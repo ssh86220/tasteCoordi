@@ -48,7 +48,8 @@
   
     <bean id="coordinationDao" class="com.tastecoordi.web.dao.mybatis.MyBatisCoordinationDao" />   
     <bean id="memberdao" class="com.tastecoordi.web.dao.mybatis.MyBatisMemberDao" /> 
-    
+    <bean id="commentDao" class="com.tastecoordi.web.dao.mybatis.MyBatisCommentDao"/>
+    <bean id="qnaDao" class="com.tastecoordi.web.dao.mybatis.MyBatisQnaDao"/>
     <!-- 
      spring controller를 매핑
     <bean id="/customer/notice" class="com.newlecture.web.controller.SpringNoticeController" /> 

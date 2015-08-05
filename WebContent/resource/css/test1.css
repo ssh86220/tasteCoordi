@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+
+#coordi-box{
+	height:350px;
+	width:320px;
+	background : #ffffff;
+	border : gray solid 1px;
+	line-height: center;	
+	float : left;
+	margin-right: 17px;
+	margin-top: 15px;
+	border: 1px solid red;
+	display : inline-block;
+} 
+
+ #coordi-list{
+	border: 1px solid red;
+	display : inline-block;
+	float: left;
+} 
+
+ #coordi-list li{
+	float: left;
+} 
+ 
+ #coordi{
+ 	float :left;
+ }
+ 
+ #coordi img{
+	border-bottom: 1px solid gray;
+	height:300px;
+	width:300px;
+ 	padding-left: 10px;
+	padding-right: 10px;
+/* 	display: inline-block;
+	margin-left: auto;
+	margin-right: auto; */
+	border: 1px solid red;
+}
+
+/*#profile li{
+	padding-left: 10px;
+	padding-top: 8px;
+	background: url("../images/bg-main-menu-vsp.png") no-repeat left center;
+	float: left;
+}
+
+#else li{
+	padding-left: 10px;
+	padding-top: 15px;
+	background: url("../images/bg-main-menu-vsp.png") no-repeat left center;
+	float: left;
+}  */

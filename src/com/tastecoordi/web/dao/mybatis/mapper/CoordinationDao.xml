@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tastecoordi.web.dao.CoordinationDao">
+	<!-- (String code) -->
+	<delete id="delCodi" parameterType="String"> DELETE Coordinations WHERE 
+		CODE LIKE #{code} </delete>
+
+	<select id="getCoordinations" resultType="com.tastecoordi.web.vo.Coordination">
+	
+		select * from CodiView
+	</select>
+
+	<!-- <insert id="addCodi" parameterType="com.tastecoordi.web.vo.Coordination"> 
+		<selectKey keyProperty="temp" order="BEFORE" resultType="String"> SELECT 
+		ISNULL(MAX(SUBSTRING(code,4,3)),0)+1 FROM Coordinations WHERE MID LIKE #{mid} 
+		</selectKey> INSERT INTO Coordinations(CODE, Title, MID, Style) VALUES ((#{mid}+(REPLICATE('0', 
+		3 - LEN(#{temp}))+#{temp})),#{title},#{mid},#{style}) </insert> -->
+
+	
+</mapper>
+

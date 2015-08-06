@@ -87,7 +87,7 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value="qnaReg",method=RequestMethod.POST)
-	public String qnaReg(QnA q,HttpServletRequest request) throws IOException{ // reDirect
+	public String qnaReg(QnA q,HttpServletRequest request,Principal principal) throws IOException{ // reDirect
 	
 			/*String title=request.getParameter("title");
 			String content=request.getParameter("content");
@@ -98,8 +98,14 @@ public class CustomerController {
 			qna.setContent(content);
 			qna.setEmail(email);*/
 			
-			
 			//qnaDao = new MyBatisQnADao();
+		String mid=principal.getName();
+		
+				
+		q.setMid(mid);
+	
+		/*comment.setContent(content);*/
+		
 			qnaDao.addQnA(q);
 			
 		

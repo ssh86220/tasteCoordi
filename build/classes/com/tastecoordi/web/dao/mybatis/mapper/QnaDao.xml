@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tastecoordi.web.dao.QnaDao">
+	
+	<select id="getQnAs" resultType="com.tastecoordi.web.vo.QnA">
+		SELECT * FROM QnAs order by regDate DESC
+	</select>
+
+
+	<select id="getQnA" parameterType="String"
+		resultType="com.tastecoordi.web.vo.QnA">
+		SELECT * FROM QnAs WHERE Number=#{number}
+	</select>
+
+
+	<insert id="addQnA" parameterType="com.tastecoordi.web.vo.QnA">
+		<selectKey keyProperty="number" order="BEFORE" resultType="string">
+			select isNull(MAX(CAST(number as INT)),0)+1 number from QnAs;
+		</selectKey>
+		INSERT INTO QnAs(NUMBER,TITLE,CONTENT,MID,Email)
+		VALUES (#{number}, #{title}, #{content}, #{mid}, #{email})
+		
+	</insert>
+	
+	<delete id="removeQnA" parameterType="string">
+	Delete FROM QnAs where number = #{number};
+	</delete>
+	
+	<update id="revisionQnA" parameterType="string">
+	Update QnAs set title=#{title},email=#{email},content=#{content} where number=#{number};
+	</update>
+
+</mapper>

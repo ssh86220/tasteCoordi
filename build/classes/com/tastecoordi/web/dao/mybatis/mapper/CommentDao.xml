@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tastecoordi.web.dao.CommentDao"> 
+	
+	
+	<select id="getComment" parameterType="string" resultType="com.tastecoordi.web.vo.Comment">
+		select * FROM QnAComments where QnANumber=#{QnANumber}
+	</select>
+	
+	<insert id="addComment" parameterType="com.tastecoordi.web.vo.Comment">
+		<selectKey keyProperty="code" order="BEFORE" resultType="String">
+			SELECT ISNULL(MAX(CAST(code as INT)),0)+1 Code FROM QnAComments 
+		</selectKey>
+	
+		INSERT INTO QnAComments(CODE, Mid, QnaNumber, CONTENT) 
+		VALUES(#{Code},#{Mid},#{QnaNumber},#{Content})
+	</insert>
+	
+	
+	<!-- <delete id="removeClothes" parameterType="string">
+	Delete CLOTHES where Code = #{code};
+	</delete>
+	
+	<select id="getClothes" resultType="com.tastecoordi.web.vo.Clothes">
+		SELECT * FROM Clothes where price is not null
+	</select> -->
+</mapper>

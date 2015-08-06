@@ -31,5 +31,8 @@ public int addClothes(Clothes c);
 	public List<Clothes> searchCategory(String category);
 	public List<Clothes> searchColor(String color);
 	
+	
+
+	
 
 }

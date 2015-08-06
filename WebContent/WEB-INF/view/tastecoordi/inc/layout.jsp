@@ -38,7 +38,7 @@
 	<div class="fix"></div>
 
 	<main id="main">
-	<tiles:insertAttribute name="main" /> </main>
+	<tiles:insertAttribute name="body" /> </main>
 	<!-- 메인영역 -->
 	<div class="fix"></div>
 	

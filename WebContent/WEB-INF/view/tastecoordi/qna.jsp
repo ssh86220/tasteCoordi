@@ -5,105 +5,12 @@
 <c:set var="ctxName" value="${pageContext.request.contextPath}"/>
 <%@ taglib prefix="titles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
+<link href="../resource/css/qna.css" rel="stylesheet" type="text/css" />
 
-<style>
-
-/* ----------------------게시판 메인설정--------------------- */
-#qna tr{
-	height: 30px;
-	line-height: 30px;
-}
-
-#qna td,
-#qna th{
-text-align: center;
-border-bottom: 1px #e9e9e9 solid;
-
-}
-#qna td{
-text-align: center;
-border-bottom: 1px #e9e9e9 solid;
-
-}
-
-#qna td:FIRST-CHILD,
-#qna th:FIRST-CHILD{
-width: 60px;
-}
-#qna td:FIRST-CHILD+td{
-width: 400px;
-text-align:left;
-text-indent:10px
-}
-
-
-
-#qna td:FIRST-CHILD+td+td,
-#qna th:FIRST-CHILD+th+th{
-width : 100px;
-}
-#qna td:FIRST-CHILD+td+td+td,
-#qna th:FIRST-CHILD+th+th+th{
-width : 100px;
-} 
-#qna td:FIRST-CHILD+td+td+td+td,
-#qna th:FIRST-CHILD+th+th+th+th{
-width:60px;
-}
-
-#qna th{
-background: #f5f5f5 url("../images/bg-title-sp.png")no-repeat left center;
-}
-
-#qna{
-width:720px;
-border-top: 2px #171a39 solid;
-}
-
-#qna th:FIRST-CHILD {
-	background: #f5f5f5;
-}
-/* ----------------------게시판 메인설정 끝--------------------- */
-
-/* ---------------여기는 page설정 ------------------- */
-#page li{
-float: left;
-width:25px;
-height:25px;
-
-text-align: center;
-line-height: 25px; 
-}
-
-#page ul{
-
-/*display: inline-block; /* 자식의 가로세로와 같게 */
-overflow: auto;/* 자식의 높이만 같게 */
-float: left;
-}
-#page > * {
-float: left; 
-
-}
-#page > p{
-width:25px;
-height:25px;
-/* border: 1px solid green; */
-text-align: center;
-line-height: 25px; 
-font-size: 12px;
-
-}
-#service {
-
-}
-
-/* ---------------여기는 page설정  끝------------------- */
-</style>
 <!DOCTYPE html>
 
 			<main id="main">	
-
+			<div class="content-wrapper">
 			<h1 class="hidden">QnA</h1>
 			<div>
 				
@@ -181,6 +88,7 @@ font-size: 12px;
 					<p>02-123-4567</p>
 				</section>
 
+			</div>
 			</div>
 			</main>
 		

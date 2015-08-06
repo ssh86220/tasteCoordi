@@ -35,8 +35,10 @@
 
 	<div class="fix"></div>
 
-	<main id="main"> <tiles:insertAttribute name="main" /> </main>
 	<!-- 메인영역 -->
+	<main id="main">
+	 <tiles:insertAttribute name="body" />
+	 </main>
 	<!-- 푸터영역 -->
 	<tiles:insertAttribute name="footer" />
 

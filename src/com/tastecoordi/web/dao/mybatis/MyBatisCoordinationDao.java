@@ -113,7 +113,7 @@ public List<Coordination> getCodis() {
 	//SqlSession session = factory.openSession();
 	CoordinationDao dao = session.getMapper(CoordinationDao.class);
 
-	return dao.getCodis(1, "title", "");
+	return dao.getCodis();
 }
 
 

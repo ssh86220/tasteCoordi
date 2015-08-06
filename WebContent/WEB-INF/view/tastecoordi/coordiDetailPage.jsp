@@ -73,7 +73,7 @@
 					<section id = "coordi-copyright">
 						<h1>코디 저작정보</h1>
 						
-						${codi.title} created by ${codi.mid}<br>
+					${codi.title} created by ${codi.mid}<br>
 								<h1 class = "Hidden">설명</h1>
 								설명 :
 								<p>

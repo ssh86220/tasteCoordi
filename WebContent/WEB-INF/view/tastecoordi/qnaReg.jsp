@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<!--코드블럭 -->
-	<%
-		
-	%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="ctxName" value="${pageContext.request.contextPath}"/>
+<%@ taglib prefix="titles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 
 <!DOCTYPE html>
 
@@ -23,7 +24,8 @@
 			<fieldset>
 			<legend class="Hidden">공지사항 정보</legend>
 			<dl>
-				<dd><input type="Hidden" name="mid" value="kimdill"></dd>
+				<dt class="Hidden">아이디</dt>
+				<dd class="Hidden"><security:authentication property="name"/>
 				<dt>제목</dt>
 				<dd><input name="title"></dd>
 				<!-- <dt>첨부파일</dt>

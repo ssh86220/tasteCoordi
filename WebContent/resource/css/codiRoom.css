@@ -1,0 +1,108 @@
+#canvas{
+	float : left;
+	background : pink; 
+	width : 50%;
+	height : 951px;
+	/* border-top : 1px solid black; */
+	
+	
+}
+
+ #item{
+	float : right;
+	width : 50%;
+	/* border-top : 1px solid black; */
+	background : yellow; 
+	height :951px;
+
+	
+}
+
+#turn{
+	display : inline-block;
+	/* border: 1px solid #BCBA34; */ 
+	}
+	
+#turn li{
+		padding-left: 24px;
+		float : left
+}
+
+#turn li:first-child{
+		padding : 0px;
+	}
+#turn li:last-child{
+		padding-left : 161px;
+	}	
+	
+#item-menu{
+	display : inline-block;
+	}
+	
+#item-menu li{
+		padding-left: 24px;
+		float : left
+}
+#item-menu li:first-child{
+		padding : 0px;
+	}
+
+#item-category{
+	display : inline-block;
+	}
+	
+#item-category li{
+		padding-left: 24px;
+		float : left
+}	
+#item-category li:first-child{
+		padding : 0px;
+	}
+
+
+/*img*/
+
+#item-img{
+	display : inline-block;
+ 	/* border: 1px solid #BCBA34;  */ 
+	}
+
+#item-img li{
+	padding-left: 25px;	
+}
+
+#item-img img{
+	width : 70px;
+	height : 70px;	
+	float : left;
+} 
+
+#detail-img{
+	width : 120px;
+	height : 100px;
+	
+}	
+
+#myClothes-img{
+	display : inline-block;
+}
+
+#myClothes-img li{
+	padding-left: 25px;	
+	float : left;
+}
+
+#myClothes-img img{
+	width : 70px;
+	height : 70px;	
+	display : block;
+} 
+
+#myClothes-img input[type="checkbox"]{
+	display : block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+

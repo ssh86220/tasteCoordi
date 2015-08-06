@@ -68,7 +68,7 @@ public class MyBatisClothesDao implements ClothesDao {
 		return result;*/
 	}
 
-/*	@Override
+	@Override
 	public List<Clothes> getClothes(int page, String field, String query,
 			String startDate, String endDate) {
 		HashMap<String, Object> params = new HashMap<String, Object>();
@@ -78,31 +78,13 @@ public class MyBatisClothesDao implements ClothesDao {
 		params.put("startDate", startDate);
 		params.put("endDate", endDate);
 
-		SqlSession session = factory.openSession();
+		//SqlSession session = factory.openSession();
 		List<Clothes> list = session.selectList("getClothes", params);
-		session.close();
+		//session.close();
 		return list;
 		
 	}
 
-	@Override
-	public int removeClothes(String code) throws ClassNotFoundException,
-			SQLException {
-		int result = 0;
-		SqlSession session = factory.openSession();
-		
-		try {
-			ClothesDao dao = session.getMapper(ClothesDao.class);
-			result = dao.removeClothes(code);
-			session.commit();
-		} finally {
-			session.rollback();
-			session.close();
-
-		}
-		return result;
-		
-	}
 
 
 	@Override
@@ -121,7 +103,7 @@ public class MyBatisClothesDao implements ClothesDao {
 	public Clothes getCloth(String code) throws ClassNotFoundException,
 			SQLException {
 		// TODO Auto-generated method stub
-		SqlSession session = factory.openSession();
+		
 		ClothesDao dao = session.getMapper(ClothesDao.class);
 		
 		return dao.getCloth(code);
@@ -142,12 +124,30 @@ public class MyBatisClothesDao implements ClothesDao {
 		params.put("startDate", startDate);
 		params.put("endDate", endDate);
 
-		SqlSession session = factory.openSession();
+		
 		List<Clothes> list = session.selectList("getMyClothes", params);
-		session.close();
+		//session.close();
 		return list;
 		
-	}*/
+	}
+
+	@Override
+	public List<Clothes> searchCategory(String category) {
+		// TODO Auto-generated method stub
+		List<Clothes> list = session.selectList("searchCategory", category);
+		//session.close();
+		return list;
+	}
+
+	@Override
+	public List<Clothes> searchColor(String color) {
+		// TODO Auto-generated method stub
+		List<Clothes> list = session.selectList("searchColor", color);
+		//session.close();
+		return list;
+	}
+
+
 
 	
 	

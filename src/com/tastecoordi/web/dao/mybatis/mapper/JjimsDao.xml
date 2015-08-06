@@ -11,5 +11,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  	 <delete id="delJjims" parameterType = "string">
  		DELETE JJIMs WHERE ClothesCode = #{clothesCode}
  	</delete>
+ 	
+ 	
+	<select id="getJjim" parameterType="string" resultType="com.tastecoordi.web.vo.Jjims">
+	SELECT * FROM JJIMSVIEW WHERE Mid =#{mid}
+	</select>
+
+	<insert id="addJjims" parameterType="com.tastecoordi.web.vo.Jjims">
+		INSERT INTO JJIMS(MID, CLOTHESCODE, REGDATE) VALUES(#{mid},#{clothesCode},getDate())
+	</insert>
+
+	<delete id="removeJjims" parameterType="string">
+		DELETE FROM JJIMS WHERE clothesCode = #{clothesCode} and Mid =#{mid}
+	</delete>
+
+	<select id="getJjimsCount" parameterType="string" resultType="Integer">
+		SELECT JjimCount FROM JjimCountView WHERE CODE= #{clothesCode}
+	</select>
+
+	<select id="getJjimsPeople" parameterType="string" resultType="com.tastecoordi.web.vo.Jjims">
+		SELECT MID FROM JJIMs WHERE CLOTHESCODE=#{clothesCode}
+	</select>
 
 </mapper>

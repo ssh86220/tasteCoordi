@@ -17,6 +17,7 @@
 <title>>tsMAIN</title>
 <link href="../resource/css/reset.css" type="text/css" rel="stylesheet" />
 <link href="../resource/css/layout.css" type="text/css" rel="stylesheet" />
+<link href="../resource/css/codiRoom.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="../resource/js/mordernizr.js"></script>
 </head>
 <body>

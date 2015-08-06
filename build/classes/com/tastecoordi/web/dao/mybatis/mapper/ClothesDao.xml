@@ -42,4 +42,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM Clothes WHERE Mid = #{mid}
 	</select>
 	
+	<select id="searchCategory" parameterType="string" resultType="com.tastecoordi.web.vo.Clothes">
+	SELECT * from CLOTHES WHERE CATEGORIES=#{Categories} and PRICE IS NOT NULL
+	</select>
+	
+	<select id="searchColor" parameterType="string" resultType="com.tastecoordi.web.vo.Clothes">
+	SELECT * from CLOTHES WHERE COLOR=#{Color} and PRICE IS NOT NULL
+	</select>
+	
 </mapper>

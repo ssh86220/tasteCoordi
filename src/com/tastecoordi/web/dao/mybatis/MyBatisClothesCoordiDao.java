@@ -15,24 +15,25 @@ public class MyBatisClothesCoordiDao implements ClothesCoordiDao{
 	private SqlSession session;
 	//SqlSessionFactory factory = new SqlTastecodiSessionFactory().getSqlSessionFactory();
 
-	/*@Override
+	@Override
 	public int addCC(ClothesCoordi cCodi) {
 		// TODO Auto-generated method stub
-		SqlSession session = factory.openSession();
+		//SqlSession session = factory.openSession();
 		
 		int result = 0;
+		result = session.insert("com.tastecoordi.web.dao.ClothesCoordiDao.addCC", cCodi);
 		
-		try{
+		/*try{
 			result = session.insert("com.tastecoordi.web.dao.ClothesCoordiDao.addCC", cCodi);
 			session.commit();
 		}
 		finally{
 			session.rollback();
 			session.close();
-		}
+		}*/
 		
 		return result;
-	}*/
+	}
 
 	/*@Override
 	public int delCC(String cCode) {

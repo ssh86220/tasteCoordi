@@ -25,6 +25,8 @@
     	<logout logout-success-url="/tastecoordi/tsMain"/>
     	<!-- url에 직접 접근을 못하도록 설정(로그인시에만 가능)-->
     	<intercept-url pattern="/tastecoordi/mypage/myCodi" access="ROLE_USER"/>
+    	<intercept-url pattern="/tastecoordi/codiRoomMyClothes" access="ROLE_USER"/>
+    	<intercept-url pattern="/tastecoordi/codiRoomJjims" access="ROLE_USER"/>
     </http>
     
     

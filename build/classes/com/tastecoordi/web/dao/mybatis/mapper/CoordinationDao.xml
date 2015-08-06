@@ -26,5 +26,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM Coordinations WHERE MID LIKE #{mid}
 	</select>
 	
+	<select id="getCoordiesCode" parameterType="string" resultType="String">
+		SELECT #{mid} + ISNULL(MAX(SUBSTRING(code,4,3)),0) FROM Coordinations GROUP BY MID HAVING MID=#{mid} 
+	</select>
+	
 </mapper>
 

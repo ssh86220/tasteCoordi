@@ -44,7 +44,7 @@
     <bean id="clothesDao" class="com.tastecoordi.web.dao.mybatis.MyBatisClothesDao" />  
     <bean id="likeDao" class="com.tastecoordi.web.dao.mybatis.MyBatisLikeDao" />
     <bean id="jjimsDao" class="com.tastecoordi.web.dao.mybatis.MyBatisJjimsDao" />
-     
+    <bean id="clothesCoordiDao" class="com.tastecoordi.web.dao.mybatis.MyBatisClothesCoordiDao"/>  
     
     <!-- 
      spring controller를 매핑

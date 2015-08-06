@@ -31,7 +31,7 @@
 					</c:if>		
 						
 						
-				<li><a href=""><img
+				<li><a href="codiRoom"><img
 						src="${ctxName}/resource/image/css/coordi-icon.png" alt="Coordi"></a></li>
 				<li><a href="tsmainSearch"><img
 						src="${ctxName}/resource/image/css/search-icon.png" alt="Search"></a></li>

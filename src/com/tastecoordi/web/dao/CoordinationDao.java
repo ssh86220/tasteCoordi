@@ -21,4 +21,7 @@ public interface CoordinationDao {
 	public List<Coordination> getCodis(String id);
 	public int openCodi(String code);
 	
+	//°¡¿µ
+	public String getCoordiesCode(String mid);
+	
 }

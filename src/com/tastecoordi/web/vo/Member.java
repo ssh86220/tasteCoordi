@@ -4,49 +4,50 @@ import java.sql.Date;
 
 public class Member {
 	
-	private String ID;
-	private String Name;
-	private String PW;
-	private String Email;
-	private Date RegDate;
+	private String id;
+	private String name; // 닉네임 or 업체명
+	private String pw;
+	private String email;
+	private Date regDate;
 	private String image;
 	private String DefaultRole;
 	
-	public String getID() {
-		return ID;
-	}
 	public String getDefaultRole() {
 		return DefaultRole;
 	}
 	public void setDefaultRole(String defaultRole) {
 		DefaultRole = defaultRole;
 	}
-	public void setID(String iD) {
-		ID = iD;
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getName() {
-		return Name;
+		return name;
 	}
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
-	public String getPW() {
-		return PW;
+	
+	public String getPw() {
+		return pw;
 	}
-	public void setPW(String pW) {
-		PW = pW;
+	public void setPw(String pw) {
+		this.pw = pw;
 	}
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 	public Date getRegDate() {
-		return RegDate;
+		return regDate;
 	}
 	public void setRegDate(Date regDate) {
-		RegDate = regDate;
+		this.regDate = regDate;
 	}
 	public String getImage() {
 		return image;
@@ -54,7 +55,6 @@ public class Member {
 	public void setImage(String image) {
 		this.image = image;
 	}
-
 	
 
 }

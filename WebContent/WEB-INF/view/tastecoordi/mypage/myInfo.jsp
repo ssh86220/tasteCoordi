@@ -28,11 +28,10 @@
 							<dd><input type="button" value="중복검사"/></dd>
 							<dt>프로필사진</dt>
 							<dd><input name="file" type="file"/></dd>
-							<!-- <dd><input name="image"/></dd> -->
 						</dl>
 			
 						<div>
-						<!-- <a href="mypageMyCodi"> --><input type="submit" value="수정"/></a>
+						<input type="submit" value="수정"/></a>
 						<a href="myInfo">취소</a>
 						</div>
 			

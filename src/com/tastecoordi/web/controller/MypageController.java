@@ -443,8 +443,8 @@ public class MypageController {
 		member.setName(name);
 		
 		if(pw.isEmpty())
-			pw = memberDao.getMember(id).getPW();
-		member.setPW(pw);
+			pw = memberDao.getMember(id).getPw();
+		member.setPw(pw);
 		
 		if(email.isEmpty())
 			email = memberDao.getMember(id).getEmail();

@@ -10,7 +10,7 @@
 	margin-right: 17px;
 	margin-top: 15px;
 	border: 1px solid red;
-	display : inline-block;
+	display : block;
 } 
 
  #coordi-list{
@@ -19,9 +19,9 @@
 	float: left;
 } 
 
- #coordi-list li{
+/*  #coordi-list li{
 	float: left;
-} 
+}  */
  
 /*  #coordi{
  	float :left;

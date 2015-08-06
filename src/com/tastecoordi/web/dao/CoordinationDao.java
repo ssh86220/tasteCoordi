@@ -17,4 +17,8 @@ public interface CoordinationDao {
 	public List<Coordination> getCoordinations(int page, String field, String query);
 	public List<Coordination> getSearchCodi(String style, String category, String color);
 	
+	//º“¿±
+	public List<Coordination> getCodis(String id);
+	public int openCodi(String code);
+	
 }

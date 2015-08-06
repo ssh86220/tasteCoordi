@@ -11,4 +11,7 @@ public interface CommentDao {
 	public int addComment(Comment comment);
 	public int removeQnA(String code);
 	public int revisionQnA(String code,String title,String content,String memberUid);
+
+	//º“¿±
+	public Comment getCommemtCnt(String mid);
 }

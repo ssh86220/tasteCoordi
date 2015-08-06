@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tastecoordi.web.dao.FollowDao">
+	<insert id="addFollow" parameterType="com.tastecoordi.web.vo.Follow">
+		INSERT INTO Follows(Mid,TagetMid)
+		VALUES (#{Mid}, #{TagetMid})
+	</insert>
+
+	<select id="getFollow" parameterType="string"
+		resultType="com.tastecoordi.web.vo.Follow">
+		select * from Follows where
+		Mid=#{Mid}
+	</select>
+
+	<!-- 수정함  150730-->
+	<delete id="removeFollow" parameterType="string">
+		DELETE Follows WHERE TagetMid = #{TagetMid}
+	</delete>
+	
+	<select id="getFollowerCnt" parameterType="String" resultType="com.tastecoordi.web.vo.Follow">
+		SELECT COUNT(TagetMid) followerCnt FROM FOLLOWS WHERE TagetMid = #{TagetMid}
+	</select>
+	
+	<select id="getFollowingCnt" parameterType="String" resultType="com.tastecoordi.web.vo.Follow">
+		SELECT COUNT(Mid) followerCnt FROM FOLLOWS WHERE Mid = #{Mid}
+	</select>
+	
+	<select id="getFollowerImg" parameterType="String" resultType="com.tastecoordi.web.vo.Follow">
+		SELECT  Follows.Mid, Follows.TagetMid, Members.image followerImg
+		FROM     Follows INNER JOIN
+               Members ON Follows.Mid = Members.ID
+		WHERE TagetMid = #{tagetMid}
+	</select>
+	
+	<select id="getFollowingImg" parameterType="String" resultType="com.tastecoordi.web.vo.Follow">
+		SELECT  Follows.Mid, Follows.TagetMid, Members.image followingImg
+		FROM     Follows INNER JOIN
+               Members ON Follows.TagetMid = Members.ID
+		WHERE Mid = #{Mid}
+	</select>
+	
+
+
+</mapper>

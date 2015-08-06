@@ -16,6 +16,17 @@ public class Coordination {
 	private int CmtCnt;
 	private int LikeCnt;
 	private String Name;
+	
+	//º“¿±
+	private String temp;
+	public String getTemp() {
+		return temp;
+	}
+	public void setTemp(String temp) {	
+
+		this.temp = temp;
+	}
+	
 
 /*	public List<Like> getLikes() {
 

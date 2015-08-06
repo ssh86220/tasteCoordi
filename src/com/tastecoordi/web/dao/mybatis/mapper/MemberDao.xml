@@ -40,12 +40,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from members where id=#{mid}; </selectKey> INSERT INTO MEMBERROLES(MID) VALUES 
 		(#{id}) </insert> -->
 
-	<update id="updateMember" parameterType="com.tastecoordi.web.vo.Member">
-		<selectKey keyProperty="id" order="AFTER" resultType="string">
-			update id from members where id = #{id};
-		</selectKey>
-		UPDATE Members SET NAME = #{name} ,PW = #{pw}, EMAIL=#{email}, IMAGE = #{image}; 
-		
-	</update>
+	<update id="alterMember" parameterType="com.tastecoordi.web.vo.Member">
+		UPDATE MEMBERS SET NAME = #{name}, PW = #{pw}, EMAIL = #{email}, IMAGE = #{image}  WHERE ID = 'csy'
+	</update>	
 
 </mapper>

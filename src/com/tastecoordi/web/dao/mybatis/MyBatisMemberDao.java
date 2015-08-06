@@ -91,17 +91,12 @@ public class MyBatisMemberDao implements MemberDao {
 		return getMembers(1, "name", "", "2015-04-19", "2015-08-01");
 	}
 
+
 	@Override
-	public int updateMember(Member m) {
-
-		int result = 0;
+	public int alterMember(Member m) {
+		MemberDao dao = session.getMapper(MemberDao.class);
 		
-		result = session.update(
-				"com.tastecoordi.web.dao.MemberDao.addMember", m);
-
-	
-		return result;
-
+		return dao.alterMember(m);
 	}
 
 }

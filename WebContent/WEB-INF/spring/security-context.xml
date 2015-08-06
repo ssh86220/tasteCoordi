@@ -13,35 +13,39 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
         
-      <beans:bean 
+    <beans:bean 
       id="newlecAuthenticationSuccessHandler" 
       class="com.tastecoordi.web.controller.NewlecAuthenticationSuccessHandler"/>  
-        
-        <http>
-        	<form-login login-page="/joinus/login"
-        	default-target-url="/tastecoordi/qna"/>
-        	<!-- authentication-success-handler-ref="newlecAuthenticationSuccessHandler" -->
-        	
-        	<logout logout-success-url="/tastecoordi/qna"/>
-        	
-        	<!-- <intercept-url pattern="/tastecoordi/qnaDetail" access="ROLE_USER"/> -->
-        	<intercept-url pattern="/tastecoordi/qnaReg" access="ROLE_USER"/>
-        </http>
-        <authentication-manager>
-	<authentication-provider>
-		<jdbc-user-service 
-		data-source-ref="dataSource"
-		users-by-username-query="
-		SELECT ID USERID, PW PASSWORD, 1 ENABLED 
-		FROM MEMBERS WHERE ID=?
-		"
-		authorities-by-username-query="
-		SELECT MID USERID, Rcode AUTHORITES FROM MemberRoles WHERE MID=?
-		"		
-		/>
+    
+    <http>
+    	<!-- 로그인을 할 페이지 / 로그인한 후의 기본으로 보여질 페이지 -->
+    	<form-login login-page="/joinus/login" 
+    	default-target-url="/tastecoordi/tsMain"/>
+	    <!-- logout-success-url = 로그아웃시 보여질 페이지 -->
+    	<logout logout-success-url="/tastecoordi/tsMain"/>
+    	<!-- url에 직접 접근을 못하도록 설정(로그인시에만 가능)-->
+    	<intercept-url pattern="/tastecoordi/mypage/myCodi" access="ROLE_USER"/>
+    </http>
+    
+    
+        <!-- 인증정보 관리
+    authorities = user의 역활 / ROLE_ 는 예약어 -->
+    <authentication-manager>
+    	<authentication-provider>
+    		<!-- ENABLED(휴먼유저인지 1/0) 상수도 별칭 가능 -->
+    		<jdbc-user-service 
+    			data-source-ref="dataSource"
+    			users-by-username-query="
+    				SELECT ID USERID, PW PASSWORD, 1 ENABLED FROM MEMBERS WHERE ID=?
+    			"
+    			authorities-by-username-query="
+    				SELECT MID USERID, RCODE AUTHORITIES FROM MEMBERROLES WHERE MID=?
+    			"/>
+
+    	</authentication-provider>
+    </authentication-manager>
 	
-	</authentication-provider>
-</authentication-manager>
+
 
 
 </beans:beans>

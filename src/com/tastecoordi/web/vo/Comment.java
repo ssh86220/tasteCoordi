@@ -10,6 +10,16 @@ public class Comment {
 	private String QnaNumber;
 	private String Content;
 
+	//º“¿±
+	private int commentCnt;
+	public int getCommentCnt() {
+		return commentCnt;
+	}
+	public void setCommentCnt(int commentCnt) {
+		this.commentCnt = commentCnt;
+	}
+	
+	
 	public String getMid() {
 		return Mid;
 	}

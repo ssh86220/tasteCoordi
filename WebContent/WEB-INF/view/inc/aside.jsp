@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+ <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>   
+ <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
  <c:set var="ctxName" value='${pageContext.request.contextPath}'/>  
 	<aside id="aside">
 		<!-- <div class="content-wrapper"> -->
@@ -7,14 +11,30 @@
 		<nav>
 			<h1 class="Hidden">메뉴</h1>
 			<ul>
+				<li><a href="mypage/myCodi"><img
+						src="${ctxName}/resource/image/css/mypage-icon.png" alt="Mypage"></a></li>			 
+				<%-- <li><a href=""><img
+						src="${ctxName}/resource/image/css/login-icon.png" alt="Login"></a></li> --%>
+				
+				<c:if test="${empty pageContext.request.userPrincipal.name}">
+						<li><a href="${ctxName}/joinus/login"><img
+						src="${ctxName}/resource/image/css/login-icon.png" alt="Login"></a></li>
+					</c:if>
+					<c:if test="${not empty pageContext.request.userPrincipal.name}">
+						<%-- <security:authentication property="authorities" var="authorities" />
+						<c:forEach items="${authorities}" var="auth">
+							${auth.authority}
+						</c:forEach> 
+						<a href="${ctxName}/j_spring_security_logout"><security:authentication property="name" />--%>
+						<a href="${ctxName}/j_spring_security_logout"><img
+						src="${ctxName}/resource/image/css/logout.png" alt="Logout"></a>	
+					</c:if>		
+						
+						
 				<li><a href=""><img
-						src="../resource/image/css/mypage-icon.png" alt="Mypage"></a></li>			 
-				<li><a href=""><img
-						src="../resource/image/css/login-icon.png" alt="Login"></a></li>
-				<li><a href=""><img
-						src="../resource/image/css/coordi-icon.png" alt="Coordi"></a></li>
+						src="${ctxName}/resource/image/css/coordi-icon.png" alt="Coordi"></a></li>
 				<li><a href="tsmainSearch"><img
-						src="../resource/image/css/search-icon.png" alt="Search"></a></li>
+						src="${ctxName}/resource/image/css/search-icon.png" alt="Search"></a></li>
 
 				<!-- <form>
 
@@ -106,9 +126,9 @@
 
 						</fieldset> -->
 				<li><a href=""><img
-						src="../resource/image/css/company-icon.png" alt="Company"></a></li>
+						src="${ctxName}/resource/image/css/company-icon.png" alt="Company"></a></li>
 				<li><a href=""><img
-						src="../resource/image/css/q&a-icon.png" alt="Q&A"></a></li>
+						src="${ctxName}/resource/image/css/q&a-icon.png" alt="Q&A"></a></li>
 			</ul>
 		</nav>
 		<!-- </div> -->

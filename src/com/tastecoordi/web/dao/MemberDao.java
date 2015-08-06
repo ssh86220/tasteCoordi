@@ -28,6 +28,7 @@ public interface MemberDao {
 	
 	public int removeMember(String id);
 	
-	public int updateMember(Member m);
+	//¼ÒÀ±
+	public int alterMember(Member m);
 
 }

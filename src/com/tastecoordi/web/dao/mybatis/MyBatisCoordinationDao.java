@@ -86,4 +86,17 @@ public class MyBatisCoordinationDao implements CoordinationDao {
 		return dao.getSearchCodi("style", "category", "color");
 	}
 
+	@Override
+	public List<Coordination> getCodis(String id) {
+		CoordinationDao dao = session.getMapper(CoordinationDao.class);
+		
+		return dao.getCodis(id);
+	}
+
+	@Override
+	public int openCodi(String code) {
+		CoordinationDao dao = session.getMapper(CoordinationDao.class);
+		return dao.openCodi(code);
+	}
+
 }

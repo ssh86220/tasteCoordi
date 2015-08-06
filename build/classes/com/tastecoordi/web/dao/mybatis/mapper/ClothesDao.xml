@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tastecoordi.web.dao.ClothesDao"> 
+	
+	<insert id="addClothes" parameterType="com.tastecoordi.web.vo.Clothes">
+		<selectKey keyProperty="temp" order="BEFORE" resultType="String">
+			SELECT ISNULL(MAX(SUBSTRING(code,4,3)),0)+1 FROM Clothes WHERE MID LIKE #{mid} and SUBSTRING(Code,1,3)= #{Categories} 
+		</selectKey>
+		INSERT INTO CLOTHES(code,mid,Name,price,SiteName,Link,Color,Categories,RegDATE,Image) 
+		VALUES ((#{Categories}+(REPLICATE('0', 3 - LEN(#{temp}))+#{temp})+#{mid}),
+		#{mid},#{Name},#{price},#{SiteName},#{Link},#{Color},#{Categories},getDate(),#{Image})
+	</insert>
+	
+	<select id="getCloth" parameterType="string" resultType="com.tastecoordi.web.vo.Clothes">
+		select * FROM Clothes WHERE CODE =#{code}
+	</select>
+	
+	<delete id="removeClothes" parameterType="string">
+	Delete CLOTHES where CODE = #{code};
+	</delete>
+	
+	
+	<select id="getClothes" resultType="com.tastecoordi.web.vo.Clothes">
+	SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY REGDATE DESC) NUM,
+				 Clothes.* FROM Clothes where price is not null and ${field}
+				  LIKE '%${query}%' and REGDATE between convert(DATETIME,#{startDate}) and 
+				 convert(DATETIME,#{endDate}))C WHERE C.NUM BETWEEN 1 + (${page} - 1) * 10 
+				 AND 10 * ${page}
+	</select>
+	
+<!-- 	<select id="getMyClothes" parameterType="string" resultType="com.tastecoordi.web.vo.Clothes">
+	SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY REGDATE DESC) NUM,
+				 Clothes.* FROM Clothes where price is null and Mid =#{mid} and ${field}
+				  LIKE '%${query}%' and REGDATE between convert(DATETIME,#{startDate}) and 
+				 convert(DATETIME,#{endDate}))C WHERE C.NUM BETWEEN 1 + (${page} - 1) * 10 
+				 AND 10 * ${page}
+	</select> -->
+	
+	<select id="getMyClothes" parameterType="string" resultType="com.tastecoordi.web.vo.Clothes">
+		SELECT * FROM Clothes WHERE Mid = #{mid}
+	</select>
+	
+</mapper>

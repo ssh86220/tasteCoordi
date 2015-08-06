@@ -18,6 +18,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</selectKey> INSERT INTO Coordinations(CODE, Title, MID, Style) VALUES ((#{mid}+(REPLICATE('0', 
 		3 - LEN(#{temp}))+#{temp})),#{title},#{mid},#{style}) </insert> -->
 
+	<update id="openCodi" parameterType="String">
+		UPDATE Coordinations SET [Open] = ABS([Open]-1) WHERE CODE LIKE #{code}
+	</update>
+	
+	<select id="getCodis" parameterType="String" resultType="com.tastecoordi.web.vo.Coordination">
+		SELECT * FROM Coordinations WHERE MID LIKE #{mid}
+	</select>
 	
 </mapper>
 

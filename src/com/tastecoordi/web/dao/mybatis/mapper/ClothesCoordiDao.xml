@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tastecoordi.web.dao.ClothesCoordiDao"> 
+	
+	<insert id="addCC" parameterType="com.tastecoordi.web.vo.ClothesCoordi">
+		INSERT INTO ClothesCoordis(CODE, ClothesCode, CoordiesCode) 
+		VALUES ((#{clothCode}+#{CoordiCode}),#{clothCode},#{CoordiCode})
+	</insert>
+	
+	<!-- (String code)  -->
+	<delete id="delCC" parameterType="String">
+		DELETE ClothesCoordis WHERE CoordiesCode LIKE #{CoordiCode}
+	</delete>
+	
+	<select id="getCCs" resultType="com.tastecoordi.web.vo.ClothesCoordi">
+		SELECT * FROM ClothesCoordis 
+	</select>
+	
+</mapper>

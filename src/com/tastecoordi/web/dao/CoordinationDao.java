@@ -24,4 +24,13 @@ public interface CoordinationDao {
 	//가영
 	public String getCoordiesCode(String mid);
 	
+	//영조
+	
+
+	public List<Coordination> getCodis(); // 모두출력
+
+	public List<Coordination> getCodis(int page, String field, String query);
+	
+	public Coordination getCodi(String code);
+	
 }

@@ -29,4 +29,14 @@ public interface FollowDao {
 	public List<Follow> getFollowerImg(String targetMid);
 	public List<Follow> getFollowingImg(String Mid);
 
+	//¿µÁ¶
+	
+	public int removeFollow2(Follow f) throws ClassNotFoundException,
+	SQLException;;
+
+
+public int getfollow(Follow f) throws ClassNotFoundException, SQLException;
+
+
+public int addFollow(Follow f);
 }

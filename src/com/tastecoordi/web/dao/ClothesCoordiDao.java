@@ -10,6 +10,14 @@ public interface ClothesCoordiDao {
 		
 		public List<ClothesCoordi> getCCs();
 		public int addCC(ClothesCoordi cCodi);
+		
+		//¿µÁ¶
+		
+	
+
+		public int delCC(String code);
+
+		public List<ClothesCoordi> getCCs(String code);
 	
 
 

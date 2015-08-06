@@ -1,5 +1,6 @@
 package com.tastecoordi.web.dao.mybatis;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -105,6 +106,38 @@ public String getCoordiesCode(String mid) {
 CoordinationDao dao = session.getMapper(CoordinationDao.class);
 
 return dao.getCoordiesCode(mid);
+}
+
+@Override
+public List<Coordination> getCodis() {
+	//SqlSession session = factory.openSession();
+	CoordinationDao dao = session.getMapper(CoordinationDao.class);
+
+	return dao.getCodis(1, "title", "");
+}
+
+
+@Override
+public List<Coordination> getCodis(int page, String field, String query) {
+	
+	HashMap<String, Object>params = new HashMap<String, Object>();
+	params.put("page", page);
+	params.put("field", field);
+	params.put("query", query);
+
+	//SqlSession session = factory.openSession();
+	List<Coordination> list = session.selectList("getCoordination",params);
+	
+	session.close();
+	
+	return list;
+}
+
+@Override
+public Coordination getCodi(String code) {
+	//SqlSession session = factory.openSession();
+	CoordinationDao dao = session.getMapper(CoordinationDao.class);
+	return dao.getCodi(code);
 }
 
 }

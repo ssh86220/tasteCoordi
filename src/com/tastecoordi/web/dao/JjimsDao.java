@@ -1,5 +1,6 @@
 package com.tastecoordi.web.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import com.tastecoordi.web.vo.Jjims;
@@ -24,5 +25,13 @@ public List<Jjims> getJjims(String mid);
 	public int getJjimsCount(String code);
 	
 	public List<Jjims> getJjimsPeople(String clothesCode);
+	//¿µÁ¶
+	
+	public List<Jjims> getJjims(
+			String mid,
+			String clothesCode,
+			Date regDate);
+	
+	public int removeJjims(String mid);
 
 }

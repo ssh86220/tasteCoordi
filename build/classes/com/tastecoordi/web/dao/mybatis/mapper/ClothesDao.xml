@@ -28,6 +28,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				  LIKE '%${query}%' and REGDATE between convert(DATETIME,#{startDate}) and 
 				 convert(DATETIME,#{endDate}))C WHERE C.NUM BETWEEN 1 + (${page} - 1) * 10 
 				 AND 10 * ${page}
+				 
+				 
 	</select>
 	
 <!-- 	<select id="getMyClothes" parameterType="string" resultType="com.tastecoordi.web.vo.Clothes">

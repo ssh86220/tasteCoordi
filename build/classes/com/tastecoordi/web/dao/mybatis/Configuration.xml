@@ -18,6 +18,15 @@
 	</environments>
 	<mappers>
 		<mapper resource='com/tastecoordi/web/dao/mybatis/mapper/CoordinationDao.xml'></mapper>
-		<mapper resource = 'com/tastecoordi/web/dao/mybatis/mapper/MemberDao.xml'></mapper> 
+		
+		
+		<mapper resource="com/tastecoordi/web/dao/mybatis/mapper/ClothesDao.xml"></mapper>
+		<mapper resource="com/tastecoordi/web/dao/mybatis/mapper/MemberDao.xml"></mapper>
+
+
+		<mapper resource="com/tastecoordi/web/dao/mybatis/mapper/NoticeDao.xml"></mapper>
+		<mapper resource="com/tastecoordi/web/dao/mybatis/mapper/NoticeFileDao.xml"></mapper>
+		<mapper resource="com/tastecoordi/web/dao/mybatis/mapper/CommentsDao.xml"></mapper>
+		<mapper resource="/com/tastecoordi/web/dao/mybatis/mapper/ClothesCoordi.xml"></mapper>
 	</mappers>
 </configuration>

@@ -9,6 +9,7 @@ public class Comment {
 	private Date RegDate;
 	private String QnaNumber;
 	private String Content;
+	
 
 	//º“¿±
 	private int commentCnt;
@@ -18,7 +19,6 @@ public class Comment {
 	public void setCommentCnt(int commentCnt) {
 		this.commentCnt = commentCnt;
 	}
-	
 	
 	public String getMid() {
 		return Mid;

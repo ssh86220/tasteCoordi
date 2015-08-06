@@ -30,5 +30,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT #{mid} + ISNULL(MAX(SUBSTRING(code,4,3)),0) FROM Coordinations GROUP BY MID HAVING MID=#{mid} 
 	</select>
 	
+
+
+
+
+
+
+
+
+
+	<insert id="addCodi" parameterType="com.tastecoordi.web.vo.Coordination">
+		<selectKey keyProperty="temp" order="BEFORE" resultType="String">
+			SELECT ISNULL(MAX(SUBSTRING(code,4,3)),0)+1 FROM Coordinations WHERE
+			MID LIKE #{mid}
+		</selectKey>
+
+		INSERT INTO Coordinations(CODE, Title, MID, Style)
+		VALUES
+		((#{mid}+(REPLICATE('0', 3 -
+		LEN(#{temp}))+#{temp})),#{title},#{mid},#{style})
+	</insert>
+	
+	<select id="getCodi" parameterType="String"
+		resultType="com.tastecoordi.web.vo.Coordination">
+		SELECT * FROM Coordinations Where Code =#{code}
+	</select>
+	
 </mapper>
 

@@ -7,8 +7,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tastecoordi.web.dao.CommentDao;
+import com.tastecoordi.web.dao.CommentsDao;
 import com.tastecoordi.web.dao.QnaDao;
 import com.tastecoordi.web.vo.Comment;
+import com.tastecoordi.web.vo.Comments;
 
 public class MyBatisCommentDao implements CommentDao {
 	
@@ -80,6 +82,7 @@ public class MyBatisCommentDao implements CommentDao {
 		
 		return dao.getCommemtCnt(mid);
 	}
+
 
 	
 	

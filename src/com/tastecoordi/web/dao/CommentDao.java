@@ -3,6 +3,7 @@ package com.tastecoordi.web.dao;
 import java.util.List;
 
 import com.tastecoordi.web.vo.Comment;
+import com.tastecoordi.web.vo.Comments;
 
 public interface CommentDao {
 
@@ -14,4 +15,6 @@ public interface CommentDao {
 
 	//º“¿±
 	public Comment getCommemtCnt(String mid);
+	
+	
 }

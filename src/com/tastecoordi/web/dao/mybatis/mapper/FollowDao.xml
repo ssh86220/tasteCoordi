@@ -41,6 +41,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE Mid = #{Mid}
 	</select>
 	
+	
+	
+	<!--영조  -->
+	<delete id="removeFollow2" parameterType="string">
+		DELETE Follows WHERE Mid
+		=#{Mid}
+	</delete>
 
 
 </mapper>

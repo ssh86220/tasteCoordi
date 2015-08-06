@@ -3,7 +3,13 @@ package com.tastecoordi.web.vo;
 public class Like {
 	private String Mid;
 	private String CodiCode;
-	
+	private int cmtCount;
+	public int getCmtCount() {
+		return cmtCount;
+	}
+	public void setCmtCount(int cmtCount) {
+		this.cmtCount = cmtCount;
+	}
 	private String Img;
 	
 	
@@ -25,6 +31,7 @@ public class Like {
 	}
 	public void setCodiCode(String codiCode) {
 		CodiCode = codiCode;
+	
 	}
 
 }

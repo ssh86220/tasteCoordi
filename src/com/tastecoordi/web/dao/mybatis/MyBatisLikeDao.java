@@ -27,4 +27,57 @@ public class MyBatisLikeDao implements LikeDao{
 		return dao.delLike(codicode);
 	}
 
+
+	
+	
+	@Override
+	public int addLike(Like m) {
+		
+
+		int result = 0;
+
+		try {
+			result = session.insert("com.tastecoordi.web.dao.LikeDao.addLike",
+					m);
+			session.commit();
+		} finally {
+			session.rollback();
+			session.close();
+		}
+
+		return result;
+	}
+
+
+	@Override
+	public int removeLike(String uid) {
+
+		
+		int result = 0;
+
+		try {
+			result = session.delete(
+					"com.tastecoordi.web.dao.LikeDao.removeLike ", uid);
+			session.commit();
+		} finally {
+			session.rollback();
+			session.close();
+		}
+
+		return result;
+
+	}
+
+	@Override
+	public Like getLike(String uid) {
+		
+
+		Like m = session.selectOne("com.tastecoordi.web.dao.LikeDao.getLike",
+				uid);
+
+		session.close();
+
+		return m;
+	}
+
 }

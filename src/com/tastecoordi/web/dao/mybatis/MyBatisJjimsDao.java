@@ -1,5 +1,6 @@
 package com.tastecoordi.web.dao.mybatis;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -72,6 +73,38 @@ public class MyBatisJjimsDao implements JjimsDao {
 		List<Jjims> list = session.selectList("com.tastecoordi.web.dao.JjimsDao.getJjimsPeople", clothesCode);		
 		//session.close();
 		return list;
+	}
+
+	
+	
+	@Override
+	public List<Jjims> getJjims(String mid, String clothesCode, Date regDate) {
+		HashMap<String, Object> params = new HashMap<String, Object>();
+		
+		params.put("mid", mid);
+		params.put("clothesCode", clothesCode);
+		params.put("regDate", regDate);
+		
+	
+		
+		List<Jjims> list = session.selectList("getJjims", params);
+		session.close();
+		return list;
+	}
+
+	@Override
+	public int removeJjims(String mid) {
+		
+		int result=0;
+		try{
+		result = session.delete("com.tastecoordi.web.dao.JjimsDao.removeJjims", mid);
+		session.commit();
+		}
+		finally{
+		session.rollback();
+		session.close();
+		}
+		return result;
 	}
 
 }

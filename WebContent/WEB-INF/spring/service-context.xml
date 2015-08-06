@@ -35,7 +35,7 @@
 		<constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean>
     
-  
+ 	<bean id = "noticeDao" class = "com.tastecoordi.web.dao.mybatis.MyBatisNoticeDao"/>
     <bean id="coordinationDao" class="com.tastecoordi.web.dao.mybatis.MyBatisCoordinationDao" />   
     <bean id="memberdao" class="com.tastecoordi.web.dao.mybatis.MyBatisMemberDao" /> 
     <bean id="commentDao" class="com.tastecoordi.web.dao.mybatis.MyBatisCommentDao"/>
@@ -44,7 +44,9 @@
     <bean id="clothesDao" class="com.tastecoordi.web.dao.mybatis.MyBatisClothesDao" />  
     <bean id="likeDao" class="com.tastecoordi.web.dao.mybatis.MyBatisLikeDao" />
     <bean id="jjimsDao" class="com.tastecoordi.web.dao.mybatis.MyBatisJjimsDao" />
-    <bean id="clothesCoordiDao" class="com.tastecoordi.web.dao.mybatis.MyBatisClothesCoordiDao"/>  
+    <bean id="clothesCoordiDao" class="com.tastecoordi.web.dao.mybatis.MyBatisClothesCoordiDao"/> 
+    <bean id = "commentsDao" class = "com.tastecoordi.web.dao.mybatis.MybatisCommentsDao"/> 
+    <bean id = "noticeFileDao" class = "com.tastecoordi.web.dao.mybatis.MyBatisNoticeFileDao"/>
     
     <!-- 
      spring controller를 매핑

@@ -30,5 +30,10 @@ public interface MemberDao {
 	
 	//¼ÒÀ±
 	public int alterMember(Member m);
+	
+	
+	
+		
+
 
 }

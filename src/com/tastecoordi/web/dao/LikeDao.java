@@ -9,5 +9,11 @@ public interface LikeDao {
 	public List<Like> getLikes(String mid);
 	
 	public int delLike(String codicode);
+	//¿µÁ¶
+	
+	public int addLike(Like m);
+	
+	public int removeLike(String uid);
 
+	public Like getLike(String uid);
 }

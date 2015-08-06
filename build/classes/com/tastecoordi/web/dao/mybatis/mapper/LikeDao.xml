@@ -5,15 +5,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.tastecoordi.web.dao.LikeDao">
 
 
-	<select id="getLikes" parameterType = "string" resultType="com.tastecoordi.web.vo.Like">
- 		SELECT * FROM LikeView WHERE MID=#{mid}
- 	</select>
- 	
- 	 <delete id="delLike" parameterType = "string">
- 		DELETE Likes WHERE CodiCode = #{codicode}
- 	
- 	</delete>
-	
+	<select id="getLikes" parameterType="string"
+		resultType="com.tastecoordi.web.vo.Like">
+		SELECT * FROM LikeView WHERE MID=#{mid}
+	</select>
 
+	<delete id="delLike" parameterType="string">
+
+		DELETE Likes WHERE CodiCode = #{codicode}
+
+	</delete>
+
+	<insert id="addLike" parameterType="com.tastecoordi.web.vo.Like">
+		INSERT INTO Likes(MID,
+		CODICODE) VALUES (#{mid},#{codiCode})
+	</insert>
+
+	<delete id="removeLike" parameterType="string">
+		DELETE Likes WHERE MID =#{mid}
+
+	</delete>
 
 </mapper>

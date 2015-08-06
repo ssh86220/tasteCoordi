@@ -32,6 +32,7 @@ public int addClothes(Clothes c);
 	public List<Clothes> searchColor(String color);
 	
 	
+	
 
 	
 

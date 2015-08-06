@@ -111,4 +111,36 @@ public class MyBatisFollowDao implements FollowDao {
 	}
 
 
+	
+	@Override
+	public int addFollow(Follow f) {
+	
+
+		int result = 0;
+
+		try {
+			result = session.insert(
+					"com.tastecoordi.web.dao.FollowDao.addFollow", f);
+			session.commit();
+		} finally {
+			session.rollback();
+			session.close();
+		}
+
+		return result;
+	}
+
+	@Override
+	public int removeFollow2(Follow f) throws ClassNotFoundException,
+			SQLException {
+		return 0;
+	}
+
+	@Override
+	public int getfollow(Follow f) throws ClassNotFoundException, SQLException {
+		
+		return 0;
+	}
+
+
 }

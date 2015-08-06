@@ -52,12 +52,38 @@ public class MyBatisClothesCoordiDao implements ClothesCoordiDao{
 	}*/
 
 	@Override
-	public List<ClothesCoordi> getCCs() {
+	public List<ClothesCoordi> getCCs(String code) {
 		//SqlSession session = factory.openSession();
 		ClothesCoordiDao dao = session.getMapper(ClothesCoordiDao.class);
-		
-		return dao.getCCs();
+
+		return dao.getCCs(code);
 	}
+
+	@Override
+	public int delCC(String code) {
+		// TODO Auto-generated method stub
+		//SqlSession session = factory.openSession();
+		int result = 0;
+		try {
+			result = session.delete(
+					"com.tastecoordi.web.dao.Coordination.delCC", code);
+			session.commit();
+		} finally {
+			session.rollback();
+			session.close();
+		}
+		return result;
+	}
+
+	@Override
+	public List<ClothesCoordi> getCCs() {
+		//SqlSession session = factory.openSession();
+				ClothesCoordiDao dao = session.getMapper(ClothesCoordiDao.class);
+
+				return dao.getCCs();
+	}
+
+	
 
 	
 

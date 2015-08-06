@@ -127,7 +127,7 @@
 						</fieldset> -->
 				<li><a href=""><img
 						src="${ctxName}/resource/image/css/company-icon.png" alt="Company"></a></li>
-				<li><a href=""><img
+				<li><a href="qna"><img
 						src="${ctxName}/resource/image/css/q&a-icon.png" alt="Q&A"></a></li>
 			</ul>
 		</nav>

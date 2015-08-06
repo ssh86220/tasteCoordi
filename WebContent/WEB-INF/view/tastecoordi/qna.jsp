@@ -11,11 +11,11 @@
 
 			<main id="main">	
 			<div class="content-wrapper">
-			<h1 class="hidden">QnA</h1>
+			<h1 class="Hidden">QnA</h1>
 			<div>
 				
 				<section id="qna">
-					<h1 class="hidden">게시판 목록</h1>
+					<h1 class="Hidden">게시판 목록</h1>
 					<table>
 						<thead>
 							<tr>
@@ -43,11 +43,11 @@
 				</section>
 				
 				<section>
-					<h1 class="hidden">QnA 검색폼</h1>
+					<h1 class="Hidden">QnA 검색폼</h1>
 					<form>
 						<fieldset>
-							<legend class="hidden">QnA 검색정보</legend>
-							<label class="hidden">검색필드</label> <select>
+							<legend class="Hidden">QnA 검색정보</legend>
+							<label class="Hidden">검색필드</label> <select>
 								<option>제목</option>
 								<option>작성자</option>
 							</select> <label>검색어</label> <input type="text" /> <input type="submit"
@@ -59,7 +59,7 @@
 
 
 				<nav>
-					<h1 class="hidden">글쓰기 목록</h1>
+					<h1 class="Hidden">글쓰기 목록</h1>
 					<security:authorize ifAnyGranted="ROLE_USER">
 					<div>
 						<a href="qnaReg"><img src="../resource/image/css/btn-write.png" alt="글쓰기" /></a>
@@ -68,7 +68,7 @@
 				</nav>
 
 				<nav id=page class="clearfix">
-					<h1 class="hidden">페이지</h1>
+					<h1 class="Hidden">페이지</h1>
 					<p><a href="">이전</a></p>
 					<ul>
 						<li><a href="">[1]</a></li>

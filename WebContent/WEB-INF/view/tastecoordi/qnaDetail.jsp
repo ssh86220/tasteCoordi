@@ -6,100 +6,14 @@
 <%@ taglib prefix="titles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 	<!--코드블럭 -->
+<link href="../resource/css/qnaDetail.css" rel="stylesheet" type="text/css" />
 
 <!DOCTYPE html>
-<style>
-#detail-title{
-font-size: 20px;
-font-weight: bold;
-}
-/* ----------------목록 설정--------------- */
-#detail-menulist{
 
-border: 1px red solid;
-display: inline-block;
-}
-#list1{
-margin-left:2px;
-float: left;
-}
-#list2{
-margin-left:2px;
-float: left;
-}
-#list3{
-margin-left:2px;
-float: left;
-}
-/* ----------------목록 설정 끝--------------- */
-
-#write-reple{
-border: 1px red solid;
-width: 600px;
-
-}
-
-#detail{
-height: 350px;
-width:600px;
-border: 1px red solid;
-}
-
-
-/* ------------------댓글 목록 설정 시작---------------- */
-#reple{
-/* border-top: 1px #171a39 solid; */
-border: 1px red solid;
-width:470px;
-}
-
-#reple tr{
-	height: 20px;
-	line-height: 20px;
-}
-
-#reple td,
-#reple th{
-text-align: center;
-border-bottom: 1px #e9e9e9 solid;
-
-}
-#detail td{
-text-align: center;
-border-bottom: 1px #e9e9e9 solid;
-
-}
-
-#reple td:FIRST-CHILD,
-#reple th:FIRST-CHILD{
-width: 40px;
-}
-#reple td:FIRST-CHILD+td{
-width: 350px;
-text-align:left;
-text-indent:10px
-}
-
-
-
-#reple td:FIRST-CHILD+td+td,
-#reple th:FIRST-CHILD+th+th{
-width : 80px;
-}
-#reple td:FIRST-CHILD+td+td+td,
-#reple th:FIRST-CHILD+th+th+th{
-width : 100px;
-} 
-#reple th{
-background: #f5f5f5 url("../images/bg-title-sp.png")no-repeat left center;
-}
-
-/* ------------------댓글 목록 설정 끝---------------- */
-</style>
 
 	<main id="main">
-	
-	<h1 class="hidden">QnA</h1>
+	<div class="content-wrapper">
+	<h1 class="Hidden">QnA</h1>
 	
 		<section>
 		<h1 id="detail-title">게시판</h1>
@@ -150,13 +64,13 @@ background: #f5f5f5 url("../images/bg-title-sp.png")no-repeat left center;
 	 	
 	 	<form method="post" action="addComment">
 			<fieldset>
-			<legend class="hidden">댓글 달기</legend>
+			<legend class="Hidden">댓글 달기</legend>
 			<dl>
 				<dt>댓글 작성</dt>
 				<dd><textarea rows="3" cols="33" name="content"></textarea>
 				</dd>
-				<dt class="hidden">아이디</dt>
-				<dd class="hidden"><security:authentication property="name"/></dd>
+				<dt class="Hidden">아이디</dt>
+				<dd class="Hidden"><security:authentication property="name"/></dd>
 			</dl>
 			<div><input type="submit" value="작성완료"></div>
 			</fieldset>
@@ -180,7 +94,7 @@ background: #f5f5f5 url("../images/bg-title-sp.png")no-repeat left center;
 	
 	
 		<nav id="detail-menulist" class="clearfix">
-		<h1 class="hidden">속성 목록</h1>
+		<h1 class="Hidden">속성 목록</h1>
 			<div id="list1">
 			<a href="qna"><img src="" alt="목록"/></a>
 			<div id="list2">
@@ -202,6 +116,6 @@ background: #f5f5f5 url("../images/bg-title-sp.png")no-repeat left center;
 		<p>02-123-4567</p>
 		</section>
 	
-	
+	</div>
 	</main>
 	

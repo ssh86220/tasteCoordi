@@ -6,46 +6,24 @@
 	%>
 
 <!DOCTYPE html>
-<!-- <html>
-<head>
-<meta charset="UTF-8">
-<title>TASTES COORDI</title>
-</head>
-<body>
-	<header id="header">
-		<h1>TASTES COORDI</h1>
-		
-	</header>
 
-	<aside>
-		<nav>
-			<h1>메인 메뉴</h1>
-			<ul>
-				<li><a href="">MyPage</a></li>
-				<li><a href="">Login</a></li>
-				<li><a href="">CoorDi</a></li>
-				<li><a href="">Search</a></li>
-				<li><a href="">QnA</a></li>
-				<li><a href="">Company</a></li>
-			</ul>
-		</nav>	
-	</aside> -->
 
 	<main id="main">
+	<div class="content-wrapper">
 	<section>
-	<h1>QnA</h1>
+	<h1 class="Hidden">QnA</h1>
 	
 		<section>
 		<h1>게시판</h1>
 		</section>
 		
 		<section>
-		<h1>게시판 내용</h1>
+		<h1 class="Hidden">게시판 내용</h1>
 		<form method="post">
 			<fieldset>
-			<legend>공지사항 정보</legend>
+			<legend class="Hidden">공지사항 정보</legend>
 			<dl>
-				<dd><input type="hidden" name="mid" value="kimdill"></dd>
+				<dd><input type="Hidden" name="mid" value="kimdill"></dd>
 				<dt>제목</dt>
 				<dd><input name="title"></dd>
 				<!-- <dt>첨부파일</dt>
@@ -64,7 +42,7 @@
 
 	
 		<nav>
-		<h1>글쓰기 목록</h1>
+		<h1 class="Hidden">글쓰기 목록</h1>
 			<div>
 			<a href="qna">목록</a>
 			
@@ -77,17 +55,6 @@
 		</section>
 	
 	</section>
-	
+	</div>	
 	</main>
 	
-	
-	<!-- <footer>
-		<section>
-		<h1>사이트 정보</h1>
-			<p>FreeStyle Copyright@2015</p>
-		</section>
-	</footer>
-
-
-</body>
-</html> -->

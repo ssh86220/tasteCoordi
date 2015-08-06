@@ -1,0 +1,89 @@
+@CHARSET "UTF-8";
+@IMPORT url("layout.css");
+
+#detail-title{
+font-size: 20px;
+font-weight: bold;
+}
+/* ----------------목록 설정--------------- */
+#detail-menulist{
+
+border: 1px red solid;
+display: inline-block;
+}
+#list1{
+margin-left:2px;
+float: left;
+}
+#list2{
+margin-left:2px;
+float: left;
+}
+#list3{
+margin-left:2px;
+float: left;
+}
+/* ----------------목록 설정 끝--------------- */
+
+#write-reple{
+border: 1px red solid;
+width: 600px;
+
+}
+
+#detail{
+height: 350px;
+width:600px;
+border: 1px red solid;
+}
+
+
+/* ------------------댓글 목록 설정 시작---------------- */
+#reple{
+/* border-top: 1px #171a39 solid; */
+border: 1px red solid;
+width:470px;
+}
+
+#reple tr{
+	height: 20px;
+	line-height: 20px;
+}
+
+#reple td,
+#reple th{
+text-align: center;
+border-bottom: 1px #e9e9e9 solid;
+
+}
+#detail td{
+text-align: center;
+border-bottom: 1px #e9e9e9 solid;
+
+}
+
+#reple td:FIRST-CHILD,
+#reple th:FIRST-CHILD{
+width: 40px;
+}
+#reple td:FIRST-CHILD+td{
+width: 350px;
+text-align:left;
+text-indent:10px
+}
+
+
+
+#reple td:FIRST-CHILD+td+td,
+#reple th:FIRST-CHILD+th+th{
+width : 80px;
+}
+#reple td:FIRST-CHILD+td+td+td,
+#reple th:FIRST-CHILD+th+th+th{
+width : 100px;
+} 
+#reple th{
+background: #f5f5f5 url("../images/bg-title-sp.png")no-repeat left center;
+}
+
+/* ------------------댓글 목록 설정 끝---------------- */

@@ -31,9 +31,9 @@
 					</c:if>		
 						
 						
-				<li><a href="codiRoom"><img
+				<li><a href="${ctxName}/tastecoordi/codiRoom"><img
 						src="${ctxName}/resource/image/css/coordi-icon.png" alt="Coordi"></a></li>
-				<li><a href="tsmainSearch"><img
+				<li><a href="${ctxName}/tastecoordi/tsmainSearch"><img
 						src="${ctxName}/resource/image/css/search-icon.png" alt="Search"></a></li>
 
 				<!-- <form>
@@ -127,7 +127,7 @@
 						</fieldset> -->
 				<li><a href=""><img
 						src="${ctxName}/resource/image/css/company-icon.png" alt="Company"></a></li>
-				<li><a href="qna"><img
+				<li><a href="${ctxName}/tastecoordi/qna"><img
 						src="${ctxName}/resource/image/css/q&a-icon.png" alt="Q&A"></a></li>
 			</ul>
 		</nav>

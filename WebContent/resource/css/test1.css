@@ -1,54 +1,53 @@
 @CHARSET "UTF-8";
 
 #coordi-box{
-	height:350px;
-	width:320px;
-	background : #ffffff;
-	border : gray solid 1px;
+	height:370px;
+	width:300px;
+	background :#ffffff;
+	border : #faf3e5 solid 5px;
 	line-height: center;	
 	float : left;
 	margin-right: 17px;
-	margin-top: 15px;
-	border: 1px solid red;
+	margin-top: 50px;
 	display : block;
 } 
 
  #coordi-list{
-	border: 1px solid red;
-	/* display : inline-block; */
+	 border: 1px solid red; 
+	display : block;
 	float: left;
 } 
 
- #coordi-list li{
+/*  #coordi-list li{
 	float: left;
-}
+} */
  
-/*  #coordi{
- 	float :left;
- }
-  */
- #coordi img{
-	border-bottom: 1px solid gray;
+#coordi img{
+	border-bottom: 5px solid #faf3e5;
 	height:300px;
-	width:300px;
+	width:280px;
  	padding-left: 10px;
 	padding-right: 10px;
 	display: inline-block;
 	margin-left: auto;
 	margin-right: auto;
-	border: 1px solid red;
+	
+}
+#profile li{	
+	padding-top: 15px;
+	float: left;
 }
 
-/*#profile li{
-	padding-left: 10px;
-	padding-top: 8px;
-	background: url("../images/bg-main-menu-vsp.png") no-repeat left center;
-	float: left;
+ #profile li:FIRST-CHILD{
+	padding-top: 7px;	
+} 
+
+#else{
+	float: right;
+	padding-right:10px;
 }
 
 #else li{
-	padding-left: 10px;
 	padding-top: 15px;
-	background: url("../images/bg-main-menu-vsp.png") no-repeat left center;
 	float: left;
-}  */
+}  

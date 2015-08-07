@@ -76,14 +76,6 @@ public class MyBatisCommentDao implements CommentDao {
 		return result;
 	}
 
-	@Override
-	public Comment getCommemtCnt(String mid) {
-		CommentDao dao = session.getMapper(CommentDao.class);
-		
-		return dao.getCommemtCnt(mid);
-	}
-
-
 	
 	
 }

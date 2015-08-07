@@ -11,10 +11,10 @@
 	<h1 class="Hidden">QnA</h1>
 	
 		<section>
-		<h1>게시판</h1>
+		<h1 id="detail-title">게시판</h1>
 		</section>
 		
-		<section>
+		<article id="detail">
 		<h1 class="Hidden">게시판 내용</h1>
 		<form method="post" action="qnaReReg?c=${c.number}">
 			<fieldset>
@@ -38,7 +38,7 @@
 			
 		
 		
-	</section>
+	</article>
 
 	
 		<nav>

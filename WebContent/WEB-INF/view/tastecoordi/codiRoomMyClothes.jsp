@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="ctxName" value='${pageContext.request.contextPath}'/> 	
+<c:set var="ctxName" value='${pageContext.request.contextPath}'/> 
+<link href="../resource/css/codiRoom.css" type="text/css" rel="stylesheet" />	
 		<div class="content-wrapper clearfix">		
 		<section class="clearfix">
 			<h1 class="Hidden">코디하기</h1>

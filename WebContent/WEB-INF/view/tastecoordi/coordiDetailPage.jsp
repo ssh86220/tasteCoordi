@@ -186,8 +186,7 @@
 			<ul>
 				<li><a href=""><img src="" alt="이미지1"></a></li>
 				<li><a href=""><img src="" alt="이미지2"></a></li>
-				
-				
+								
 			<c:forEach var="cl" items="${clotheslist}">
 				<li>${cl.clothesCode}</li>
 				<%-- <li>${cl.image}</li> --%>

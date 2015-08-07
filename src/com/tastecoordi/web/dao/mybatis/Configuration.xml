@@ -27,6 +27,6 @@
 		<mapper resource="com/tastecoordi/web/dao/mybatis/mapper/NoticeDao.xml"></mapper>
 		<mapper resource="com/tastecoordi/web/dao/mybatis/mapper/NoticeFileDao.xml"></mapper>
 		<mapper resource="com/tastecoordi/web/dao/mybatis/mapper/CommentsDao.xml"></mapper>
-		<mapper resource="/com/tastecoordi/web/dao/mybatis/mapper/ClothesCoordi.xml"></mapper>
+		<mapper resource="/com/tastecoordi/web/dao/mybatis/mapper/ClothesCoordiDao.xml"></mapper>
 	</mappers>
 </configuration>

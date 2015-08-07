@@ -16,6 +16,7 @@
 				<%-- <li><a href=""><img
 						src="${ctxName}/resource/image/css/login-icon.png" alt="Login"></a></li> --%>
 				
+
 				<c:if test="${empty pageContext.request.userPrincipal.name}">
 						<li><a href="${ctxName}/joinus/login"><img
 						src="${ctxName}/resource/image/css/login-icon.png" alt="Login"></a></li>
@@ -24,8 +25,7 @@
 						<%-- <security:authentication property="authorities" var="authorities" />
 						<c:forEach items="${authorities}" var="auth">
 							${auth.authority}
-						</c:forEach> 
-						<a href="${ctxName}/j_spring_security_logout"><security:authentication property="name" />--%>
+						</c:forEach>  --%>
 						<a href="${ctxName}/j_spring_security_logout"><img
 						src="${ctxName}/resource/image/css/logout.png" alt="Logout"></a>	
 					</c:if>		

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+
 <c:set var="ctxName" value="${pageContext.request.contextPath}"/>           
 
 <html>
@@ -36,7 +38,9 @@
 					<h1 class="hidden">상품목록</h1>
 					
 					<form name="itemForm" method="post" action="myClothesDel">
-						<a href="myClothesReg">아이템 등록</a>
+						<security:authorize ifAnyGranted="ROLE_ENTER">
+							<a href="myClothesReg">아이템 등록</a>
+						</security:authorize>
 						<!-- <input type="button" value="삭제" onclick="del()"> -->
 						<input type="submit" value="삭제">
 						

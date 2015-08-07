@@ -96,9 +96,10 @@
 						<td>${n.price}</td>
 						<td>${n.siteName}</td>
 						<td>${n.link}</td>
+						<td><f:formatDate value="${n.regDate}" pattern="yyyy-MM-dd"/></td>
 						<td>${n.image}</td>
 					
-						<td><f:formatDate value="${n.regDate}" pattern="yyyy-MM-dd"/></td>
+						
 						
 												
 						<td>

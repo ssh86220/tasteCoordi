@@ -12,6 +12,8 @@
 <head>
 <meta charset="UTF-8">
 <title>TSNotice</title>
+
+<link href="../resource/css/layout.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 
@@ -21,7 +23,7 @@
          <img src="../images/logo.png" alt="TASTES COORDI">
       </h1>
       <section>
-      <h1>로고</h1>
+      <h1 class="Hidden">로고</h1>
          <section>
             <h1>상태폼</h1>
             <form>

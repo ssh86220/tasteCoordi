@@ -26,6 +26,9 @@
 	width:280px;
 }
 
+#sns{
+	float:left;
+}
 
 /* ----코디 상세페이지 댓글 리스트 표 CSS--- */
 #comment-list th{

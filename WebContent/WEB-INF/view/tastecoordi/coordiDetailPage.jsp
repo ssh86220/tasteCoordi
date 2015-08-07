@@ -77,7 +77,7 @@
 								<h1 class = "Hidden">설명</h1>
 								설명 :
 								<p>
-									<%-- ${d.title} --%>
+									${codi.title}
 								</p>
 								<!-- 코디네이션의 타이틀. 코디 룸 등록시 입력한거 불러와야 함. -->
 		
@@ -91,8 +91,8 @@
 						<h1 class = "Hidden">프로필 사진, 좋아요</h1>
 						<ul>
 							<li><a href=""><img src="" alt="프로필 사진"></a></li>
-							<li><a href=""><img src="../resource/image/css/follow.jpg" alt="팔로우 이미지"></a></li>
-							<li><a href=""
+							<li id="sns"><a href=""><img src="../resource/image/css/follow.jpg" alt="팔로우 이미지"></a></li>
+							<li id="sns"><a href=""
 								onclick="javascript:window.open('LikePop.html','popup','scrollbars=no, resizable=no, width=300,height=200')";returnfalse">
 									<img src="../resource/image/css/like.JPG" alt="좋아요 이미지">
 							</a></li>
@@ -166,6 +166,7 @@
 			<ul>
 				<li><a href=""><img src="" alt="이미지1"></a></li>
 				<li><a href=""><img src="" alt="이미지2"></a></li>
+				<%-- <li><img src="${ctxName}/resource/image/clothes/${c.image}"></li> --%>
 				
 			<c:forEach var="co" items="${codilist}">
 				<%-- <li>${n.code}</li> --%>

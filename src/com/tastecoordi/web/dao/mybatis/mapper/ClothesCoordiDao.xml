@@ -14,8 +14,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		DELETE ClothesCoordis WHERE CoordiesCode LIKE #{CoordiCode}
 	</delete>
 	
-	<select id="getCCs" resultType="com.tastecoordi.web.vo.ClothesCoordi">
-		SELECT * FROM ClothesCoordis 
+	<select id="getCCs" parameterType="String" resultType="com.tastecoordi.web.vo.ClothesCoordi">
+		SELECT * FROM ClothesCoordiView WHERE CoordiesCode = #{CoordiesCode}
 	</select>
 	
 </mapper>

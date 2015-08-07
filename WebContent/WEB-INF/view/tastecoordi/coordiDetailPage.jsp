@@ -3,6 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<c:set var="ctxName" value='${pageContext.request.contextPath}'/> 
 
 <%
 	/* CommentsDao commentsDao = new MybatisCommentsDao();
@@ -186,9 +187,19 @@
 			<ul>
 				<li><a href=""><img src="" alt="이미지1"></a></li>
 				<li><a href=""><img src="" alt="이미지2"></a></li>
+			<%-- 	<c:forEach var="c" items="${list}">
+				<li>
+							<a href="codiRoomDetail?c=${c.code}&mid=${id}">
+							<img src="${ctxName}/resource/image/clothes/${c.image}">
+							</a>
+						</li>
+				
+				</c:forEach> --%>
 								
 			<c:forEach var="cl" items="${clotheslist}">
-				<li>${cl.clothesCode}</li>
+				<li>${cl.clothesCode}
+					<img src="${ctxName}/resource/image/clothes/${cl.image}" width="200" alt="이미지1">
+				</li>
 				<%-- <li>${cl.image}</li> --%>
 			</c:forEach>	
 				

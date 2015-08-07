@@ -31,7 +31,7 @@
 					<li><img src="${ctxName}/resource/image/codi/${n.img}"></li>
 				</ul>
 				<ul id="profile">
-					<li><img src="${ctxName}/resource/image/codi/${n.img}"></li>
+					<%-- <li><img src="${ctxName}/resource/image/codi/${n.img}"></li> --%>
 					<li>${n.mid}</li>
 				</ul>
 				<ul id="else">

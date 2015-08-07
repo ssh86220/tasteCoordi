@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctxName" value='${pageContext.request.contextPath}'/> 
+<link href="../resource/css/codiRoom.css" type="text/css" rel="stylesheet" />
 <!-- <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <html>

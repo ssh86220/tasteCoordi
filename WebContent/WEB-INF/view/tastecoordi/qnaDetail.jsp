@@ -63,6 +63,13 @@
 						</form>
 						</div>						
 						</td>
+						<td>
+						<div>
+						<form method="post" action="">
+						<input type="submit" value="댓글수정">
+						</form>
+						</div>						
+						</td>
 			</tr>
 			</c:forEach>
 	 </table>
@@ -106,7 +113,7 @@
 			<a href="qna"><img src="" alt="목록"/></a>
 			<div id="list2">
 			<form method="post" action="qnaEdit?c=${c.number}">
-			<input type="submit" value="수정">
+			<input type="submit" value="글수정">
 			</form>
 			</div>
 			<div id="list3">

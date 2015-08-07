@@ -8,7 +8,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tastecoordi.web.dao.ClothesDao;
+import com.tastecoordi.web.dao.CommentDao;
 import com.tastecoordi.web.dao.CommentsDao;
+import com.tastecoordi.web.vo.Comment;
 import com.tastecoordi.web.vo.Comments;
 import com.tastecoordi.web.vo.Enterprise;
 
@@ -90,6 +92,14 @@ public class MybatisCommentsDao implements CommentsDao{
 		}
 		return result;
 	}
+	
+	@Override
+	public Comments getCommemtCnt(String mid) {
+		CommentsDao dao = session.getMapper(CommentsDao.class);
+		
+		return dao.getCommemtCnt(mid);
+	}
+
 
 	
 

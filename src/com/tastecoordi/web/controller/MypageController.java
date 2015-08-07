@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.tastecoordi.web.dao.ClothesDao;
-import com.tastecoordi.web.dao.CommentDao;
+import com.tastecoordi.web.dao.CommentsDao;
 import com.tastecoordi.web.dao.CoordinationDao;
 import com.tastecoordi.web.dao.FollowDao;
 import com.tastecoordi.web.dao.JjimsDao;
@@ -38,7 +38,7 @@ public class MypageController {
 	
 	private MemberDao memberDao;
 	private FollowDao followDao;
-	private CommentDao commentDao;
+	private CommentsDao commentsDao;
 	private CoordinationDao coordinationDao;
 	private ClothesDao clothesDao;
 	private LikeDao likeDao;
@@ -58,8 +58,8 @@ public class MypageController {
 		this.followDao = followDao;
 	}
 	@Autowired
-	public void setCommentDao(CommentDao commentDao) {
-		this.commentDao = commentDao;
+	public void setCommentsDao(CommentsDao commentsDao) {
+		this.commentsDao = commentsDao;
 	}
 	@Autowired
 	public void setCoordinationDao(CoordinationDao coordinationDao) {
@@ -103,7 +103,7 @@ public class MypageController {
 			userImg = memberDao.getMember(id).getImage();
 			follower = followDao.getFollowerCnt(id).getFollowerCnt();
 			following = followDao.getFollowingCnt(id).getFollowerCnt();
-			commentCnt = commentDao.getCommemtCnt(id).getCommentCnt();
+			commentCnt = commentsDao.getCommemtCnt(id).getCommentCnt();
 		}
 		
 		
@@ -181,7 +181,7 @@ public class MypageController {
 		userImg = memberDao.getMember(id).getImage();
 		follower = followDao.getFollowerCnt(id).getFollowerCnt();
 		following = followDao.getFollowingCnt(id).getFollowerCnt();
-		commentCnt = commentDao.getCommemtCnt(id).getCommentCnt();
+		commentCnt = commentsDao.getCommemtCnt(id).getCommentCnt();
 		
 		List<Clothes> list = null; //内叼 格废
 		
@@ -291,7 +291,7 @@ public class MypageController {
 		userImg = memberDao.getMember(id).getImage();
 		follower = followDao.getFollowerCnt(id).getFollowerCnt();
 		following = followDao.getFollowingCnt(id).getFollowerCnt();
-		commentCnt = commentDao.getCommemtCnt(id).getCommentCnt();
+		commentCnt = commentsDao.getCommemtCnt(id).getCommentCnt();
 		
 		List<Like> list = null; //内叼 格废
 		
@@ -339,7 +339,7 @@ public class MypageController {
 		userImg = memberDao.getMember(id).getImage();
 		follower = followDao.getFollowerCnt(id).getFollowerCnt();
 		following = followDao.getFollowingCnt(id).getFollowerCnt();
-		commentCnt = commentDao.getCommemtCnt(id).getCommentCnt();
+		commentCnt = commentsDao.getCommemtCnt(id).getCommentCnt();
 		
 		List<Jjims> list = null; //内叼 格废
 		
@@ -387,7 +387,7 @@ public class MypageController {
 		userImg = memberDao.getMember(id).getImage();
 		follower = followDao.getFollowerCnt(id).getFollowerCnt();
 		following = followDao.getFollowingCnt(id).getFollowerCnt();
-		commentCnt = commentDao.getCommemtCnt(id).getCommentCnt();
+		commentCnt = commentsDao.getCommemtCnt(id).getCommentCnt();
 		
 		Member m = memberDao.getMember(id);
 		
@@ -467,7 +467,7 @@ public class MypageController {
 		userImg = memberDao.getMember(id).getImage();
 		follower = followDao.getFollowerCnt(id).getFollowerCnt();
 		following = followDao.getFollowingCnt(id).getFollowerCnt();
-		commentCnt = commentDao.getCommemtCnt(id).getCommentCnt();
+		commentCnt = commentsDao.getCommemtCnt(id).getCommentCnt();
 		
 		List<Follow> list = null; //内叼 格废
 		
@@ -491,7 +491,7 @@ public class MypageController {
 		userImg = memberDao.getMember(id).getImage();
 		follower = followDao.getFollowerCnt(id).getFollowerCnt();
 		following = followDao.getFollowingCnt(id).getFollowerCnt();
-		commentCnt = commentDao.getCommemtCnt(id).getCommentCnt();
+		commentCnt = commentsDao.getCommemtCnt(id).getCommentCnt();
 		
 		List<Follow> list = null; //内叼 格废
 		

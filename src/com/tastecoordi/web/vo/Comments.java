@@ -9,6 +9,16 @@ public class Comments {
 	private Date regDate;
 	private String content;
 	
+	//º“¿±
+		private int commentCnt;
+		public int getCommentCnt() {
+			return commentCnt;
+		}
+		public void setCommentCnt(int commentCnt) {
+			this.commentCnt = commentCnt;
+		}
+	
+		
 	public String getCode() {
 		return code;
 	}

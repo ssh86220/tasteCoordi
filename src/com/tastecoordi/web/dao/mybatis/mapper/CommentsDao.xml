@@ -17,4 +17,11 @@ INSERT INTO COMMENTS(CODE, MID, CODICODE, REGDATE, CONTENT)
 <delete id="removeComments" parameterType="string">
 DELETE FROM COMMENTS WHERE MID = #{code}
 </delete>
+
+
+<select id="getCommemtCnt" parameterType="String" resultType="com.tastecoordi.web.vo.Comments">
+<!-- SELECT COUNT(Mid) commentCnt FROM COMMENTS WHERE Mid = #{Mid}  -->
+SELECT COUNT(Code) commentCnt FROM COMMENTS 
+WHERE SUBSTRING(CodiCode,1,3) = #{Mid}
+</select>
 </mapper>

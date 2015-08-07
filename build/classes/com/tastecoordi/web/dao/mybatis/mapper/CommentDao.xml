@@ -18,9 +18,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		VALUES(#{Code},#{Mid},#{QnaNumber},#{Content})
 	</insert>
 	
-	<select id="getCommemtCnt" parameterType="String" resultType="com.tastecoordi.web.vo.Comment">
-	SELECT COUNT(Mid) commentCnt FROM COMMENTS WHERE Mid = #{Mid} 
-	</select>
 	
 	<!-- <delete id="removeClothes" parameterType="string">
 	Delete CLOTHES where Code = #{code};

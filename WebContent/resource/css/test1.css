@@ -13,9 +13,11 @@
 } 
 
  #coordi-list{
-	 border: 1px solid red; 
-	display : block;
+	/*  border: 1px solid red;  */
+	display : inline-block;
 	float: left;
+	padding-left: 15px;
+	
 } 
 
 /*  #coordi-list li{
@@ -50,4 +52,16 @@
 #else li{
 	padding-top: 15px;
 	float: left;
+}
+
+#more{
+	/* margin-left:auto;
+	margin-right:auto; */
+	margin-top:50px;
+	text-align: center;
+	
 }  
+
+#more input[type="submit"]{
+	margin-top:50px;
+	}

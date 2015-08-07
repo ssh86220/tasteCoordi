@@ -31,7 +31,7 @@
 					<li><img src="${ctxName}/resource/image/codi/${n.img}"></li>
 				</ul>
 				<ul id="profile">
-					<li><img src="../resource/image/css/pro.JPG" alt="프로필이미지"></li>
+					<li><img src="${ctxName}/resource/image/codi/${n.img}"></li>
 					<li>${n.mid}</li>
 				</ul>
 				<ul id="else">
@@ -50,17 +50,11 @@
 
 	</section>
 
-	<!-- <nav id="page-list">
-	<h1>페이지목록</h1>
-	<ul>
-		<li><a href="">1</a></li>
-		<li><a href="">2</a></li>
-		<li><a href="">3</a></li>
-	</ul>
-</nav> -->
 
-<input type="submit" value="more"/>
-
-<div class="fix"></div>
-<div class="fix"></div>
+	
+	<section id="more">
+		<input type="submit" value="more" />
+	</section>
+	<div class="fix"></div>
+	<div class="fix"></div>
 </div>

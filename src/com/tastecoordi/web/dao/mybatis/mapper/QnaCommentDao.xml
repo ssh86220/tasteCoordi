@@ -17,13 +17,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO QnAComments(CODE, Mid, QnaNumber, CONTENT) 
 		VALUES(#{Code},#{Mid},#{QnaNumber},#{Content})
 	</insert>
-	
-	
-	<!-- <delete id="removeClothes" parameterType="string">
-	Delete CLOTHES where Code = #{code};
+	<delete id="removeComment" parameterType="string">
+	Delete FROM QnAComments where Code = #{code};
 	</delete>
 	
-	<select id="getClothes" resultType="com.tastecoordi.web.vo.Clothes">
-		SELECT * FROM Clothes where price is not null
-	</select> -->
+	
 </mapper>

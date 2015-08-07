@@ -56,6 +56,13 @@
 					<td>${q.content}</td>
 					<td>${q.mid}</td>
 					<td>${q.regDate}</td>
+					<td>
+						<div>
+						<form method="post" action="deleteComment?c=${q.code}&n=${q.qnaNumber}">
+						<input type="submit" value="삭제">
+						</form>
+						</div>						
+						</td>
 			</tr>
 			</c:forEach>
 	 </table>

@@ -1,13 +1,11 @@
 package com.tastecoordi.web.dao.mybatis;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tastecoordi.web.dao.QnaCommentDao;
-import com.tastecoordi.web.dao.QnaDao;
 import com.tastecoordi.web.vo.QnaComment;
 
 public class MyBatisQnaCommentDao implements QnaCommentDao {
@@ -16,24 +14,22 @@ public class MyBatisQnaCommentDao implements QnaCommentDao {
 	private SqlSession session;
 	
 	@Override
-	public int removeQnA(String number) {
+	public int removeComment(String code) {
 		int result = 0;
+		QnaCommentDao dao = session.getMapper(QnaCommentDao.class);
+		result = dao.removeComment(code);
 		
-		//SqlSession session = factory.openSession();
-		QnaDao dao = session.getMapper(QnaDao.class);
-		result = dao.removeQnA(number);
-		
-		/*try {
-			session.commit();
-		} finally {
-			session.rollback();
-			session.close();
-
-		}*/
 		return result;
 	}
 
 	@Override
+	public int revisionQnA(String code, String title, String content,
+			String memberUid) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	/*@Override
 	public int revisionQnA(String number, String title, String email,
 			String content) {
 		HashMap<String, Object> params=new HashMap<String, Object>();
@@ -46,16 +42,16 @@ public class MyBatisQnaCommentDao implements QnaCommentDao {
 		int result = 0;
 		
 		result = session.update("com.tastecoordi.web.dao.QnaDao.revisionQnA",params);
-		/*try {
+		try {
 			session.commit();
 		} finally {
 			session.rollback();
 			session.close();
 
-		}*/
+		}
 
 		return result;
-	}
+	}*/
 
 	@Override
 	public List<QnaComment> getComment(String qnaNumber) {
@@ -73,6 +69,7 @@ public class MyBatisQnaCommentDao implements QnaCommentDao {
 
 		return result;
 	}
+
 
 
 	

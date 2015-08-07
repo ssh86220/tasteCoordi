@@ -76,6 +76,15 @@ public class CustomerController {
 		
 		return "redirect:qnaDetail?c="+c;
 	}
+
+	@RequestMapping(value="deleteComment",method=RequestMethod.POST)
+	public String deleteComment(String n,String c,HttpServletRequest request)throws IOException{
+		
+		qnaCommentDao.removeComment(c);
+		
+		return "redirect:qnaDetail?c="+n;
+		
+	}
 	
 
 	

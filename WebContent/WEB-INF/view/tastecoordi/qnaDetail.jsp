@@ -62,7 +62,7 @@
 	 </section>
 	 	<section id="write-reple">
 	 	
-	 	<form method="post" action="addComment">
+	 	<form method="post" action="addComment?c=${c.number}">
 			<fieldset>
 			<legend class="Hidden">댓글 달기</legend>
 			<dl>

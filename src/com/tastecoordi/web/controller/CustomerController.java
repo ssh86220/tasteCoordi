@@ -12,21 +12,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.tastecoordi.web.dao.CommentDao;
+import com.tastecoordi.web.dao.QnaCommentDao;
 import com.tastecoordi.web.dao.QnaDao;
-import com.tastecoordi.web.vo.Comment;
 import com.tastecoordi.web.vo.QnA;
+import com.tastecoordi.web.vo.QnaComment;
 
 @Controller
 @RequestMapping("/tastecoordi/*")
 public class CustomerController {
 	
 	private QnaDao qnaDao;
-	private CommentDao commentDao;
+	private QnaCommentDao qnaCommentDao;
 
 	@Autowired
-	public void setCommentDao(CommentDao commentDao) {
-		this.commentDao = commentDao;
+	public void setCommentDao(QnaCommentDao qnaCommentDao) {
+		this.qnaCommentDao = qnaCommentDao;
 	}
 
 
@@ -55,26 +55,26 @@ public class CustomerController {
 		QnA q = qnaDao.getQnA(c);
 		model.addAttribute("c",q);
 		
-		List<Comment> list = commentDao.getComment(c);
+		List<QnaComment> list = qnaCommentDao.getComment(c);
 		model.addAttribute("list", list);
 		
 		return "tastecoordi.qnaDetail";
 		
 	}
 	@RequestMapping(value="addComment",method=RequestMethod.POST)
-	public String addComment(Comment comment,HttpServletRequest request,Principal principal){
+	public String addComment(String c,QnaComment comment,Principal principal){
 
-		String qnaNumber =request.getParameter("qnaNumber");
+		//String qnaNumber =request.getParameter("qnaNumber");
 		String mid=principal.getName();
-		String content=request.getParameter("content");
+		//String content=request.getParameter("content");
 				
-		comment.setQnaNumber(qnaNumber);
+		comment.setQnaNumber(c);
 		comment.setMid(mid);
-		comment.setContent(content);
+		//comment.setContent(content);
 		
-		commentDao.addComment(comment);
+		qnaCommentDao.addComment(comment);
 		
-		return "redirect:qna";
+		return "redirect:qnaDetail?c="+c;
 	}
 	
 

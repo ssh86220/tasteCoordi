@@ -35,10 +35,11 @@
 		<constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean>
     
- 	<bean id = "noticeDao" class = "com.tastecoordi.web.dao.mybatis.MyBatisNoticeDao"/>
+ 	<bean id ="noticeDao" class ="com.tastecoordi.web.dao.mybatis.MyBatisNoticeDao"/>
     <bean id="coordinationDao" class="com.tastecoordi.web.dao.mybatis.MyBatisCoordinationDao" />   
     <bean id="memberdao" class="com.tastecoordi.web.dao.mybatis.MyBatisMemberDao" /> 
     <bean id="commentDao" class="com.tastecoordi.web.dao.mybatis.MyBatisCommentDao"/>
+    <bean id="qnaCommentDao" class="com.tastecoordi.web.dao.mybatis.MyBatisQnaCommentDao"/>
     <bean id="qnaDao" class="com.tastecoordi.web.dao.mybatis.MyBatisQnaDao"/>
     <bean id="followDao" class="com.tastecoordi.web.dao.mybatis.MyBatisFollowDao" />  
     <bean id="clothesDao" class="com.tastecoordi.web.dao.mybatis.MyBatisClothesDao" />  

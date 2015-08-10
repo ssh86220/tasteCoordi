@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tastecoordi.web.dao.EnterpriseDao">
+<insert id="addEnterprise" parameterType="com.tastecoordi.web.vo.Enterprise">
+INSERT INTO ENTERPRISES(MID,LINK, PHONENUMBER) VALUES(#{mid},#{Link},#{PhoneNumber})
+</insert>
+
+<!-- <select id="getEnterprisesNotApp" parameterType="String" resultType="com.tastecoordi.web.vo.Enterprise">
+		SELECT * FROM ENTERPRISES
+		SELECT * FROM APPENTERPRISE WHERE ALLOWDAY IS NULL 
+</select>
+
+<select id="getEnterpriseApp" parameterType="String" resultType="com.tastecoordi.web.vo.Enterprise">
+		SELECT * FROM ENTERPRISES
+		SELECT * FROM APPENTERPRISE WHERE ALLOWDAY IS NOT NULL 
+</select>
+
+<select id="getEnterpriseAppMid" parameterType="String" resultType="com.tastecoordi.web.vo.Enterprise">
+		 SELECT * FROM APPENTERPRISE WHERE ALLOWDAY IS NOT NULL  and MID=#{query} 
+		 SELECT * FROM APPROVECOMPANYVIEW WHERE MID=#{mid} 	
+</select>
+
+<select id="getEnterpriseAppName" parameterType="String" resultType="com.tastecoordi.web.vo.Enterprise">
+		 SELECT * FROM APPENTERPRISE WHERE ALLOWDAY IS NOT NULL  and Name=#{query} 
+		 SELECT * FROM APPROVECOMPANYVIEW WHERE MID=#{mid} 	
+</select>
+
+<select id="getEnterprise" parameterType="String" resultType="com.tastecoordi.web.vo.Enterprise">
+		 SELECT * FROM ENTERPRISES WHERE MID=#{mid} 
+		 SELECT * FROM APPROVECOMPANYVIEW WHERE MID=#{mid} 	
+</select>
+
+<delete id="deleteEnterprise" parameterType="String">	
+		DELETE FROM ENTERPRISES WHERE MID=#{mid}
+</delete>
+
+<update id="updateGetEnterprise" parameterType="String">	
+		UPDATE Enterprises SET AllowDay ='2015-07-07' WHERE MID=#{mid}
+</update>
+
+<update id="updateEnterpriseInfo" parameterType="String">	
+		UPDATE ApproveCompanyView SET NAME=#{name} WHERE MID=#{mid}
+</update>
+
+<select id="deleteEnterprises" parameterType="String">	
+		DELETE FROM ENTERPRISES 
+</select>
+ -->
+</mapper>

@@ -48,6 +48,7 @@
     <bean id="clothesCoordiDao" class="com.tastecoordi.web.dao.mybatis.MyBatisClothesCoordiDao"/> 
     <bean id = "commentsDao" class = "com.tastecoordi.web.dao.mybatis.MybatisCommentsDao"/> 
     <bean id = "noticeFileDao" class = "com.tastecoordi.web.dao.mybatis.MyBatisNoticeFileDao"/>
+    <bean id = "enterpriseDao" class = "com.tastecoordi.web.dao.mybatis.MyBatisEnterpriseDao"/>
     
     <!-- 
      spring controller를 매핑

@@ -1,35 +1,25 @@
 package com.tastecoordi.web.vo;
 
-import java.util.Date;
-
 public class Enterprise {
-	private String MID;
+
+	private String Mid;
 	private String Link;
 	private String PhoneNumber;
-	private Date AllowDay;
-	private Date RequestDate;
-
+	private String Allowday;
+	private String RequestDate;
+			
+//-----------------------------------------------------
+	private String Name;
+	private String Pw;
+	private String Email;
 	
 	
-	public String getMID() {
-		return MID;
+	public String getMid() {
+		return Mid;
 	}
-	public void setMID(String mID) {
-		MID = mID;
+	public void setMid(String mid) {
+		Mid = mid;
 	}
-	public Date getRequestDate() {
-		return RequestDate;
-	}
-	public void setRequestDate(Date requestDate) {
-		RequestDate = requestDate;
-	}
-	public Date getAllowDay() {
-		return AllowDay;
-	}
-	public void setAllowDay(Date allowDay) {
-		AllowDay = allowDay;
-	}
-
 	public String getLink() {
 		return Link;
 	}
@@ -42,6 +32,36 @@ public class Enterprise {
 	public void setPhoneNumber(String phoneNumber) {
 		PhoneNumber = phoneNumber;
 	}
-
-
+	public String getAllowday() {
+		return Allowday;
+	}
+	public void setAllowday(String allowday) {
+		Allowday = allowday;
+	}
+	public String getRequestDate() {
+		return RequestDate;
+	}
+	public void setRequestDate(String requestDate) {
+		RequestDate = requestDate;
+	}
+	public String getName() {
+		return Name;
+	}
+	public void setName(String name) {
+		Name = name;
+	}
+	public String getPw() {
+		return Pw;
+	}
+	public void setPw(String pw) {
+		Pw = pw;
+	}
+	public String getEmail() {
+		return Email;
+	}
+	public void setEmail(String email) {
+		Email = email;
+	}
+	
+	
 }

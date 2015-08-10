@@ -20,7 +20,7 @@
 
 <script type="text/javascript" src="../resource/js/mordernizr.js"></script>
 </head>
-<body>
+
 <body>
 	<div id="top">
 		<!-- <div class="content-wrapper"> -->
@@ -28,18 +28,18 @@
 		<!-- </div> -->
 	</div>
 
-	<!-- 어사이드영역 -->
-	<tiles:insertAttribute name="aside" />
+	
+		<!-- 어사이드영역 -->
+		<tiles:insertAttribute name="aside" />
+	  <div id="test">
+		<!-- 헤더영역 -->
+		<tiles:insertAttribute name="header" />
 
-	<!-- 헤더영역 -->
-	<tiles:insertAttribute name="header" />
+		<div class="fix"></div>
 
-	<div class="fix"></div>
-
-	<!-- 메인영역 -->
-	<main id="main">
-	 <tiles:insertAttribute name="body" />
-	 </main>
+		<!-- 메인영역 -->
+		<main id="main"> <tiles:insertAttribute name="body" /> </main>
+	</div>
 	<!-- 푸터영역 -->
 	<tiles:insertAttribute name="footer" />
 

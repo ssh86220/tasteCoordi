@@ -39,23 +39,18 @@
 							</div>
 						</nav>
 						
-						<article>
+						<article id = "social-count">
 							<h1 class="hidden">회원/업체 social 정보</h1>
-							<dl>
-								<dt>팔로워</dt>
-									<dd><a href="myFollower">${follower}</a></dd>
-								<dt>팔로잉</dt>
-									<dd><a href="myFollowing">${following}</a></dd>
-								<dt>댓글</dt>
-									<dd>${commentCnt}</dd>								
-							</dl>
+							<p style="background: url('${ctxName}/resource/image/css/nt.JPG') no-repeat 121px;">팔로워  &emsp; <a href="myFollower">${follower}</a></p>
+							<p style="background: url('${ctxName}/resource/image/css/nt.JPG') no-repeat 121px;">팔로잉  &emsp;  <a href="myFollowing">${following}</a></p>
+							<p style="background: url('${ctxName}/resource/image/css/nt.JPG') no-repeat 121px;">&nbsp;&nbsp;&nbsp;댓글  &emsp;&nbsp;&nbsp;${commentCnt}</p>
 						</article>
 		
 					</section>
 					
 					<nav>
 						<h1 class="hidden">회원 선택 메뉴</h1>
-						<ul>
+						<ul id="cumtomer-select-menu">
 							<li><a href="myCodi">내 코디</a></li>
 							<li><a href="myClothes">내 옷장</a></li>
 							<li><a href="myLikes">좋아요</a></li>

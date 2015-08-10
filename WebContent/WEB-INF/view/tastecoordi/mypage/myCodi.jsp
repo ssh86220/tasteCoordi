@@ -40,13 +40,44 @@
 		f.submit();
 	}
 	
+ 	window.addEventListener("load", function(){
+		var img = document.getElementById("codi-item");
+		
+		if(img.alt == 0){
+			img.style.borderStyle="solid";
+			img.style.borderColor="red";
+			img.style.borderWidth="1px";			
+		}
+		
+	});
+	
 </script>
 <style type="text/css">
+
 	/*-----아이템 리스트-----*/
 	#items{
 	/* border: solid red 1px; */
 	display: inline-block;
-	position: relative;
+	padding-top: 30px;
+	padding-left: 10px;
+	margin-left: 15px;
+	}
+	
+	#item-btn{
+	/* border: solid red 1px; */
+	/* width: 830px; */
+	}
+	
+	#item-btn > *{
+	float:left;
+	/* border: solid red 1px; */
+	width: 380px;
+	text-align: right;
+	}
+	
+	#btn-left{
+	text-align: left;
+	margin-left: 30px;
 	}
 	
 	#items li{
@@ -56,8 +87,9 @@
 	height: 200px;
 	}
 	
-</style>
 	
+</style>
+
 </head>
 
 <body>    
@@ -72,9 +104,13 @@
 				
 				<form name="itemForm">
 					<div id = "item-btn">
-						<input type="checkbox" id="all-check">check all<br>
-						<input type="button" value="삭제" onclick="del()">
-						<input type="button" value="공개/비공개" onclick="state()">					
+						<div id="btn-left">
+							<input type="checkbox" id="all-check">check all<br>
+						</div>
+						<div>
+							<input type="button" value="삭제" onclick="del()">
+							<input type="button" value="공개/비공개" onclick="state()">				
+						</div>
 					</div>
 					
 					<div id="items">
@@ -87,7 +123,7 @@
 									</div>
 									<div>									
 										${codi.open}
-										<img class="items"  src="${ctxName}/resource/image/codi/${codi.img}">
+										<img id="codi-item"  class="items" alt="${codi.open}" src="${ctxName}/resource/image/codi/${codi.img}" >
 									</div>
 								</li>
 								<c:if test="${status.count%4 eq 0}"><br></c:if>			

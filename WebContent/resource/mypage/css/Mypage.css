@@ -4,6 +4,9 @@
 @IMPORT url("../../css/layout.css");
 
 /*기본설정*/
+a
+{text-decoration: none;}
+
 .clearfix:after
 	{content: ".";
 	display: block;
@@ -24,7 +27,7 @@
 {height: 20px; background: #171a39; position: fixed; left: 0; top: 0px; width: 100%;}
 
 #mid-blank
-{min-height: 1000px; background: #fbf7ee;}
+{min-height: 1000px; /* background: #fbf7ee; */}
 /* #fbf7ee */
 
 #bot-blank
@@ -44,11 +47,16 @@
 {height: auto; background: #f8e8c8; display: block;}
 #customer-menu-text
 {padding: 20px;}
+#myinfo
+{text-align: center; line-height: 27px;}
+#social-count
+{text-align: center; margin-bottom: 15px; margin-top: 15px; line-height: 25px;}
+#cumtomer-select-menu
+{text-align: center; line-height: 30px;}
 
 #profile img
 {display: block; width: 150px; height: 150px; margin-left: auto; margin-right: auto;
-	-webkit-border-radius:100px;
-	-moz-border-radius: 100px;
+border-radius:100px;
 }
 #myinfo
 {margin-top: 30px;}
@@ -56,7 +64,7 @@
 
 /*중앙 방*/
 #item-list
-{width: 66%; height:100%; min-height: inherit; background: #fbf7ee; float: left;
+{width: 70%; height:100%; min-height: inherit; background: #fbf7ee; float: left;
 padding: 20px;}
 #coordies-list img
 {width: 170px; height: 170px;}

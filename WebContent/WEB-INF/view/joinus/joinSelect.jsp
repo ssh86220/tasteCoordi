@@ -18,8 +18,8 @@ h1{ width:304px;height:228px; }
 	alt="Mountain View" > </h1> 
 	
 	<ul>	
-	<li><a href="joinMember" >일반 회원가입</a></li>
-	<li><a href="joinEnterprise" >업체 회원가입</a></li>
+	<li><a href="joinMem" >일반 회원가입</a></li>
+	<li><a href="joinEnter" >업체 회원가입</a></li>
 	</ul>
 </body>
 </html>

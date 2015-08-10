@@ -72,7 +72,7 @@ public class CoordiDetailController extends HttpServlet {
 	
 		//코디 리스트
 				
-				List<Coordination> codilist = coordinationDao.getCodis();
+				List<Coordination> codilist = coordinationDao.getCodis(c);
 				model.addAttribute("codilist", codilist);
 		
 		//코디에 사용된 아이템 리스트

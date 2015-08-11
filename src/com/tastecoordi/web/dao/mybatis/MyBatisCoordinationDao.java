@@ -140,4 +140,13 @@ public Coordination getCodi(String code) {
 	return dao.getCodi(code);
 }
 
+@Override
+public Coordination getCodiSearch(String code) {
+	Coordination m = session.selectOne(
+			"com.tastecoordi.web.dao.CoordinationDao.getCoordination", code);
+
+
+	return m;
+}
+
 }

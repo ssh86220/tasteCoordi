@@ -33,4 +33,7 @@ public interface CoordinationDao {
 	
 	public Coordination getCodi(String code);
 	
+	//¼±Èñ
+	public Coordination getCodiSearch(String code);
+	
 }

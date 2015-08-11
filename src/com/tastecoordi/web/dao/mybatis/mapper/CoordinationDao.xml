@@ -11,6 +11,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 		select * from CodiView
 	</select>
+	
+	<select id="getCodiSearch" resultType="com.tastecoordi.web.vo.Coordination">
+		select * from CodiSearchView
+	</select>
 
 	<!-- <insert id="addCodi" parameterType="com.tastecoordi.web.vo.Coordination"> 
 		<selectKey keyProperty="temp" order="BEFORE" resultType="String"> SELECT 

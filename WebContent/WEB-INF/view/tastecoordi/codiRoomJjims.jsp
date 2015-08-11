@@ -10,10 +10,10 @@
 		
 		<!-- 캔버스 영역 -->
 			<section id="canvas" class="clearfix">
-				<h1>코디 캔버스</h1>
+				<h1 class="Hidden">코디 캔버스</h1>
 				
 				<section id="turn">
-				<h1>코디 순서 표시 및 저장</h1>
+				<h1 class="Hidden">코디 순서 표시 및 저장</h1>
 					<ul class="clearfix">
 						<li>새로하기 버튼</li>
 						<li>이전 버튼</li>
@@ -25,14 +25,14 @@
 														
 			<!-- 아이템 영역 -->
 			<section id="item" class="clearfix">
-				<h1 class="hidden">코디 아이템</h1>
+				<h1 class="Hidden">코디 아이템</h1>
 			
 			<!-- 아이템 선택 영역 -->
 			<section>
-				<h1>아이템 선택하기</h1>
+				<h1 class="Hidden">아이템 선택하기</h1>
 				
 				<section>
-					<h1>아이템 저장소</h1>
+					<h1 class="Hidden">아이템 저장소</h1>
 						<ul id="item-menu" class="clearfix">
 							<li><a href="codiRoom">의류</a></li>
 							<li><a href="codiRoomMyClothes">내 옷장</a></li>
@@ -50,7 +50,7 @@
 							<li><a href="codiRoomSearch?c=<c:out value="acc"/>">패션잡화</a></li>					
 						</ul> --%>
 					
-						<h1>아이템 색상 선택</h1>
+						<h1 class="Hidden">아이템 색상 선택</h1>
 						<form method="post" action="codiRoomSearch">
 						<select name="color">
 							<option value="red">빨강</option>
@@ -74,9 +74,9 @@
 		</section>
 	  
 			<section>
-				<h1>찜 아이템 목록</h1>
+				<h1 class="Hidden">찜 아이템 목록</h1>
 				<section>
-					<h1>찜한 아이템 목록</h1>
+					<h1 class="Hidden">찜한 아이템 목록</h1>
 					<c:forEach var="j" items="${list}">
 					<%-- <ul>					
 						<li>회원 아이디 : ${j.mid} </li>
@@ -95,7 +95,7 @@
 				</section>
 				
 				<nav>
-					<h1>페이저</h1>
+					<h1 class="Hidden">페이저</h1>
 					<ul>
 						<li><a href="">PREV</a></li> 
 						<li><a href="">1</a></li> 

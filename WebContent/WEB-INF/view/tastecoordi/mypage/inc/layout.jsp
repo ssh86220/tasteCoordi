@@ -16,29 +16,6 @@
 <%-- <link href="${ctxName}/resource/css/reset.css" type="text/css" rel="stylesheet"/>
 <link href="${ctxName}/resource/css/layout.css" type="text/css" rel="stylesheet"/> --%>
 <link href="${ctxName}/resource/mypage/css/Mypage.css" type="text/css" rel="stylesheet"/>
-<style type="text/css">
-	
-	/* text-align 내용 정렬 위치 */
-	#item-btn{
-	text-align: right;
-	}
-	
-	#items{
-	/* border: red solid 1px; */
-	padding: 10px;
-	}
-	
-	#item-box{
-	/* border: red solid 1px; */
-	display: inline-block;
-	margin: 10px;
-	}
-
-	
-	
-</style>
-
-
 </head>
 <body>
 	<!-- CSS로 스타일을 입힐때 보이게끔만... 문서의 위치가 보여지는 위치는 아니다. -->

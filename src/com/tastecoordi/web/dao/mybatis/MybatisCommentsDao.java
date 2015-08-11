@@ -73,6 +73,10 @@ public class MybatisCommentsDao implements CommentsDao{
 		session.close();
 		}
 		return result;
+		
+		
+		
+		
 	}
 
 	@Override

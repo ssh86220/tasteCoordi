@@ -8,6 +8,8 @@ public class ClothesCoordi {
 	/*---------------------*/
 	private String image;
 	
+	/*-------------------------*/
+	
 	public String getCode() {
 		return code;
 	}
@@ -29,8 +31,9 @@ public class ClothesCoordi {
 	public String getCoordiesCode() {
 		return CoordiesCode;
 	}
-	public void setCoordiesCode(String coordiCode) {
-		this.CoordiesCode = coordiCode;
+	public void setCoordiesCode(String coordiesCode) {
+		this.CoordiesCode = coordiesCode;
 	}
+	
 
 }

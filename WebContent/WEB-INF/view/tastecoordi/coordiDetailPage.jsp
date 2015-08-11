@@ -18,6 +18,8 @@
 <link href="../resource/css/reset.css" type="text/css" rel="stylesheet"/>
 <link href="../resource/css/layout.css" type="text/css" rel="stylesheet"/>
 <link href="../resource/css/coordidetail.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript"></script>
+
 
 </head>
 
@@ -93,11 +95,19 @@
 						<ul>
 							<li><a href=""><img src="" alt="프로필 사진"></a></li>
 							<li id="sns"><a href=""><img src="../resource/image/css/follow.jpg" alt="팔로우 이미지"></a></li>
-							<li id="sns"><a href=""
-								onclick="javascript:window.open('LikePop.html','popup','scrollbars=no, resizable=no, width=300,height=200')";returnfalse">
-									<img src="../resource/image/css/like.JPG" alt="좋아요 이미지">
-							</a></li>
+							
 							<!-- 좋아요 팝업창, 마이페이지로 이동 -->
+							<li id="sns">							
+							<a href=""
+								onclick="javascript:window.open('likePop.jsp','popup','scrollbars=no, resizable=no, width=300,height=200')"; return false">
+								<img src="../resource/image/css/like.JPG" alt="좋아요 이미지">
+									
+									
+									
+									
+									
+							</a></li>
+						
 						</ul>
 					</nav>
 				<!------------3. 상단 우측 두번째 나누기 끝----------->		
@@ -114,7 +124,7 @@
 									</dd>
 								</dl>
 								<div>
-									<input type="submit" value="입력">
+									<input type="submit" value="입력"/>
 								</div>
 							</fieldset>
 						</form>
@@ -163,18 +173,23 @@
 	<section>
 		<nav id= "overview">
 			<h1><img src="../resource/image/css/overview.jpg" alt="Overview"></h1>
-			<!-- 이미지 리스트로 출력 가로 5개, 줄바꿈. css로-->
+			
 			<ul>
 				<li><a href=""><img src="" alt="이미지1"></a></li>
 				<li><a href=""><img src="" alt="이미지2"></a></li>
 				<%-- <li><img src="${ctxName}/resource/image/clothes/${c.image}"></li> --%>
 				
+			<!-- --------코디코드, 코디 이미지 리스트 출력--------- -->
 			<c:forEach var="co" items="${codilist}">
 				<%-- <li>${n.code}</li> --%>
+				<li>${co.code}
+					<img src="${ctxName}/resource/image/codi/${co.img}" width="200" alt="이미지1">				
+				</li>
 				<li>${co.img}</li>
 				
-				
 			</c:forEach>
+				
+				
 				
 			</ul>
 		</nav>
@@ -187,15 +202,7 @@
 			<ul>
 				<li><a href=""><img src="" alt="이미지1"></a></li>
 				<li><a href=""><img src="" alt="이미지2"></a></li>
-			<%-- 	<c:forEach var="c" items="${list}">
-				<li>
-							<a href="codiRoomDetail?c=${c.code}&mid=${id}">
-							<img src="${ctxName}/resource/image/clothes/${c.image}">
-							</a>
-						</li>
-				
-				</c:forEach> --%>
-								
+											
 			<c:forEach var="cl" items="${clotheslist}">
 				<li>${cl.clothesCode}
 					<img src="${ctxName}/resource/image/clothes/${cl.image}" width="200" alt="이미지1">

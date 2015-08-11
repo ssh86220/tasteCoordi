@@ -13,9 +13,19 @@ public class Coordination {
 	private String img;
 	private int hit;
 
+	
+	//º±»Ò
 	private int CmtCnt;
 	private int LikeCnt;
 	private String Name;
+	
+	
+
+	private String color;
+	private String categories;
+	private String clothesCode;
+	private String coordiesCode;
+	private String clothesCoordisCode;
 	
 	//º“¿±
 	private String temp;
@@ -26,6 +36,8 @@ public class Coordination {
 
 		this.temp = temp;
 	}
+	
+
 	
 
 /*	public List<Like> getLikes() {
@@ -122,4 +134,34 @@ public class Coordination {
 		this.img = img;
 	}
 
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public String getCategories() {
+		return categories;
+	}
+	public void setCategories(String categories) {
+		this.categories = categories;
+	}
+	public String getClothesCode() {
+		return clothesCode;
+	}
+	public void setClothesCode(String clothesCode) {
+		this.clothesCode = clothesCode;
+	}
+	public String getCoordiesCode() {
+		return coordiesCode;
+	}
+	public void setCoordiesCode(String coordiesCode) {
+		this.coordiesCode = coordiesCode;
+	}
+	public String getClothesCoordisCode() {
+		return clothesCoordisCode;
+	}
+	public void setClothesCoordisCode(String clothesCoordisCode) {
+		this.clothesCoordisCode = clothesCoordisCode;
+	}
 }

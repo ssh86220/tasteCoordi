@@ -64,7 +64,9 @@
 		<!-- ---------2. 상단 좌측 코디 이미지 -------------------->
 				<section id = "coordi-img" >
 					<h1 class = "Hidden">코디 이미지</h1>
-					<img src="" alt="코디 이미지">
+					<!-- <img src="" alt="코디 이미지"> -->
+					<img src="${ctxName}/resource/image/codi/${c.img}">				
+					
 				</section>
 		<!------------2. 상단 좌측 코디 이미지 끝 -------------------->
 
@@ -93,10 +95,13 @@
 					<nav id = "coordi-like">
 						<h1 class = "Hidden">프로필 사진, 좋아요</h1>
 						<ul>
-							<li><a href=""><img src="" alt="프로필 사진"></a></li>
+							<!-- 프로필 사진 회원정보에 맟춰 불러오기 -->
+							<li><a href=""><img src="../resource/image/profile/pro.JPG" width=200px alt="프로필 사진"></a></li>
+							
+							<!-- 팔로우 카운트 추가 -->
 							<li id="sns"><a href=""><img src="../resource/image/css/follow.jpg" alt="팔로우 이미지"></a></li>
 							
-							<!-- 좋아요 팝업창, 마이페이지로 이동 -->
+							<!-- 좋아요 카운트 추가 팝업창, 마이페이지로 이동 -->
 							<li id="sns">							
 							<a href=""
 								onclick="javascript:window.open('likePop.jsp','popup','scrollbars=no, resizable=no, width=300,height=200')"; return false">
@@ -179,12 +184,12 @@
 				<li><a href=""><img src="" alt="이미지2"></a></li>
 				<%-- <li><img src="${ctxName}/resource/image/clothes/${c.image}"></li> --%>
 				
-			<!-- --------코디코드, 코디 이미지 리스트 출력--------- -->
+			<!-- --------코디코드, 코디 이미지 리스트 출력. 안나옴ㅠ 왜일까--------- -->
 			<c:forEach var="co" items="${codilist}">
 				<%-- <li>${n.code}</li> --%>
-				<li>${co.code}
-					<img src="${ctxName}/resource/image/codi/${co.img}" width="200" alt="이미지1">				
-				</li>
+				<%-- <li>${co.code}
+					<img src="${ctxName}/resource/image/codi/${co.img}" width="200px" alt="이미지1">				
+				</li> --%>
 				<li>${co.img}</li>
 				
 			</c:forEach>
@@ -198,14 +203,15 @@
 
 		<nav id= "coordi-item">
 			<h1><img src="../resource/image/css/coordi-item.jpg" alt="해당 코디에 사용된 아이템"></h1>
-			<!-- 이미지 리스트로 출력 가로 5개, 줄바꿈. css로-->
+			
 			<ul>
 				<li><a href=""><img src="" alt="이미지1"></a></li>
 				<li><a href=""><img src="" alt="이미지2"></a></li>
-											
+				
+			<!------ 아이템 이미지 불러오기 ----->							
 			<c:forEach var="cl" items="${clotheslist}">
 				<li>${cl.clothesCode}
-					<img src="${ctxName}/resource/image/clothes/${cl.image}" width="200" alt="이미지1">
+					<img src="${ctxName}/resource/image/clothes/${cl.image}" width="200px" alt="이미지1">
 				</li>
 				<%-- <li>${cl.image}</li> --%>
 			</c:forEach>	

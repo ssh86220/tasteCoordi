@@ -93,7 +93,7 @@
 					<nav id = "coordi-like">
 						<h1 class = "Hidden">프로필 사진, 좋아요</h1>
 						<ul>
-							<li><a href=""><img src="" alt="프로필 사진"></a></li>
+							<li><a href=""><img src="../resource/image/profile/pro.JPG" width=200px alt="프로필 사진"></a></li>
 							<li id="sns"><a href=""><img src="../resource/image/css/follow.jpg" alt="팔로우 이미지"></a></li>
 							
 							<!-- 좋아요 팝업창, 마이페이지로 이동 -->
@@ -183,7 +183,7 @@
 			<c:forEach var="co" items="${codilist}">
 				<%-- <li>${n.code}</li> --%>
 				<li>${co.code}
-					<img src="${ctxName}/resource/image/codi/${co.img}" width="200" alt="이미지1">				
+					<img src="${ctxName}/resource/image/codi/${co.img}" width="200px" alt="이미지1">				
 				</li>
 				<li>${co.img}</li>
 				
@@ -205,7 +205,7 @@
 											
 			<c:forEach var="cl" items="${clotheslist}">
 				<li>${cl.clothesCode}
-					<img src="${ctxName}/resource/image/clothes/${cl.image}" width="200" alt="이미지1">
+					<img src="${ctxName}/resource/image/clothes/${cl.image}" width="200px" alt="이미지1">
 				</li>
 				<%-- <li>${cl.image}</li> --%>
 			</c:forEach>	

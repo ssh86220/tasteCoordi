@@ -1,8 +1,18 @@
+.content-wrapper {
+	width: inherit; 
+	height: inherit;
+	min-height: inherit; 
+	margin-left: 20px;
+	margin-right: 20px;
+
+} 
+
 #canvas{
 	float : left;
-	background : pink; 
+	/* background : #fbf7ee; */
+	background : pink;
 	width : 50%;
-	height : 951px;
+	height : 711px;
 	/* border-top : 1px solid black; */
 	
 	
@@ -12,15 +22,15 @@
 	float : right;
 	width : 50%;
 	/* border-top : 1px solid black; */
-	background : yellow; 
-	height :951px;
+	background : yellow;  
+	height :711px;
 
 	
 }
 
 #turn{
 	display : inline-block;
-	/* border: 1px solid #BCBA34; */ 
+	/*  border: 1px solid #BCBA34;  */
 	}
 	
 #turn li{
@@ -29,10 +39,10 @@
 }
 
 #turn li:first-child{
-		padding : 0px;
+		padding-left : 5px;
 	}
 #turn li:last-child{
-		padding-left : 161px;
+		padding-left : 146px;
 	}	
 	
 #item-menu{
@@ -64,11 +74,12 @@
 
 #item-img{
 	display : inline-block;
+	padding-top: 7px;
  	/* border: 1px solid #BCBA34;  */ 
 	}
 
 #item-img li{
-	padding-left: 25px;	
+	padding-left: 29px;	
 }
 
 #item-img img{
@@ -85,10 +96,12 @@
 
 #myClothes-img{
 	display : inline-block;
+	padding-top: 7px;
 }
 
 #myClothes-img li{
-	padding-left: 25px;	
+	/* padding-left: 25px;	 */
+	padding-left: 29px;		
 	float : left;
 }
 

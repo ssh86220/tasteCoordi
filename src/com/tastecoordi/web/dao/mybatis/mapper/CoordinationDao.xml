@@ -28,7 +28,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="getCodis" parameterType="String" resultType="com.tastecoordi.web.vo.Coordination">
 		SELECT * FROM CodiView WHERE MID LIKE #{mid}
-		
 	</select>
 	
 	<select id="getCoordiesCode" parameterType="string" resultType="String">

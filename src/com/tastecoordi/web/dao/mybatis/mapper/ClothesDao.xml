@@ -26,8 +26,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY REGDATE DESC) NUM,
 				 Clothes.* FROM Clothes where price is not null and ${field}
 				  LIKE '%${query}%' and REGDATE between convert(DATETIME,#{startDate}) and 
-				 convert(DATETIME,#{endDate}))C WHERE C.NUM BETWEEN 1 + (${page} - 1) * 25 
-				 AND 25 * ${page}
+				 convert(DATETIME,#{endDate}))C WHERE C.NUM BETWEEN 1 + (${page} - 1) * 5 
+				 AND 5 * ${page}
 				 
 				 
 	</select>

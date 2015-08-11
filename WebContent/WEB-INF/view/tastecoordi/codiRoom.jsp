@@ -110,9 +110,9 @@
 						<h1 class="Hidden">페이저</h1>
 						<ul>
 							<li><a href="">PREV</a></li> 
-							<li><a href="">1</a></li> 
-							<li><a href="">2</a></li> 
-							<li><a href="">[3]</a></li>
+							<li><a href="codiRoom?page=1">1</a></li> 
+							<li><a href="codiRoom?page=2">2</a></li> 
+							<li><a href="codiRoom?page=3">[3]</a></li>
 							<li><a href="">4</a></li>
 							<li><a href="">...</a></li>
 							<li><a href="">40</a></li>

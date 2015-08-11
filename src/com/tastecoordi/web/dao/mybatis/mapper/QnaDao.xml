@@ -7,6 +7,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getQnAs" resultType="com.tastecoordi.web.vo.QnA">
 		SELECT * FROM QnAs order by regDate DESC
 	</select>
+	<!-- <select id="getQnAs" resultType="com.tastecoordi.web.vo.QnA">
+		SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY REGDATE DESC) NUM,
+				 QnAs.* FROM QnAs where ${field}
+				  LIKE '%${query}%' and REGDATE between convert(DATETIME,#{startDate}) and 
+				 convert(DATETIME,#{endDate}))C WHERE C.NUM BETWEEN 1 + (${page} - 1) * 10 
+				 AND 10 * ${page}
+	</select> -->
+	
 
 
 	<select id="getQnA" parameterType="String"

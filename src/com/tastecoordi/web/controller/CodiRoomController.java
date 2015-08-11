@@ -43,11 +43,18 @@ public class CodiRoomController {
 	
 	
 	@RequestMapping("codiRoom")
-	public String codiRoom(Model model, String c, HttpServletRequest request){
-		
-	 	List<Clothes> list = clothesDao.getClothes();
+	public String codiRoom(Model model, String c, HttpServletRequest request,String page){
+		if(page!=null){
+	 	List<Clothes> list = clothesDao.getClothes(Integer.parseInt(page));
 	 	
 	 	model.addAttribute("list", list);
+		}
+		if(page==null){
+			
+			List<Clothes> list = clothesDao.getClothes(1);
+		 	
+		 	model.addAttribute("list", list);
+		}
 	 	
 		return "tastecoordi.codiRoom";
 	}

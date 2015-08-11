@@ -18,20 +18,20 @@ public class MyBatisQnaDao implements QnaDao {
 	@Override
 	public List<QnA> getQnAs() {
 
-		return getQnAs(1, "TITLE", "");
+		return getQnAs(1, "", "");
 	}
 
 	@Override
 	public List<QnA> getQnAs(int page) {
 
-		return getQnAs(page,"TITLE","");
+		return getQnAs(page,"","");
 	}
 
 	@Override
-	public List<QnA> getQnAs(int page, String filed, String query) {
+	public List<QnA> getQnAs(int page, String field, String query) {
 		//SqlSession session = factory.openSession();
 		QnaDao dao = session.getMapper(QnaDao.class);
-		List<QnA> list = dao.getQnAs(page, filed, query);
+		List<QnA> list = dao.getQnAs(page, field, query);
 		
 		CommentDao commentdao = session.getMapper(CommentDao.class);
 

@@ -1,36 +1,48 @@
+/* ------------------------------각 영역 */
+
 .content-wrapper {
 	width: inherit; 
 	height: inherit;
 	min-height: inherit; 
-	margin-left: 20px;
-	margin-right: 20px;
+	margin-left: 15px;
+	margin-right: 15px;
+	
 
 } 
-
 #canvas{
 	float : left;
 	/* background : #fbf7ee; */
-	background : pink;
-	width : 50%;
+	/* background : pink; */ 
+	width : 49%;
 	height : 711px;
-	/* border-top : 1px solid black; */
-	
-	
+}
+
+#coordi-canvas{
+	 border:1px solid gray;
+	height : 680px; 
+}
+
+#coordi-item{
+	border:1px solid gray;
+	/* border-right: 0px; */
+	height : 680px; 
 }
 
  #item{
 	float : right;
-	width : 50%;
-	/* border-top : 1px solid black; */
-	background : yellow;  
+	width : 49%;	
+	/* background : yellow; */  
 	height :711px;
-
-	
 }
 
+#product{
+	 height : 585px;
+}
+
+
+/* 코디 순서 표시 */
 #turn{
-	display : inline-block;
-	/*  border: 1px solid #BCBA34;  */
+	display : inline-block; 
 	}
 	
 #turn li{
@@ -44,7 +56,8 @@
 #turn li:last-child{
 		padding-left : 146px;
 	}	
-	
+
+/* 의류, 내 옷장, 찜 아이템	 */
 #item-menu{
 	display : inline-block;
 	}
@@ -57,6 +70,8 @@
 		padding : 0px;
 	}
 
+
+/* 아이템 카테고리 */
 #item-category{
 	display : inline-block;
 	}
@@ -70,8 +85,8 @@
 	}
 
 
-/*img*/
 
+/*------------------------------img*/
 #item-img{
 	display : inline-block;
 	padding-top: 7px;
@@ -79,7 +94,7 @@
 	}
 
 #item-img li{
-	padding-left: 29px;	
+	padding-left: 31px;	
 }
 
 #item-img img{
@@ -117,5 +132,34 @@
 	margin-right: auto;
 }
 
+/* ----------------------- pager*/
 
-
+	#pager{
+		margin-left: 100px;
+		margin-right: 100px;
+	}
+ 	#pager li { 
+ 		float: left; 
+ 		width: 40px; 
+ 		height: 25px; 
+		/* border: 1px solid green;  */ 
+ 		 text-align: center; 
+ 		line-height: 25px; 
+ 	} 
+  
+ 	#pager { 
+ 		display: inline-block; /*박스크기맞추기 */ 
+ 	} 
+  
+ 	#pager ul { 
+ 		/* border: 1px solid red;  */ 
+ 		overflow: auto; /* 크기맞추는거 inline-block과 쓰임 */ 
+	 } 
+	 
+/* 	 #pager a{
+	 	display : block;
+		margin-left: auto;
+		margin-right: auto;
+	 } */
+  
+ 	

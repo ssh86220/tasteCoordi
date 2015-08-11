@@ -90,13 +90,13 @@ public class MyBatisClothesDao implements ClothesDao {
 	@Override
 	public List<Clothes> getClothes() {
 		// TODO Auto-generated method stub
-		return getClothes(1, "CODE", "","2015-04-19","2015-07-28");
+		return getClothes(1, "CODE", "","2015-04-19","2015-08-28");
 	}
 
 	@Override
 	public List<Clothes> getClothes(int page) {
 		// TODO Auto-generated method stub
-		return getClothes(page, "CODE", "","2015-04-19","2015-07-28");
+		return getClothes(page, "CODE", "","2015-04-19","2015-08-28");
 	}
 
 	@Override

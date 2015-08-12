@@ -41,9 +41,31 @@
 						
 						<article id = "social-count">
 							<h1 class="hidden">회원/업체 social 정보</h1>
-							<p style="background: url('${ctxName}/resource/image/css/nt.JPG') no-repeat 121px;">팔로워  &emsp; <a href="myFollower">${follower}</a></p>
+							
+							<table>
+								<tr>
+									<td>팔로워</td>
+									<td><a href="myFollower">
+									<img src="${ctxName}/resource/image/css/nt.JPG">
+									<p>${follower}</p></a></td>
+								</tr>
+								<tr>
+									<td>팔로잉</td>
+									<td><a href="myFollowing">
+									<img src="${ctxName}/resource/image/css/nt.JPG">
+									<p>${following}</p></a></td>
+								</tr>
+								<tr>
+									<td>댓글</td>
+									<td>
+									<img src="${ctxName}/resource/image/css/nt.JPG">
+									<p>${commentCnt}</p></td>
+								</tr>
+							</table>
+							
+							<%-- <p style="background: url('${ctxName}/resource/image/css/nt.JPG') no-repeat 121px;">팔로워  &emsp; <a href="myFollower">${follower}</a></p>
 							<p style="background: url('${ctxName}/resource/image/css/nt.JPG') no-repeat 121px;">팔로잉  &emsp;  <a href="myFollowing">${following}</a></p>
-							<p style="background: url('${ctxName}/resource/image/css/nt.JPG') no-repeat 121px;">&nbsp;&nbsp;&nbsp;댓글  &emsp;&nbsp;&nbsp;${commentCnt}</p>
+							<p style="background: url('${ctxName}/resource/image/css/nt.JPG') no-repeat 121px;">&nbsp;&nbsp;&nbsp;댓글  &emsp;&nbsp;&nbsp;${commentCnt}</p> --%>
 						</article>
 		
 					</section>
@@ -58,7 +80,7 @@
 						</ul>
 					</nav>
 					
-					<a href="javascript:ViewLayer();">팝업test</a>
+					<!-- <a href="javascript:ViewLayer();">팝업test</a> -->
 				</div>
 				</section>			
 			</aside>   

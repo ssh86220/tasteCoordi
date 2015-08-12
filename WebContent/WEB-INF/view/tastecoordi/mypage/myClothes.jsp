@@ -25,23 +25,58 @@
 		})
 	})
 </script>
+
 </head>
 
 	<body>
 	
 		<main id="item-list">	
 			<section>
-				<h1>내 코디</h1>
+				<h1 class="hidden">내 옷장</h1>
 				
-				<section id="coordies-list">
+				<section id="clothes-list">
 								
 					<h1 class="hidden">상품목록</h1>
 					
 					<form name="itemForm" method="post" action="myClothesDel">
-						<security:authorize ifAnyGranted="ROLE_ENTER">
+						<div id = "item-btn">
+							<div id="btn-left">
+								<input type="checkbox" id="all-check">check all<br>
+							</div>
+							<div>
+								<input type="submit" value="삭제">		
+							</div>
+						</div>
+						
+						<div id="items">
+												
+							<ul>							
+								<c:forEach var="clothes" items="${list}" varStatus="status">
+									<li>
+										<div>
+											<input type="checkbox" name="check" value="${clothes.code}"/>
+										</div>
+										<div>	
+											<img class="items" src="${ctxName}/resource/image/clothes/${clothes.image}">
+										</div>
+									</li>
+									<c:if test="${status.count%5 eq 0}"><br></c:if>			
+								</c:forEach>
+							</ul>
+							
+						</div>
+					
+					
+					
+					
+					
+					
+					
+					
+						<%-- <security:authorize ifAnyGranted="ROLE_ENTER">
 							<a href="myClothesReg">아이템 등록</a>
 						</security:authorize>
-						<!-- <input type="button" value="삭제" onclick="del()"> -->
+						
 						<input type="submit" value="삭제">
 						
 						<table>
@@ -64,7 +99,7 @@
 			
 							</c:forEach>
 							</tbody>
-						</table>
+						</table> --%>
 					</form>		
 					
 				</section>

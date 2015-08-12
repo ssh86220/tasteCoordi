@@ -41,73 +41,31 @@
 	}
 	
  	window.addEventListener("load", function(){
- 		/* var img = document.getElementById("codi-item");
-		if(img.alt == 0){
-		img.style.borderStyle="solid";
-		img.style.borderColor="red";
-		img.style.borderWidth="1px";			
-		} */
-		
-		
+ 				
 		var items = document.getElementById("items");
 		var img = items.getElementsByTagName("img");
 		
-		/* if(img[1].alt == 0){
-			img[1].style.borderStyle="solid";
-			img[1].style.borderColor="red";
-			img[1].style.borderWidth="1px";			
-		}  */
-		
-		//alert(img[0].alt);
-
+		//0 = 비공개
 		for(var i=0; i<img.length; i++)
-			if(img[i].alt == 0){
-				img[i].style.borderStyle="solid";
-				img[i].style.borderColor="red";
-				img[i].style.borderWidth="1px";			
-			} 
-		 
+			if(img[i].alt == 0)
+				img[i].style.opacity = "0.3";
 		
 		
 	});
 	
 </script>
+
 <style type="text/css">
 
-	/*-----아이템 리스트-----*/
-	#items{
-	/* border: solid red 1px; */
-	display: inline-block;
-	padding-top: 30px;
-	padding-left: 10px;
-	margin-left: 15px;
-	}
+#clothes-list img
+{width: 170px; height: 170px;}
+
+#items li{
 	
-	#item-btn{
-	/* border: solid red 1px; */
-	/* width: 830px; */
-	}
-	
-	#item-btn > *{
-	float:left;
-	/* border: solid red 1px; */
-	width: 380px;
-	text-align: right;
-	}
-	
-	#btn-left{
-	text-align: left;
-	margin-left: 30px;
-	}
-	
-	#items li{
-	float: left;
-	/* border: solid green 1px; */
 	width: 200px;
 	height: 200px;
 	}
-	
-	
+
 </style>
 
 </head>
@@ -118,7 +76,7 @@
 		<section>
 			<h1 class="hidden">내 코디</h1>
 			
-			<section id="coordies-list">
+			<section id="clothes-list">
 							
 				<h1 class="hidden">상품목록</h1>
 				

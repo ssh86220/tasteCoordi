@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.tastecoordi.web.dao.QnaCommentDao;
 import com.tastecoordi.web.dao.QnaDao;
+import com.tastecoordi.web.vo.Clothes;
 import com.tastecoordi.web.vo.QnA;
 import com.tastecoordi.web.vo.QnaComment;
 
@@ -37,11 +38,21 @@ public class CustomerController {
 	
 
 	@RequestMapping("qna")
-	public String qna(Model model){
-		List<QnA> list = qnaDao.getQnAs();
+	public String qna(Model model, String c, HttpServletRequest request,String page){
 		
+		if(page!=null){
+			List<QnA> list = qnaDao.getQnAs(Integer.parseInt(page));
+		 	
+		 	model.addAttribute("list", list);
+			}
+			if(page==null){
+				
+				List<QnA> list = qnaDao.getQnAs(1);
+			 	
+				model.addAttribute("list",list);
+			}
 		//mv.setViewName("/WEB-INF/view/customer/notice.jsp");//=1
-		model.addAttribute("list",list);
+		
 		
 		return "tastecoordi.qna";
 		

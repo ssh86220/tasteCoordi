@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tastecoordi.web.dao.CommentDao;
 import com.tastecoordi.web.dao.QnaDao;
+import com.tastecoordi.web.vo.Clothes;
 import com.tastecoordi.web.vo.QnA;
 
 public class MyBatisQnaDao implements QnaDao {
@@ -18,22 +19,31 @@ public class MyBatisQnaDao implements QnaDao {
 	@Override
 	public List<QnA> getQnAs() {
 
-		return getQnAs(1, "", "");
+		return getQnAs(1, "NUMBER", "");
 	}
 
 	@Override
 	public List<QnA> getQnAs(int page) {
 
-		return getQnAs(page,"","");
+		return getQnAs(page,"NUMBER","");
 	}
 
 	@Override
 	public List<QnA> getQnAs(int page, String field, String query) {
 		//SqlSession session = factory.openSession();
-		QnaDao dao = session.getMapper(QnaDao.class);
-		List<QnA> list = dao.getQnAs(page, field, query);
+
+		/*QnaDao dao = session.getMapper(QnaDao.class);
+		List<QnA> list = dao.getQnAs(page, field, query);*/
 		
 		CommentDao commentdao = session.getMapper(CommentDao.class);
+		HashMap<String, Object> params = new HashMap<String, Object>();
+		params.put("page", page);
+		params.put("field", field);
+		params.put("query", query);
+
+
+		//SqlSession session = factory.openSession();
+		List<QnA> list = session.selectList("getQnAs", params);
 
 		for (QnA q : list) {
 			//q.setFiles(fileDao.getNoticeFilesOfNotice(n.getCode()));

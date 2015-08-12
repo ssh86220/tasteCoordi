@@ -84,33 +84,19 @@ public class MypageController {
 	
 	
 	//내코디
-	//@RequestMapping("mypageMyCodi")
 	@RequestMapping("myCodi")
 	public String myCodi(Model model, Principal principal){
-		//추후에 페이지 합치면 비회원은 접근 못하도록...
+		id = principal.getName();
 		
-		if(principal==null){
-			id = null;
-			userImg = null;
-			follower = 0;
-			following = 0;
-			commentCnt = 0;
-		}
-		else{
-			id = principal.getName();
-			
-			//내 정보(왼쪽 사이드)
-			userImg = memberDao.getMember(id).getImage();
-			follower = followDao.getFollowerCnt(id).getFollowerCnt();
-			following = followDao.getFollowingCnt(id).getFollowerCnt();
-			commentCnt = commentsDao.getCommemtCnt(id).getCommentCnt();
-		}
-		
-		
+		//내 정보(왼쪽 사이드)
+		userImg = memberDao.getMember(id).getImage();
+		follower = followDao.getFollowerCnt(id).getFollowerCnt();
+		following = followDao.getFollowingCnt(id).getFollowerCnt();
+		commentCnt = commentsDao.getCommemtCnt(id).getCommentCnt();
 		
 		List<Coordination> list = null; //코디 목록
 		
-		list = coordinationDao.getCodis(id); //임시로 id가 "csy"인 사용자의 정보를 이용
+		list = coordinationDao.getCodis(id);
 		
 		model.addAttribute("userImg", userImg);
 		model.addAttribute("follower", follower);
@@ -118,20 +104,16 @@ public class MypageController {
 		model.addAttribute("commentCnt", commentCnt);	
 		model.addAttribute("list", list);		
 		
-		//return "/WEB-INF/view/tasteCoordi/mypageMyCodi.jsp";
 		return "tastecoordi.mypage.myCodi";
 	}
 	
 	// 코디 공개/비공개
-	//@RequestMapping(value="mypageMyCodiState", method=RequestMethod.GET)
 	@RequestMapping(value="myCodiState", method=RequestMethod.GET)
 	public String myCodiState(){
 		
-		//return "redirect:mypageMyCodi";
 		return "redirect:myCodi";
 	}
 	
-	//@RequestMapping(value="mypageMyCodiState", method=RequestMethod.POST)
 	@RequestMapping(value="myCodiState", method=RequestMethod.POST)
 	public String myCodiState(HttpServletRequest request){
 		
@@ -142,7 +124,6 @@ public class MypageController {
 			coordinationDao.openCodi(code);
 		}
 		
-		//return "redirect:mypageMyCodi";
 		return "redirect:myCodi";
 	}
 	
@@ -154,7 +135,6 @@ public class MypageController {
 		model.addAttribute("m", m);
 		
 		return "redirect:myCodi";
-		//return "/WEB-INF/view/tasteCoordi/mypageMyCodi.jsp";
 	}
 	
 	@RequestMapping(value="myCodiDel", method=RequestMethod.POST)
@@ -173,7 +153,6 @@ public class MypageController {
 	}
 	
 	//내옷장
-	//@RequestMapping("mypageMyClothes")
 	@RequestMapping("myClothes")
 	public String myClothes(Model model){
 		
@@ -185,7 +164,7 @@ public class MypageController {
 		
 		List<Clothes> list = null; //코디 목록
 		
-		list = clothesDao.getMyClothes(id);//임시로 id가 "csy"인 사용자의 정보를 이용
+		list = clothesDao.getMyClothes(id);
 		
 		model.addAttribute("userImg", userImg);
 		model.addAttribute("follower", follower);
@@ -194,11 +173,9 @@ public class MypageController {
 		model.addAttribute("list", list);		
 		
 		return "tastecoordi.mypage.myClothes";
-		//return "/WEB-INF/view/tasteCoordi/mypageMyClothes.jsp";
 	}
 	
 	// 내옷장 삭제
-	//@RequestMapping(value="mypageMyClothesDel", method=RequestMethod.GET)
 	@RequestMapping(value="myClothesDel", method=RequestMethod.GET)	
 	public String myClothesDel(Model model){
 		
@@ -206,10 +183,8 @@ public class MypageController {
 		model.addAttribute("m", m);
 		
 		return "redirect:myClothes";
-		//return "/WEB-INF/view/tasteCoordi/mypageMyCodi.jsp";
 	}
 	
-	//@RequestMapping(value="mypageMyClothesDel", method=RequestMethod.POST)
 	@RequestMapping(value="myClothesDel", method=RequestMethod.POST)
 	public String myClothesDel(HttpServletRequest request){
 
@@ -223,11 +198,9 @@ public class MypageController {
 		}
 		
 		return "redirect:myClothes";
-		//return "redirect:mypageMyClothes";
 	}
 	
 	// 아이템 등록
-	//@RequestMapping(value="mypageClothesUpload", method=RequestMethod.GET)
 	@RequestMapping(value="myClothesReg", method=RequestMethod.GET)
 	public String myClothesReg(Model model){
 		
@@ -246,10 +219,8 @@ public class MypageController {
 		model.addAttribute("m", m);
 		
 		return "tastecoordi.mypage.myClothesReg";
-		//return "/WEB-INF/view/tasteCoordi/mypageClothesReg.jsp";
 	}
 	
-	//@RequestMapping(value="mypageClothesUpload", method=RequestMethod.POST)
 	@RequestMapping(value="myClothesReg", method=RequestMethod.POST)
 	public String myClothesReg(HttpServletRequest request, MultipartFile file, Clothes clothes) throws IOException{
 		
@@ -291,7 +262,6 @@ public class MypageController {
 		clothesDao.addClothes(clothes);
 		
 		return "redirect:myClothes";
-		//return "redirect:mypageMyClothes";
 	}
 	
 	//좋아요
@@ -306,7 +276,7 @@ public class MypageController {
 		
 		List<Like> list = null; //코디 목록
 		
-		list = likeDao.getLikes(id);//임시로 id가 "csy"인 사용자의 정보를 이용
+		list = likeDao.getLikes(id);
 		
 		model.addAttribute("userImg", userImg);
 		model.addAttribute("follower", follower);
@@ -354,7 +324,7 @@ public class MypageController {
 		
 		List<Jjims> list = null; //코디 목록
 		
-		list = jjimsDao.getJjims(id);//임시로 id가 "csy"인 사용자의 정보를 이용
+		list = jjimsDao.getJjims(id);
 		
 		model.addAttribute("userImg", userImg);
 		model.addAttribute("follower", follower);
@@ -390,7 +360,6 @@ public class MypageController {
 	}
 		
 	// 내 정보 수정
-	//@RequestMapping(value="mypageMyInfo", method=RequestMethod.GET)
 	@RequestMapping(value="myInfo", method=RequestMethod.GET)
 	public String myInfo(Model model){
 		
@@ -408,11 +377,9 @@ public class MypageController {
 		model.addAttribute("commentCnt", commentCnt);	
 		model.addAttribute("m", m);
 		
-		//return "/WEB-INF/view/tasteCoordi/mypageMyInfo.jsp";
 		return "tastecoordi.mypage.myInfo";
 	}
 	
-	//@RequestMapping(value="mypageMyInfo", method=RequestMethod.POST)
 	@RequestMapping(value="myInfo", method=RequestMethod.POST)
 	public String myInfo(HttpServletRequest request, MultipartFile file, Member member) throws IOException{
 		
@@ -465,12 +432,10 @@ public class MypageController {
 		
 		memberDao.alterMember(member);
 		
-		//return "redirect:mypageMyCodi";
 		return "redirect:myCodi";
 	}
 	
 	// 팔로워
-	//@RequestMapping("mypageFollower")
 	@RequestMapping("myFollower")
 	public String myFollower(Model model){
 		
@@ -493,9 +458,8 @@ public class MypageController {
 		return "tastecoordi.mypage.myFollower";
 	}
 	
-	// 팔로잉(수정전)
+	// 팔로잉
 	@RequestMapping("myFollowing")
-	//@RequestMapping("mypageFollowing")
 	public String myFollowing(Model model){
 		
 		//내 정보(왼쪽 사이드)
@@ -519,7 +483,6 @@ public class MypageController {
 	
 	// 팔로잉 삭제
 	@RequestMapping(value="myFollowingDel", method=RequestMethod.GET)
-	//@RequestMapping(value="mypageFollowingDel", method=RequestMethod.GET)
 	public String myFollowingDel(Model model){
 		
 		Member m = memberDao.getMember(id);
@@ -529,7 +492,6 @@ public class MypageController {
 	}
 	
 	@RequestMapping(value="myFollowingDel", method=RequestMethod.POST)
-	//@RequestMapping(value="mypageFollowingDel", method=RequestMethod.POST)
 	public String myFollowerDel(HttpServletRequest request){
 
 		String[] delMid = request.getParameterValues("check");

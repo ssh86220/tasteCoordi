@@ -35,7 +35,8 @@
 						<nav id="myinfo">
 							<h1 class="hidden">회원/업체 정보 수정</h1>
 							<div>
-								<a href="myInfo">내 정보 수정</a>
+								<!-- <a href="myInfo">내 정보 수정</a> -->
+								<a href="javascript:ViewLayer();">내 정보 수정</a>
 							</div>
 						</nav>
 						
@@ -76,58 +77,104 @@
 							<li><a href="myJjims">찜한 아이템</a></li>
 						</ul>
 					</nav>
-					
-					<!-- <a href="javascript:ViewLayer();">팝업test</a> -->
 				</div>
 				</section>			
 			</aside>   
 			
-			<!-- 레이어팝업test -->
-			<!-- <div id="divpop" style="position:absolute;left:395px;top:100px;z-index:200;visibility:hidden;"> 
-			<table width=300 height=400 cellpadding=2 cellspacing=0> 
-			<tr> 
-			    <td style="border:1px #666666 solid" height=360 align=center bgcolor=white> 
-			    여기에 내용 삽입 
-			    </td> 
-			</tr> 
-			<tr> 
-			        <form name="notice_form"> 
-			    <td align=right bgcolor=white> 
-			        <input type="checkbox" name="chkbox" value="checkbox">오늘 하루 이 창을 열지 않음 
-			        <a href="javascript:closeWin();"><B>[닫기]</B></a> 
-			    </td> 
-			</tr> 
-			        </form> 
-			</table> 
-			</div>  			
+			<div id="myinfo-pop">
 			
-			<script language="Javascript"> 
-			cookiedata = document.cookie;    
-			if ( cookiedata.indexOf("maindiv=done") < 0 ){      
-			    document.all['divpop'].style.visibility = "visible"; 
-			    } 
-			    else { 
-			        document.all['divpop'].style.visibility = "hidden"; 
-			} 
+				<form method="post" enctype="multipart/form-data" action="myInfo">
+					
+					<table id="myinfo-form">
+						<tr>
+							<td>닉네임</td>
+							<td><input name="name"/><input type="button" value="중복검사"/></td>
+						</tr>
+						<tr>
+							<td>비밀번호</td>
+							<td><input name="pw"/></td>
+						</tr>
+						<tr>
+							<td>비밀번호 확인</td>
+							<td><input name="pw-check"/></td>
+						</tr>
+						<tr>
+							<td>이메일</td>
+							<td><input name="email"/><input type="button" value="중복검사"/></td>
+						</tr>
+						<tr>
+							<td>프로필사진</td>
+							<td><input name="file" type="file"/></td>
+						</tr>
+					</table>
+		
+					<div id="myinfo-btn">
+						<input type="submit" value="수정"/></a>
+						<a href="javascript:closeWin();">취소</a>
+					</div>
+		
+				</form>
 			
-			function closeWin() { 
-			    if ( document.notice_form.chkbox.checked ){ 
-			        setCookie( "maindiv", "done" , 1 ); 
-			    } 
-			    document.all['divpop'].style.visibility = "hidden"; 
-			} 
-			</script>  -->
-			
-			
-			<!-- <div id="pop-myinfo" style="background-color: red;position:absolute; left:550px; top:300px; width:100px; height:100px; z-index:1; display:none;">
-				test
 			</div>
+				
 			
-			 <script> 
-		      function ViewLayer(){
-		             document.getElementById("pop-myinfo").style.display='inline'
-		     }
+			<div id="mask"></div>
+			
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
+<script> 
+     function ViewLayer(){
+            
+            document.getElementById("myinfo-pop").style.visibility="visible";
+    	}
+     function closeWin(){
+    	 document.getElementById("myinfo-pop").style.visibility="hidden";
+     }
+     
+     
+    /* 검은막을 구하는 jQuery */
+    /* function wrapWindowByMask(){
+         //화면의 높이와 너비를 구한다.
+         var maskHeight = $(document).height();  
+         var maskWidth = $(window).width();  
 
-   			</script>  -->
+         //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
+         $('#mask').css({'width':maskWidth,'height':maskHeight});  
+
+         //애니메이션 효과
+         $('#mask').fadeIn(1000);      
+         $('#mask').fadeTo("slow",0.8);    
+ 	} */
+
+			</script> 
+			
+<style>
+	#myinfo-pop
+	{position:absolute;left:395px;top:100px;z-index:200; visibility:hidden;
+	width: 430px; height:230px;	border:1px #666666 solid; background:white;
+	padding-top: 20px; text-align: center;}
+	
+	#myinfo-form
+	{margin-left: auto; margin-right: auto;}
+	#myinfo-form td
+	{height: 30px; width: 100px; text-align: center;}
+	#myinfo-form td + td
+	{width: 300px; text-align: left; padding-left: 10px;}
+	#myinfo-form input[type=button]
+	{margin-left: 10px;}
+	
+			
+	#myinfo-btn
+	{margin-top: 20px;}		
+	
+	/* 검은막 */
+	/* #mask {  
+	  position:fix;  
+	  left:0;
+	  top:0;
+	  z-index:9000;  
+	  background-color:#000;  
+	  display:none;  
+	} */
+</style>
 			
 			 

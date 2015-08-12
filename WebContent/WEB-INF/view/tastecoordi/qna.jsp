@@ -62,7 +62,7 @@
 					<h1 class="Hidden">글쓰기 목록</h1>
 					<security:authorize ifAnyGranted="ROLE_USER">
 					<div>
-						<a href="qnaReg"><img src="../resource/image/css/btn-write.png" alt="글쓰기" /></a>
+						<a href="qnaReg"><img src="${ctxName}/resource/image/css/btn-write.png" alt="글쓰기" /></a>
 					</div>
 					</security:authorize>
 				</nav>
@@ -71,11 +71,11 @@
 					<h1 class="Hidden">페이지</h1>
 					<p><a href="">이전</a></p>
 					<ul>
-						<li><a href="">[1]</a></li>
-						<li><a href="">[2]</a></li>
-						<li><a href="">[3]</a></li>
-						<li><a href="">[4]</a></li>
-						<li><a href="">[5]</a></li>
+						<li><a href="qna?page=1">[1]</a></li>
+						<li><a href="qna?page=2">[2]</a></li>
+						<li><a href="qna?page=3">[3]</a></li>
+						<li><a href="qna?page=4">[4]</a></li>
+						<li><a href="qna?page=5">[5]</a></li>
 					
 					</ul>
 					<p><a href="">다음</a></p>

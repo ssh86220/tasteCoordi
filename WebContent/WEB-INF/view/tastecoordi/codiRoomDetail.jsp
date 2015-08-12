@@ -2,33 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <c:set var="ctxName" value='${pageContext.request.contextPath}'/> 
-<link href="../resource/css/codiRoom.css" type="text/css" rel="stylesheet" />
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>코디룸Detail</title>
-</head>
-<body> -->
-<%-- 	<header>
-		<h1> <img src="" alt="TASTES COORDI"></h1>	
-	</header>
-	
-	<aside>
-		<h1>메인메뉴</h1>
-		<nav>
-			<h1>메뉴</h1>
-			<ul>
-				<li><a href="">MyPage</a></li>
-				<li><a href="codiRoomLogin">Login</a></li>
-				<li>${id}<c:out value="${id}"/><a href="codiRoomLogout">Logout</a></li>
-				<li><a href="">Coordi</a></li>
-				<li><a href="">Search</a></li>
-				<li><a href="">Q&A</a></li>
-				<li><a href="">Company</a></li>
-			</ul>
-		</nav>	
-	</aside> --%>		
+<link href="../resource/css/codiRoom.css" type="text/css" rel="stylesheet" />	
 		<div class="content-wrapper clearfix">		
 		<section class="clearfix">
 			<h1 class="Hidden">코디하기</h1>
@@ -47,7 +21,7 @@
 					</ul>
 				</section>
 				
-				<section>
+				<section id="coordi-canvas">
 				<h1 class="Hidden">코디 영역</h1>
 					<div>
 					<section>
@@ -85,7 +59,7 @@
 					</section> 			
 					</div>					
 				</section>	
-			
+							
 			</section>
 									
 			<!--아이템 영역 -->			
@@ -103,7 +77,8 @@
 							<li><a href="codiRoomMyClothes">내 옷장</a></li>
 							<li><a href="codiRoomJjims">찜 아이템</a></li>
 						</ul>			
-							
+				
+				<div id="coordi-item">			
 				<section>
 						<h1 class="Hidden">아이템 카테고리</h1>
 						<ul id="item-category" class="clearfix">
@@ -135,52 +110,41 @@
 						<input type ="submit" value="검색">
 						</form>												
 				</section>
+				
+				<!-- 상품 이미지 목록 -->
+				<section>
+					<h1 class="Hidden">아이템 이미지 목록</h1>
+					<section id="product">
+						<h1 class="Hidden">이미지 목록</h1>
+							<c:forEach var="c" items="${list}">
+								<ul id="item-img" class="clearfix">									
+									<li>
+										<a href="codiRoomDetail?c=${c.code}&mid=${id}">
+										<img src="${ctxName}/resource/image/clothes/${c.image}">
+										</a>
+									</li>							
+								</ul>
+							</c:forEach>						
+					</section>
+				
+					<nav id="pager">
+					<h1 class="Hidden">페이저</h1>
+						<ul>
+							<li><a href="">PREV</a></li> 
+							<li><a href="">1</a></li> 
+							<li><a href="">2</a></li> 
+							<li><a href="">[3]</a></li>
+							<li><a href="">4</a></li>
+							<li><a href="">...</a></li>
+							<li><a href="">40</a></li>
+							<li><a href="">NEXT</a></li>
+							</ul>
+					</nav>			
+			</section>	
+				</div>
 			</section>			
 		</section>
 	  
-			<!-- 상품 이미지 목록 -->
-			<section>
-				<h1 class="Hidden">아이템 이미지 목록</h1>
-				<section>
-					<h1 class="Hidden">이미지 목록</h1>
-					<c:forEach var="c" items="${list}">
-					<ul id="item-img" class="clearfix">									
-						<li>
-							<a href="codiRoomDetail?c=${c.code}&mid=${id}">
-							<img src="${ctxName}/resource/image/clothes/${c.image}">
-							</a>
-						</li>
-								
-					</ul>
-					</c:forEach>						
-				</section>
-				
-				<nav>
-					<h1 class="Hidden">페이저</h1>
-					<ul>
-						<li><a href="">PREV</a></li> 
-						<li><a href="">1</a></li> 
-						<li><a href="">2</a></li> 
-						<li><a href="">[3]</a></li>
-						<li><a href="">4</a></li>
-						<li><a href="">...</a></li>
-						<li><a href="">40</a></li>
-						<li><a href="">NEXT</a></li>
-						</ul>
-				</nav>			
-			</section>	
-								
-								
-			</section>
-		</section>		
-
-	
-	<!-- <footer>
-		<section>
-			<h1>저작권 정보</h1>
-			<p>FreeStyle Copyright ⓒ  2015 All Right Reserved.</p>
-		</section>	
-	</footer>
- -->
-<!-- </body>
-</html> -->
+	  								
+	</section>
+</section>		

@@ -32,6 +32,7 @@ public class CoordiDetailController extends HttpServlet {
 	private CommentsDao commentsDao;
 	private ClothesDao clothesDao;
 	private ClothesCoordiDao clothesCoordiDao;
+
 	
 
 	
@@ -66,8 +67,8 @@ public class CoordiDetailController extends HttpServlet {
 		model.addAttribute("codi", coordinationDao.getCodi(c));
 		//코디 하나에 대한 정보
 		
-		/*String code = request.getParameter("c");	//코디 룸페이지에서 c 넘겨줘야.(notice.jsp 100번째 줄 참고)
-		Coordination codi = coordinationDao.getCodi(code);
+		//String code = request.getParameter("c");	//코디 룸페이지에서 c 넘겨줘야.(notice.jsp 100번째 줄 참고)
+		/*Coordination codi = coordinationDao.getCodi(c);
 		model.addAttribute("codi", codi);*/
 	
 		//코디 리스트

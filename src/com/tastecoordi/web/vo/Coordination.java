@@ -18,6 +18,8 @@ public class Coordination {
 	private int CmtCnt;
 	private int LikeCnt;
 	private String Name;
+	private String image;
+	
 	
 	
 
@@ -164,4 +166,11 @@ public class Coordination {
 	public void setClothesCoordisCode(String clothesCoordisCode) {
 		this.clothesCoordisCode = clothesCoordisCode;
 	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	
 }

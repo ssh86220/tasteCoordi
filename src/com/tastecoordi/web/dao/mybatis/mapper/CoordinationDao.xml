@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="getCoordinations" resultType="com.tastecoordi.web.vo.Coordination">
 	
-		select * from CodiView
+		select * from codiViews
 	</select>
 	
 	<select id="getCodiSearch" resultType="com.tastecoordi.web.vo.Coordination">
@@ -25,6 +25,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="openCodi" parameterType="String">
 		UPDATE Coordinations SET [Open] = ABS([Open]-1) WHERE CODE LIKE #{code}
 	</update>
+
+
 	
 	<select id="getCodis" parameterType="String" resultType="com.tastecoordi.web.vo.Coordination">
 		SELECT * FROM CodiView WHERE MID LIKE #{mid}

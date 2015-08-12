@@ -63,9 +63,6 @@
 								</tr>
 							</table>
 							
-							<%-- <p style="background: url('${ctxName}/resource/image/css/nt.JPG') no-repeat 121px;">팔로워  &emsp; <a href="myFollower">${follower}</a></p>
-							<p style="background: url('${ctxName}/resource/image/css/nt.JPG') no-repeat 121px;">팔로잉  &emsp;  <a href="myFollowing">${following}</a></p>
-							<p style="background: url('${ctxName}/resource/image/css/nt.JPG') no-repeat 121px;">&nbsp;&nbsp;&nbsp;댓글  &emsp;&nbsp;&nbsp;${commentCnt}</p> --%>
 						</article>
 		
 					</section>

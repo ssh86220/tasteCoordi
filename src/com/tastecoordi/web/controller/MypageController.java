@@ -232,6 +232,17 @@ public class MypageController {
 	public String myClothesReg(Model model){
 		
 		Member m = memberDao.getMember(id);
+		
+		userImg = memberDao.getMember(id).getImage();
+		follower = followDao.getFollowerCnt(id).getFollowerCnt();
+		following = followDao.getFollowingCnt(id).getFollowerCnt();
+		commentCnt = commentsDao.getCommemtCnt(id).getCommentCnt();
+		
+		model.addAttribute("userImg", userImg);
+		model.addAttribute("follower", follower);
+		model.addAttribute("following", following);
+		model.addAttribute("commentCnt", commentCnt);	
+		
 		model.addAttribute("m", m);
 		
 		return "tastecoordi.mypage.myClothesReg";
@@ -241,7 +252,7 @@ public class MypageController {
 	//@RequestMapping(value="mypageClothesUpload", method=RequestMethod.POST)
 	@RequestMapping(value="myClothesReg", method=RequestMethod.POST)
 	public String myClothesReg(HttpServletRequest request, MultipartFile file, Clothes clothes) throws IOException{
-
+		
  		ServletContext application = request.getServletContext();
  		String url = "/resource/image/clothes";
  		String path = application.getRealPath(url);

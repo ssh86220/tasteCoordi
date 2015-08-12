@@ -44,11 +44,15 @@
 								<input type="checkbox" id="all-check">check all<br>
 							</div>
 							<div>
+								<security:authorize ifAnyGranted="ROLE_ENTER">
+									<a href="myClothesReg">아이템 등록</a>
+								</security:authorize>
+								&emsp;
 								<input type="submit" value="삭제">		
 							</div>
 						</div>
 						
-						<div id="items">
+						<div id="items">	
 												
 							<ul>							
 								<c:forEach var="clothes" items="${list}" varStatus="status">
@@ -65,41 +69,7 @@
 							</ul>
 							
 						</div>
-					
-					
-					
-					
-					
-					
-					
-					
-						<%-- <security:authorize ifAnyGranted="ROLE_ENTER">
-							<a href="myClothesReg">아이템 등록</a>
-						</security:authorize>
-						
-						<input type="submit" value="삭제">
-						
-						<table>
-							<thead>
-								<tr>
-									<th><input type="checkbox" id="all-check">check all<br></th>
-									<th>코드</th>
-									<th>작성자</th>
-									<th>이미지명</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="clothes" items="${list}">	
-								<tr>
-									<td><input type="checkbox" name="check" value="${clothes.code}"/></td>
-									<td>${clothes.code}</td>
-									<td>${clothes.name}</td>
-									<td><img src="${ctxName}/resource/image/clothes/${clothes.image}">${clothes.image}</td>														
-								</tr>
-			
-							</c:forEach>
-							</tbody>
-						</table> --%>
+				
 					</form>		
 					
 				</section>

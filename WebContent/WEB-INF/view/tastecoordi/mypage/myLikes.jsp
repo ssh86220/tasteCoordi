@@ -29,35 +29,41 @@
 
 		<main id="item-list">	
 			<section>
-				<h1>내 코디</h1>
+				<h1 class="hidden">좋아요</h1>
 				
-				<section id="coordies-list">
+				<section id="clothes-list">
 								
 					<h1 class="hidden">상품목록</h1>
 					
 					<form name="itemForm" method="post" action="myLikesDel">
-						<input type="submit" value="삭제">
+					
+						<div id = "item-btn">
+							<div id="btn-left">
+								<input type="checkbox" id="all-check">check all<br>
+							</div>
+							<div>
+								<input type="submit" value="삭제">		
+							</div>
+						</div>
 						
-						<table>
-							<thead>
-								<tr>
-									<th><input type="checkbox" id="all-check">check all<br></th>
-									<th>코드</th>
-									<th>이미지명</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="like" items="${list}">	
-								<tr>
-									<td><input type="checkbox" name="check" value="${like.codiCode}"/></td>
-									<td>${like.codiCode}</td>
-									<td><img src="${ctxName}/resource/image/codi/${like.img}">${like.img}</td>
-															
-								</tr>
-			
-							</c:forEach>
-							</tbody>
-						</table>
+						<div id="items">	
+												
+							<ul>							
+								<c:forEach var="like" items="${list}" varStatus="status">
+									<li>
+										<div>
+											<input type="checkbox" name="check" value="${like.codiCode}"/>
+										</div>
+										<div>	
+											<img class="items" src="${ctxName}/resource/image/clothes/${like.img}">
+										</div>
+									</li>
+									<c:if test="${status.count%5 eq 0}"><br></c:if>			
+								</c:forEach>
+							</ul>
+							
+						</div>
+				
 					</form>		
 					
 				</section>

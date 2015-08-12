@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
     
 <!-- jstl(core lib: 대부분 제어와 관련) 접두사와 처리기 선언-->
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
+<c:set var="ctxName" value="${pageContext.request.contextPath}"/>    
 
 <html>
 <head>
@@ -29,35 +30,42 @@
 <body>
 		<main id="item-list">	
 			<section>
-				<h1>내 코디</h1>
+				<h1 class="hidden">찜한 아이템</h1>
 				
-				<section id="coordies-list">
+				<section id="clothes-list">
 								
 					<h1 class="hidden">상품목록</h1>
 					
 					<form name="itemForm" method="post" action="myJjimsDel">
-						<input type="submit" value="삭제">
+					
+						<div id = "item-btn">
+							<div id="btn-left">
+								<input type="checkbox" id="all-check">check all<br>
+							</div>
+							<div>
+								<input type="submit" value="삭제">		
+							</div>
+						</div>
 						
-						<table>
-							<thead>
-								<tr>
-									<th><input type="checkbox" id="all-check">check all<br></th>
-									<th>코드</th>
-									<th>이미지명</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="jjim" items="${list}">	
-								<tr>
-									<td><input type="checkbox" name="check" value="${jjim.clothesCode}"/></td>
-									<td>${jjim.clothesCode}</td>
-									<td><img src="${ctxName}/resource/image/clothes/${jjim.image}">${jjim.image}</td>
-															
-								</tr>
-			
-							</c:forEach>
-							</tbody>
-						</table>
+						<div id="items">	
+												
+							<ul>							
+								<c:forEach var="jjim" items="${list}" varStatus="status">
+									<li>
+										<div>
+											<input type="checkbox" name="check" value="${jjim.clothesCode}"/>
+										</div>
+										<div>	
+										${jjim.clothesCode}
+											<img class="items" src="${ctxName}/resource/image/clothes/${jjim.image}">
+										</div>
+									</li>
+									<c:if test="${status.count%5 eq 0}"><br></c:if>			
+								</c:forEach>
+							</ul>
+							
+						</div>
+					
 					</form>		
 					
 				</section>

@@ -120,6 +120,15 @@ public class MyBatisQnaDao implements QnaDao {
 		return result;
 	}
 
+	@Override
+	public List<QnA> searchQnA(String field,String enter) {
+		HashMap<String, Object> params=new HashMap<String, Object>();
+		params.put("field", field);
+		params.put("enter", enter);
+		List<QnA> list = session.selectList("searchQnA", params);
+		return list;
+	}
+
 	
 	
 }

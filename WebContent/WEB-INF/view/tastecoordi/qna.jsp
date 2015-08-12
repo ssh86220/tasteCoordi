@@ -44,14 +44,15 @@
 				
 				<section>
 					<h1 class="Hidden">QnA 검색폼</h1>
-					<form>
+					<form method="post" action="searchQnA">
 						<fieldset>
 							<legend class="Hidden">QnA 검색정보</legend>
-							<label class="Hidden">검색필드</label> <select>
-								<option>제목</option>
-								<option>작성자</option>
-							</select> <label>검색어</label> <input type="text" /> <input type="submit"
-								value="검색" />
+							<label class="Hidden">검색필드</label> 
+							<select name="field">
+								<option value="title">제목</option>
+								<option value="mid">작성자</option>
+							</select> <label>검색어</label> <input name="enter" type="text" /> 
+							<input type="submit" value="검색" />
 						</fieldset>
 					</form>
 				</section>

@@ -13,7 +13,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				  LIKE '%${query}%')C WHERE C.NUM BETWEEN 1 + (${page} - 1) * 10 
 				 AND 10 * ${page}
 	</select>
-	
+	<select id="searchQnA" 
+		resultType="com.tastecoordi.web.vo.QnA">
+		
+		Select * from QnAs where ${field} like'%${enter}%'
+
+	</select>
 
 
 	<select id="getQnA" parameterType="String"

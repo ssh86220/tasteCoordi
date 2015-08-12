@@ -15,4 +15,6 @@ public interface QnaDao {
 	public int removeQnA(String number);
 	
 	public int revisionQnA(String number,String title,String email,String content);
+	
+	public List<QnA> searchQnA(String field,String enter);
 }

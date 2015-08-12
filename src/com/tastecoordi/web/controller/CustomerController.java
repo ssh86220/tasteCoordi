@@ -160,5 +160,15 @@ public class CustomerController {
 		return "tastecoordi.qnaEdit";
 		
 	}
+	@RequestMapping(value="searchQnA",method=RequestMethod.POST)
+	public String searchQnA(Model model,String field,String enter){
+		
+		List<QnA> list=qnaDao.searchQnA(field, enter);
+		model.addAttribute("list",list);
+	
+		
+		return "tastecoordi.qna";
+		
+	}
 
 }

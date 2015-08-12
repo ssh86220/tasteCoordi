@@ -41,13 +41,33 @@
 	}
 	
  	window.addEventListener("load", function(){
-		var img = document.getElementById("codi-item");
-		
+ 		/* var img = document.getElementById("codi-item");
 		if(img.alt == 0){
-			img.style.borderStyle="solid";
-			img.style.borderColor="red";
-			img.style.borderWidth="1px";			
-		}
+		img.style.borderStyle="solid";
+		img.style.borderColor="red";
+		img.style.borderWidth="1px";			
+		} */
+		
+		
+		var items = document.getElementById("items");
+		var img = items.getElementsByTagName("img");
+		
+		/* if(img[1].alt == 0){
+			img[1].style.borderStyle="solid";
+			img[1].style.borderColor="red";
+			img[1].style.borderWidth="1px";			
+		}  */
+		
+		//alert(img[0].alt);
+
+		for(var i=0; i<img.length; i++)
+			if(img[i].alt == 0){
+				img[i].style.borderStyle="solid";
+				img[i].style.borderColor="red";
+				img[i].style.borderWidth="1px";			
+			} 
+		 
+		
 		
 	});
 	
@@ -123,7 +143,7 @@
 									</div>
 									<div>									
 										${codi.open}
-										<img id="codi-item"  class="items" alt="${codi.open}" src="${ctxName}/resource/image/codi/${codi.img}" >
+										<img class="items" alt="${codi.open}" src="${ctxName}/resource/image/codi/${codi.img}">
 									</div>
 								</li>
 								<c:if test="${status.count%4 eq 0}"><br></c:if>			

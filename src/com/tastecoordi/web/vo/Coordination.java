@@ -40,8 +40,16 @@ public class Coordination {
 	}
 	
 
+	//¿µÁ¶
+	private String codiCode;
 	
-
+	public String getCodiCode() {
+		return codiCode;
+	}
+	public void setCodiCode(String codiCode) {
+		this.codiCode = codiCode;
+	}
+	
 /*	public List<Like> getLikes() {
 
 		LikeDao likeDao = new MyBatisLikeDao();
@@ -56,6 +64,7 @@ public class Coordination {
 		return commentsDao.getCommentsOfCoordination(this.code);
 	}*/
 
+	
 	public int getHit() {
 		return hit;
 	}

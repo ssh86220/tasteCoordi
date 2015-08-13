@@ -100,11 +100,11 @@
 										<input type="checkbox" name="check" value="${codi.code}"/>
 									</div>
 									<div>									
-										${codi.open}
+										<%-- ${codi.open} --%>
 										<img class="items" alt="${codi.open}" src="${ctxName}/resource/image/codi/${codi.img}">
 									</div>
 								</li>
-								<c:if test="${status.count%4 eq 0}"><br></c:if>			
+								<%-- <c:if test="${status.count%4 eq 0}"><br></c:if>		 --%>	
 							</c:forEach>
 						</ul>
 						

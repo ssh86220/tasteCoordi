@@ -118,38 +118,58 @@
 			</div>
 				
 			
-			<div id="mask"></div>
+			<div id="mask">test</div>
 			
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
 <script> 
      function ViewLayer(){
             
             document.getElementById("myinfo-pop").style.visibility="visible";
+            document.body.style.overflow="hidden";
+            
+            // 레이어 팝업 중앙에...
+            function position_cm(obj){
+           	    var windowWidth = $(window).width(); //현재 윈도우의 너비
+           	    var windowHeight = $(window).height(); //현재 윈도우의 높이
+           	    var $obj = $(obj); //myinfo-pop
+           	    var objWidth = $obj.width();
+           	 	var objHeight = $obj.height();
+           	    $obj.css({
+           	        'left':(windowWidth/2)-(objWidth/2),
+           	        'top':(windowHeight/2)-(objHeight/2)
+           	    });
+           	}
+            //jQuery
+           	$(document).ready(function(){
+           	    position_cm($('#myinfo-pop'));
+           	});
+           	$(window).resize(function(){
+           	    position_cm($('#myinfo-pop'));
+           	});
+
     	}
      function closeWin(){
     	 document.getElementById("myinfo-pop").style.visibility="hidden";
+    	 document.body.style.overflow="scroll";
      }
+
      
      
     /* 검은막을 구하는 jQuery */
-    /* function wrapWindowByMask(){
-         //화면의 높이와 너비를 구한다.
-         var maskHeight = $(document).height();  
-         var maskWidth = $(window).width();  
+	function wrapWindowByMask(){        //화면의 높이와 너비를 구한다.
+		var maskHeight = $(document).height();  
+		var maskWidth = $(window).width();  
+        //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
+		$('#mask').css({'width':maskWidth,'height':maskHeight});  
+        //애니메이션 효과        $('#mask').fadeIn(1000);      
+		$('#mask').fadeTo("slow",0.8);    
+	}
 
-         //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
-         $('#mask').css({'width':maskWidth,'height':maskHeight});  
-
-         //애니메이션 효과
-         $('#mask').fadeIn(1000);      
-         $('#mask').fadeTo("slow",0.8);    
- 	} */
-
-			</script> 
+</script> 
 			
 <style>
 	#myinfo-pop
-	{position:absolute;left:395px;top:100px;z-index:200; visibility:hidden;
+	{position:absolute;left:0px;top:0px;z-index:200; visibility:hidden;
 	width: 430px; height:230px;	border:1px #666666 solid; background:white;
 	padding-top: 20px; text-align: center;}
 	
@@ -167,14 +187,18 @@
 	{margin-top: 20px;}		
 	
 	/* 검은막 */
-	/* #mask {  
-	  position:fix;  
-	  left:0;
-	  top:0;
-	  z-index:9000;  
-	  background-color:#000;  
-	  display:none;  
-	} */
+	#mask{  
+	position:absolute;  
+	left:0;
+	top:0;
+	z-index:9000;  
+	background-color:#000;  
+	display:none; 
+	width: 500px;
+	height: 500px; 
+	border: solid 5px;
+	}
+
 </style>
 			
 			 

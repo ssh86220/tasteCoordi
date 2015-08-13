@@ -104,6 +104,12 @@ public class MybatisCommentsDao implements CommentsDao{
 		return dao.getCommemtCnt(mid);
 	}
 
+	@Override
+	public List<Comments> getComments(String codiCode) {
+		CommentsDao dao = session.getMapper(CommentsDao.class);
+		return dao.getComments(codiCode);
+	}
+
 
 	
 

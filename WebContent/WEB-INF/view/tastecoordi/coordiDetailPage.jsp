@@ -14,9 +14,9 @@
 			
 				<section id = "coordi-img" >
 					<h1 class = "Hidden">코디 이미지</h1>
-					<!-- <img src="" alt="코디 이미지"> -->
-					<img src="${ctxName}/resource/image/codi/${codi.img}">		
-					<img src=../resource/image/codi/codi1.JPG />		
+				
+					<img src="${ctxName}/resource/image/codi/${codi.img}">
+					
 						
 				
 				</section>
@@ -49,7 +49,10 @@
 						<h1 class = "Hidden">프로필 사진, 좋아요</h1>
 						<ul>
 							<!-- 프로필 사진 회원정보에 맟춰 불러오기 -->
-							<li><a href=""><img src="../resource/image/profile/pro.JPG" width=200px alt="프로필 사진"></a></li>
+							<!-- <li><a href=""><img src="../resource/image/profile/pro.JPG" width=200px alt="프로필 사진"></a></li> -->
+							<li><a href=""><img src="${ctxName}/resource/image/codi/${codi.img}" width=200px alt="프로필 사진"></a></li>
+							
+							
 							
 							<!-- 팔로우 카운트 추가 -->
 							<li id="sns"><a href=""><img src="../resource/image/css/follow.jpg" alt="팔로우 이미지"></a></li>
@@ -108,7 +111,8 @@
 										<tr>
 											<td>${n.code}</td>
 											<td>${n.mid}</td>
-											<td><a href="coordiDetailPage?c=${n.codiCode}">${n.codiCode}</td>
+											<td><a href="coordiDetailPage?c=${n.codiCode}">${n.codiCode}</a></td>
+											
 											<td>${n.regDate}</td>
 											<td>${n.content}</td>
 										</tr>

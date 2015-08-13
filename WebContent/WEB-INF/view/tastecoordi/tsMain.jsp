@@ -26,13 +26,13 @@
 
 
 
-        <a href="coordiDetailPage?c=${n.codiCode}">
+        
 
 			<ul id="coordi-box">
 				<ul id="coordi">
 					<!-- <a href="../tastecoordi/coordiDetailPage"/> -->
 					<%-- <li><img src="../resource/image/css/codi1.JPG" alt="코디이미지">${n.img}</li> --%>
-					<li><img src="${ctxName}/resource/image/codi/${n.img}"></li>
+					<li><a href="coordiDetailPage?c=${n.codiCode}"><img src="${ctxName}/resource/image/codi/${n.img}"></a></li>
 				</ul>
 				<ul id="profile">
 					<%-- <li><img src="${ctxName}/resource/image/codi/${n.img}"></li> --%>

@@ -9,11 +9,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="getCoordinations" resultType="com.tastecoordi.web.vo.Coordination">
 	
-		select DISTINCT IMG, CODICODE, HIT, LIKECNT, CMTCNT, TITLE, MID from codiSearchViews
+		select DISTINCT IMG, CODICODE, HIT, LIKECNT, CMTCNT, TITLE, MID, IMAGE from CodiView1
 	</select>
 	
 	<select id="getCodiSearch" resultType="com.tastecoordi.web.vo.Coordination">
-		 select distinct IMG, CODICODE, HIT, LIKECNT, CMTCNT, TITLE, MID from codiSearchViews where style=#{style} or color=#{color} or categories=#{categories}
+		 select distinct IMG, CODICODE, HIT, LIKECNT, CMTCNT, TITLE, MID, IMAGE from CodiView1 where style=#{style} or color=#{color} or categories=#{categories}
 	</select>
 
 	<!-- <insert id="addCodi" parameterType="com.tastecoordi.web.vo.Coordination"> 

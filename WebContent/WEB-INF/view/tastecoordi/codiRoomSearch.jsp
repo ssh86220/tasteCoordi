@@ -60,12 +60,18 @@
 				<section>
 						<h1 class="Hidden">아이템 카테고리</h1>
 						<ul id="item-category" class="clearfix">
-							<li><a href="codiRoomSearch?c=<c:out value="top"/>">상의</a></li>
-							<li><a href="codiRoomSearch?c=<c:out value="bot"/>">하의</a></li>
-							<li><a href="codiRoomSearch?c=<c:out value="one"/>">원피스</a></li>
-							<li><a href="codiRoomSearch?c=<c:out value="out"/>">아우터</a></li>
-							<li><a href="codiRoomSearch?c=<c:out value="sho"/>">신발</a></li>
-							<li><a href="codiRoomSearch?c=<c:out value="acc"/>">패션잡화</a></li>					
+							<li><a href="codiRoomSearch?c=<c:out value="top"/>">
+								<img id="category-img" src="${ctxName}/resource/image/css/codiRoom-top.png"/>TOP</a></li>
+							<li><a href="codiRoomSearch?c=<c:out value="bot"/>">
+							<img id="category-img" src="${ctxName}/resource/image/css/codiRoom-bot.png"/>BOTTOM</a></li>
+							<li><a href="codiRoomSearch?c=<c:out value="one"/>">
+							<img id="category-img" src="${ctxName}/resource/image/css/codiRoom-onepiece.png"/>ONEPIECE</a></li>
+							<li><a href="codiRoomSearch?c=<c:out value="out"/>">
+							<img id="category-img" src="${ctxName}/resource/image/css/codiRoom-outer.png"/>OUTER</a></li>
+							<li><a href="codiRoomSearch?c=<c:out value="sho"/>">
+							<img id="category-img" src="${ctxName}/resource/image/css/codiRoom-shoes.png"/>SHOES</a></li>
+							<li><a href="codiRoomSearch?c=<c:out value="acc"/>">
+							<img id="category-img" src="${ctxName}/resource/image/css/codiRoom-acc.png"/>ACCSSORY</a></li>					
 						</ul>
 					
 						<h1 class="Hidden">아이템 색상 선택</h1>

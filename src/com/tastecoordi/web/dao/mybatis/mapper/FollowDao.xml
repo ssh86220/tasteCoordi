@@ -28,14 +28,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="getFollowerImg" parameterType="String" resultType="com.tastecoordi.web.vo.Follow">
-		SELECT  Follows.Mid, Follows.TagetMid, Members.image followerImg
+		SELECT  Follows.Mid, Follows.TagetMid, Members.image followerImg, Members.Name mName
 		FROM     Follows INNER JOIN
                Members ON Follows.Mid = Members.ID
 		WHERE TagetMid = #{tagetMid}
 	</select>
 	
 	<select id="getFollowingImg" parameterType="String" resultType="com.tastecoordi.web.vo.Follow">
-		SELECT  Follows.Mid, Follows.TagetMid, Members.image followingImg
+		SELECT  Follows.Mid, Follows.TagetMid, Members.image followingImg, Members.Name tagetName
 		FROM     Follows INNER JOIN
                Members ON Follows.TagetMid = Members.ID
 		WHERE Mid = #{Mid}

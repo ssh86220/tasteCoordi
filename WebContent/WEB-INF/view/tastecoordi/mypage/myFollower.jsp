@@ -35,7 +35,7 @@
 												</c:otherwise>
 											</c:choose>
 										</div>
-										<p>${follower.mid}</p>
+										<p>${follower.mName}</p>
 									</li>
 									<c:if test="${status.count%5 eq 0}"><br></c:if>			
 								</c:forEach>

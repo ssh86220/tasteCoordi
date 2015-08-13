@@ -7,13 +7,28 @@ public class Follow {
 	private String  Mid;
 	private String TagetMid;
 	
+	//º“¿±
 	private int followerCnt;
-
 
 	private String followerImg;
 	private String followingImg;
 	
+	private String mName;
+	private String tagetName;
+	
 
+	public String getmName() {
+		return mName;
+	}
+	public void setmName(String mName) {
+		this.mName = mName;
+	}
+	public String getTagetName() {
+		return tagetName;
+	}
+	public void setTagetName(String tagetName) {
+		this.tagetName = tagetName;
+	}
 	public String getFollowerImg() {
 		return followerImg;
 	}
@@ -28,8 +43,6 @@ public class Follow {
 		this.followingImg = followingImg;
 	}
 
-	
-	
 	
 	public int getFollowerCnt() {
 		return followerCnt;

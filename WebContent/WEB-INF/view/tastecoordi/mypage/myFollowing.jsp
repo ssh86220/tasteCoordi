@@ -72,7 +72,7 @@
 												</c:otherwise>
 											</c:choose>
 										</div>
-										<p>${following.tagetMid}</p>
+										<p>${following.tagetName}</p>
 									</li>
 									<c:if test="${status.count%5 eq 0}"><br></c:if>			
 								</c:forEach>

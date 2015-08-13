@@ -5,9 +5,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.tastecoordi.web.dao.CommentsDao">
 
-<select id="getComments" resultType="com.tastecoordi.web.vo.Comments">
+<!-- <select id="getComments" resultType="com.tastecoordi.web.vo.Comments">
 SELECT * FROM Comments
-</select>
+
+</select> -->
 
 <insert id="addComments" parameterType="com.tastecoordi.web.vo.Comments">
 INSERT INTO COMMENTS(CODE, MID, CODICODE, REGDATE, CONTENT) 
@@ -24,4 +25,13 @@ DELETE FROM COMMENTS WHERE MID = #{code}
 SELECT COUNT(Code) commentCnt FROM COMMENTS 
 WHERE SUBSTRING(CodiCode,1,3) = #{Mid}
 </select>
+
+
+
+<select id="getComments" parameterType = "String" resultType="com.tastecoordi.web.vo.Comments">
+SELECT * FROM Comments where CodiCode = #{codiCode}
+
+</select>
+
+
 </mapper>

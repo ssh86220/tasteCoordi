@@ -23,7 +23,7 @@
 	<section id="coordi-list" class="clearfix:after">
 		<h1 class="Hidden">코디목록</h1>
 		<c:forEach var="n" items="${list}">
-        <a href="coordiDetailPage?c=${n.code}">
+        <a href="coordiDetailPage?c=${n.codiCode}">
 			<ul id="coordi-box">
 				<ul id="coordi">
 					<!-- <a href="../tastecoordi/coordiDetailPage"/> -->

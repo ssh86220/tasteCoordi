@@ -59,23 +59,24 @@ public class CoordiDetailController extends HttpServlet {
 	@RequestMapping("coordiDetailPage")
 	public String coordinationDetail(Model model, String c){
 		
-		List<Comments> list = commentsDao.getComments();
+		List<Comments> list = commentsDao.getComments(c);
 		model.addAttribute("list", list);
 		
 		
 		
-		model.addAttribute("codi", coordinationDao.getCodi(c));
 		//코디 하나에 대한 정보
+		model.addAttribute("codi", coordinationDao.getCodi(c));
 		
 		//String code = request.getParameter("c");	//코디 룸페이지에서 c 넘겨줘야.(notice.jsp 100번째 줄 참고)
 		/*Coordination codi = coordinationDao.getCodi(c);
 		model.addAttribute("codi", codi);*/
 	
+		
 		//코디 리스트
-				
 				List<Coordination> codilist = coordinationDao.getCodis(c);
 				model.addAttribute("codilist", codilist);
 		
+				
 		//코디에 사용된 아이템 리스트
 			
 			/*List<Clothes> clotheslist = clothesDao.getClothes();

@@ -40,11 +40,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 
-
-
-
-
-
 	<insert id="addCodi" parameterType="com.tastecoordi.web.vo.Coordination">
 		<selectKey keyProperty="temp" order="BEFORE" resultType="String">
 			SELECT ISNULL(MAX(SUBSTRING(code,4,3)),0)+1 FROM Coordinations WHERE
@@ -59,7 +54,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="getCodi" parameterType="String"
 		resultType="com.tastecoordi.web.vo.Coordination">
-		SELECT * FROM Coordinations Where Code =#{code}
+		SELECT * FROM Coordinations Where Code =#{code} 
 	</select>
 	
 </mapper>

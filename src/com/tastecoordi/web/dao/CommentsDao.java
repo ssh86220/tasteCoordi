@@ -20,4 +20,6 @@ public interface CommentsDao {
 	//º“¿±
 	public Comments getCommemtCnt(String mid);
 	
+	//øµ¡∂
+	public List<Comments> getComments(String codiCode);
 }

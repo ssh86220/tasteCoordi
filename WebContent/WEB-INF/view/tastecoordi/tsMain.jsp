@@ -23,15 +23,16 @@
 	<section id="coordi-list" class="clearfix:after">
 		<h1 class="Hidden">코디목록</h1>
 		<c:forEach var="n" items="${list}">
-        <a href="coordiDetailPage?c=${n.code}">
+
 			<ul id="coordi-box">
 				<ul id="coordi">
 					<!-- <a href="../tastecoordi/coordiDetailPage"/> -->
 					<%-- <li><img src="../resource/image/css/codi1.JPG" alt="코디이미지">${n.img}</li> --%>
-					<li><img src="${ctxName}/resource/image/codi/${n.img}"></li>
+					<li><a href="coordiDetailPage?c=${n.code}"><img src="${ctxName}/resource/image/codi/${n.img}"></a></li>
 				</ul>
 				<ul id="profile">
 					<%-- <li><img src="${ctxName}/resource/image/codi/${n.img}"></li> --%>
+					<li>${n.image}</li>
 					<li>${n.mid}</li>
 				</ul>
 				<ul id="else">
@@ -46,7 +47,7 @@
 			<%-- 	<c:if test="${status.count%3 eq 0}"> --%>
 
 			<%-- </c:if> --%>
-			</a>
+		
 		</c:forEach>
 
 	</section>

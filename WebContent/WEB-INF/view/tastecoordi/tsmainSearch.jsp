@@ -155,11 +155,5 @@
 	</section> --%>
 
 
-	<!-- 
-	<section id="more">
-		<input type="submit" value="more" />
-	</section>
-	<div class="fix"></div>
-	<div class="fix"></div>
-</div> -->
+	
 </div>

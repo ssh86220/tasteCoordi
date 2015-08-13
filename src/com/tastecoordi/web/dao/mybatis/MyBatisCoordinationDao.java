@@ -151,7 +151,7 @@ public  List<Coordination> getCodiSearch(String style, String categories, String
 	
 
 	return list;
-	/*List<Coordination> list = session.selectList("getCodiSearch", style);
+	/*List<Coordination> list = session.selectList("getCodiSearch", code);
 	return list;*/
 }
 

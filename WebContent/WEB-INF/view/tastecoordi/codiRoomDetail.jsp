@@ -34,7 +34,7 @@
 								<form method="POST">
 								<tr>
 									<td>
-										<input type="submit" value="찜하기"/> 
+										<input class="button jjim-button" type="submit" value="찜하기"/> 
 										count : ${count}
 										찜한 사람들 :
 										<c:forEach var="j" items="${jjimPeopleList}">
@@ -45,14 +45,14 @@
 								</form>
 								<form method="POST" action="codiRoomJjimsDelete?c=${c.code}&mid=${id}">
 								<tr>
-									<td><input type="submit" value="찜취소"/></td>
+									<td><input class="button jjim-delete-button" type="submit" value="찜취소"/></td>
 								</tr>
 								</form>
 								<tr>
-									<td>사이트 링크 :${c.link}</td>
+									<td><img id="site" src="${ctxName}/resource/image/css/codiRoom-shop.png">${c.link}</td>
 								</tr>
 								<tr>
-									<td>가격:${c.price}</td>
+									<td><img id="price" src="${ctxName}/resource/image/css/codiRoom-price.png">${c.price}원</td>
 								</tr>		
 							</tbody>				
 						</table>
@@ -82,12 +82,18 @@
 				<section>
 						<h1 class="Hidden">아이템 카테고리</h1>
 						<ul id="item-category" class="clearfix">
-							<li><a href="codiRoomSearch?c=<c:out value="top"/>">상의</a></li>
-							<li><a href="codiRoomSearch?c=<c:out value="bot"/>">하의</a></li>
-							<li><a href="codiRoomSearch?c=<c:out value="one"/>">원피스</a></li>
-							<li><a href="codiRoomSearch?c=<c:out value="out"/>">아우터</a></li>
-							<li><a href="codiRoomSearch?c=<c:out value="sho"/>">신발</a></li>
-							<li><a href="codiRoomSearch?c=<c:out value="acc"/>">패션잡화</a></li>					
+							<li><a href="codiRoomSearch?c=<c:out value="top"/>">
+								<img id="category-img" src="${ctxName}/resource/image/css/codiRoom-top.png"/>TOP</a></li>
+							<li><a href="codiRoomSearch?c=<c:out value="bot"/>">
+							<img id="category-img" src="${ctxName}/resource/image/css/codiRoom-bot.png"/>BOTTOM</a></li>
+							<li><a href="codiRoomSearch?c=<c:out value="one"/>">
+							<img id="category-img" src="${ctxName}/resource/image/css/codiRoom-onepiece.png"/>ONEPIECE</a></li>
+							<li><a href="codiRoomSearch?c=<c:out value="out"/>">
+							<img id="category-img" src="${ctxName}/resource/image/css/codiRoom-outer.png"/>OUTER</a></li>
+							<li><a href="codiRoomSearch?c=<c:out value="sho"/>">
+							<img id="category-img" src="${ctxName}/resource/image/css/codiRoom-shoes.png"/>SHOES</a></li>
+							<li><a href="codiRoomSearch?c=<c:out value="acc"/>">
+							<img id="category-img" src="${ctxName}/resource/image/css/codiRoom-acc.png"/>ACCSSORY</a></li>					
 						</ul>
 					
 						<h1 class="Hidden">아이템 색상 선택</h1>

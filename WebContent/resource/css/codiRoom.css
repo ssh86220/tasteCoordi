@@ -83,8 +83,12 @@
 #item-category li:first-child{
 		padding : 0px;
 	}
-
-
+#item-category a{	
+	text-decoration: none;
+	font-size : 3px;
+	text-align : center;
+	display : inline-block;
+}
 
 /*------------------------------img*/
 #item-img{
@@ -131,6 +135,23 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+#site{
+	width : 28px;
+	height : 25px;	
+}
+#price{
+	width : 36px;
+	height : 15px;	
+}
+#category-img{
+	width : 45px;
+	height : 40px;
+	display : block;
+	margin-left: auto;
+	margin-right: auto; 
+	padding-left : 4px;
+}
+
 
 /* ----------------------- pager*/
 
@@ -156,10 +177,25 @@
  		overflow: auto; /* 크기맞추는거 inline-block과 쓰임 */ 
 	 } 
 	 
-/* 	 #pager a{
-	 	display : block;
-		margin-left: auto;
-		margin-right: auto;
-	 } */
-  
- 	
+
+ /* ----------------------- button*/	
+ 	 .button{
+		display : inline-block;
+		overflow : hidden;
+		border : 0px;
+		text-indent : -100px;
+	}
+	
+	.button:hover{
+		cursor : pointer;
+	}	 
+	.jjim-button{
+		width : 19px;
+		height : 21px; 
+		background: url("../image/css/codiRoom-Jjim.png") no-repeat center;
+	}
+	.jjim-delete-button{
+		width : 19px;
+		height : 21px; 
+		background: url("../image/css/codiRoom-Jjim.png") no-repeat center;
+	}

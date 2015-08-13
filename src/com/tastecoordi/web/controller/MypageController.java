@@ -33,7 +33,7 @@ import com.tastecoordi.web.vo.Member;
 
 @Controller
 @RequestMapping("/tastecoordi/mypage/*")
-//@RequestMapping("/tasteCoordi/*")
+
 public class MypageController {
 	
 	private MemberDao memberDao;
@@ -383,6 +383,12 @@ public class MypageController {
 	@RequestMapping(value="myInfo", method=RequestMethod.POST)
 	public String myInfo(HttpServletRequest request, MultipartFile file, Member member) throws IOException{
 		
+		
+		//String prevPage = request.getRequestURI().toString();//POST 林家
+		String prevPage = request.getHeader("referer"); //POST 捞傈林家
+		String UrlReplace = prevPage.replace("/", ".");
+		prevPage = UrlReplace.substring(48);
+
 		String image = "";
 		
 		if(file.isEmpty()){
@@ -432,7 +438,8 @@ public class MypageController {
 		
 		memberDao.alterMember(member);
 		
-		return "redirect:myCodi";
+		//return "redirect:myCodi";
+		return "redirect:"+prevPage;
 	}
 	
 	// 迫肺况

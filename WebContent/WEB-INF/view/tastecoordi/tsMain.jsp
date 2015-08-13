@@ -23,16 +23,16 @@
 	<section id="coordi-list" class="clearfix:after">
 		<h1 class="Hidden">코디목록</h1>
 		<c:forEach var="n" items="${list}">
-<<<<<<< HEAD
 
-=======
+
+
         <a href="coordiDetailPage?c=${n.codiCode}">
->>>>>>> branch 'master' of https://github.com/ssh86220/tasteCoordi.git
+
 			<ul id="coordi-box">
 				<ul id="coordi">
 					<!-- <a href="../tastecoordi/coordiDetailPage"/> -->
 					<%-- <li><img src="../resource/image/css/codi1.JPG" alt="코디이미지">${n.img}</li> --%>
-					<li><a href="coordiDetailPage?c=${n.code}"><img src="${ctxName}/resource/image/codi/${n.img}"></a></li>
+					<li><img src="${ctxName}/resource/image/codi/${n.img}"></li>
 				</ul>
 				<ul id="profile">
 					<%-- <li><img src="${ctxName}/resource/image/codi/${n.img}"></li> --%>

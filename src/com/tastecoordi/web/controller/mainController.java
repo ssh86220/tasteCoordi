@@ -1,10 +1,12 @@
 package com.tastecoordi.web.controller;
 
+import java.io.IOException;
 import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,7 +37,7 @@ public class mainController {
 	}
 
 	@RequestMapping("tsMain")
-	public String tsMain(Model model) {
+	public String tsMain(Model model, String c) {
 		/* CoordinationDao coordinationDao = new MyBatisCoordinationDao(); */
 		List<Coordination> list = coordinationDao.getCoordinations();
 
@@ -44,15 +46,18 @@ public class mainController {
 		return "tastecoordi.tsMain";
 	}
 
-	@RequestMapping("tsMainDetail")
-	public String tsMainDetail(String c, Model model) {
+/*	@RequestMapping("tsMainDetail")
+	public String tsMainDetail(String style, Model model) {
 
-		Coordination n = coordinationDao.getCoordination(c);
-
-		model.addAttribute("n", n);
+		List<Coordination> list = coordinationDao.getCoordinations();
+		model.addAttribute("list", list);
+		
+		List<Coordination> searchList = coordinationDao.getCodiSearch(style);	
+		
+	 	model.addAttribute("searchList", searchList);;
 
 		return "tastecoordi.tsMainDetail";
-	}
+	}*/
 
 	@RequestMapping(value = "tsmainSearch", method = RequestMethod.GET)
 	public String tsmainSearch() {
@@ -68,20 +73,21 @@ public class mainController {
 		return "tastecoordi.tsmainSearch";
 	}
 
-	@RequestMapping(value="tsmainSearchColor", method=RequestMethod.POST)
-	public String tsmainSearch(String c, Model model, HttpServletRequest request) {
+	@RequestMapping(value="tsmainSearch", method=RequestMethod.POST)
+	public String tsmainSearch(String style, String color, String categories, Model model, HttpServletRequest request) {
 		
-		List<Coordination> list = coordinationDao.getCoordinations();
-		model.addAttribute("list", list);
+		/*List<Coordination> list = coordinationDao.getCoordinations();
+		model.addAttribute("list", list);*/
 		
-		/*Coordination searchList = coordinationDao.getCodiSearch(s);	 	
-	 	model.addAttribute("searchList", searchList);*/
+		List<Coordination> searchList = coordinationDao.getCodiSearch(style, color, categories);	
 		
-		List<Clothes> searchList = clothesDao.searchCategory(c);	 	
-	 	model.addAttribute("searchList", searchList);
+	 	model.addAttribute("list", searchList);
+
+	/*	List<Clothes> searchcategoryList = clothesDao.searchCategory(category);	 	
+	 	model.addAttribute("searchList", searchcategoryList);*/
 	 	 	
 		
-		return "tastecoordi.tsmainDetail";
+		return "tastecoordi.tsMain";
 	}
 	/*
 	 * @RequestMapping(value="codiRoomSearch",method=RequestMethod.GET) public

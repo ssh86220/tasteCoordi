@@ -34,6 +34,6 @@ public interface CoordinationDao {
 	public Coordination getCodi(String code);
 	
 	//¼±Èñ
-	public Coordination getCodiSearch(String code);
+	public List <Coordination> getCodiSearch(String style, String categories, String color);
 	
 }

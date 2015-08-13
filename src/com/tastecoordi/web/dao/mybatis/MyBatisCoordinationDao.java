@@ -141,12 +141,18 @@ public Coordination getCodi(String code) {
 }
 
 @Override
-public Coordination getCodiSearch(String code) {
-	Coordination m = session.selectOne(
-			"com.tastecoordi.web.dao.CoordinationDao.getCoordination", code);
+public  List<Coordination> getCodiSearch(String style, String categories, String color) {
+	HashMap<String, Object> params = new HashMap<String, Object>();
+	params.put("style", style);
+	params.put("color", color);
+	params.put("categories", categories);
+	
+	List<Coordination> list= session.selectList("getCodiSearch",params);
+	
 
-
-	return m;
+	return list;
+	/*List<Coordination> list = session.selectList("getCodiSearch", style);
+	return list;*/
 }
 
 }

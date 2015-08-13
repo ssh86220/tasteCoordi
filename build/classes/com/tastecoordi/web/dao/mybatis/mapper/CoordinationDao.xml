@@ -13,7 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="getCodiSearch" resultType="com.tastecoordi.web.vo.Coordination">
-		select * from CodiSearchView
+		select * from CodiSearchView where style=#{style}
 	</select>
 
 	<!-- <insert id="addCodi" parameterType="com.tastecoordi.web.vo.Coordination"> 

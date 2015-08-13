@@ -21,7 +21,7 @@
 
 #header {
 	height: 120px;
-	width: 1165px;
+	width: 92%;
 	background: #fbf7ee;
 	position: fixed;
 	left: 0;
@@ -81,9 +81,8 @@
 
 #header img {
 	display: block;
-	margin-left: auto;
+ 	margin-left: auto;
 	margin-right: auto;
-	
 }
 
 #aside img{

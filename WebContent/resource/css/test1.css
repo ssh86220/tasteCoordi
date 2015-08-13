@@ -40,6 +40,14 @@
 	float: left;
 }
 
+#profile img{
+	height:35px;
+	width:35px;	
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+}
+
  #profile li:FIRST-CHILD{
 	padding-top: 7px;	
 } 
@@ -65,3 +73,5 @@
 #more input[type="submit"]{
 	margin-top:50px;
 	}
+	
+

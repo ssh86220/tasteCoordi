@@ -74,36 +74,12 @@
 										</div>
 										<p>${following.tagetName}</p>
 									</li>
-									<c:if test="${status.count%5 eq 0}"><br></c:if>			
+									<%-- <c:if test="${status.count%5 eq 0}"><br></c:if>	 --%>		
 								</c:forEach>
 							</ul>
 							
 						</div>
-					
-					
-					
-						<%-- <input type="submit" value="삭제">
-						
-						<table>
-							<thead>
-								<tr>
-									<th><input type="checkbox" id="all-check">check all<br></th>
-									<th>팔로잉 id</th>
-									<th>프로필사진</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="following" items="${list}">	
-								<tr>
-									<td><input type="checkbox" name="check" value="${following.tagetMid}"/></td>
-									<td>${following.tagetMid}</td>
-									<td><img src="../resource/image/profile/${following.followingImg}">${following.followingImg}</td>
-															
-								</tr>
-			
-							</c:forEach>
-							</tbody>
-						</table> --%>
+				
 					</form>		
 					
 				</section>

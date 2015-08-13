@@ -64,7 +64,7 @@
 											<img class="items" src="${ctxName}/resource/image/clothes/${clothes.image}">
 										</div>
 									</li>
-									<c:if test="${status.count%5 eq 0}"><br></c:if>			
+									<%-- <c:if test="${status.count%5 eq 0}"><br></c:if>	 --%>		
 								</c:forEach>
 							</ul>
 							

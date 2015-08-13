@@ -37,31 +37,12 @@
 										</div>
 										<p>${follower.mName}</p>
 									</li>
-									<c:if test="${status.count%5 eq 0}"><br></c:if>			
+									<%-- <c:if test="${status.count%5 eq 0}"><br></c:i --%>f>			
 								</c:forEach>
 							</ul>
 							
 						</div>
-					
-					
-						<%-- <table>
-							<thead>
-								<tr>
-									<th>팔로워 id</th>
-									<th>프로필사진</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="follower" items="${list}">	
-								<tr>				
-									<td>${follower.mid}</td>
-									<td><img src="../resource/image/profile/${follower.followerImg}">${follower.followerImg}</td>														
-								</tr>
-			
-							</c:forEach>
-							</tbody>
-						</table> --%>
-	
+						
 				</section>
 					
 			</section>	

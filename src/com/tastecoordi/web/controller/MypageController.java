@@ -361,7 +361,11 @@ public class MypageController {
 		
 	// 내 정보 수정
 	@RequestMapping(value="myInfo", method=RequestMethod.GET)
-	public String myInfo(Model model){
+	public String myInfo(Model model, HttpServletRequest request){
+		
+		String prevPage = request.getHeader("referer"); //POST 이전주소
+		String UrlReplace = prevPage.replace("/", ".");
+		prevPage = UrlReplace.substring(UrlReplace.lastIndexOf('.')+1); 
 		
 		//내 정보(왼쪽 사이드)
 		userImg = memberDao.getMember(id).getImage();
@@ -377,7 +381,8 @@ public class MypageController {
 		model.addAttribute("commentCnt", commentCnt);	
 		model.addAttribute("m", m);
 		
-		return "tastecoordi.mypage.myInfo";
+		//return "tastecoordi.mypage.myInfo";
+		return "redirect:"+prevPage;
 	}
 	
 	@RequestMapping(value="myInfo", method=RequestMethod.POST)
@@ -387,7 +392,9 @@ public class MypageController {
 		//String prevPage = request.getRequestURI().toString();//POST 주소
 		String prevPage = request.getHeader("referer"); //POST 이전주소
 		String UrlReplace = prevPage.replace("/", ".");
-		prevPage = UrlReplace.substring(48);
+		//prevPage = UrlReplace.substring(48); 
+		prevPage = UrlReplace.substring(UrlReplace.lastIndexOf('.')+1); 
+		//http:..localhost.TasteCoordi.tastecoordi.mypage. 을 쉽게 찾을 수 있는 방법은?
 
 		String image = "";
 		

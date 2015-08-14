@@ -37,7 +37,7 @@
 										</div>
 										<p>${follower.mName}</p>
 									</li>
-									<%-- <c:if test="${status.count%5 eq 0}"><br></c:i --%>f>			
+									<%-- <c:if test="${status.count%5 eq 0}"><br></c:if> --%>			
 								</c:forEach>
 							</ul>
 							

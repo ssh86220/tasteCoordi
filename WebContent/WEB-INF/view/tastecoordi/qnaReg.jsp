@@ -25,7 +25,7 @@
 			<legend class="Hidden">공지사항 정보</legend>
 			<dl>
 				<dt class="Hidden">아이디</dt>
-				<dd class="Hidden"><security:authentication property="name"/>
+				<dd class="Hidden"><security:authentication property="name"/></dd>
 				<dt>제목</dt>
 				<dd><input name="title"></dd>
 				<!-- <dt>첨부파일</dt>

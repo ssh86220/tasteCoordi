@@ -506,7 +506,7 @@ public class MypageController {
 	}
 	
 	@RequestMapping(value="myFollowingDel", method=RequestMethod.POST)
-	public String myFollowerDel(HttpServletRequest request){
+	public String myFollowingDel(HttpServletRequest request){
 
 		String[] delMid = request.getParameterValues("check");
 		
@@ -518,5 +518,81 @@ public class MypageController {
 		
 		return "redirect:myFollowing";
 	}
+	
+	//ÆÈ·ÎÀ× È¸¿ø ÄÚµð ¸ñ·Ï
+	@RequestMapping(value="myFollowingCodi")
+	public String myFollowingCodi(Model model, String c){
+		
+		String targetMid = memberDao.getMember(c).getId();
+		userImg = memberDao.getMember(c).getImage();
+		follower = followDao.getFollowerCnt(c).getFollowerCnt();
+		following = followDao.getFollowingCnt(c).getFollowerCnt();
+		commentCnt = commentsDao.getCommemtCnt(c).getCommentCnt();
+		
+		List<Coordination> list = null; //ÄÚµð ¸ñ·Ï
+		
+		list = coordinationDao.getCodis(c);
+		
+		model.addAttribute("id", id);
+		model.addAttribute("targetMid", targetMid);
+		model.addAttribute("userImg", userImg);
+		model.addAttribute("follower", follower);
+		model.addAttribute("following", following);
+		model.addAttribute("commentCnt", commentCnt);	
+		model.addAttribute("list", list);	
+		
+		return "tastecoordi.mypage.myFollowingCodi";
+	}
+	
+	//ÆÈ·ÎÀ× È¸¿ø ÁÁ¾Æ¿ä ¸ñ·Ï
+	@RequestMapping(value="myFollowingLikes")
+	public String myFollowingLike(Model model, String c){
+		
+		String targetMid = memberDao.getMember(c).getId();
+		userImg = memberDao.getMember(c).getImage();
+		follower = followDao.getFollowerCnt(c).getFollowerCnt();
+		following = followDao.getFollowingCnt(c).getFollowerCnt();
+		commentCnt = commentsDao.getCommemtCnt(c).getCommentCnt();
+		
+		List<Like> list = null; //ÄÚµð ¸ñ·Ï
+		
+		list = likeDao.getLikes(c);
+		
+		model.addAttribute("id", id);
+		model.addAttribute("targetMid", targetMid);
+		model.addAttribute("userImg", userImg);
+		model.addAttribute("follower", follower);
+		model.addAttribute("following", following);
+		model.addAttribute("commentCnt", commentCnt);	
+		model.addAttribute("list", list);	
+		
+		return "tastecoordi.mypage.myFollowingLikes";
+	}
+	
+	//ÆÈ·ÎÀ× È¸¿ø ÂòÇÑ¾ÆÀÌÅÛ ¸ñ·Ï
+	@RequestMapping("myFollowingJjims")
+	public String myFollowingJjims(Model model, String c){
+		
+		String targetMid = memberDao.getMember(c).getId();
+		userImg = memberDao.getMember(c).getImage();
+		follower = followDao.getFollowerCnt(c).getFollowerCnt();
+		following = followDao.getFollowingCnt(c).getFollowerCnt();
+		commentCnt = commentsDao.getCommemtCnt(c).getCommentCnt();
+		
+		List<Jjims> list = null; //ÄÚµð ¸ñ·Ï
+		
+		list = jjimsDao.getJjims(c);
+		
+		model.addAttribute("id", id);
+		model.addAttribute("targetMid", targetMid);
+		model.addAttribute("userImg", userImg);
+		model.addAttribute("follower", follower);
+		model.addAttribute("following", following);
+		model.addAttribute("commentCnt", commentCnt);	
+		model.addAttribute("list", list);	
+		
+		return "tastecoordi.mypage.myFollowingJjims";
+	}
+	
 	
 }

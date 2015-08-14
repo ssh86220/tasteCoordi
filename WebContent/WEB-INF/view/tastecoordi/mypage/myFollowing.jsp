@@ -68,13 +68,12 @@
 													<h1><img src="${ctxName}/resource/image/profile/pro.JPG" alt="팔로워이미지" ></h1>
 												</c:when>
 												<c:otherwise>
-													<h1><img src="${ctxName}/resource/image/profile/${following.followingImg}" alt="팔로워이미지" ></h1>
+													<h1><a href="myFollowingCodi?c=${following.tagetMid}"><img src="${ctxName}/resource/image/profile/${following.followingImg}" alt="팔로워이미지" ></a></h1>
 												</c:otherwise>
 											</c:choose>
 										</div>
 										<p>${following.tagetName}</p>
 									</li>
-									<%-- <c:if test="${status.count%5 eq 0}"><br></c:if>	 --%>		
 								</c:forEach>
 							</ul>
 							

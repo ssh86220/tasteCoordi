@@ -43,7 +43,7 @@
 	 <thead>
 	 
 		 <tr>
-				<th>번호</th>
+				<th class="Hidden">번호</th>
 				<th>내용</th>
 				<th>아이디</th>
 				<th>작성일</th>
@@ -52,7 +52,7 @@
 	
 		 	<c:forEach var="q" items="${list}">
 			 <tr>
-					<td>${q.code}</td>
+					<td class="Hidden">${q.code}</td>
 					<td>${q.content}</td>
 					<td>${q.mid}</td>
 					<td>${q.regDate}</td>

@@ -81,6 +81,9 @@
 				</section>			
 			</aside>   
 			
+						
+			<div id="back-pop">
+			
 			<div id="myinfo-pop">
 			
 				<form method="post" enctype="multipart/form-data" action="myInfo">
@@ -116,15 +119,18 @@
 				</form>
 			
 			</div>
+
+
+			</div>
 				
 			
-			<div id="mask">test</div>
+			<!-- <div id="mask">test</div> -->
 			
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
 <script> 
      function ViewLayer(){
             
-            document.getElementById("myinfo-pop").style.visibility="visible";
+            document.getElementById("back-pop").style.visibility="visible";
             document.body.style.overflow="hidden";
             
             // 레이어 팝업 중앙에...
@@ -149,7 +155,7 @@
 
     	}
      function closeWin(){
-    	 document.getElementById("myinfo-pop").style.visibility="hidden";
+    	 document.getElementById("back-pop").style.visibility="hidden";
     	 document.body.style.overflow="scroll";
      }
 
@@ -169,7 +175,7 @@
 			
 <style>
 	#myinfo-pop
-	{position:absolute;left:0px;top:0px;z-index:200; visibility:hidden;
+	{position:absolute;left:0px;top:0px;z-index:200; /* visibility:hidden; */
 	width: 430px; height:230px;	border:1px #666666 solid; background:white;
 	padding-top: 20px; text-align: center;}
 	
@@ -198,6 +204,18 @@
 	height: 500px; 
 	border: solid 5px;
 	}
+	
+	#back-pop {
+    position: fixed;
+    width: 100%;
+    height: 2000px;
+    top: 0px;
+    left: 0px;
+    background: url('${ctxName}/resource/image/css/dark_bg.png');
+    display: block;
+    visibility: hidden;
+	}
+	
 
 </style>
 			

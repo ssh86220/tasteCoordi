@@ -13,9 +13,16 @@
 
 window.addEventListener("load", function(){
 	var searchUp = document.querySelector("#search-up");
+	
 	searchUp.onclick = function() {
-		document.querySelector(".search-form").style.visibility="visible";
 		
+		
+ 		var vis =document.querySelector(".search-form");
+ 		/* alert(vis); */
+		if(vis.style.visibility=="visible")
+			vis.style.visibility="hidden";
+		else
+			vis.style.visibility="visible"; 
 	};
 	
 });
@@ -36,6 +43,9 @@ window.addEventListener("load", function(){
 	visibility: hidden;
 }
 
+.search-up:hover .search-form {
+	visibility: visible;
+}
 .search-form h3 {
     font-weight: bold;
     color: #646464;
@@ -75,8 +85,8 @@ window.addEventListener("load", function(){
 
 			<li><a href="codiRoom"><img
 					src="${ctxName}/resource/image/css/coordi-icon.png" alt="Coordi"></a></li>
-			<li><input type="button" value="앙" id="search-up" /><img
-					src="${ctxName}/resource/image/css/search-icon.png" alt="Search"></a></li>
+			<li><!-- <input type="button" value="앙" id="search-up" /> --><img 
+					src="${ctxName}/resource/image/css/search-icon.png" alt="Search" id="search-up"></a></li>
 
 
 			<li><a href="${ctxName}/joinus/joinSelect"><img

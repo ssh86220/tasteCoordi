@@ -24,10 +24,6 @@
 		<h1 class="Hidden">코디목록</h1>
 		<c:forEach var="n" items="${list}">
 
-
-
-        
-
 			<ul id="coordi-box">
 				<ul id="coordi">
 					<!-- <a href="../tastecoordi/coordiDetailPage"/> -->

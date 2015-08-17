@@ -103,7 +103,7 @@
 						<c:forEach var="c" items="${list}">
 						<ul id="item-img" class="clearfix">									
 							<li>
-								<a href="codiRoomDetail?c=${c.code}&mid=${id}">
+								<a href="codiRoomDetail?c=${c.code}<%-- &mid=${id} --%>">
 								<img src="${ctxName}/resource/image/clothes/${c.image}">
 								</a>
 							</li>

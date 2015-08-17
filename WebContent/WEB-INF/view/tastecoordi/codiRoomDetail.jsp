@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <c:set var="ctxName" value='${pageContext.request.contextPath}'/> 
+ <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <link href="../resource/css/codiRoom.css" type="text/css" rel="stylesheet" />	
 		<div class="content-wrapper clearfix">		
 		<section class="clearfix">
@@ -31,23 +32,44 @@
 								<tr>
 									<td rowspan = 5><img id="detail-img" src="${ctxName}/resource/image/clothes/${c.image}"> </td>
 								</tr>
-								<form method="POST">
-								<tr>
-									<td>
-										<input class="button jjim-button" type="submit" value="찜하기"/> 
-										count : ${count}
-										찜한 사람들 :
-										<c:forEach var="j" items="${jjimPeopleList}">
-										 ${j.mid}
-										</c:forEach>
-									</td>
-								</tr>
-								</form>
-								<form method="POST" action="codiRoomJjimsDelete?c=${c.code}&mid=${id}">
-								<tr>
-									<td><input class="button jjim-delete-button" type="submit" value="찜취소"/></td>
-								</tr>
-								</form>
+								<c:forEach var="j" items="${jjimPeopleList}">
+									<c:if test="${pageContext.request.userPrincipal.name eq j.mid}">
+										<c:set var="isJjim" value="true" />
+									</c:if>
+								</c:forEach>
+								
+								 
+								 <c:choose>
+								 	<c:when test="${isJjim eq true}"> 
+										<form method="POST" action="codiRoomJjimsDelete?c=${c.code}&mid=${id}">
+										<tr>
+											<td>
+												<input class="button jjim-delete-button" type="submit" value="찜취소"/>
+												count : ${count}  
+												찜한 사람들 : 
+												<c:forEach var="j" items="${jjimPeopleList}">
+										 		${j.mid}
+												</c:forEach>																						
+											</td>
+										</tr>
+										</form>
+									</c:when>
+									
+									 <c:otherwise>
+										<form method="POST">									
+										<tr>
+											<td>										
+												<input class="button jjim-button" type="submit" value="찜하기"/> 
+												count : ${count}
+												찜한 사람들 :  
+												<c:forEach var="j" items="${jjimPeopleList}">
+											 	${j.mid}
+												</c:forEach>
+											</td>
+										</tr>
+										</form>									 
+									 </c:otherwise>
+								</c:choose>
 								<tr>
 									<td><img id="site" src="${ctxName}/resource/image/css/codiRoom-shop.png">${c.link}</td>
 								</tr>
@@ -125,7 +147,7 @@
 							<c:forEach var="c" items="${list}">
 								<ul id="item-img" class="clearfix">									
 									<li>
-										<a href="codiRoomDetail?c=${c.code}&mid=${id}">
+										<a href="codiRoomDetail?c=${c.code}<%-- &mid=${id} --%>">
 										<img src="${ctxName}/resource/image/clothes/${c.image}">
 										</a>
 									</li>							

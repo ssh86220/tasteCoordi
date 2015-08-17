@@ -25,6 +25,9 @@ public List<Jjims> getJjims(String mid);
 	public int getJjimsCount(String code);
 	
 	public List<Jjims> getJjimsPeople(String clothesCode);
+	
+	
+	
 	//¿µÁ¶
 	
 	public List<Jjims> getJjims(

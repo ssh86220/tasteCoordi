@@ -107,4 +107,6 @@ public class MyBatisJjimsDao implements JjimsDao {
 		return result;
 	}
 
+
+
 }

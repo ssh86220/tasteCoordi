@@ -224,7 +224,7 @@
 			</aside>   
 			
 						
-			<div id="back-pop">
+			<!-- <div id="back-pop">
 			
 			<div id="myinfo-pop">
 			
@@ -263,7 +263,7 @@
 			</div>
 
 
-			</div>
+			</div> -->
 				
 			
 			<!-- <div id="mask">test</div> -->

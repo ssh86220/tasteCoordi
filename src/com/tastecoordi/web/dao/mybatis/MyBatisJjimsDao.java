@@ -107,16 +107,6 @@ public class MyBatisJjimsDao implements JjimsDao {
 		return result;
 	}
 
-	@Override
-	public List<String> getJjimsMid(String clothesCode) {
-		// TODO Auto-generated method stub
-		
-		JjimsDao j = session.getMapper(JjimsDao.class);		
-		return j.getJjimsMid(clothesCode);
-		
-		/*List<String> list = session.selectList("com.tastecoordi.web.dao.JjimsDao.getJjimsPeople", clothesCode);		
-		//session.close();
-		return list;*/
-	}
+
 
 }

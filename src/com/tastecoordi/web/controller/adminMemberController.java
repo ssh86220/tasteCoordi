@@ -22,20 +22,22 @@ import com.tastecoordi.web.dao.MemberDao;
 import com.tastecoordi.web.vo.Member;
 
 @Controller
-@RequestMapping("/tastecoordi/*")
+//@RequestMapping("/tastecoordi/*")
+@RequestMapping("/admin/*")
 public class adminMemberController {
 
 	@Autowired
 	private MemberDao memberDao;
 
-	@RequestMapping("adminMem")
+	//@RequestMapping("adminMem")
+	@RequestMapping("adminMenu")
 	public String adminMem(Model model) {
 
 		List<Member> list = memberDao.getMembers();
 
 		model.addAttribute("list", list);
 
-		return "tastecoordi.adminMem";
+		return "admin.adminMenu";
 	}
 
 	@RequestMapping(value="adminMemDelete", method = RequestMethod.POST)

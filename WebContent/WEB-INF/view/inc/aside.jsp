@@ -82,16 +82,16 @@ window.addEventListener("load", function(){
 					src="${ctxName}/resource/image/css/logout.png" alt="Logout"></a>
 			</c:if>
 
-
-			<li><a href="codiRoom"><img
+			<li><a href="${ctxName}/tastecoordi/codiRoom"><img
 					src="${ctxName}/resource/image/css/coordi-icon.png" alt="Coordi"></a></li>
+			
 			<li><!-- <input type="button" value="앙" id="search-up" /> --><img 
 					src="${ctxName}/resource/image/css/search-icon.png" alt="Search" id="search-up"></a></li>
 
 
 			<li><a href="${ctxName}/joinus/joinSelect"><img
 					src="${ctxName}/resource/image/css/company-icon.png" alt="Company"></a></li>
-			<li><a href="qna"><img
+			<li><a href="${ctxName}/tastecoordi/qna"><img
 					src="${ctxName}/resource/image/css/q&a-icon.png" alt="Q&A"></a></li>
 		</ul>
 	</nav>

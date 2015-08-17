@@ -79,15 +79,14 @@ padding: 20px;}
 /*-----아이템 리스트-----*/
 	#items{
 	/* border: solid red 1px; */
-	/* display: inline-block; */
+	overflow: auto;
 	padding-top: 30px;
 	padding-left: 10px;
 	margin-left: 15px;
 	}
 	
 	#item-btn{
-	/* border: solid red 1px; */
-	/* width: 830px; */
+	overflow: auto;
 	}
 	
 	#item-btn > *{

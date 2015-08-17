@@ -4,6 +4,12 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <link href="../resource/css/coordidetail.css" type="text/css" rel="stylesheet" />
+
+<script src = "../resource/js/coordiDetailPage.js" type="text/javascript">
+		//js 파일로 링크
+</script>
+
+
 <c:set var="ctxName" value='${pageContext.request.contextPath}'/> 
 
 
@@ -59,9 +65,9 @@
 							
 							<!-- 좋아요 카운트 추가 팝업창, 마이페이지로 이동 -->
 							<li id="sns">							
-							<a href=""
-								onclick="javascript:window.open('likePop.jsp','popup','scrollbars=no, resizable=no, width=300,height=200')"; return false">
-								<img src="../resource/image/css/like.JPG" alt="좋아요 이미지">
+							<!-- <a href=""
+								onclick="javascript:window.open('likePop.jsp','popup','scrollbars=no, resizable=no, width=300,height=200')"; return false"> -->
+								<input type = "button"  value = "좋아요 이미지" id="btn-show-like"/><img src="../resource/image/css/like.JPG" alt="좋아요 이미지"/>
 									
 									
 									

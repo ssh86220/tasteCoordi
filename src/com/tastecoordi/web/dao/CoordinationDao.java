@@ -26,12 +26,13 @@ public interface CoordinationDao {
 	
 	//영조
 	
-
 	public List<Coordination> getCodis(); // 모두출력
 
 	public List<Coordination> getCodis(int page, String field, String query);
 	
 	public Coordination getCodi(String code);
+	
+	//public Coordination getProfile(String code);//15.08.17 영조 추가분
 	
 	//선희
 	public List <Coordination> getCodiSearch(String style, String categories, String color);

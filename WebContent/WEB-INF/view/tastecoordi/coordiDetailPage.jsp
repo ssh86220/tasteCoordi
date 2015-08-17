@@ -9,7 +9,6 @@
 		//js 파일로 링크
 </script>
 
-
 <c:set var="ctxName" value='${pageContext.request.contextPath}'/> 
 
 
@@ -45,9 +44,6 @@
 								</p>
 								<!-- 코디네이션의 타이틀. 코디 룸 등록시 입력한거 불러와야 함. -->
 		
-						<%-- <c:forEach var="d" items="${codilist}">
-							${d.title} created by ${d.mid}<br>  <!-- 코디네이션의 제목? 코드?, 아이디 -->
-						</c:forEach> --%>
 					</section>
 					
 					
@@ -56,8 +52,12 @@
 						<ul>
 							<!-- 프로필 사진 회원정보에 맟춰 불러오기 -->
 							<!-- <li><a href=""><img src="../resource/image/profile/pro.JPG" width=200px alt="프로필 사진"></a></li> -->
+							
 							<li><a href=""><img src="${ctxName}/resource/image/codi/${codi.img}" width=200px alt="프로필 사진"></a></li>
 							
+							<c:forEach var="profile" items="${profile}">
+							<li><img src="${ctxName}/resource/image/profile/${profile.image}"></li>
+							</c:forEach>
 							
 							
 							<!-- 팔로우 카운트 추가 -->
@@ -67,7 +67,7 @@
 							<li id="sns">							
 							<!-- <a href=""
 								onclick="javascript:window.open('likePop.jsp','popup','scrollbars=no, resizable=no, width=300,height=200')"; return false"> -->
-								<input type = "button"  value = "좋아요 이미지" id="btn-show-like"/><img src="../resource/image/css/like.JPG" alt="좋아요 이미지"/>
+								<input type = "button"  value = "좋아요 이미지 입히기" id="btn-show-like"/><img src="../resource/image/css/like.JPG" alt="좋아요 이미지"/>
 									
 									
 									

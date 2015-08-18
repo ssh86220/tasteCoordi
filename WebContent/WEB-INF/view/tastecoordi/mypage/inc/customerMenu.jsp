@@ -8,95 +8,96 @@
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
 <script> 
-     function ViewLayer(){
-            
-            document.getElementById("back-pop").style.visibility="visible";
-            document.body.style.overflow="hidden";
-            
-            // 레이어 팝업 중앙에...
-            function position_cm(obj){
-           	    var windowWidth = $(window).width(); //현재 윈도우의 너비
-           	    var windowHeight = $(window).height(); //현재 윈도우의 높이
-           	    var $obj = $(obj); //myinfo-pop
-           	    var objWidth = $obj.width();
-           	 	var objHeight = $obj.height();
-           	    $obj.css({
-           	        'left':(windowWidth/2)-(objWidth/2),
-           	        'top':(windowHeight/2)-(objHeight/2)
-           	    });
-           	}
-            //jQuery
-           	$(document).ready(function(){
-           	    position_cm($('#myinfo-pop'));
-           	});
-           	$(window).resize(function(){
-           	    position_cm($('#myinfo-pop'));
-           	});
+	
+    function createPopup(url){
+		var screen = document.createElement("div");//검은바탕
 
-    	}
-     function closeWin(){
-    	 document.getElementById("back-pop").style.visibility="hidden";
-    	 document.body.style.overflow="scroll";
-     }
+		screen.style.position = "fixed";
+		screen.style.left = "0px";
+		screen.style.top = "0px";
+		screen.style.width = "100%";
+		screen.style.height = "100%";
+		screen.style.background = "black";
+		screen.style.opacity = "0.3";
+	   
+		document.body.appendChild(screen);
+		
+		//중앙좌표를 계산하기 위함
+		var docWidth = window.innerWidth; //창의 너비 및 높이		
+		var docHeight = window.innerHeight;
+		var width = 430; //view의 너비 및 높이
+		var height = 230;
+		var left = docWidth/2 - width/2;
+		var top = docHeight/2 - height/2;
+		
+		var dialog = document.createElement("div");//뷰
+		
+		dialog.style.position = "fixed";
+		dialog.style.left = left + "px";
+		dialog.style.top = top + "px";
+		dialog.style.width = width + "px";
+		dialog.style.height = height + "px";
+		dialog.style.background = "rgb(255,255,255)"; //흰색
+		dialog.style.border = "solid 1px black";
+		
+		document.body.appendChild(dialog);
+		
+		var viewContent = document.createElement("div");//내용
+		
+		/* viewContent.style.background="red"; */
+		
+		dialog.appendChild(viewContent);
+		
+		var btnCloseView = document.createElement("input");
+		btnCloseView.type="button";
+		btnCloseView.value="close";
+		btnCloseView.style.position = "absolute";
+		btnCloseView.style.right="-10px";
+		btnCloseView.style.top="-10px";
+		
+		dialog.appendChild(btnCloseView);
+		
+		btnCloseView.onclick = function(){
+			document.body.removeChild(dialog);
+			document.body.removeChild(screen);
+		};
+		
+		/* var myinfoBtn = document.querySelector("myinfo-btn");
+		myinfoBtn.onclick = function(){
+			document.body.removeChild(dialog);
+			document.body.removeChild(screen);
+		}; */
+		
+		var request = new XMLHttpRequest(); 
+		//완료된 다음에 넘겨라
+		request.onreadystatechange = function(){
+			if (request.readyState == 4){
+				
+				viewContent.innerHTML = request.responseText; //기다리지않으므로 출력결과가 없다.	
+				//= 대치, += 추가
 
-     
-     
-    /* 검은막을 구하는 jQuery */
-	function wrapWindowByMask(){        //화면의 높이와 너비를 구한다.
-		var maskHeight = $(document).height();  
-		var maskWidth = $(window).width();  
-        //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
-		$('#mask').css({'width':maskWidth,'height':maskHeight});  
-        //애니메이션 효과        $('#mask').fadeIn(1000);      
-		$('#mask').fadeTo("slow",0.8);    
-	}
+			}
+		}
+		
+		//주소창 입력
+		request.open("GET", url , true); //비동기가 기본형
+		//전달
+		request.send(null);
+		
+		
+		
+    }
+    
+    window.addEventListener("load", function(){
+    	var btnMyinfo = document.querySelector("#myinfo input[type='button']");
+    	btnMyinfo.onclick = function(){
+    		createPopup("myInfoUp");
+    		
+    	};
+    	
+    });
 
 </script> 
-			
-<style>
-	#myinfo-pop
-	{position:absolute;left:0px;top:0px;z-index:200; /* visibility:hidden; */
-	width: 430px; height:230px;	border:1px #666666 solid; background:white;
-	padding-top: 20px; text-align: center;}
-	
-	#myinfo-form
-	{margin-left: auto; margin-right: auto;}
-	#myinfo-form td
-	{height: 30px; width: 100px; text-align: center;}
-	#myinfo-form td + td
-	{width: 300px; text-align: left; padding-left: 10px;}
-	#myinfo-form input[type=button]
-	{margin-left: 10px;}
-	
-			
-	#myinfo-btn
-	{margin-top: 20px;}		
-	
-	/* 검은막 */
-	#mask{  
-	position:absolute;  
-	left:0;
-	top:0;
-	z-index:9000;  
-	background-color:#000;  
-	display:none; 
-	width: 500px;
-	height: 500px; 
-	border: solid 5px;
-	}
-	
-	#back-pop {
-    position: fixed;
-    width: 100%;
-    height: 2000px;
-    top: 0px;
-    left: 0px;
-    background: url('${ctxName}/resource/image/css/dark_bg.png');
-    display: block;
-    visibility: hidden;
-	}
-	
-</style>
     
     
 			<header id=logo>
@@ -138,6 +139,7 @@
 							<div>
 								<c:if test="${targetMid eq id}">	
 									<a href="javascript:ViewLayer();">내 정보 수정</a>
+									<input type="button" value="내정보수정" />
 								</c:if>
 							</div>
 						</nav>
@@ -222,52 +224,3 @@
 				</div>
 				</section>			
 			</aside>   
-			
-						
-			<!-- <div id="back-pop">
-			
-			<div id="myinfo-pop">
-			
-				<form method="post" enctype="multipart/form-data" action="myInfo">
-					
-					<table id="myinfo-form">
-						<tr>
-							<td>닉네임</td>
-							<td><input name="name"/><input type="button" value="중복검사"/></td>
-						</tr>
-						<tr>
-							<td>비밀번호</td>
-							<td><input name="pw"/></td>
-						</tr>
-						<tr>
-							<td>비밀번호 확인</td>
-							<td><input name="pw-check"/></td>
-						</tr>
-						<tr>
-							<td>이메일</td>
-							<td><input name="email"/><input type="button" value="중복검사"/></td>
-						</tr>
-						<tr>
-							<td>프로필사진</td>
-							<td><input name="file" type="file"/></td>
-						</tr>
-					</table>
-		
-					<div id="myinfo-btn">
-						<input type="submit" value="수정"/></a>
-						<a href="javascript:closeWin();">취소</a>
-					</div>
-		
-				</form>
-			
-			</div>
-
-
-			</div> -->
-				
-			
-			<!-- <div id="mask">test</div> -->
-			
-
-			
-			 

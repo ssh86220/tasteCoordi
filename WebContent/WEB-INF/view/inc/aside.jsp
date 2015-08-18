@@ -40,9 +40,10 @@
 
 		document.body.appendChild(dialog);
 
-/* 		var view = document.createElement("div");
+		var view = document.createElement("div");
+		view.style.background="yellow";
 
-		dialog.appendChild(view); */
+		dialog.appendChild(view);
 
 
 		var btnClose = document.createElement("input");
@@ -82,7 +83,8 @@
 
 		var btnShowscreen = document.querySelector("#btn-show-screen");
 		btnShowscreen.onclick = function() {
-			showDialog("../joinus/codiRoom.jsp");
+			
+			showDialog("../joinus/joinSelect");
 		};
 	
 

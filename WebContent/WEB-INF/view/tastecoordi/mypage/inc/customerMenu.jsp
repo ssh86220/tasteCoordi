@@ -83,9 +83,7 @@
 		request.open("GET", url , true); //비동기가 기본형
 		//전달
 		request.send(null);
-		
-		
-		
+						
     }
     
     window.addEventListener("load", function(){

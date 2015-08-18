@@ -3,7 +3,7 @@
 	height: 20px;
 	width: 100%;
 	background: #171a39;
-    position: fixed;
+   /*  position: fixed; */
 	left: 0px;
 	top: 0px;
 }
@@ -11,7 +11,7 @@
 #aside {
 	height: 1000px;
 	width: 8%;
-	background: #faf3e5;
+ 	background: #faf3e5;
 	float: left;
 	position: fixed;
 	top: 20px;
@@ -22,8 +22,8 @@
 #header {
 	height: 120px;
 	width: 92%;
-	background: #fbf7ee;
-	position: fixed;
+ 	background: #fbf7ee;
+/* 	position: fixed; */
 	left: 0;
 	top: 20px;
 	float: left;
@@ -48,13 +48,13 @@
 
 } 
 
-#test {
+/* #test {
 	width: 92%;
 	min-height: 900px;
 	float: left;
 	background: #fbf7ee;
 	border : blue soild 10px;
-}
+} */
 
 .clearfix:after {
 	content: ".";

@@ -76,4 +76,10 @@
 	margin-top:50px;
 	}
 	
-
+ #test {
+	width: 100%;
+	min-height: 500px;
+	float: left;
+	background: #fbf7ee;
+	border : blue soild 10px;
+}

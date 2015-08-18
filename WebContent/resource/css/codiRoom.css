@@ -19,12 +19,14 @@
 	#coordi-canvas{
 	 	border:1px solid gray;
 		height : 680px; 
+		margin-top: -9px;
 	}
 
 	#coordi-item{
 		border:1px solid gray;
 		/* border-right: 0px; */
 		height : 680px; 
+		margin-top: -10px;
 	}
 
  	#item{
@@ -35,7 +37,7 @@
 	}
 
 	#product{
-	 	height : 585px;
+	 	height : 565px;
 	}
 
 
@@ -55,15 +57,21 @@
 	}
 	
 	#item-menu li{
-		padding-left: 24px;
-		float : left
+		/* padding-left: 24px; */
+		padding-left: 14px;
+		padding-right: 14px;
+		margin-left : 9px;
+		float : left;
+		border : 1px solid gray;
+		border-bottom : none;
 	}
 	#item-menu li:first-child{
-		padding : 0px;
-	}
+		margin : 0px;
+	} 
 	#item-menu a{
 		text-decoration: none;
 		color : black;
+		font-size: 17px;
 	}
 
 
@@ -208,10 +216,6 @@
 		text-decoration: none;
 		color : black;
 
-	}
-	
-	#coordi-canvas{
-	 	margin-top : -2px;
 	}
 	
 	/*-- 저장하기 이미지 */

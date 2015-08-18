@@ -15,10 +15,12 @@
 				<section id="turn">
 				<h1 class="Hidden">코디 순서 표시 및 저장</h1>
 					<ul class="clearfix">
-						<li>새로하기 버튼</li>
-						<li>이전 버튼</li>
-						<li>이후 버튼</li>
-						<li>코디 저장 버튼</li>
+						<li id="re"><a href="">
+						<img src="${ctxName}/resource/image/css/codiRoom-re.jpg">새로하기</a></li>
+						<li id="pre"><a href="">←</a></li>
+						<li id="next"><a href="">→</a></li>
+						<li id="save"><a href="">
+						<img src="${ctxName}/resource/image/css/codiRoom-save.png">저장하기</a></li>
 					</ul>
 				</section>
 				

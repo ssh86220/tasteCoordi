@@ -25,14 +25,14 @@
 
 		var docHeight = window.innerHeight;
 		var docWidth = window.innerWidth;
-		var width = "500";
-		var height = "400";
+		var width = "300";
+		var height = "300";
 		var top = docHeight / 2 - height / 2;
 		var left = docWidth / 2 - width / 2;
 
 		var dialog = document.createElement("div");
-		dialog.style.width = "500px";
-		dialog.style.height = "400px";
+		dialog.style.width = "300px";
+		dialog.style.height = "300px";
 		dialog.style.position = "fixed";
 		dialog.style.left = left + "px";
 		dialog.style.top = top + "px";
@@ -41,8 +41,9 @@
 		document.body.appendChild(dialog);
 
 		var view = document.createElement("div");
-		view.style.background="yellow";
-
+		 view.style.background="#f8deec"; 
+		 view.style.width = "100%";
+		 view.style.height = "100%";
 		dialog.appendChild(view);
 
 
@@ -86,7 +87,7 @@
 			
 			showDialog("../joinus/joinSelect");
 		};
-	
+			
 
 		var searchUp = document.querySelector("#search-up");
 

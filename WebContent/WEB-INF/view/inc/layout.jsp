@@ -28,18 +28,17 @@
 		<!-- </div> -->
 	</div>
 
+
+	<!-- 어사이드영역 -->
+	<tiles:insertAttribute name="aside" />
 	
-		<!-- 어사이드영역 -->
-		<tiles:insertAttribute name="aside" />
-<!-- 	  <div id="test"> -->
+	<div id="main-wapper">
 		<!-- 헤더영역 -->
 		<tiles:insertAttribute name="header" />
 
-	   <div class="fix"></div>  
-
 		<!-- 메인영역 -->
 		<main id="main"> <tiles:insertAttribute name="body" /> </main>
-<!-- 	</div> -->
+	</div>
 	<!-- 푸터영역 -->
 	<tiles:insertAttribute name="footer" />
 

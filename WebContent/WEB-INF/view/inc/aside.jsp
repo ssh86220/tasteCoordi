@@ -64,7 +64,7 @@ window.addEventListener("load", function(){
 		<h1 class="Hidden">메뉴</h1>
 		<ul>
 			<li><a href="${ctxName}/tastecoordi/mypage/myCodi"><img
-					src="${ctxName}/resource/image/css/mypage-icon.png" alt="Mypage"></a></li>
+					src="${ctxName}/resource/image/css/pro.JPG" alt="Mypage"></a></li>
 			<%-- <li><a href=""><img
 						src="${ctxName}/resource/image/css/login-icon.png" alt="Login"></a></li> --%>
 

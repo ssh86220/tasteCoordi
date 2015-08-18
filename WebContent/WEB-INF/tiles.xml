@@ -8,6 +8,7 @@
 	
 	<definition name="tastecoordi.mypage.myInfoUp" template="/WEB-INF/view/tastecoordi/mypage/myInfoUp.jsp" />
 	<definition name="joinus.joinSelect" template="/WEB-INF/view/joinus/joinSelect.jsp" />
+	<definition name = "tastecoordi.likePop" template= "/WEB-INF/view/tastecoordi/likePop.jsp"/>
 	
 	<definition name="tastecoordi.mypage.*" template="/WEB-INF/view/tastecoordi/mypage/inc/layout.jsp">
 	    <put-attribute name="header" value="/WEB-INF/view/tastecoordi/mypage/inc/header.jsp" />

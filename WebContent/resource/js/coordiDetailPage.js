@@ -33,7 +33,7 @@ function showDialog(url) {
 			view.style.width = width + "px";
 			view.style.height = height + "px";
 			view.style.background = "rgb(255,255,255)";
-			
+			view.style.textAlign = "center";	//가운데정렬
 
 			document.body.appendChild(view);
 			

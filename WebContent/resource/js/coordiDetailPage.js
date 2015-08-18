@@ -1,3 +1,4 @@
+
 //팝업 장막 만들기
 function showDialog(url) {
 		//장막 div 생성
@@ -35,12 +36,40 @@ function showDialog(url) {
 			
 
 			document.body.appendChild(view);
+			
+			
+			/* ---------닫기 버튼 만들기------------------------------------ */
+ 			var btnClose = document.createElement("input");
+ 			btnClose.type= "button";
+ 			btnClose.value = "X";
+ 			btnClose.style.position = "absolute";
+ 			btnClose.style.right = "-10px";
+ 			btnClose.style.top = "-10px";
+ 			btnClose.onclick = function(){
+ 				document.body.removeChild(view);	//viewWrapper로 수정
+ 				document.body.removeChild(like);
+ 			};
+			
+ 			
+ 			/* ---------비동기형 요쳥-------------------------------------------- */ 
+ 			var request = new XMLHttpRequest();
+ 	 		request.open("GET",url, true);	//showDialog 함수 url 쓴거
+ 	 		request.send(null);
+ 	 		
+ 	 		request.onreadystatechange = function(){
+ 	 			if(request.readyState == 4)	{//데이터 뿌리기. 작업 완료되면 실행
+ 	 				view.innerHTML += request.responseText;	//html 연결. +=는 추가(html을 꺼내서 누적), =는 기존거 대신 그냥
+ 	 				view.appendChild(btnClose);
+ 	 			}
+ 	 		}
+ 	   /*-------------여기까지 비동기 요청---------------------------------- */
+ 	 
+ 			
 }
-
 window.addEventListener("load", function() {
 	
 	var btnShowLike = document.querySelector("#btn-show-like");
 	btnShowLike.onclick = function() {
-		showDialog("LikePop.html");	//바디도 없는 빈 조각파일 만들기(view에 나올 내용)
+		showDialog("likePop");	//바디도 없는 빈 조각파일 만들기(view에 나올 내용)
 	};
 });

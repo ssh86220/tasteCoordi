@@ -67,7 +67,7 @@
 							<li id="sns">							
 							<!-- <a href=""
 								onclick="javascript:window.open('likePop.jsp','popup','scrollbars=no, resizable=no, width=300,height=200')"; return false"> -->
-								<input type = "button"  value = "좋아요 이미지 입히기" id="btn-show-like"/><img src="../resource/image/css/like.JPG" alt="좋아요 이미지"/>
+								<img src="../resource/image/css/like.JPG" alt="좋아요 이미지" id="btn-show-like"/>
 									
 									
 									

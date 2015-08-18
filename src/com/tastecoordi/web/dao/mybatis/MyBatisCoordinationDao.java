@@ -155,4 +155,11 @@ public  List<Coordination> getCodiSearch(String style, String categories, String
 	return list;*/
 }
 
+/*//15.08.17 ¿µÁ¶
+@Override
+public Coordination getProfile(String code) {
+	CoordinationDao dao = session.getMapper(CoordinationDao.class);
+	return dao.getProfile(code);
+}*/
+
 }

@@ -54,7 +54,6 @@ public class CodiRoomJjimsController {
 				
 		model.addAttribute("count", jjimsDao.getJjimsCount(c));
 		
-		//model.addAttribute("mid", jjimsDao.getJjimsMid(c));
 		
 		List<Jjims> jjimPeopleList = jjimsDao.getJjimsPeople(c);
 		model.addAttribute("jjimPeopleList", jjimPeopleList);

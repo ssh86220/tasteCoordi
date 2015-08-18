@@ -26,7 +26,7 @@ public List<Jjims> getJjims(String mid);
 	
 	public List<Jjims> getJjimsPeople(String clothesCode);
 	
-	public List<String> getJjimsMid(String clothesCode);
+	
 	
 	//¿µÁ¶
 	

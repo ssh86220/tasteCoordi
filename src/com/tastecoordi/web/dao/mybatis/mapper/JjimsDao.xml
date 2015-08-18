@@ -33,8 +33,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT MID FROM JJIMs WHERE CLOTHESCODE=#{clothesCode}
 	</select>
 	
-	<select id="getJjimsMid" parameterType="string" resultType="string">
-		select MID from JjimMidView WHERE CODE= #{clothesCode}
-	</select>
+
 
 </mapper>

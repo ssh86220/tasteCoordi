@@ -14,6 +14,19 @@
 	    <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
 	</definition>
 	
+	<definition name="joinus.*" template="/WEB-INF/view/inc/layout.jsp">
+	    <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
+	    <put-attribute name="aside" value="/WEB-INF/view/inc/aside.jsp" />
+	    <put-attribute name="body" value="/WEB-INF/view/joinus/{1}.jsp" />
+	    <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
+	</definition>
+	
+	<definition name="admin.*" template="/WEB-INF/view/inc/layout.jsp">
+	    <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
+	    <put-attribute name="aside" value="/WEB-INF/view/admin/inc/aside.jsp" />
+	    <put-attribute name="body" value="/WEB-INF/view/admin/{1}.jsp" />
+	    <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
+	</definition>
 
 	
 	<definition name="*.*" template="/WEB-INF/view/inc/layout.jsp">
@@ -23,11 +36,5 @@
     <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
   	</definition>
   
-		<!-- <definition name="joinus.*" template="/WEB-INF/view/inc/layout.jsp">
-	    <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
-	    <put-attribute name="aside" value="/WEB-INF/view/inc/aside.jsp" />
-	    <put-attribute name="body" value="/WEB-INF/view/tastecoordi/joinus/{1}.jsp" />
-	    <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
-	</definition> -->
 	
 </tiles-definitions>

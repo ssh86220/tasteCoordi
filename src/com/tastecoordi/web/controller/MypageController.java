@@ -358,96 +358,6 @@ public class MypageController {
 		
 		return "redirect:myJjims";
 	}
-		
-	// 내 정보 수정
-	@RequestMapping(value="myInfo", method=RequestMethod.GET)
-	public String myInfo(Model model, HttpServletRequest request){
-		
-		String prevPage = request.getHeader("referer"); //POST 이전주소
-		String UrlReplace = prevPage.replace("/", ".");
-		prevPage = UrlReplace.substring(UrlReplace.lastIndexOf('.')+1); 
-		
-		//내 정보(왼쪽 사이드)
-		userImg = memberDao.getMember(id).getImage();
-		follower = followDao.getFollowerCnt(id).getFollowerCnt();
-		following = followDao.getFollowingCnt(id).getFollowerCnt();
-		commentCnt = commentsDao.getCommemtCnt(id).getCommentCnt();
-		
-		Member m = memberDao.getMember(id);
-		
-		model.addAttribute("userImg", userImg);
-		model.addAttribute("follower", follower);
-		model.addAttribute("following", following);
-		model.addAttribute("commentCnt", commentCnt);	
-		model.addAttribute("m", m);
-		
-		//return "tastecoordi.mypage.myInfo";
-		return "redirect:"+prevPage;
-	}
-	
-	@RequestMapping(value="myInfo", method=RequestMethod.POST)
-	public String myInfo(HttpServletRequest request, MultipartFile file, Member member) throws IOException{
-		
-		
-		//String prevPage = request.getRequestURI().toString();//POST 주소
-		String prevPage = request.getHeader("referer"); //POST 이전주소
-		String UrlReplace = prevPage.replace("/", ".");
-		//prevPage = UrlReplace.substring(48); 
-		prevPage = UrlReplace.substring(UrlReplace.lastIndexOf('.')+1); 
-		//http:..localhost.TasteCoordi.tastecoordi.mypage. 을 쉽게 찾을 수 있는 방법은?
-
-		String image = "";
-		
-		if(file.isEmpty()){
-			image = memberDao.getMember(id).getImage();
-		}else{	
-			//실제 경로
-	 		ServletContext application = request.getServletContext();
-	 		String url = "/resource/image/profile";
-	 		String path = application.getRealPath(url);
-	 		String temp =  file.getOriginalFilename();
-	 		image=temp.substring(temp.lastIndexOf("\\")+1);
-	 		String fpath = path +"\\" +image;
-	 		
-	 		InputStream ins = file.getInputStream();
-	 		OutputStream outs = new FileOutputStream(fpath);
-	 		
-	 		byte[] buffer = new byte[1024];
-	 		
-	 		int len = 0;
-	 		
-	 		while((len = ins.read(buffer,0,1024))>=0)
-	 			outs.write(buffer, 0, len);
-	 		
-	 		outs.flush();
-	 		outs.close();
-	 		ins.close();
-		
-		}
-		
-		String name = request.getParameter("name");
-		String pw = request.getParameter("pw");
-		String email = request.getParameter("email");
-		
-		if(name.isEmpty())
-			name = memberDao.getMember(id).getName();
-		member.setName(name);
-		
-		if(pw.isEmpty())
-			pw = memberDao.getMember(id).getPw();
-		member.setPw(pw);
-		
-		if(email.isEmpty())
-			email = memberDao.getMember(id).getEmail();
-		member.setEmail(email);
-
-		member.setImage(image);
-		
-		memberDao.alterMember(member);
-		
-		//return "redirect:myCodi";
-		return "redirect:"+prevPage;
-	}
 	
 	// 팔로워
 	@RequestMapping("myFollower")
@@ -594,5 +504,169 @@ public class MypageController {
 		return "tastecoordi.mypage.myFollowingJjims";
 	}
 	
+	
+	@RequestMapping(value="myInfoUp", method=RequestMethod.GET)
+	public String myInfoUp(Model model, HttpServletRequest request){
+
+		
+		Member m = memberDao.getMember(id);
+		
+		model.addAttribute("m", m);
+		
+		return "tastecoordi.mypage.myInfoUp";
+		//return "redirect:"+prevPage;
+		
+	}
+	
+	@RequestMapping(value="myInfoUp", method=RequestMethod.POST)
+	public String myInfoUp(HttpServletRequest request, MultipartFile file, Member member) throws IOException{
+		
+		String prevPage = request.getHeader("referer"); //POST 이전주소
+		String UrlReplace = prevPage.replace("/", ".");
+		prevPage = UrlReplace.substring(UrlReplace.lastIndexOf('.')+1); 
+
+		String image = "";
+		
+		if(file.isEmpty()){
+			image = memberDao.getMember(id).getImage();
+		}else{	
+			//실제 경로
+	 		ServletContext application = request.getServletContext();
+	 		String url = "/resource/image/profile";
+	 		String path = application.getRealPath(url);
+	 		String temp =  file.getOriginalFilename();
+	 		image=temp.substring(temp.lastIndexOf("\\")+1);
+	 		String fpath = path +"\\" +image;
+	 		
+	 		InputStream ins = file.getInputStream();
+	 		OutputStream outs = new FileOutputStream(fpath);
+	 		
+	 		byte[] buffer = new byte[1024];
+	 		
+	 		int len = 0;
+	 		
+	 		while((len = ins.read(buffer,0,1024))>=0)
+	 			outs.write(buffer, 0, len);
+	 		
+	 		outs.flush();
+	 		outs.close();
+	 		ins.close();
+		
+		}
+		
+		String name = request.getParameter("name");
+		String pw = request.getParameter("pw");
+		String email = request.getParameter("email");
+		
+		if(name.isEmpty())
+			name = memberDao.getMember(id).getName();
+		member.setName(name);
+		
+		if(pw.isEmpty())
+			pw = memberDao.getMember(id).getPw();
+		member.setPw(pw);
+		
+		if(email.isEmpty())
+			email = memberDao.getMember(id).getEmail();
+		member.setEmail(email);
+
+		member.setImage(image);
+		
+		memberDao.alterMember(member);
+		
+		return "redirect:"+prevPage;
+	}
+	
+	
+	/*	
+	// 내 정보 수정
+	@RequestMapping(value="myInfo", method=RequestMethod.GET)
+	public String myInfo(Model model, HttpServletRequest request){
+		
+		String prevPage = request.getHeader("referer"); //POST 이전주소
+		String UrlReplace = prevPage.replace("/", ".");
+		prevPage = UrlReplace.substring(UrlReplace.lastIndexOf('.')+1); 
+		
+		//내 정보(왼쪽 사이드)
+		userImg = memberDao.getMember(id).getImage();
+		follower = followDao.getFollowerCnt(id).getFollowerCnt();
+		following = followDao.getFollowingCnt(id).getFollowerCnt();
+		commentCnt = commentsDao.getCommemtCnt(id).getCommentCnt();
+		
+		Member m = memberDao.getMember(id);
+		
+		model.addAttribute("userImg", userImg);
+		model.addAttribute("follower", follower);
+		model.addAttribute("following", following);
+		model.addAttribute("commentCnt", commentCnt);	
+		model.addAttribute("m", m);
+		
+		//return "tastecoordi.mypage.myInfo";
+		return "redirect:"+prevPage;
+	}
+	
+	@RequestMapping(value="myInfo", method=RequestMethod.POST)
+	public String myInfo(HttpServletRequest request, MultipartFile file, Member member) throws IOException{
+		
+		
+		//String prevPage = request.getRequestURI().toString();//POST 주소
+		String prevPage = request.getHeader("referer"); //POST 이전주소
+		String UrlReplace = prevPage.replace("/", ".");
+		//prevPage = UrlReplace.substring(48); 
+		prevPage = UrlReplace.substring(UrlReplace.lastIndexOf('.')+1); 
+		//http:..localhost.TasteCoordi.tastecoordi.mypage. 을 쉽게 찾을 수 있는 방법은?
+
+		String image = "";
+		
+		if(file.isEmpty()){
+			image = memberDao.getMember(id).getImage();
+		}else{	
+			//실제 경로
+	 		ServletContext application = request.getServletContext();
+	 		String url = "/resource/image/profile";
+	 		String path = application.getRealPath(url);
+	 		String temp =  file.getOriginalFilename();
+	 		image=temp.substring(temp.lastIndexOf("\\")+1);
+	 		String fpath = path +"\\" +image;
+	 		
+	 		InputStream ins = file.getInputStream();
+	 		OutputStream outs = new FileOutputStream(fpath);
+	 		
+	 		byte[] buffer = new byte[1024];
+	 		
+	 		int len = 0;
+	 		
+	 		while((len = ins.read(buffer,0,1024))>=0)
+	 			outs.write(buffer, 0, len);
+	 		
+	 		outs.flush();
+	 		outs.close();
+	 		ins.close();
+		
+		}
+		
+		String name = request.getParameter("name");
+		String pw = request.getParameter("pw");
+		String email = request.getParameter("email");
+		
+		if(name.isEmpty())
+			name = memberDao.getMember(id).getName();
+		member.setName(name);
+		
+		if(pw.isEmpty())
+			pw = memberDao.getMember(id).getPw();
+		member.setPw(pw);
+		
+		if(email.isEmpty())
+			email = memberDao.getMember(id).getEmail();
+		member.setEmail(email);
+
+		member.setImage(image);
+		
+		memberDao.alterMember(member);
+		
+		//return "redirect:myCodi";
+		return "redirect:"+prevPage;
+	}*/
 	
 }

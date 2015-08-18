@@ -6,6 +6,8 @@
 
 	<!-- 소윤 -->
 	
+	<definition name="tastecoordi.mypage.myInfoUp" template="/WEB-INF/view/tastecoordi/mypage/myInfoUp.jsp" />
+	
 	<definition name="tastecoordi.mypage.*" template="/WEB-INF/view/tastecoordi/mypage/inc/layout.jsp">
 	    <put-attribute name="header" value="/WEB-INF/view/tastecoordi/mypage/inc/header.jsp" />
 	    <put-attribute name="c-aside" value="/WEB-INF/view/tastecoordi/mypage/inc/customerMenu.jsp" />

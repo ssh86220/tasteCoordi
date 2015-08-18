@@ -51,6 +51,7 @@
 	min-height: 900px;
 	float: left;
 	background: #fbf7ee;
+	padding-top: 140px;
 }
 
 .clearfix:after {

@@ -10,24 +10,98 @@
 <script type="text/javascript"
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
 <script>
+	function showDialog(url) {
+		var screen = document.createElement("div");
 
-window.addEventListener("load", function(){
-	var searchUp = document.querySelector("#search-up");
+		screen.style.width = "100%";
+		screen.style.height = "100%";
+		screen.style.position = "fixed";
+		screen.style.left = "0px";
+		screen.style.top = "0px";
+		screen.style.background = "black";
+		screen.style.opacity = "0.7";
+
+		document.body.appendChild(screen);
+
+		var docHeight = window.innerHeight;
+		var docWidth = window.innerWidth;
+		var width = "500";
+		var height = "400";
+		var top = docHeight / 2 - height / 2;
+		var left = docWidth / 2 - width / 2;
+
+		var dialog = document.createElement("div");
+		dialog.style.width = "500px";
+		dialog.style.height = "400px";
+		dialog.style.position = "fixed";
+		dialog.style.left = left + "px";
+		dialog.style.top = top + "px";
+		dialog.style.background = "rgb(255,255,255)";
+
+		document.body.appendChild(dialog);
+
+/* 		var view = document.createElement("div");
+
+		dialog.appendChild(view); */
+
+
+		var btnClose = document.createElement("input");
+		btnClose.type = "button";
+		btnClose.value = "X";
+		btnClose.style.position = "absolute";
+		btnClose.style.right = "-5px";
+		btnClose.style.top = "-5px";
+		btnClose.style.padding = "3px";
+
+		dialog.appendChild(btnClose);
+
+		btnClose.onclick = function() {
+
+			document.body.removeChild(dialog);
+			document.body.removeChild(screen);
+		}
+
+
+
+		var request = new window.XMLHttpRequest();
+
+		//비동기 반응
+		request.onreadystatechange = function() {
+			if (request.readyState == 4)
+			view.innerHTML = request.responseText;
+		}
+
+		//요청
+		request.open("GET", url, true);
+		request.send(null);
+
+		//반응 (기다리면 동기 안기다리면 비동기)	
+	}
+
+	window.addEventListener("load", function() {
+
+		var btnShowscreen = document.querySelector("#btn-show-screen");
+		btnShowscreen.onclick = function() {
+			showDialog("../joinus/codiRoom.jsp");
+		};
 	
-	searchUp.onclick = function() {
-		
-		
- 		var vis =document.querySelector(".search-form");
- 		/* alert(vis); */
-		if(vis.style.visibility=="visible")
-			vis.style.visibility="hidden";
-		else
-			vis.style.visibility="visible"; 
-	};
-	
-});
-	
+
+		var searchUp = document.querySelector("#search-up");
+
+		searchUp.onclick = function() {
+
+			var vis = document.querySelector(".search-form");
+			/* alert(vis); */
+			if (vis.style.visibility == "visible")
+				vis.style.visibility = "hidden";
+			else
+				vis.style.visibility = "visible";
+		};
+
+	});
+
 </script>
+
 
 <style>
 .search-form {
@@ -46,14 +120,13 @@ window.addEventListener("load", function(){
 .search-up:hover .search-form {
 	visibility: visible;
 }
+
 .search-form h3 {
-    font-weight: bold;
-    color: #646464;
-    margin-bottom: 5px;
-    margin-top: 7px;
+	font-weight: bold;
+	color: #646464;
+	margin-bottom: 5px;
+	margin-top: 7px;
 }
-
-
 </style>
 
 
@@ -64,7 +137,7 @@ window.addEventListener("load", function(){
 		<h1 class="Hidden">메뉴</h1>
 		<ul>
 			<li><a href="${ctxName}/tastecoordi/mypage/myCodi"><img
-					src="${ctxName}/resource/image/css/pro.JPG" alt="Mypage"></a></li>
+					src="${ctxName}/resource/image/css/mypage.png" alt="Mypage"></a></li>
 			<%-- <li><a href=""><img
 						src="${ctxName}/resource/image/css/login-icon.png" alt="Login"></a></li> --%>
 
@@ -84,19 +157,23 @@ window.addEventListener("load", function(){
 
 			<li><a href="${ctxName}/tastecoordi/codiRoom"><img
 					src="${ctxName}/resource/image/css/coordi-icon.png" alt="Coordi"></a></li>
-			
-			<li><!-- <input type="button" value="앙" id="search-up" /> --><img 
-					src="${ctxName}/resource/image/css/search-icon.png" alt="Search" id="search-up"></a></li>
+
+			<li>
+				<!-- <input type="button" value="앙" id="search-up" /> --> <img
+				src="${ctxName}/resource/image/css/search-icon.png" alt="Search"
+				id="search-up"></a>
+			</li>
 
 
-			<li><a href="${ctxName}/joinus/joinSelect"><img
-					src="${ctxName}/resource/image/css/company-icon.png" alt="Company"></a></li>
+			<li>
+				<%-- <a href="${ctxName}/joinus/joinSelect"> --%> <img
+				src="${ctxName}/resource/image/css/company-icon.png" alt="Company"
+				id="btn-show-screen"></a>
+			</li>
 			<li><a href="${ctxName}/tastecoordi/qna"><img
 					src="${ctxName}/resource/image/css/q&a-icon.png" alt="Q&A"></a></li>
-					
-			<li>
-				<a href="${ctxName}/admin/adminMenu" >관리자 메뉴</a>
-			</li>		
+
+			<li><a href="${ctxName}/admin/adminMenu">관리자 메뉴</a></li>
 		</ul>
 	</nav>
 

@@ -5,6 +5,9 @@
 <c:set var="ctxName" value='${pageContext.request.contextPath}' />
 <link href="../resource/css/test1.css" type="text/css" rel="stylesheet" />
 
+
+
+
 <div class="content-wrapper">
 	<section>
 		<h1 class="Hidden">메인메뉴</h1>
@@ -31,7 +34,6 @@
 					<li><a href="coordiDetailPage?c=${n.codiCode}"><img src="${ctxName}/resource/image/codi/${n.img}"></a></li>
 				</ul>
 				<ul id="profile">
-					<%-- <li><img src="${ctxName}/resource/image/codi/${n.img}"></li> --%>
 					<li><img src="${ctxName}/resource/image/profile/${n.image}"></li>
 					<li>${n.mid}</li>
 				</ul>

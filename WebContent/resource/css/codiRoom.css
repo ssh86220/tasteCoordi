@@ -1,158 +1,242 @@
 /* ------------------------------각 영역 */
 
-.content-wrapper {
-	width: inherit; 
-	height: inherit;
-	min-height: inherit; 
-	margin-left: 15px;
-	margin-right: 15px;
+	.content-wrapper {
+		width: inherit; 
+		height: inherit;
+		min-height: inherit; 
+		margin-left: 15px;
+		margin-right: 15px;
+	} 
 	
+	#canvas{
+		float : left;
+		/* background : #fbf7ee; */
+		/* background : pink; */ 
+		width : 49%;
+		height : 711px;
+	}
 
-} 
-#canvas{
-	float : left;
-	/* background : #fbf7ee; */
-	/* background : pink; */ 
-	width : 49%;
-	height : 711px;
-}
+	#coordi-canvas{
+	 	border:1px solid gray;
+		height : 680px; 
+	}
 
-#coordi-canvas{
-	 border:1px solid gray;
-	height : 680px; 
-}
+	#coordi-item{
+		border:1px solid gray;
+		/* border-right: 0px; */
+		height : 680px; 
+	}
 
-#coordi-item{
-	border:1px solid gray;
-	/* border-right: 0px; */
-	height : 680px; 
-}
+ 	#item{
+		float : right;
+		width : 49%;	
+		/* background : yellow; */  
+		height :711px;
+	}
 
- #item{
-	float : right;
-	width : 49%;	
-	/* background : yellow; */  
-	height :711px;
-}
-
-#product{
-	 height : 585px;
-}
+	#product{
+	 	height : 585px;
+	}
 
 
-/* 코디 순서 표시 */
-#turn{
-	display : inline-block; 
+	/* 코디 순서 표시 */
+	#turn{
+		display : inline-block; 
 	}
 	
-#turn li{
+	#turn li{
+		/* padding-left: 24px; */
+		float : left;
+	}
+
+	/* 의류, 내 옷장, 찜 아이템	 */
+	#item-menu{
+		display : inline-block;
+	}
+	
+	#item-menu li{
 		padding-left: 24px;
 		float : left
-}
-
-#turn li:first-child{
-		padding-left : 5px;
 	}
-#turn li:last-child{
-		padding-left : 146px;
+	#item-menu li:first-child{
+		padding : 0px;
+	}
+	#item-menu a{
+		text-decoration: none;
+		color : black;
+	}
+
+
+	/* 아이템 카테고리 */
+	#item-category{
+		display : inline-block;
+		margin-left : 53px;
+		}
+	
+	#item-category li{
+		padding-left: 24px;
+		float : left
 	}	
 
-/* 의류, 내 옷장, 찜 아이템	 */
-#item-menu{
-	display : inline-block;
-	}
-	
-#item-menu li{
-		padding-left: 24px;
-		float : left
-}
-#item-menu li:first-child{
+	#item-category li:first-child{
 		padding : 0px;
 	}
-
-
-/* 아이템 카테고리 */
-#item-category{
-	display : inline-block;
-	}
 	
-#item-category li{
-		padding-left: 24px;
-		float : left
-}	
-#item-category li:first-child{
-		padding : 0px;
+	#item-category a{	
+		text-decoration: none;
+		font-size : 3px;
+		text-align : center;
+		display : inline-block;
 	}
-#item-category a{	
-	text-decoration: none;
-	font-size : 3px;
-	text-align : center;
-	display : inline-block;
-}
 
 /*------------------------------img*/
-#item-img{
-	display : inline-block;
-	padding-top: 7px;
- 	/* border: 1px solid #BCBA34;  */ 
+	#item-img{
+		display : inline-block;
+		padding-top: 7px;
+ 		/* border: 1px solid #BCBA34;  */ 
 	}
 
-#item-img li{
-	padding-left: 31px;	
-}
+	#item-img li{
+		padding-left: 31px;	
+	}
 
-#item-img img{
-	width : 70px;
-	height : 70px;	
-	float : left;
-} 
+	#item-img img{
+		width : 70px;
+		height : 70px;	
+		float : left;
+	} 
 
-#detail-img{
-	width : 120px;
-	height : 100px;
+	#detail-img{
+		width : 120px;
+		height : 100px;	
+	}	
+
+
+	#myClothes-img{
+		display : inline-block;
+		padding-top: 7px;
+	}
+	#myClothes-img li{
+		/* padding-left: 25px;	 */
+		padding-left: 29px;		
+		float : left;
+	}
+	#myClothes-img img{
+		width : 70px;
+		height : 70px;	
+		display : block;
+	} 
+	#myClothes-img input[type="checkbox"]{
+		display : block;
+		margin-left: auto;
+		margin-right: auto;
+	}
 	
-}	
+	#site{
+		width : 28px;
+		height : 25px;	
+	}
+	
+	#price{
+		width : 36px;
+		height : 15px;	
+	}
+	
+	#category-img{
+		width : 45px;
+		height : 40px;
+		display : block;
+		margin-left: auto;
+		margin-right: auto; 
+		padding-left : 4px;
+	}
 
-#myClothes-img{
-	display : inline-block;
-	padding-top: 7px;
-}
+	/*-- 새로하기 이미지 */
+	#re{
+		border : 1px solid #D3D0D2;    
+		 /* background: #F2D2E1; */
+		 font-family: Arial, Helvetica, sans-serif;
+		 font-size: 16px;
+		 margin-right: 18px; 
+		 margin-left : 2px;
+		
+	}
 
-#myClothes-img li{
-	/* padding-left: 25px;	 */
-	padding-left: 29px;		
-	float : left;
-}
+	#re img{
+		width : 17px;
+		height :17px;
+		padding-right: 7px;
+		
+	}
+	#re a{
+		text-decoration: none;
+		color : #302E2F;
+	}
+	
+	/*-- 전 */ 
+	#pre{
+		/*  border : 2px solid #CACACA;   
+		 background: #FFE0F1;  */
+		 border : 1px solid #D3D0D2;    
+		/*  background: #F2D2E1; */
+		 font-family: Arial, Helvetica, sans-serif;
+		 font-size: 18px;
+		 color : #464646;
+		 font-weight : bold;
+		 margin-right: 9px; 
+		 padding-left: 2px;
+		 padding-right: 2px;
+		 
+	}
+	 #pre a{
+		text-decoration: none;
+		color : black;
+	
+	}
+	
+	/*-- 후 */ 
+	#next{
+		border : 1px solid #D3D0D2;    
+		 font-family: Arial, Helvetica, sans-serif;
+		 font-size: 18px;
+		 color : #464646;
+		 font-weight : bold;
+		 padding-left: 2px;
+		 padding-right: 2px;	 
+	}
+	 #next a{
+		text-decoration: none;
+		color : black;
 
-#myClothes-img img{
-	width : 70px;
-	height : 70px;	
-	display : block;
-} 
+	}
+	
+	#coordi-canvas{
+	 	margin-top : -2px;
+	}
+	
+	/*-- 저장하기 이미지 */
+	#save{  
+		 border : 1px solid #D3D0D2; 
+		background: #F50571; 
+		 font-family: Arial, Helvetica, sans-serif;
+		 font-size: 16px;
+		 margin-left:295px;  
+		
+	}
 
-#myClothes-img input[type="checkbox"]{
-	display : block;
-	margin-left: auto;
-	margin-right: auto;
-}
-#site{
-	width : 28px;
-	height : 25px;	
-}
-#price{
-	width : 36px;
-	height : 15px;	
-}
-#category-img{
-	width : 45px;
-	height : 40px;
-	display : block;
-	margin-left: auto;
-	margin-right: auto; 
-	padding-left : 4px;
-}
-
-
+	#save img{
+		width : 17px;
+		height :17px;
+		padding-right: 7px;
+		
+	}
+	#save a{
+		color : white;
+		text-decoration : none;
+	}
+	
+	
+	
 /* ----------------------- pager*/
 
 	#pager{
@@ -199,3 +283,5 @@
 		height : 21px; 
 		background: url("../image/css/codiRoom-Jjim2.png") no-repeat center;
 	}
+	
+	

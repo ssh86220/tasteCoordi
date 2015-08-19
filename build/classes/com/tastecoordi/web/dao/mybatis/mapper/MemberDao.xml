@@ -8,10 +8,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			select
 			id from members where id = #{id};
 		</selectKey>
-		INSERT INTO MEMBERS(ID, NAME, PW, EMAIL,REGDATE,IMAGE) VALUES
-		(#{id},#{name},#{pw},#{email},getDate(),#{image})
+		INSERT INTO MEMBERS(ID, NAME, PW, EMAIL,REGDATE,IMAGE,DefaultRole) VALUES
+		(#{id},#{name},#{pw},#{email},getDate(),#{image},'ROLE_USER')
 		INSERT INTO
-		MEMBERROLES(RCODE,MID) VALUES ('3',#{id})
+		MEMBERROLES(RCODE,MID) VALUES ('ROLE_USER',#{id})
 	</insert>
 	<!-- <select id="getMembers" resultType="com.tastecodi.java.vo.Member"> 
 		select * from MEMBERS where ${field} like '%${query}%' </select> -->

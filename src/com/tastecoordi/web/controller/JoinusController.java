@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.tastecoordi.web.dao.EnterpriseDao;
 import com.tastecoordi.web.dao.MemberDao;
+import com.tastecoordi.web.dao.MemberRolesDao;
 import com.tastecoordi.web.vo.Enterprise;
 import com.tastecoordi.web.vo.Member;
+import com.tastecoordi.web.vo.MemberRoles;
 
 
 @Controller
@@ -23,6 +25,7 @@ public class JoinusController {
 	
 	private MemberDao memberDao;
 	private EnterpriseDao enterpriseDao;
+	private MemberRolesDao memberRolesDao;
 	
 /*===================================================================*/	
 	
@@ -36,9 +39,16 @@ public class JoinusController {
 		this.enterpriseDao = enterpriseDao;
 	}
 	
+	@Autowired
+	public void setMemberRolesDao(MemberRolesDao memberRolesDao) {
+		this.memberRolesDao = memberRolesDao;
+	}
+	
 
 	/*===================================================================*/	
 	
+
+
 
 
 
@@ -77,14 +87,14 @@ public class JoinusController {
 	}
 	
 	@RequestMapping(value="joinMem",method=RequestMethod.POST)
-	public String joinMem(Member member, HttpServletRequest request){
+	public String joinMem(Member member,MemberRoles memberRoles, HttpServletRequest request){
 	
 	
 		String id = request.getParameter("ID");
  		String pw = request.getParameter("PW");
  		String email = request.getParameter("Email");
  		String nname= request.getParameter("Nname");
- 		//String defaultRole= request.getParameter("DefalutRole");
+ 		
  		
 		
  		member.setId(id);
@@ -92,6 +102,8 @@ public class JoinusController {
  		member.setEmail(email);
  		member.setName(nname);
  		member.setDefaultRole("ROLE-USER");
+ 		memberRoles.setRcode("ROLE-USER");
+ 		memberRoles.setMID(id);
  	
 		memberDao.addMember(member);
 	 	

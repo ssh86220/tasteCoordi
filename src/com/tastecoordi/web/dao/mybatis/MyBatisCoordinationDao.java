@@ -72,11 +72,15 @@ public Coordination getCoordination(String code) {
 /*SqlSession session = factory.openSession();*/ // 여러가지 DAO가 담긴 보따리에서 내가 원하는
 // DAO를 꺼내오는 것
 
-Coordination m = session.selectOne(
+/*Coordination m = session.selectOne(
 		"com.tastecoordi.web.dao.CoordinationDao.getCoordination", code);
 
 
-return m;
+return m;*/
+CoordinationDao dao = session.getMapper(CoordinationDao.class);
+
+return dao.getCoordination(code);
+
 }
 
 @Override

@@ -17,8 +17,8 @@ function showDialog(url) {
 		//반응형 웹-브라우저의 크기 구하기
 		var docwidth = window.innerWidth;
 		var docheight = window.innerHeight;
-		var width = 500;
-		var height = 300;
+		var width = 300;
+		var height = 200;
 		var left = (docwidth/2) - (width/2);
 		var top = (docheight/2) - (height/2);
 			
@@ -34,6 +34,10 @@ function showDialog(url) {
 			view.style.height = height + "px";
 			view.style.background = "rgb(255,255,255)";
 			view.style.textAlign = "center";	//가운데정렬
+			//view.style.lineHeight = height+"px";//세로 가운데정렬
+			/*		view.style.display="table-cell";
+			view.style.verticalAlign="middle";*/	
+
 
 			document.body.appendChild(view);
 			

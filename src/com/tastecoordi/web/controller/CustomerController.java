@@ -125,8 +125,7 @@ public class CustomerController {
 		q.setMid(mid);
 	
 		/*comment.setContent(content);*/
-		
-			qnaDao.addQnA(q);
+		qnaDao.addQnA(q);
 			
 		
 		

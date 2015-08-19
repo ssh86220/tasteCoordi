@@ -38,7 +38,7 @@
 				</dd>
 			</dl>
 			<dl id="detailContent">
-				<dt id="neyong">내용</dt>
+				<dt>내용</dt>
 				<dd>${c.content}</dd>
 			</dl>
 
@@ -65,7 +65,7 @@
 					</table> --%>
 		</article>
 		<section id="reple">
-			<h1>댓글 내용</h1>
+			<h1 id="reple-title">댓글 내용</h1>
 			<table>
 
 				<thead>
@@ -84,6 +84,7 @@
 						<td>${q.content}</td>
 						<td>${q.mid}</td>
 						<td>${q.regDate}</td>
+						<c:if test="${q.mid==q.mid}">
 						<td>
 							<div>
 								<form method="post"
@@ -92,6 +93,7 @@
 								</form>
 							</div>
 						</td>
+						</c:if>
 						<td>
 							<div>
 								<form method="post" action="">
@@ -109,16 +111,16 @@
 				<fieldset>
 					<legend class="Hidden">댓글 달기</legend>
 					<dl>
-						<dt>댓글 작성</dt>
+						<dt id="reple-title">댓글 작성</dt>
 						<dd>
 							<textarea rows="3" cols="33" name="content"></textarea>
 						</dd>
 						<dt class="Hidden">아이디</dt>
 						<dd class="Hidden">
-							<security:authentication property="name" />
+							<security:authentication property="name"/>
 						</dd>
 					</dl>
-					<div>
+					<div id="submit-button">
 						<input type="submit" value="작성완료">
 					</div>
 				</fieldset>
@@ -159,7 +161,7 @@
 		</nav>
 
 
-		<section>
+		<section id="service">
 			<h1>고객센터 번호</h1>
 			<p>02-123-4567</p>
 		</section>

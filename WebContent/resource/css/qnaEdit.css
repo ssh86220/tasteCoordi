@@ -3,9 +3,9 @@
 
 
 /* -------------제목부분------------- */
-#detail-title{
-font-size: 20px;
-font-weight: bold;
+#edit-title{
+	margin-left: 200px;
+	
 }
 #page-detail{
 	margin-left: 220px;
@@ -21,18 +21,6 @@ font-weight: bold;
 margin-top:10px;
 border: 1px black solid;
 display: inline-block;
-}
-#list1 img{
-margin-left:5px;
-float: left;
-}
-#list2{
-margin-left:5px;
-float: left;
-}
-#list3{
-margin-left:5px;
-float: left;
 }
 /* ----------------목록 설정 끝--------------- */
 
@@ -149,13 +137,16 @@ text-align: left;
 }
 #service {
 	float:right;
-	margin-right: 145px;	
+	margin-right: 175px;	
 	font-weight: bold;
 	/* border:1px solid gray; */
 	/* margin-right: 10px; */ 
-	margin-bottom: 20px;
+	margin-top: 100px;
 
 }
+
+
+/* ------------------댓글 목록 설정 끝---------------- */
 
 
 /* ------------------댓글 목록 설정 끝---------------- */

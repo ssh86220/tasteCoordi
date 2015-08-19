@@ -20,7 +20,7 @@
 				<section id = "coordi-img" >
 					<h1 class = "Hidden">코디 이미지</h1>
 				
-					<img src="${ctxName}/resource/image/codi/${codi.img}">
+					<img src="${ctxName}/resource/image/codi/${codi.img}" width=420px height=420px>
 					
 						
 				
@@ -34,11 +34,12 @@
 					<h1 class = "Hidden">코디설명</h1>
 				<!------------3. 상단 우측 두번째 나누기----------->		
 					<section id = "coordi-copyright">
-						<h1>코디 저작정보</h1>
+						<h1><img src="../resource/image/css/codicopyright.jpg" alt="코디 저작정보"></h1>
 						
-					${codi.title} created by ${codi.mid}<br>
+					${codi.title} <img src = "../resource/image/css/created.jpg" alt = "created by"> ${codi.mid}<br>
+								<br>
 								<h1 class = "Hidden">설명</h1>
-								설명 :
+								<img src = "../resource/image/css/codiiform.jpg" alt ="코디 설명">
 								<p>
 									${codi.title}
 								</p>
@@ -52,7 +53,7 @@
 						<ul>
 							<!-- 프로필 사진 회원정보에 맟춰 불러오기 -->
 						 	<%-- 	<c:forEach var="profile" items="${profile}"> --%>
-							<li><img src="${ctxName}/resource/image/profile/${profile.image}" width=200px alt="프로필 사진"></li>
+							<li><img src="${ctxName}/resource/image/profile/${profile.image}" width=200px height=200px alt="프로필 사진"></li>
 							
 							<%-- </c:forEach> --%>
 							
@@ -171,7 +172,7 @@
 			<!------ 아이템 이미지 불러오기 ----->							
 			<c:forEach var="cl" items="${clotheslist}">
 				<li>${cl.clothesCode}
-					<img src="${ctxName}/resource/image/clothes/${cl.image}" width="200px" alt="이미지1">
+					<img src="${ctxName}/resource/image/clothes/${cl.image}" width="100px" alt="이미지1">
 				</li>
 				<%-- <li>${cl.image}</li> --%>
 			</c:forEach>	

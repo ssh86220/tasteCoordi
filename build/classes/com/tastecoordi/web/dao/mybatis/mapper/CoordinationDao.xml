@@ -37,7 +37,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 	코디상세페이지 프로필 사진 출력 -->
 	<select id ="getCoordination" parameterType="string" resultType="com.tastecoordi.web.vo.Coordination">
-		select DISTINCT CodiCode from CodiView1 where CODICODE =#{CodiCode}
+		select DISTINCT CodiCode, image from CodiView1 where CODICODE =#{CodiCode}
+		
 	</select>
 
 

@@ -37,8 +37,9 @@
 						<h1><img src="../resource/image/css/codicopyright.jpg" alt="코디 저작정보"></h1>
 						
 					${codi.title} <img src = "../resource/image/css/created.jpg" alt = "created by"> ${codi.mid}<br>
+								<br>
 								<h1 class = "Hidden">설명</h1>
-								설명 :
+								<img src = "../resource/image/css/codiiform.jpg" alt ="코디 설명">
 								<p>
 									${codi.title}
 								</p>

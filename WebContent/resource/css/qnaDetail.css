@@ -79,7 +79,18 @@ background: #f5f5f5;
 
 }
 
+#detailContent dt{
 
+text-align: left;
+background : red;
+border: 1px gray solid;
+width: 600px;
+float: left;
+text-align: center;
+text-indent: 0px;
+background: #f5f5f5;
+
+}
 
 #detail dd{
 	
@@ -89,6 +100,14 @@ display: inline-block;
 float: left;
 border: 1px gray solid;
 	
+}
+
+#detailContent dd{
+width: 600px;
+float: left;
+min-height: inherit;
+border : none; 
+
 }
 
 

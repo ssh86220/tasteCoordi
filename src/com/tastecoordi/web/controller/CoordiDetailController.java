@@ -61,10 +61,8 @@ public class CoordiDetailController extends HttpServlet {
 	public String coordinationDetail(Model model, String c){
 		
 		//프로필 이미지 불러오기. 15.08.17 영조 추가분
-			/*List<Coordination> profile = coordinationDao.getCoordinations();
-			model.addAttribute("profile", profile);*/
 		//model.addAttribute("profile", coordinationDao.getProfile(c));
-		model.addAttribute("profile", coordinationDao.getCoordinations());
+		model.addAttribute("profile", coordinationDao.getCoordination(c));
 
 		
 		

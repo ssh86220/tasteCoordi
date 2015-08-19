@@ -4,9 +4,9 @@
 <style>
 	
 	#myinfo-form
-	{margin-left: auto; margin-right: auto; margin-top: 20px;}
+	{margin-left: 15px; margin-top: 20px;}
 	#myinfo-form td
-	{height: 30px; width: 100px; text-align: center;}
+	{height: 30px; width: 170px; text-align: center;}
 	#myinfo-form td + td
 	{width: 300px; text-align: left; padding-left: 10px;}
 	#myinfo-form input[type=button]
@@ -14,7 +14,7 @@
 	
 			
 	#myinfo-btn
-	{margin-top: 20px; text-align: center;}	
+	{margin-top: 20px; text-align: center; margin-left: -50px;}	
 </style>    
 
 <div>
@@ -46,7 +46,7 @@
 
 		<div id="myinfo-btn">
 			<input type="submit" value="수정"/>
-			<input type="button" value="취소"/>
+			<!-- <input type="button" value="취소"/> -->
 			<!-- <a href="javascript:closeWin();">취소</a> -->
 		</div>
 

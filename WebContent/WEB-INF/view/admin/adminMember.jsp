@@ -33,7 +33,6 @@
 			<table>
 				<thead>
 					<tr>
-						<th><!-- <input type="checkbox" id="all-check">check all<br> --></th>
 						<th>ID</th>
 						<th>PW</th>
 						<th>닉네임</th>
@@ -43,16 +42,16 @@
 					</tr>
 				</thead>
 				<tbody>				
-						<c:forEach var="n" items='${list}'>
+						<c:forEach var="member" items='${list}'>
 							<tr>
-								<td>${n.id}</td>
-								<td>${n.pw}</td>
-								<td>${n.name}</td>
-								<td>${n.email}</td>
-								<td><fmt:formatDate value="${n.regDate}"
+								<td>${member.id}</td>
+								<td>${member.pw}</td>
+								<td>${member.name}</td>
+								<td>${member.email}</td>
+								<td><fmt:formatDate value="${member.regDate}"
 										pattern="yyyy-MM-dd" /></td>
 								<td><%-- <a href="tsMemberModi?id=${n.id}">수정</a> --%>
-								<form method="POST" action="tsAdminMemDelete?c=${n.id}">
+								<form method="POST" action="adminMemberDelete?c=${member.id}">
 							    <input type="submit" value="삭제하기" /> 
 							    </form>
 								</td>

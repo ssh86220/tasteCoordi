@@ -5,8 +5,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctxName" value="${pageContext.request.contextPath}"/>            
 
-
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
 <script> 
 	
     function createPopup(url){
@@ -19,13 +17,14 @@
 		screen.style.height = "100%";
 		screen.style.background = "black";
 		screen.style.opacity = "0.3";
+		screen.style.overflow = "hidden";
 	   
 		document.body.appendChild(screen);
 		
 		//중앙좌표를 계산하기 위함
 		var docWidth = window.innerWidth; //창의 너비 및 높이		
 		var docHeight = window.innerHeight;
-		var width = 430; //view의 너비 및 높이
+		var width = 400; //view의 너비 및 높이
 		var height = 230;
 		var left = docWidth/2 - width/2;
 		var top = docHeight/2 - height/2;
@@ -37,8 +36,8 @@
 		dialog.style.top = top + "px";
 		dialog.style.width = width + "px";
 		dialog.style.height = height + "px";
-		dialog.style.background = "rgb(255,255,255)"; //흰색
-		dialog.style.border = "solid 1px black";
+		dialog.style.background = "rgb(249, 227, 236)"; //흰색
+		/* dialog.style.border = "solid 1px black"; */
 		
 		document.body.appendChild(dialog);
 		
@@ -50,16 +49,19 @@
 		
 		var btnCloseView = document.createElement("input");
 		btnCloseView.type="button";
-		btnCloseView.value="close";
+		btnCloseView.value="취소";
 		btnCloseView.style.position = "absolute";
-		btnCloseView.style.right="-10px";
-		btnCloseView.style.top="-10px";
+		/* btnCloseView.style.right="-10px";
+		btnCloseView.style.top="-10px"; */
+		btnCloseView.style.right="160px";
+		btnCloseView.style.bottom="22px";
 		
 		dialog.appendChild(btnCloseView);
 		
 		btnCloseView.onclick = function(){
 			document.body.removeChild(dialog);
 			document.body.removeChild(screen);
+			document.body.style.overflow = "auto";
 		};
 		
 		/* var myinfoBtn = document.querySelector("myinfo-btn");
@@ -88,14 +90,22 @@
     
     window.addEventListener("load", function(){
     	var btnMyinfo = document.querySelector("#myinfo input[type='button']");
-    	btnMyinfo.onclick = function(){
+    	var myInfo = document.querySelector("#myinfo > div > p");
+    	
+    	myInfo.onclick = function(){
     		createPopup("myInfoUp");
+    		document.body.style.overflow = "hidden";
     		
     	};
     	
     });
+    
 
 </script> 
+<style>
+	#myinfo > div > p:HOVER
+	{cursor: pointer; text-decoration: underline;}
+</style>
     
     
 			<header id=logo>
@@ -136,8 +146,8 @@
 							</c:if>
 							<div>
 								<c:if test="${targetMid eq id}">	
-									<a href="javascript:ViewLayer();">내 정보 수정</a>
-									<input type="button" value="내정보수정" />
+									<!-- <a href="javascript:ViewLayer();">내 정보 수정</a> -->
+									<p>내 정보 수정</p>
 								</c:if>
 							</div>
 						</nav>

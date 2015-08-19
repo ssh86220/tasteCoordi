@@ -30,25 +30,26 @@ public class adminMemberController {
 	private MemberDao memberDao;
 
 	//@RequestMapping("adminMem")
-	@RequestMapping("adminMenu")
+	@RequestMapping("adminMember")
 	public String adminMem(Model model) {
 
-		List<Member> list = memberDao.getMembers();
-
+		//List<Member> list = memberDao.getMembers();
+		List<Member> list = memberDao.getMemberList();
+		
 		model.addAttribute("list", list);
 
-		return "admin.adminMenu";
+		return "admin.adminMember";
 	}
 
-	@RequestMapping(value="adminMemDelete", method = RequestMethod.POST)
-	public String adminMemDelete(String c, HttpServletRequest request) {
+	@RequestMapping(value="adminMemberDelete", method = RequestMethod.POST)
+	public String adminMemDelete(String c) {
 
 		/*Member m = memberDao.getMember(id);*/
 		
 		
 		memberDao.removeMember(c);
 
-		return "tastecoordi.adminMemDelete";
+		return "redirect:adminMember";
 	}
 	@RequestMapping("tsMemberModi")
 	public String tsMemberModi(String c, Model model) {

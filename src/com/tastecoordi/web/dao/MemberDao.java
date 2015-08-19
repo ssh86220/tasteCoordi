@@ -32,6 +32,7 @@ public interface MemberDao {
 	public int alterMember(Member m);
 	
 	public List<Member> getMemberList();
+	public List<Member> getMemberList(String field, String query);
 	
 	
 	

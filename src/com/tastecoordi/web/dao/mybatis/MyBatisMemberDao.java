@@ -101,9 +101,16 @@ public class MyBatisMemberDao implements MemberDao {
 
 	@Override
 	public List<Member> getMemberList() {
+		//MemberDao dao = session.getMapper(MemberDao.class);
+
+		return getMemberList("id", "");
+	}
+
+	@Override
+	public List<Member> getMemberList(String field, String query) {
 		MemberDao dao = session.getMapper(MemberDao.class);
 
-		return dao.getMemberList();
+		return dao.getMemberList(field, query);
 	}
 
 }

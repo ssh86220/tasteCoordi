@@ -45,7 +45,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 	
 	<select id="getMemberList" resultType="com.tastecoordi.web.vo.Member">
-		SELECT * FROM MEMBERS ORDER BY REGDATE DESC
+		SELECT ROW_NUMBER() OVER (ORDER BY REGDATE DESC) ROWNUM, * FROM MEMBERS
+		WHERE ${field} LIKE '%{query}%'
 	</select>	
 
 </mapper>

@@ -12,17 +12,17 @@
 
 		<section id="lecture-search-form">
 			<h1 class="Hidden">상태폼</h1>
-			<form>
+			<form method="post">
 				<fieldset>
-					<legend>
-						<a href="">회원검색</a>
-					</legend>
-					<label>회원검색</label> <select>
-						<option>ID</option>
-						<option>이메일</option>
-						<option>닉네임</option>
-					</select> <label>회원정보검색</label> <input type="text" /> <input type="submit"
-						value="검색" />
+					<label>회원검색</label> 
+						<select name = "field">
+							<option value="id">ID</option>
+							<option value="defaultRole">회원등급</option>
+							<option value="email">이메일</option>
+						</select> 
+					<label>회원정보검색</label> 
+						<input type="text" name="query"/>
+						<input type="submit" value="검색" />
 				</fieldset>
 			</form>
 		</section>
@@ -37,6 +37,7 @@
 						<th>PW</th>
 						<th>닉네임</th>
 						<th>이메일</th>
+						<th>회원등급</th>
 						<th>가입일자</th>
 						<th>관리</th>
 					</tr>
@@ -48,6 +49,7 @@
 								<td>${member.pw}</td>
 								<td>${member.name}</td>
 								<td>${member.email}</td>
+								<td>${member.defaultRole}</td>
 								<td><fmt:formatDate value="${member.regDate}"
 										pattern="yyyy-MM-dd" /></td>
 								<td><%-- <a href="tsMemberModi?id=${n.id}">수정</a> --%>

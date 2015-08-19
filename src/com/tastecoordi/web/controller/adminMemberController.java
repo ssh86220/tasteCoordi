@@ -26,8 +26,16 @@ import com.tastecoordi.web.vo.Member;
 @RequestMapping("/admin/*")
 public class adminMemberController {
 
-	@Autowired
 	private MemberDao memberDao;
+
+	@Autowired
+	public MemberDao getMemberDao() {
+		return memberDao;
+	}
+
+	public void setMemberDao(MemberDao memberDao) {
+		this.memberDao = memberDao;
+	}
 
 	//@RequestMapping("adminMem")
 	@RequestMapping("adminMember")
@@ -43,11 +51,19 @@ public class adminMemberController {
 
 	@RequestMapping(value="adminMemberDelete", method = RequestMethod.POST)
 	public String adminMemDelete(String c) {
-
-		/*Member m = memberDao.getMember(id);*/
-		
 		
 		memberDao.removeMember(c);
+
+		return "redirect:adminMember";
+	}
+	
+	
+	@RequestMapping(value="adminMemberSearch", method = RequestMethod.POST)
+	public String adminMemSearch(Model model, String c, String field, String query) {
+		
+		
+		List<Member> list = memberDao.getMemberList(field, query);
+		model.addAttribute("list", list);
 
 		return "redirect:adminMember";
 	}

@@ -84,12 +84,14 @@ public class JoinusController {
  		String pw = request.getParameter("PW");
  		String email = request.getParameter("Email");
  		String nname= request.getParameter("Nname");
+ 		//String defaultRole= request.getParameter("DefalutRole");
  		
 		
  		member.setId(id);
  		member.setPw(pw);
  		member.setEmail(email);
  		member.setName(nname);
+ 		member.setDefaultRole("ROLE-USER");
  	
 		memberDao.addMember(member);
 	 	

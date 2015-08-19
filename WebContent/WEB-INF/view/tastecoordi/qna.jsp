@@ -9,9 +9,10 @@
 
 <!DOCTYPE html>
 
-			<main id="main">	
+		
+			<div id="main">
 			<div class="content-wrapper">
-			<h1 class="Hidden">QnA</h1>
+			<h1 id="qna-name">Q n A</h1>
 			<div>
 				
 				<section id="qna">
@@ -42,7 +43,7 @@
 					</table>
 				</section>
 				
-				<section>
+				<section id="qna-form">
 					<h1 class="Hidden">QnA 검색폼</h1>
 					<form method="post" action="searchQnA">
 						<fieldset>
@@ -59,7 +60,7 @@
 
 
 
-				<nav>
+				<nav id="qna-write">
 					<h1 class="Hidden">글쓰기 목록</h1>
 					<security:authorize ifAnyGranted="ROLE_USER">
 					<div>
@@ -70,7 +71,7 @@
 
 				<nav id=page class="clearfix">
 					<h1 class="Hidden">페이지</h1>
-					<p><a href="">이전</a></p>
+					<p><a href="">[이전]</a></p>
 					<ul>
 						<li><a href="qna?page=1">[1]</a></li>
 						<li><a href="qna?page=2">[2]</a></li>
@@ -79,17 +80,18 @@
 						<li><a href="qna?page=5">[5]</a></li>
 					
 					</ul>
-					<p><a href="">다음</a></p>
+					<p><a href="">[다음]</a></p>
 				</nav>
 
 
 
 				<section id="service">
-					<h1>고객센터 번호</h1>
+					<p>고객센터 번호</p>
 					<p>02-123-4567</p>
 				</section>
 
 			</div>
 			</div>
-			</main>
+			</div>
+
 		

@@ -41,9 +41,9 @@
 		document.body.appendChild(dialog);
 
 		var view = document.createElement("div");
-		 view.style.background="#f8deec"; 
-		 view.style.width = "100%";
-		 view.style.height = "100%";
+		view.style.background="#f8deec"; 
+		view.style.width = "100%";
+		view.style.height = "100%";
 		dialog.appendChild(view);
 
 
@@ -140,7 +140,7 @@
 		<h1 class="Hidden">메뉴</h1>
 		<ul>
 			<li><a href="${ctxName}/tastecoordi/mypage/myCodi"><img
-					src="${ctxName}/resource/image/css/mypage.png" alt="Mypage"></a></li>
+					src="${ctxName}/resource/image/css/mypage-icon.png" alt="Mypage"></a></li>
 			<%-- <li><a href=""><img
 						src="${ctxName}/resource/image/css/login-icon.png" alt="Login"></a></li> --%>
 

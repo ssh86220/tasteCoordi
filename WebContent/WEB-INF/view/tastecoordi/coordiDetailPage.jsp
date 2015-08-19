@@ -51,13 +51,10 @@
 						<h1 class = "Hidden">프로필 사진, 좋아요</h1>
 						<ul>
 							<!-- 프로필 사진 회원정보에 맟춰 불러오기 -->
-							<!-- <li><a href=""><img src="../resource/image/profile/pro.JPG" width=200px alt="프로필 사진"></a></li> -->
+						 	<%-- 	<c:forEach var="profile" items="${profile}"> --%>
+							<li><img src="${ctxName}/resource/image/profile/${profile.image}" width=200px alt="프로필 사진"></li>
 							
-							<li><a href=""><img src="${ctxName}/resource/image/codi/${codi.img}" width=200px alt="프로필 사진"></a></li>
-							
-							<c:forEach var="profile" items="${profile}">
-							<li><img src="${ctxName}/resource/image/profile/${profile.image}"></li>
-							</c:forEach>
+							<%-- </c:forEach> --%>
 							
 							
 							<!-- 팔로우 카운트 추가 -->

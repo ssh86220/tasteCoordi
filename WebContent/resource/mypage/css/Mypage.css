@@ -2,8 +2,21 @@
 
 @IMPORT url("../../css/reset.css");
 @IMPORT url("../../css/layout.css");
+/* @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css); */
+
 
 /*기본설정*/
+
+/* 기본폰트 */
+/* html, body,
+div, span,
+dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+p, fieldset, input,
+table, th, td {
+	font-family: 'Jeju Gothic', 맑은 고딕, 고딕, sans-serif
+	} */
+
 a
 {text-decoration: none;}
 

@@ -31,6 +31,8 @@ public interface MemberDao {
 	//¼ÒÀ±
 	public int alterMember(Member m);
 	
+	public List<Member> getMemberList();
+	
 	
 	
 		

@@ -99,4 +99,11 @@ public class MyBatisMemberDao implements MemberDao {
 		return dao.alterMember(m);
 	}
 
+	@Override
+	public List<Member> getMemberList() {
+		MemberDao dao = session.getMapper(MemberDao.class);
+
+		return dao.getMemberList();
+	}
+
 }

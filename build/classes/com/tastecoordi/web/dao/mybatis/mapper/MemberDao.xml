@@ -20,8 +20,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM MEMBERS WHERE ID = #{id}
 	</select>
 	<delete id="removeMember" parameterType="string">
-		DELETE FROM MEMBERROLES
-		WHERE MID = #{id}
+		<!-- DELETE FROM MEMBERROLES
+		WHERE MID = #{id} -->
 		DELETE FROM MEMBERS WHERE ID = #{id}
 	</delete>
 	<select id="getMembers" resultType="com.tastecoordi.web.vo.Member">
@@ -42,6 +42,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<update id="alterMember" parameterType="com.tastecoordi.web.vo.Member">
 		UPDATE MEMBERS SET NAME = #{name}, PW = #{pw}, EMAIL = #{email}, IMAGE = #{image}  WHERE ID = 'csy'
-	</update>	
+	</update>
+	
+	<select id="getMemberList" resultType="com.tastecoordi.web.vo.Member">
+		SELECT * FROM MEMBERS ORDER BY REGDATE DESC
+	</select>	
 
 </mapper>

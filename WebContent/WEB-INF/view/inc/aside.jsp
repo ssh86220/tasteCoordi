@@ -176,7 +176,7 @@
 			<li><a href="${ctxName}/tastecoordi/qna"><img
 					src="${ctxName}/resource/image/css/q&a-icon.png" alt="Q&A"></a></li>
 
-			<li><a href="${ctxName}/admin/adminMenu">관리자 메뉴</a></li>
+			<li><a href="${ctxName}/admin/adminMember">관리자 메뉴</a></li>
 		</ul>
 	</nav>
 

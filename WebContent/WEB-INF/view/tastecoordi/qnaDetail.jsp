@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 
 
-	<main id="main">
+	<div id="page-detail">
 	<div class="content-wrapper">
 	<h1 class="Hidden">QnA</h1>
 	
@@ -20,10 +20,9 @@
 		</section>
 		
 		<article id="detail">
-		<h1>게시판 내용</h1>
-		
+		<h1 class="Hidden">게시판 내용</h1>
 			<dl>
-				<dt>제목</dt>
+				<dt>제목 :</dt>
 				<dd>${c.title}</dd>
 				<dt>아이디</dt>
 				<dd>${c.mid}</dd>
@@ -33,13 +32,36 @@
 				<dd>${c.hits}</dd>
 				<dt>작성일자</dt>
 				<dd><f:formatDate value="${c.regDate}" pattern="yyyy-MM-dd"/></dd>
-				<dt>내용</dt>
+				<dt id="neyong">내용</dt>
 				<dd>${c.content}</dd>
 				
 			</dl>
+		<%-- 	<table>
+						<thead>
+							<tr>
+							
+								<th>제목</th>
+								<th>아이디</th>
+								<th>이메일</th>
+								<th>조회수</th>
+								<th>작성일자</th>
+								<th>내용</th>
+							</tr>
+						</thead>
+								<tr>
+									<td>${c.title}</td>
+									<td>${c.mid}</td>
+									<td>${c.email}</td>
+									<td><f:formatDate value="${c.regDate}" pattern="yyyy-MM-dd"/></td>
+									<td>${c.hits}</td>
+								</tr>
+
+					</table> --%>
 	</article>
 	 <section id="reple">
+	<h1>댓글 내용</h1>
 	 <table>
+	  
 	 <thead>
 	 
 		 <tr>
@@ -131,5 +153,5 @@
 		</section>
 	
 	</div>
-	</main>
+	</div>
 	

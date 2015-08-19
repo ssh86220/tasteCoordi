@@ -101,6 +101,7 @@ public class MyBatisMemberDao implements MemberDao {
 
 	@Override
 	public List<Member> getMemberList() {
+		
 		//MemberDao dao = session.getMapper(MemberDao.class);
 
 		return getMemberList("id", "");
@@ -108,9 +109,15 @@ public class MyBatisMemberDao implements MemberDao {
 
 	@Override
 	public List<Member> getMemberList(String field, String query) {
-		MemberDao dao = session.getMapper(MemberDao.class);
+		HashMap<String, Object> params = new HashMap<String, Object>();
+		params.put("field", field);
+		params.put("query", query);
+		
+		List<Member> list = session.selectList("getMemberList", params);
+		
+		//MemberDao dao = session.getMapper(MemberDao.class);
 
-		return dao.getMemberList(field, query);
+		return list;
 	}
 
 }

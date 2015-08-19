@@ -29,17 +29,13 @@ public class adminMemberController {
 	private MemberDao memberDao;
 
 	@Autowired
-	public MemberDao getMemberDao() {
-		return memberDao;
-	}
-
 	public void setMemberDao(MemberDao memberDao) {
 		this.memberDao = memberDao;
 	}
 
 	//@RequestMapping("adminMem")
 	@RequestMapping("adminMember")
-	public String adminMem(Model model) {
+	public String adminMember(Model model) {
 
 		//List<Member> list = memberDao.getMembers();
 		List<Member> list = memberDao.getMemberList();
@@ -50,23 +46,32 @@ public class adminMemberController {
 	}
 
 	@RequestMapping(value="adminMemberDelete", method = RequestMethod.POST)
-	public String adminMemDelete(String c) {
+	public String adminMemberDelete(String c) {
 		
 		memberDao.removeMember(c);
 
 		return "redirect:adminMember";
 	}
-	
+
+	@RequestMapping(value="adminMemberSearch", method = RequestMethod.GET)
+	public String adminMemberSearch() {
+
+		return "admin.adminMemberSearch";
+	}
 	
 	@RequestMapping(value="adminMemberSearch", method = RequestMethod.POST)
-	public String adminMemSearch(Model model, String c, String field, String query) {
-		
+	public String adminMemberSearch(Model model, String field, String query) {
 		
 		List<Member> list = memberDao.getMemberList(field, query);
+		
 		model.addAttribute("list", list);
-
-		return "redirect:adminMember";
+		
+		return "admin.adminMemberSearch";
 	}
+	
+	
+	
+	
 	@RequestMapping("tsMemberModi")
 	public String tsMemberModi(String c, Model model) {
 		
@@ -76,6 +81,8 @@ public class adminMemberController {
 		
 		return "tastecoordi.tsMemberModi";
 	}
+	
+	
 	
 /*	@RequestMapping(value = "noticeReg", method = RequestMethod.GET)
 	public String adminMemDelete(){

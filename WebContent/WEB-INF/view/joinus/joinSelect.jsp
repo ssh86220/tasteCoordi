@@ -84,7 +84,6 @@ padding-left:45px;
 		dialog.appendChild(btnClose);
 
 		btnClose.onclick = function() {
-
 			document.body.removeChild(dialog);
 			document.body.removeChild(screen);
 		}
@@ -96,7 +95,7 @@ padding-left:45px;
 		//비동기 반응
 		request.onreadystatechange = function() {
 			if (request.readyState == 4)
-			view.innerHTML = request.responseText;
+			view.innerHTML += request.responseText;
 		}
 
 		//요청
@@ -129,8 +128,8 @@ padding-left:45px;
 	<div id="joinBox">
 	<div>
 		<div class="joindiv" id="btn-show-joinScreen">
-			<ul>
-				<li><a href="joinMem">일반</a></li>
+			<ul >
+				<li><a href="../joinus/joinMem">일반</a></li>
 				<li><a>회원가입</a></li>
 				 <a ><img src="../resource/image/css/joinMember.png" /></a> 
 				

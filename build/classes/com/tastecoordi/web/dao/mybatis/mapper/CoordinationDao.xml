@@ -4,16 +4,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tastecoordi.web.dao.CoordinationDao">
 	<!-- (String code) -->
-	<delete id="delCodi" parameterType="String"> DELETE Coordinations WHERE 
-		CODE LIKE #{code} </delete>
+	<delete id="delCodi" parameterType="String"> DELETE Coordinations WHERE
+		CODE LIKE #{code}
+	</delete>
 
 	<select id="getCoordinations" resultType="com.tastecoordi.web.vo.Coordination">
-	
-		select DISTINCT IMG, CODICODE, HIT, LIKECNT, CMTCNT, TITLE, MID, IMAGE from CodiView1
+
+		select DISTINCT IMG, CODICODE, HIT, LIKECNT, CMTCNT, TITLE, MID, IMAGE from
+		CodiView1
 	</select>
-	
+
 	<select id="getCodiSearch" resultType="com.tastecoordi.web.vo.Coordination">
-		 select distinct IMG, CODICODE, HIT, LIKECNT, CMTCNT, TITLE, MID, IMAGE from CodiView1 where style=#{style} or color=#{color} or categories=#{categories}
+		select distinct IMG, CODICODE, HIT, LIKECNT, CMTCNT, TITLE, MID, IMAGE from
+		CodiView1 where style=#{style} or color=#{color} or
+		categories=#{categories}
 	</select>
 
 	<!-- <insert id="addCodi" parameterType="com.tastecoordi.web.vo.Coordination"> 
@@ -23,26 +27,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		3 - LEN(#{temp}))+#{temp})),#{title},#{mid},#{style}) </insert> -->
 
 	<update id="openCodi" parameterType="String">
-		UPDATE Coordinations SET [Open] = ABS([Open]-1) WHERE CODE LIKE #{code}
+		UPDATE Coordinations SET
+		[Open] = ABS([Open]-1) WHERE CODE LIKE #{code}
 	</update>
 
 
-<!-- 15.08.20 영조 : getCodis 코디 상세페이지 오버뷰 코디 리스트 받아오기 수정중 -->
-	<select id="getCodis" parameterType="String" resultType="com.tastecoordi.web.vo.Coordination">
+	<!-- 15.08.20 영조 : getCodis 코디 상세페이지 오버뷰 코디 이미지 리스트 받아오기 수정중.-->
+	<select id="getCodis" parameterType="String"
+		resultType="com.tastecoordi.web.vo.Coordination">
 		SELECT * FROM Coordinations WHERE MID LIKE #{mid}
 		<!-- SELECT IMG, MID FROM Coordinations WHERE MID LIKE #{mid} -->
 	</select>
-	
-	
-	<select id="getCoordiesCode" parameterType="string" resultType="String">
-		SELECT #{mid} + ISNULL(MAX(SUBSTRING(code,4,3)),0) FROM Coordinations GROUP BY MID HAVING MID=#{mid} 
-	</select>
-	
 
-<!-- 	코디상세페이지 프로필 사진 출력 -->
-	<select id ="getCoordination" parameterType="string" resultType="com.tastecoordi.web.vo.Coordination">
-		select DISTINCT CodiCode, image from CodiView1 where CODICODE =#{CodiCode}
-		
+
+	<select id="getCoordiesCode" parameterType="string" resultType="String">
+		SELECT #{mid} + ISNULL(MAX(SUBSTRING(code,4,3)),0) FROM Coordinations
+		GROUP BY MID HAVING MID=#{mid}
+	</select>
+
+
+	<!-- 코디상세페이지 프로필 사진 출력 -->
+	<select id="getCoordination" parameterType="string"
+		resultType="com.tastecoordi.web.vo.Coordination">
+		select DISTINCT CodiCode, image from CodiView1 where
+		CODICODE =#{CodiCode}
+
 	</select>
 
 
@@ -58,23 +67,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		((#{mid}+(REPLICATE('0', 3 -
 		LEN(#{temp}))+#{temp})),#{title},#{mid},#{style})
 	</insert>
-	
+
 	<select id="getCodi" parameterType="String"
 		resultType="com.tastecoordi.web.vo.Coordination">
-		SELECT * FROM Coordinations Where Code =#{code} 
+		SELECT * FROM Coordinations Where Code =#{code}
 	</select>
-	
-	
-<!--15.08.17 영조 추가분 
-	<select id="getProfile" parameterType="String"
-		resultType="com.tastecoordi.web.vo.Coordination">
-			SELECT dbo.Members.image, dbo.Members.ID, dbo.Coordinations.Mid,
-			dbo.Coordinations.Code
-			FROM dbo.Coordinations CROSS JOIN
-			dbo.Members
-			where Coordinations.Mid=Members.ID And Code=#{code}	
-	</select> -->
-	
-	
+
+
+	<!--15.08.17 영조 추가분 <select id="getProfile" parameterType="String" resultType="com.tastecoordi.web.vo.Coordination"> 
+		SELECT dbo.Members.image, dbo.Members.ID, dbo.Coordinations.Mid, dbo.Coordinations.Code 
+		FROM dbo.Coordinations CROSS JOIN dbo.Members where Coordinations.Mid=Members.ID 
+		And Code=#{code} </select> -->
+
+
 </mapper>
 

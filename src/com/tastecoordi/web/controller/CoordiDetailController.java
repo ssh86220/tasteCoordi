@@ -65,6 +65,9 @@ public class CoordiDetailController extends HttpServlet {
 
 		
 		
+		
+		
+		
 		//댓글 불러오기
 		List<Comments> list = commentsDao.getComments(c);
 		model.addAttribute("list", list);

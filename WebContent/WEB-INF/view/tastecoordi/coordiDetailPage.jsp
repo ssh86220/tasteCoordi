@@ -155,8 +155,7 @@
 			<c:forEach var="co" items="${codilist}">
 				<%-- <li>${n.code}</li> --%>
 				<%-- <li>${co.code}--%>
-					<li><img src="${ctxName}/resource/image/codi/${codilist.img}" width="200px" alt="이미지1">				
-				</li> 
+					<li><img src="${ctxName}/resource/image/codi/${codilist.img}" width="200px" alt="이미지1"></li> 
 				<li>${co.img}</li>
 				
 			</c:forEach>

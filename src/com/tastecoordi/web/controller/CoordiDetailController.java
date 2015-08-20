@@ -61,7 +61,6 @@ public class CoordiDetailController extends HttpServlet {
 	public String coordinationDetail(Model model, String c){
 		
 		//프로필 이미지 불러오기. 15.08.17 영조 추가분
-		//model.addAttribute("profile", coordinationDao.getProfile(c));
 		model.addAttribute("profile", coordinationDao.getCoordination(c));
 
 		
@@ -108,40 +107,5 @@ public class CoordiDetailController extends HttpServlet {
 	
 	
 	
-	
-/*	
-	@Override
-	protected void service(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
 
-		CommentsDao commentsDao = new MybatisCommentsDao();
-		List<Comments> list = commentsDao.getComments();
-		request.setAttribute("list", list);
-		
-		
-		
-		
-		//코디 하나에 대한 정보
-		CoordinationDao coordinationDao = new MyBatisCoordinationDao();
-		String code = request.getParameter("c");	//코디 룸페이지에서 c 넘겨줘야.(notice.jsp 100번째 줄 참고)
-		Coordination codi = coordinationDao.getCodi(code);
-		request.setAttribute("codi", codi);
-		
-		//코디 리스트
-				CoordinationDao coordinationDao = new MyBatisCoordinationDao();
-				List<Coordination> codilist = coordinationDao.getCodis();
-				request.setAttribute("codilist", codilist);
-		
-		//코디에 사용된 아이템 리스트
-			ClothesDao clothesDao = new MyBatisClothesDao();
-			List<Clothes> clotheslist = clothesDao.getClothes();
-			request.setAttribute("clotheslist", clotheslist);
-				
-		
-
-		RequestDispatcher dispatcher = request
-				.getRequestDispatcher("/WEB-INF/view/CoordiDetailPage/CoordiDetailPage.jsp");
-		dispatcher.forward(request, response);
-
-	}*/
 }

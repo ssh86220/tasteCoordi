@@ -75,5 +75,6 @@ window.addEventListener("load", function() {
 	var btnShowLike = document.querySelector("#btn-show-like");
 	btnShowLike.onclick = function() {
 		showDialog("likePop");	//바디도 없는 빈 조각파일 만들기(view에 나올 내용)
+
 	};
 });

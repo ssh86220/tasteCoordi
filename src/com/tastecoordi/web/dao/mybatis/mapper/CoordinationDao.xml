@@ -26,9 +26,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		UPDATE Coordinations SET [Open] = ABS([Open]-1) WHERE CODE LIKE #{code}
 	</update>
 
+
+<!-- 15.08.20 영조 : getCodis 코디 상세페이지 오버뷰 코디 리스트 받아오기 수정중 -->
 	<select id="getCodis" parameterType="String" resultType="com.tastecoordi.web.vo.Coordination">
 		SELECT * FROM Coordinations WHERE MID LIKE #{mid}
+		<!-- SELECT IMG, MID FROM Coordinations WHERE MID LIKE #{mid} -->
 	</select>
+	
 	
 	<select id="getCoordiesCode" parameterType="string" resultType="String">
 		SELECT #{mid} + ISNULL(MAX(SUBSTRING(code,4,3)),0) FROM Coordinations GROUP BY MID HAVING MID=#{mid} 

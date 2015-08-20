@@ -122,9 +122,15 @@
 		//mypage mouse이벤트
 		var mypage = document.querySelector("#aside-menu > li:first-child > a > img");
 		var coordi = document.querySelector("#aside-menu > li:first-child + li +li > a > img");
-		var qNa = document.querySelector("#aside-menu > li:first-child + li + li + li + li + li > a > img");
+		var member = document.querySelector("#aside-menu > li:first-child + li + li + li + li > img");
+		var company = document.querySelector("#aside-menu > li:first-child + li + li + li + li + li > a > img");
+		var qNa = document.querySelector("#aside-menu > li:last-child > a > img");
+		
+		
 		asideMenuIcon(mypage);
 		asideMenuIcon(coordi);
+		asideMenuIcon(member);
+		asideMenuIcon(company);
 		asideMenuIcon(qNa);
 
 		
@@ -165,8 +171,6 @@
 		<ul id="aside-menu">
 			<li><a href="${ctxName}/tastecoordi/mypage/myCodi"><img
 					src="${ctxName}/resource/image/css/mypage-icon.png" alt="mypage"></a></li>
-			<%-- <li><a href=""><img
-						src="${ctxName}/resource/image/css/login-icon.png" alt="Login"></a></li> --%>
 
 			<c:if test="${empty pageContext.request.userPrincipal.name}">
 				<li><a href="${ctxName}/joinus/login"><img
@@ -178,8 +182,8 @@
 							${auth.authority}
 						</c:forEach> 
 						<a href="${ctxName}/j_spring_security_logout"><security:authentication property="name" />--%>
-				<a href="${ctxName}/j_spring_security_logout"><img
-					src="${ctxName}/resource/image/css/logout.png" alt="Logout"></a>
+				<li><a href="${ctxName}/j_spring_security_logout"><img
+					src="${ctxName}/resource/image/css/logout.png" alt="Logout"></a></li>
 			</c:if>
 
 			<li><a href="${ctxName}/tastecoordi/codiRoom"><img

@@ -20,7 +20,7 @@ public interface EnterpriseDao {
 		public Enterprise getEnterprise(String mid);*/
 	//-------------------------------------------------
 			
-		public int addEnterprise(Enterprise enterpise);
+		public int addEnterprise(Enterprise id);
 		
 	//-------------------------------------------------
 		

@@ -14,12 +14,13 @@
 	
 			
 	#myinfo-btn
-	{margin-top: 20px; text-align: center; margin-left: -50px;}	
-</style>    
+	{margin-top: 20px; text-align: center;}	
+</style> 
+
 
 <div>
 
-	<form method="post" enctype="multipart/form-data" action="myInfo">
+	<form method="post" enctype="multipart/form-data" action="myInfoUp">
 		
 		<table id="myinfo-form">
 			<tr>
@@ -45,8 +46,10 @@
 		</table>
 
 		<div id="myinfo-btn">
+			<!-- <p>test</p> -->
+			<input type="button" value="업체신청"/>
 			<input type="submit" value="수정"/>
-			<!-- <input type="button" value="취소"/> -->
+			<input type="button" value="취소"/>
 			<!-- <a href="javascript:closeWin();">취소</a> -->
 		</div>
 

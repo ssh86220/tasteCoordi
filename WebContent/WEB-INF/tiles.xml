@@ -7,6 +7,7 @@
 	<!-- 소윤 -->
 	
 	<definition name="tastecoordi.mypage.myInfoUp" template="/WEB-INF/view/tastecoordi/mypage/myInfoUp.jsp" />
+	<definition name="tastecoordi.mypage.myInfoEnter" template="/WEB-INF/view/tastecoordi/mypage/myInfoEnter.jsp" />
 	<definition name="joinus.joinSelect" template="/WEB-INF/view/joinus/joinSelect.jsp" />
 	<definition name = "tastecoordi.likePop" template= "/WEB-INF/view/tastecoordi/likePop.jsp"/>
 	

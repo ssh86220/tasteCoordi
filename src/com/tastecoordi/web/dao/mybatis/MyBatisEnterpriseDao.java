@@ -45,13 +45,11 @@ public class MyBatisEnterpriseDao implements EnterpriseDao{
 	}*/
 
 	@Override
-	public int addEnterprise(Enterprise enterpise) {
-		int result = 0;
+	public int addEnterprise(Enterprise id) {
 		
 		EnterpriseDao dao = session.getMapper(EnterpriseDao.class);
-		result = dao.addEnterprise(enterpise);
 		
-		return result;
+		return dao.addEnterprise(id);
 	}
 
 /*	@Override

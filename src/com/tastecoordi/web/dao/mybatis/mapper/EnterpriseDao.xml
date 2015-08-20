@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.tastecoordi.web.dao.EnterpriseDao">
 <insert id="addEnterprise" parameterType="com.tastecoordi.web.vo.Enterprise">
-INSERT INTO ENTERPRISES(MID,LINK, PHONENUMBER) VALUES(#{mid},#{Link},#{PhoneNumber})
+INSERT INTO ENTERPRISEVIEW(MID,LINK, PHONENUMBER, REQUESTDATE) VALUES(#{mid},#{Link},#{PhoneNumber}, GETDATE())
 </insert>
 
 <!-- <select id="getEnterprisesNotApp" parameterType="String" resultType="com.tastecoordi.web.vo.Enterprise">

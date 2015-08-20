@@ -20,12 +20,14 @@ import org.springframework.web.multipart.MultipartFile;
 import com.tastecoordi.web.dao.ClothesDao;
 import com.tastecoordi.web.dao.CommentsDao;
 import com.tastecoordi.web.dao.CoordinationDao;
+import com.tastecoordi.web.dao.EnterpriseDao;
 import com.tastecoordi.web.dao.FollowDao;
 import com.tastecoordi.web.dao.JjimsDao;
 import com.tastecoordi.web.dao.LikeDao;
 import com.tastecoordi.web.dao.MemberDao;
 import com.tastecoordi.web.vo.Clothes;
 import com.tastecoordi.web.vo.Coordination;
+import com.tastecoordi.web.vo.Enterprise;
 import com.tastecoordi.web.vo.Follow;
 import com.tastecoordi.web.vo.Jjims;
 import com.tastecoordi.web.vo.Like;
@@ -43,8 +45,12 @@ public class MypageController {
 	private ClothesDao clothesDao;
 	private LikeDao likeDao;
 	private JjimsDao jjimsDao;
+	private EnterpriseDao enterpriseDao;
 
-
+	@Autowired
+	public void setEnterpriseDao(EnterpriseDao enterpriseDao) {
+		this.enterpriseDao = enterpriseDao;
+	}
 	@Autowired
 	public void setLikeDao(LikeDao likeDao) {
 		this.likeDao = likeDao;
@@ -577,6 +583,50 @@ public class MypageController {
 		return "redirect:"+prevPage;
 	}
 	
+	//업체신청
+	@RequestMapping(value="myInfoEnter", method=RequestMethod.GET)
+	public String myInfoEnter(Model model){
+		
+		Member m = memberDao.getMember(id);
+		
+		model.addAttribute("m", m);
+		
+		return "tastecoordi.mypage.myInfoEnter";
+	}
+	
+	@RequestMapping(value="myInfoEnter", method=RequestMethod.POST)
+	public String myInfoEnter(HttpServletRequest request, Enterprise enterprise){
+		
+		String prevPage = request.getHeader("referer"); //POST 이전주소
+		String UrlReplace = prevPage.replace("/", ".");
+		prevPage = UrlReplace.substring(UrlReplace.lastIndexOf('.')+1); 
+		/*---------------------------------------------------------------*/
+		
+		String link = request.getParameter("link");
+		String phoneNumber = request.getParameter("phoneNumber");
+		
+		Member m = memberDao.getMember(id);
+		
+		enterprise.setMid(m.getId());
+		enterprise.setLink(link);
+		enterprise.setPhoneNumber(phoneNumber);
+		enterprise.setName(m.getName());
+		enterprise.setPw(m.getPw());
+		enterprise.setEmail(m.getEmail());
+		
+		enterpriseDao.addEnterprise(enterprise);
+
+		return "redirect:myCodi";
+		//return "redirect:"+prevPage;
+	}
+	
+	
+	//test
+	@RequestMapping("test")
+	public String test(){	
+		
+		return "tastecoordi.mypage.test";
+	}
 	
 	/*	
 	// 내 정보 수정

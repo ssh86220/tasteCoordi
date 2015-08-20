@@ -6,6 +6,32 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctxName" value='${pageContext.request.contextPath}' />
 
+<style>
+.search-form {
+	position: absolute;
+	left: -200px;
+	top: 250px;
+	z-index: 200;
+	width: 200px;
+	height: 200px;
+	padding-top: 20px;
+	text-align: center;
+	background-color: rgba(249, 227, 236, 0.8);
+	visibility: hidden;
+}
+
+.search-up:hover .search-form {
+	visibility: visible;
+}
+
+.search-form h3 {
+	font-weight: bold;
+	color: #646464;
+	margin-bottom: 5px;
+	margin-top: 7px;
+}
+</style>
+
 
 <script type="text/javascript"
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
@@ -128,31 +154,7 @@
 </script>
 
 
-<style>
-.search-form {
-	position: absolute;
-	left: -200px;
-	top: 250px;
-	z-index: 200;
-	width: 200px;
-	height: 200px;
-	padding-top: 20px;
-	text-align: center;
-	background-color: rgba(249, 227, 236, 0.8);
-	visibility: hidden;
-}
 
-.search-up:hover .search-form {
-	visibility: visible;
-}
-
-.search-form h3 {
-	font-weight: bold;
-	color: #646464;
-	margin-bottom: 5px;
-	margin-top: 7px;
-}
-</style>
 
 
 <aside id="aside">
@@ -183,22 +185,20 @@
 			<li><a href="${ctxName}/tastecoordi/codiRoom"><img
 					src="${ctxName}/resource/image/css/coordi-icon.png" alt="coordi"></a></li>
 
-			<li>
-				<!-- <input type="button" value="앙" id="search-up" /> --> <img
-				src="${ctxName}/resource/image/css/search-icon.png" alt="search"
-				id="search-up"></a>
-			</li>
+			<li><img src="${ctxName}/resource/image/css/search-icon.png"
+				alt="search" id="search-up"></li>
+
+			<li><img src="${ctxName}/resource/image/css/member-icon.png"
+				alt="member" id="btn-show-screen"></li>
 
 
-			<li>
-				<%-- <a href="${ctxName}/joinus/joinSelect"> --%> <img
-				src="${ctxName}/resource/image/css/company-icon.png" alt="company"
-				id="btn-show-screen"></a>
+			<li><a href="${ctxName}/admin/adminMember"> <img
+					src="${ctxName}/resource/image/css/company-icon.png" alt="company"></a>
 			</li>
 			<li><a href="${ctxName}/tastecoordi/qna"><img
 					src="${ctxName}/resource/image/css/q&a-icon.png" alt="q&a"></a></li>
 
-			<li><a href="${ctxName}/admin/adminMember">관리자 메뉴</a></li>
+
 		</ul>
 	</nav>
 

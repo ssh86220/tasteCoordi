@@ -21,7 +21,7 @@
 <aside id="aside">
 	
 	<ul id="admin-menu">
-		<li><a href="" >고객관리</a></li>
+		<li><a href="adminMember" >고객관리</a></li>
 		<li><a href="" >공지관리</a></li>	
 	</ul>
 </aside>

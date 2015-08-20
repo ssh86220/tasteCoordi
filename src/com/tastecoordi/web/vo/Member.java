@@ -12,6 +12,15 @@ public class Member {
 	private String image;
 	private String DefaultRole;
 	
+	//º“¿±
+	private int rowNum;
+	
+	public int getRowNum() {
+		return rowNum;
+	}
+	public void setRowNum(int rowNum) {
+		this.rowNum = rowNum;
+	}
 	public String getDefaultRole() {
 		return DefaultRole;
 	}

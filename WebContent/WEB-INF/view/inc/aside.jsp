@@ -79,8 +79,30 @@
 
 		//반응 (기다리면 동기 안기다리면 비동기)	
 	}
-
+	
+	//mypage mouse이벤트
+	function asideMenuIcon(point){
+		point.onmouseover = function(){
+			point.src = "${ctxName}/resource/image/css/"+point.alt+".png";
+		};
+		
+		point.onmouseout = function(){
+			point.src = "${ctxName}/resource/image/css/"+point.alt+"-icon.png";
+		};
+	}
+	
 	window.addEventListener("load", function() {
+		
+		//mypage mouse이벤트
+		var mypage = document.querySelector("#aside-menu > li:first-child > a > img");
+		var coordi = document.querySelector("#aside-menu > li:first-child + li +li > a > img");
+		var qNa = document.querySelector("#aside-menu > li:first-child + li + li + li + li + li > a > img");
+		asideMenuIcon(mypage);
+		asideMenuIcon(coordi);
+		asideMenuIcon(qNa);
+
+		
+		
 
 		var btnShowscreen = document.querySelector("#btn-show-screen");
 		btnShowscreen.onclick = function() {
@@ -138,15 +160,15 @@
 	<h1 class="Hidden">전체메뉴</h1>
 	<nav>
 		<h1 class="Hidden">메뉴</h1>
-		<ul>
+		<ul id="aside-menu">
 			<li><a href="${ctxName}/tastecoordi/mypage/myCodi"><img
-					src="${ctxName}/resource/image/css/mypage-icon.png" alt="Mypage"></a></li>
+					src="${ctxName}/resource/image/css/mypage-icon.png" alt="mypage"></a></li>
 			<%-- <li><a href=""><img
 						src="${ctxName}/resource/image/css/login-icon.png" alt="Login"></a></li> --%>
 
 			<c:if test="${empty pageContext.request.userPrincipal.name}">
 				<li><a href="${ctxName}/joinus/login"><img
-						src="${ctxName}/resource/image/css/login-icon.png" alt="Login"></a></li>
+						src="${ctxName}/resource/image/css/login-icon.png" alt="login"></a></li>
 			</c:if>
 			<c:if test="${not empty pageContext.request.userPrincipal.name}">
 				<%-- <security:authentication property="authorities" var="authorities" />
@@ -159,22 +181,22 @@
 			</c:if>
 
 			<li><a href="${ctxName}/tastecoordi/codiRoom"><img
-					src="${ctxName}/resource/image/css/coordi-icon.png" alt="Coordi"></a></li>
+					src="${ctxName}/resource/image/css/coordi-icon.png" alt="coordi"></a></li>
 
 			<li>
 				<!-- <input type="button" value="앙" id="search-up" /> --> <img
-				src="${ctxName}/resource/image/css/search-icon.png" alt="Search"
+				src="${ctxName}/resource/image/css/search-icon.png" alt="search"
 				id="search-up"></a>
 			</li>
 
 
 			<li>
 				<%-- <a href="${ctxName}/joinus/joinSelect"> --%> <img
-				src="${ctxName}/resource/image/css/company-icon.png" alt="Company"
+				src="${ctxName}/resource/image/css/company-icon.png" alt="company"
 				id="btn-show-screen"></a>
 			</li>
 			<li><a href="${ctxName}/tastecoordi/qna"><img
-					src="${ctxName}/resource/image/css/q&a-icon.png" alt="Q&A"></a></li>
+					src="${ctxName}/resource/image/css/q&a-icon.png" alt="q&a"></a></li>
 
 			<li><a href="${ctxName}/admin/adminMember">관리자 메뉴</a></li>
 		</ul>

@@ -3,6 +3,21 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctxName" value='${pageContext.request.contextPath}'/> 
 <link href="../resource/css/codiRoom.css" type="text/css" rel="stylesheet" />
+<!-- <script type="text/javascript" src="../resource/js/codiRoom.js"></script> -->
+<script type="text/javascript">
+	window.addEventListener("load", function(){
+		var clothesUpload = document.querySelector("#item-menu");
+	
+		clothesUpload.onclick = function(){
+		
+		//codiRoom 한 페이지 내에서 의류, 내아이템, 찜아이템 보여주기
+		//alert("tt");
+		
+		
+	};
+	
+});
+</script>
 
 		<div class="content-wrapper clearfix">		
 		<section class="clearfix">
@@ -26,17 +41,7 @@
 				
 				<section id="coordi-canvas">
 				<h1 class="Hidden">코디 영역</h1>
-					<div>
-					<!-- <a href="codiRoomCoordi">코디 저장하기</a> -->
-					<%--  <section><!-- 코디 아이템 정보 CodiRoomDetail -->
-					 <form method="POST" action="codiRoomClothesCoordi">
-					<input type="submit" value="코디 저장하기"><br>
-					 <c:forEach var="c" items="${list}">					
-						<input type="checkbox" name="check" value="${c.code}"/>
-						아이템 이름 : ${c.name}<br>
-					</c:forEach>
-					</form> 
-					</section>  	 --%>		
+					<div>	
 					</div>		 			
 				</section>	
 							
@@ -54,7 +59,7 @@
 					<h1 class="Hidden">아이템 저장소</h1>
 						<ul id="item-menu" class="clearfix">
 							<li><a href="codiRoom">의류</a></li>
-							<li><a href="codiRoomMyClothes">내 옷장</a></li>
+							<li><a href="codiRoomMyClothes">내 옷장</a> </li>
 							<li><a href="codiRoomJjims">찜 아이템</a></li>
 						</ul>			
 				
@@ -135,5 +140,4 @@
 																
 		</section>
 	</section>	
-</div>	
-	
+</div>

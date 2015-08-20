@@ -101,9 +101,7 @@
 				</section>	
 				</div>							
 			</section>			
-		</section>
-	  
-																	
+		</section>	  																	
 	</section>
 </section>	
 </div>	

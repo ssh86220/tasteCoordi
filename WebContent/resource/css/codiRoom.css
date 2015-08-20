@@ -1,4 +1,9 @@
+
 /* ------------------------------°¢ ¿µ¿ª */
+
+ #main-wapper {
+	min-height: 700px;
+}
 
 	.content-wrapper {
 		width: inherit; 

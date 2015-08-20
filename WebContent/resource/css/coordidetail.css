@@ -1,67 +1,96 @@
+
 @CHARSET "UTF-8";
+
 @import url(layout.css);
 
 /* --------코디 상세페이지용 알맹이 CSS----------- */
-#coordi-img{
-	/* position:absolute */;
-	float:left;
-	width:570px;
-	border:1px solid black;
-	
-	
+#coordi-img {
+	/* position:absolute;  */
+	float: left;
+	width: 570px;
+	/* border: 1px solid black; */
 }
 
-#coordi-img img{
+#coordi-img img {
 	margin-left: 80px;
+	-moz-box-shadow: 10px 10px 5px #000000;
+	-webkit-box-shadow: 10px 10px 5px #000000;
+	box-shadow: 10px 10px 5px #000000;
 }
 
-
-#coordi-contents{
-	float:right;
-	border:1px solid red;
-	width:585px;
+#coordi-contents {
+	float: right;
+	border: 1px solid red;
+	width: 585px;
 }
 
-#coordi-copyright{
-	float:left;
-	border:1px solid blue;
-	width:300px;
-	background:#feaba9;
+#coordi-copyright {
+	float: left;
+	border: 1px solid blue;
+	width: 300px;
+	background: #feaba9;
 }
 
-#coordi-like{
-	float:right;
-	border:1px solid green;
-	width:280px;
-}
-
-#coordi-like ul{
+#coordi-like {
+	float: right;
+	border: 1px solid green;
+	width: 280px;
 	text-align: center;
 }
 
-#sns{
-	float:left;
+/* #coordi-like img {
+text-align: center;
+} */
+#sns {
+	float: left;
+	border: 1px solid pink;
+	/* text-align: center; 가운데정렬 안먹힘*/
+	cursor: pointer;
 }
 
 /* ----코디 상세페이지 댓글 리스트 표 CSS--- */
-#comment-list th{
-	background:#feaba9;
-	width:585px;
-	text-align: center; 
+#comment-list th {
+	background: #feaba9;
+	width: 585px;
+	text-align: center;
 }
 
-#comment-list td{
-	text-align: center; 
+#comment-list td {
+	text-align: center;
 }
 
-#overview li{
-	float:left;
+#overview li {
+	float: left;
 }
 
-#coordi-item li{
-	float:left;
+#coordi-item li {
+	float: left;
 }
 
-#clear{
-	clear:both;
+#clear {
+	clear: both;
+}
+
+/* 코디 상세페이지 아이템 출력 CSS */
+
+
+#overview li {
+	border: solid 6px #faaada;
+	
+	border-top-left-radius: 5px;
+	border-top-right-radius: 75px;
+	border-bottom-left-radius: 75px;
+	border-bottom-right-radius: 5px;
+	background: #faaada;
+}
+
+#coordi-item li {
+	/* border: 1px solid pink; */
+	border: solid 6px #faaada;
+	
+	border-top-left-radius: 5px;
+	border-top-right-radius: 75px;
+	border-bottom-left-radius: 75px;
+	border-bottom-right-radius: 5px;
+	background: #faaada;
 }

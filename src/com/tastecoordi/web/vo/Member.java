@@ -14,7 +14,21 @@ public class Member {
 	
 	//º“¿±
 	private int rowNum;
+	private Date RequestDate;
+	private Date AllowDay;
 	
+	public Date getAllowDay() {
+		return AllowDay;
+	}
+	public void setAllowDay(Date allowDay) {
+		AllowDay = allowDay;
+	}
+	public Date getRequestDate() {
+		return RequestDate;
+	}
+	public void setRequestDate(Date requestDate) {
+		RequestDate = requestDate;
+	}
 	public int getRowNum() {
 		return rowNum;
 	}

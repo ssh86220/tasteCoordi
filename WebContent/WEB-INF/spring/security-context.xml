@@ -27,6 +27,7 @@
     	<intercept-url pattern="/tastecoordi/mypage/myCodi" access="ROLE_USER"/>
     	<intercept-url pattern="/tastecoordi/codiRoomMyClothes" access="ROLE_USER"/>
     	<intercept-url pattern="/tastecoordi/codiRoomJjims" access="ROLE_USER"/>
+    	<intercept-url pattern="/admin/adminMember" access="ROLE_ADMIN"/>
     </http>
     
     

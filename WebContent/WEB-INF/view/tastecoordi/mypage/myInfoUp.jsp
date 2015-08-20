@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>      
     
 <style>
 	
@@ -46,11 +48,11 @@
 		</table>
 
 		<div id="myinfo-btn">
-			<!-- <p>test</p> -->
-			<input type="button" value="업체신청"/>
+			<c:if test="${m.defaultRole eq 'ROLE_USER'}">
+				<input type="button" value="업체신청"/>
+			</c:if>
 			<input type="submit" value="수정"/>
 			<input type="button" value="취소"/>
-			<!-- <a href="javascript:closeWin();">취소</a> -->
 		</div>
 
 	</form>

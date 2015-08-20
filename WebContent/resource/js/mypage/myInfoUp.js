@@ -34,40 +34,7 @@
 		
 		var viewContent = document.createElement("div");//내용
 		
-		
-		//닫기버튼
-		dialog.appendChild(viewContent);
-		
-		var btnCloseView = document.createElement("input");
-		btnCloseView.type="button";
-		btnCloseView.value="창닫기";
-		btnCloseView.style.position = "absolute";
-		btnCloseView.style.right="-10px";
-		btnCloseView.style.top="-10px";
-		/* btnCloseView.style.right="160px";
-		btnCloseView.style.bottom="16px"; */
-		
-		dialog.appendChild(btnCloseView);
-		
-		btnCloseView.onclick = function(){
-			document.body.removeChild(dialog);
-			document.body.removeChild(screen);
-			document.body.style.overflow = "auto";
-		};
-		
-		/*var btnEnterView = document.createElement("input");
-		btnEnterView.type = "button";
-		btnEnterView.value = "업체등록신청";
-		btnEnterView.style.position = "absolute";
-		btnEnterView.style.right = "50px";
-		btnEnterView.style.bott0  = "30px";
-		
-		dialog.appendChild(btnEnterView);
-		
-		btnEnterView.onclick = function(){
-			alert("test");
-		};*/
-		
+		dialog.appendChild(viewContent);		
 		
 		var request = new XMLHttpRequest(); 
 		//완료된 다음에 넘겨라
@@ -82,6 +49,7 @@
 		    	myinfoBtn.onclick = function(){
 					document.body.removeChild(dialog);
 					document.body.removeChild(screen);
+					document.body.style.overflow = "auto";
 				};
 				
 				var myinforEnter = document.querySelector("#myinfo-btn > input[type='button']:first-child");
@@ -103,7 +71,7 @@
     }
     
     window.addEventListener("load", function(){
-    	var btnMyinfo = document.querySelector("#myinfo input[type='button']");
+    	
     	var myInfo = document.querySelector("#myinfo > div > p");
     	
     	myInfo.onclick = function(){

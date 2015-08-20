@@ -616,8 +616,8 @@ public class MypageController {
 		
 		enterpriseDao.addEnterprise(enterprise);
 
-		return "redirect:myCodi";
-		//return "redirect:"+prevPage;
+		//return "redirect:myCodi";
+		return "redirect:"+prevPage;
 	}
 	
 	

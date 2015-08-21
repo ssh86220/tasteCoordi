@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctxName" value='${pageContext.request.contextPath}'/> 	
-<link href="../resource/css/codiRoom.css" type="text/css" rel="stylesheet" />
-		<div class="content-wrapper clearfix">		
+<link href="${ctxName}/resource/css/codiRoom.css" type="text/css" rel="stylesheet" />	
+ 		<div class="content-wrapper clearfix">		
 		<section class="clearfix">
 			<h1 class="Hidden">코디하기</h1>
 		
@@ -46,7 +46,7 @@
 							<li><a href="codiRoomJjims">찜 아이템</a></li>
 						</ul>			
 				
-				<div id="coordi-item">			
+				<div id="coordi-item">	 		
 				<section>
 						<h1 class="Hidden">아이템 색상 선택</h1>
 						<form method="post" action="codiRoomSearch">
@@ -99,9 +99,9 @@
 						</ul>
 				</nav>			
 				</section>	
-				</div>							
+				 </div>							
 			</section>			
 		</section>	  																	
 	</section>
 </section>	
-</div>	
+</div>	 

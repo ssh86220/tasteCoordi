@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctxName" value='${pageContext.request.contextPath}'/> 
-<link href="../resource/css/codiRoom.css" type="text/css" rel="stylesheet" />
+<link href="${ctxName}/resource/css/codiRoom.css" type="text/css" rel="stylesheet" />	
 <!-- <script type="text/javascript" src="../resource/js/codiRoom.js"></script> -->	
 <script type="text/javascript">
 function showDialog(url) {
@@ -64,8 +64,10 @@ function showDialog(url) {
 
 	//비동기 반응
 	request.onreadystatechange = function() {
-		if (request.readyState == 4)
-		view.innerHTML = request.responseText;
+		if (request.readyState == 4){
+			view.innerHTML = request.responseText; 
+    		request.send(null);
+		}
 	}
 
 	//요청
@@ -132,7 +134,7 @@ function showDialog(url) {
 							<li><a href="codiRoomJjims">찜 아이템</a></li>
 						</ul>			
 				
-				<div id="coordi-item">			
+				<div id="coordi-item">	 		
 				<section>
 						<h1 class="Hidden">아이템 색상 선택</h1>
 						<form method="post" action="codiRoomSearch">
@@ -161,8 +163,8 @@ function showDialog(url) {
 							
 				<section id="product">
 					<h1 class="Hidden">아이템 등록</h1>
-						<a>
-						<!-- <a href="codiRoomMyClothesUpload" id="upload"> -->아이템 등록하기</a>
+						<a> 
+						<!-- <a href="codiRoomMyClothesUpload"> --> 아이템 등록하기</a>
 						<h1 class="Hidden">이미지 목록</h1>
 							<form method="POST" action="codiRoomMyClothesDelete">
 							<div class="check"><input type="submit" value="삭제하기"></div>
@@ -191,7 +193,7 @@ function showDialog(url) {
 						</ul>
 				</nav>			
 			</section>	
-			</div>
+			 </div>
 		</section>			
 	</section>
 	  

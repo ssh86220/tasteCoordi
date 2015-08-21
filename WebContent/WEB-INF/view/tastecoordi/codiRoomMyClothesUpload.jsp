@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -15,12 +15,12 @@
 	
 	<aside>
 		
-	</aside>
+	</aside> -->
 	
 	<main>	
 	<section>
 			<h1>아이템등록하기 </h1>
-			<form method="post" enctype="multipart/form-data">
+			<form method="POST" enctype="multipart/form-data" action="codiRoomMyClothesUpload">
 			
 				<dl>				
 					<dd><input type='hidden' name='mid' value="<security:authentication property="name"/>"/></dd>
@@ -65,8 +65,8 @@
 		
 	</main>
 	
-	<footer>
+<!-- 	<footer>
 	</footer>
 
 </body>
-</html>
+</html> -->

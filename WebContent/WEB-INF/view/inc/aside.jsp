@@ -45,20 +45,20 @@
 		screen.style.left = "0px";
 		screen.style.top = "0px";
 		screen.style.background = "black";
-		screen.style.opacity = "0.7";
+		screen.style.opacity = "0.5";
 
 		document.body.appendChild(screen);
 
 		var docHeight = window.innerHeight;
 		var docWidth = window.innerWidth;
-		var width = "300";
-		var height = "300";
+		var width = "400";
+		var height = "400";
 		var top = docHeight / 2 - height / 2;
 		var left = docWidth / 2 - width / 2;
 
 		var dialog = document.createElement("div");
-		dialog.style.width = "300px";
-		dialog.style.height = "300px";
+		dialog.style.width = "400px";
+		dialog.style.height = "400px";
 		dialog.style.position = "fixed";
 		dialog.style.left = left + "px";
 		dialog.style.top = top + "px";
@@ -97,8 +97,23 @@
 		request.onreadystatechange = function() {
 			if (request.readyState == 4)
 			view.innerHTML = request.responseText;
+			
+			
+			var btnJoinscreen = document.querySelector("#btn-joinMemScreen");
+			btnJoinscreen.onclick = function(){
+				
+				showDialog("../joinus/joinMem");
+			}
+			
+			var btnJoinscreen = document.querySelector("#btn-joinEnterScreen");
+			btnJoinscreen.onclick = function(){
+				
+				showDialog("../joinus/joinEnter");
+			}
+			
+				
 		}
-
+		
 		//요청
 		request.open("GET", url, true);
 		request.send(null);
@@ -132,8 +147,7 @@
 		asideMenuIcon(member);
 		asideMenuIcon(company);
 		asideMenuIcon(qNa);
-
-		
+	
 		
 
 		var btnShowscreen = document.querySelector("#btn-show-screen");
@@ -141,7 +155,7 @@
 			
 			showDialog("../joinus/joinSelect");
 		};
-			
+		
 
 		var searchUp = document.querySelector("#search-up");
 

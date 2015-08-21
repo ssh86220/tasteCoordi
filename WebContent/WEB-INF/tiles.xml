@@ -10,6 +10,8 @@
 	<definition name="tastecoordi.mypage.myInfoEnter" template="/WEB-INF/view/tastecoordi/mypage/myInfoEnter.jsp" />
 	<definition name="tastecoordi.mypage.myClothesReg" template="/WEB-INF/view/tastecoordi/mypage/myClothesReg.jsp" />
 	<definition name="joinus.joinSelect" template="/WEB-INF/view/joinus/joinSelect.jsp" />
+	<definition name="joinus.joinMem" template="/WEB-INF/view//joinus/joinMem.jsp" />
+	<definition name="joinus.joinEnter" template="/WEB-INF/view//joinus/joinEnter.jsp" />
 	<definition name = "tastecoordi.likePop" template= "/WEB-INF/view/tastecoordi/likePop.jsp"/>
 	<definition name = "tastecoordi.codiRoomMyClothesUpload" template= "/WEB-INF/view/tastecoordi/codiRoomMyClothesUpload.jsp"/>
 	

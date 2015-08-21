@@ -53,7 +53,7 @@
 						<ul >
 							<!-- 프로필 사진 회원정보에 맟춰 불러오기 -->
 						 	<%-- 	<c:forEach var="profile" items="${profile}"> --%>
-							<li><img src="${ctxName}/resource/image/profile/${profile.image}" width=200px height=200px alt="프로필 사진"></li>
+							<li><img id = "profile" src="${ctxName}/resource/image/profile/${profile.image}" width=200px height=200px alt="프로필 사진"></li>
 							
 							<%-- </c:forEach> --%>
 							
@@ -140,8 +140,32 @@
 <br><br><br>
 
 	<section>
-		<nav id= "overview">
+		
+		<nav id= "coordi-item">
 			<h1><img src="../resource/image/css/overview.jpg" alt="Overview"></h1>
+			
+			<ul>
+				<li><a href=""><img src="" alt="이미지1"></a></li>
+				<li><a href=""><img src="" alt="이미지2"></a></li>
+				
+			<!------ 아이템 이미지 불러오기 ----->							
+			<c:forEach var="cl" items="${clotheslist}">
+				<li>
+					<img src="${ctxName}/resource/image/clothes/${cl.image}" width="100px" alt="이미지1">
+					${cl.clothesCode}
+				</li>
+				<%-- <li>${cl.image}</li> --%>
+			</c:forEach>	
+				
+			</ul>
+		</nav>
+
+	<div id="clear"></div>
+
+
+<br><br>
+		<nav id= "overview">
+			<h1><img src="../resource/image/css/coordi-item.jpg" alt="해당 아이템이 사용된 코디"></h1>
 			
 			
 			<!-- --------코디코드, 코디 이미지 리스트 출력. 안나옴ㅠ 왜일까--------- -->
@@ -165,28 +189,7 @@
 			</ul>
 		</nav>
 
-	<div id="clear"></div>
 
 
-<br><br>
-
-		<nav id= "coordi-item">
-			<h1><img src="../resource/image/css/coordi-item.jpg" alt="해당 코디에 사용된 아이템"></h1>
-			
-			<ul>
-				<li><a href=""><img src="" alt="이미지1"></a></li>
-				<li><a href=""><img src="" alt="이미지2"></a></li>
-				
-			<!------ 아이템 이미지 불러오기 ----->							
-			<c:forEach var="cl" items="${clotheslist}">
-				<li>
-					<img src="${ctxName}/resource/image/clothes/${cl.image}" width="100px" alt="이미지1">
-					${cl.clothesCode}
-				</li>
-				<%-- <li>${cl.image}</li> --%>
-			</c:forEach>	
-				
-			</ul>
-		</nav>
 	</section>
 <!-- ---------1. 코디 상세페이지 하단 끝---------------------->

@@ -38,6 +38,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM Coordinations WHERE MID LIKE #{mid}
 		<!-- SELECT IMG, MID FROM Coordinations WHERE MID LIKE #{mid} -->
 	</select>
+	
+	<!-- 15.08.21 영조 : 코디 상세페이지 오버뷰 코디 이미지 리스트 받아오기 수정중.-->
+	<!-- <select id="getCoordilist" parameterType="String"
+		resultType="com.tastecoordi.web.vo.Coordination">
+		 select * from codiview1 where clothescode LIKE #{Code} 
+		select IMG, Code from Coordinations
+		</select> -->
+
+	
+	
 
 
 	<select id="getCoordiesCode" parameterType="string" resultType="String">

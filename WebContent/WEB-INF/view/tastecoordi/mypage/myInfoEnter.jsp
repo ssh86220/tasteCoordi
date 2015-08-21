@@ -38,6 +38,7 @@
 		</table>
 
 		<div id="myinfo-btn">
+			<input type="button" value="업체신청" data-code="${m.defaultRole}" style="display: none;"/>
 			<input type="submit" value="제출"/>
 			<input type="button" value="취소"/>
 		</div>

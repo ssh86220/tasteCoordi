@@ -86,7 +86,7 @@
 						<div id="btn-left">
 							<input type="checkbox" id="all-check">check all<br>
 						</div>
-						<div>
+						<div id = "codi-btns">
 							<input type="button" value="삭제" onclick="del()">
 							<input type="button" value="공개/비공개" onclick="state()">				
 						</div>

@@ -48,11 +48,9 @@
 		</table>
 
 		<div id="myinfo-btn">
-			<c:if test="${m.defaultRole eq 'ROLE_USER'}">
-				<input type="button" value="업체신청"/>
-			</c:if>
+			<input type="button" value="업체신청" data-code="${m.defaultRole}"/>
 			<input type="submit" value="수정"/>
-			<input type="button" value="취소"/>
+			<!-- <input type="button" value="취소"/> -->
 		</div>
 
 	</form>

@@ -13,9 +13,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>MyCodi</title>
-<script type = "text/javascript" src = "${ctxName}/resource/js/mypage/myInfoUp.js"></script>
-<%-- <link href="${ctxName}/resource/css/reset.css" type="text/css" rel="stylesheet"/>
-<link href="${ctxName}/resource/css/layout.css" type="text/css" rel="stylesheet"/> --%>
+<script type = "text/javascript" src = "${ctxName}/resource/mypage/js/myInfoUp.js"></script>
+
 <link href="${ctxName}/resource/mypage/css/Mypage.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>

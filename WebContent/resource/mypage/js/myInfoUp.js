@@ -34,7 +34,24 @@
 		
 		var viewContent = document.createElement("div");//내용
 		
-		dialog.appendChild(viewContent);		
+		dialog.appendChild(viewContent);
+		
+		
+		var btnClose = document.createElement("input");
+		btnClose.type = "button";
+		btnClose.value = "닫기";
+		btnClose.style.position="absolute";
+		btnClose.style.right = "-10px";
+		btnClose.style.top = "-10px";
+
+		dialog.appendChild(btnClose);
+		
+		btnClose.onclick = function(){
+			document.body.removeChild(dialog);
+			document.body.removeChild(screen);
+			document.body.style.overflow = "auto";
+		};
+		
 		
 		var request = new XMLHttpRequest(); 
 		//완료된 다음에 넘겨라
@@ -45,19 +62,26 @@
 				//= 대치, += 추가
 				
 		    	//inner에서 닫아짐
-		    	var myinfoBtn = document.querySelector("#myinfo-btn > input[type='button']:last-child");
+		    	/*var myinfoBtn = document.querySelector("#myinfo-btn > input[type='button']:last-child");
 		    	myinfoBtn.onclick = function(){
 					document.body.removeChild(dialog);
 					document.body.removeChild(screen);
 					document.body.style.overflow = "auto";
-				};
+				};	*/					
 				
 				var myinforEnter = document.querySelector("#myinfo-btn > input[type='button']:first-child");
-				myinforEnter.onclick = function(){
-		    		viewContent.innerHTML = request.open("GET", "myInfoEnter", true);
-		    		request.send(null);	
-		    		
-				};
+				
+				if(myinforEnter.dataset.code != "ROLE_USER")
+					myinforEnter.style.display = "none";		
+				else{
+					
+					myinforEnter.onclick = function(){
+						viewContent.innerHTML = request.open("GET", "myInfoEnter", true);
+						request.send(null);	
+						
+					};
+				}				
+				
 
 			}
 		}

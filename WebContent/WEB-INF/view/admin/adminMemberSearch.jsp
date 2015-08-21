@@ -33,6 +33,7 @@
 			<table>
 				<thead>
 					<tr>
+						<th></th>
 						<th>ID</th>
 						<th>PW</th>
 						<th>닉네임</th>
@@ -45,6 +46,11 @@
 				<tbody>				
 						<c:forEach var="member" items='${list}'>
 							<tr>
+								<td>
+								<c:if test="${not empty member.requestDate && empty member.allowDay}">
+								업체등록신청
+								</c:if>
+								</td>
 								<td>${member.id}</td>
 								<td>${member.pw}</td>
 								<td>${member.name}</td>

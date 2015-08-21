@@ -6,16 +6,16 @@
 	
 	#clothes-form
 	{margin-left: 15px; margin-top: 20px;}
-	/* #clothes-form td
+	#clothes-form td
 	{height: 30px; width: 170px; text-align: center;}
 	#clothes-form td + td
 	{width: 300px; text-align: left; padding-left: 10px;}
-	#clothes-form input[type=button]
-	{margin-left: 10px;}	 */
+	
 	
 			
 	#clothes-btn
 	{margin-top: 20px; text-align: center;}
+	
 </style> 
 
 				
@@ -23,7 +23,7 @@
 		
 			<table id="clothes-form">
 				<tr>
-					<td>아이템이름</td>
+					<td>상품명</td>
 					<td><input name="itemName"/></td>
 				</tr>
 				<tr>
@@ -60,7 +60,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td>아이템 이미지</td>
+					<td>이미지</td>
 					<td><input name="file" type="file"/></td>
 				</tr>
 				<tr>

@@ -56,7 +56,7 @@
 											<input type="checkbox" name="check" value="${jjim.clothesCode}"/>
 										</div>
 										<div>	
-										${jjim.clothesCode}
+										<%-- ${jjim.clothesCode} --%>
 											<img class="items" src="${ctxName}/resource/image/clothes/${jjim.image}">
 										</div>
 									</li>

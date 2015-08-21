@@ -55,7 +55,7 @@
 											<input type="checkbox" name="check" value="${like.codiCode}"/>
 										</div>
 										<div>	
-											<img class="items" src="${ctxName}/resource/image/clothes/${like.img}">
+											<img class="items" src="${ctxName}/resource/image/codi/${like.img}">
 										</div>
 									</li>
 									<%-- <c:if test="${status.count%5 eq 0}"><br></c:if>	 --%>		

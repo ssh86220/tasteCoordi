@@ -1,5 +1,4 @@
-
-    function createPopup(url){
+	function createPopup(url){
 		var screen = document.createElement("div");//검은바탕
 
 		screen.style.position = "fixed";
@@ -17,7 +16,7 @@
 		var docWidth = window.innerWidth; //창의 너비 및 높이		
 		var docHeight = window.innerHeight;
 		var width = 400; //view의 너비 및 높이
-		var height = 230;
+		var height = 270;
 		var left = docWidth/2 - width/2;
 		var top = docHeight/2 - height/2;
 		
@@ -34,7 +33,22 @@
 		
 		var viewContent = document.createElement("div");//내용
 		
-		dialog.appendChild(viewContent);		
+		dialog.appendChild(viewContent);	
+		
+		var btnClose = document.createElement("input");
+		btnClose.type = "button";
+		btnClose.value = "닫기";
+		btnClose.style.position="absolute";
+		btnClose.style.right = "-10px";
+		btnClose.style.top = "-10px";
+
+		dialog.appendChild(btnClose);
+		
+		btnClose.onclick = function(){
+			document.body.removeChild(dialog);
+			document.body.removeChild(screen);
+			document.body.style.overflow = "auto";
+		};
 		
 		var request = new XMLHttpRequest(); 
 		//완료된 다음에 넘겨라
@@ -42,29 +56,7 @@
 			if (request.readyState == 4){
 				
 				viewContent.innerHTML = request.responseText; //기다리지않으므로 출력결과가 없다.	
-				//= 대치, += 추가
-				
-		    	//inner에서 닫아짐
-		    	var myinfoBtn = document.querySelector("#myinfo-btn > input[type='button']:last-child");
-		    	myinfoBtn.onclick = function(){
-					document.body.removeChild(dialog);
-					document.body.removeChild(screen);
-					document.body.style.overflow = "auto";
-				};						
-				
-				var myinforEnter = document.querySelector("#myinfo-btn > input[type='button']:first-child");
-				
-				if(myinforEnter.dataset.code != "ROLE_USER")
-					myinforEnter.style.display = "none";		
-				else{
-					
-					myinforEnter.onclick = function(){
-						viewContent.innerHTML = request.open("GET", "myInfoEnter", true);
-						request.send(null);	
-						
-					};
-				}				
-				
+				//= 대치, += 추가				
 
 			}
 		}
@@ -76,15 +68,17 @@
 		
 						
     }
-    
-    window.addEventListener("load", function(){
-    	
-    	var myInfo = document.querySelector("#myinfo > div > p");
-    	
-    	myInfo.onclick = function(){
-    		createPopup("myInfoUp");
-    		document.body.style.overflow = "hidden";
-    		
-    	};
-    	
-    });
+	
+	
+	window.addEventListener("load", function(){
+		var regClothes = document.querySelector("#btn-right > p");
+		
+		if(regClothes.dataset.code == "ROLE_USER")
+			regClothes.style.display = "none";
+		
+		regClothes.onclick = function(){
+			createPopup("myClothesReg");
+			document.body.style.overflow = "hidden";
+		};
+		
+	});

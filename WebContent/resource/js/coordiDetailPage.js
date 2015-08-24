@@ -11,7 +11,7 @@ function showDialog(url) {
 		like.style.height = "100%";
 		like.style.background = "black";
 		like.style.opacity = "0.5";
-
+		like.style.zIndex = "2";
 		document.body.appendChild(like);
 		
 		//반응형 웹-브라우저의 크기 구하기
@@ -34,6 +34,7 @@ function showDialog(url) {
 			view.style.height = height + "px";
 			view.style.background = "rgb(255,255,255)";
 			view.style.textAlign = "center";	//가운데정렬
+			view.style.zIndex = "2";
 			//view.style.lineHeight = height+"px";//세로 가운데정렬
 			/*		view.style.display="table-cell";
 			view.style.verticalAlign="middle";*/	

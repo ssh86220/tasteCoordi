@@ -34,6 +34,10 @@ public interface CoordinationDao {
 	
 	//public Coordination getProfile(String code);//15.08.17 영조 추가분
 	
+	public List<Coordination> getClothesNCoordi(String CodiCode);	//15.08.24 영조: 해당아이템이 쓰인 코디 리스트
+	//public String getClothescode();
+	
+	
 	//선희
 	public List <Coordination> getCodiSearch(String style, String categories, String color);
 	

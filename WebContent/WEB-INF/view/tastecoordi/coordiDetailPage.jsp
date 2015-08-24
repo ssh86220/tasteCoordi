@@ -169,24 +169,21 @@
 			
 			
 			<!-- --------코디코드, 코디 이미지 리스트 출력. 안나옴ㅠ 왜일까--------- -->
-			<ul>
+		<%-- 	<ul>
 				<li><a href=""><img src="" alt="이미지1"></a></li>
 				<li><a href=""><img src="" alt="이미지2"></a></li>
-				<%-- <li><img src="${ctxName}/resource/image/clothes/${c.image}"></li>  --%>
-				<li><img src="${ctxName}/resource/image/profile/${profile.image}" width=100px height=100px alt="프로필 사진"></li>
-				<%-- <li><img src="${ctxName}/resource/image/codi/${codilist.img}" width=100px height=100px alt="프로필 사진"></li> --%>
+				<li><img src="${ctxName}/resource/image/clothes/${c.image}"></li> 
+				<li><img src="${ctxName}/resource/image/profile/${profile.image}" width=100px height=100px alt="프로필 사진"></li --%>
+				
+				<c:forEach var="clo" items="${clothesncoordi}">
+				<ul>
+				 <li><img src = "${ctxName}/resource/image/profile/${clo.img}" alt="해당 아이템이 사용된 코디"/></li><!-- 안나옴... -->
+				 </ul>
+				</c:forEach>
+				
 			
-			<c:forEach var="co" items="${codilist}">
-				<%-- <li>${n.code}</li> --%>
-				<%-- <li>${co.code}--%>
-					<li><img src="${ctxName}/resource/image/codi/${codilist.img}" width="200px" alt="이미지1"></li> 
-				<li>${co.img}</li>
-				
-			</c:forEach>
-				
-				
-				
-			</ul>
+			
+			<!-- </ul> -->
 		</nav>
 
 

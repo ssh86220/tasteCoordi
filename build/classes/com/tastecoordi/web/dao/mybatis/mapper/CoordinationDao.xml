@@ -10,13 +10,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="getCoordinations" resultType="com.tastecoordi.web.vo.Coordination">
 
-		select DISTINCT IMG, CODICODE, HIT, LIKECNT, CMTCNT, TITLE, MID, IMAGE from
+		select DISTINCT IMG,
+		CODICODE, HIT, LIKECNT, CMTCNT, TITLE, MID, IMAGE from
 		CodiView1
 	</select>
 
 	<select id="getCodiSearch" resultType="com.tastecoordi.web.vo.Coordination">
-		select distinct IMG, CODICODE, HIT, LIKECNT, CMTCNT, TITLE, MID, IMAGE from
-		CodiView1 where style=#{style} or color=#{color} or
+		select distinct IMG,
+		CODICODE, HIT, LIKECNT, CMTCNT, TITLE, MID, IMAGE from
+		CodiView1 where
+		style=#{style} or color=#{color} or
 		categories=#{categories}
 	</select>
 
@@ -32,22 +35,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 
 
-	<!-- 15.08.20 영조 : getCodis 코디 상세페이지 오버뷰 코디 이미지 리스트 받아오기 수정중.-->
+	<!-- 15.08.20 영조 : getCodis 코디 상세페이지 오버뷰 코디 이미지 리스트 받아오기 수정중. -->
 	<select id="getCodis" parameterType="String"
 		resultType="com.tastecoordi.web.vo.Coordination">
 		SELECT * FROM Coordinations WHERE MID LIKE #{mid}
 		<!-- SELECT IMG, MID FROM Coordinations WHERE MID LIKE #{mid} -->
 	</select>
-	
-	<!-- 15.08.21 영조 : 코디 상세페이지 오버뷰 코디 이미지 리스트 받아오기 수정중.-->
-	<!-- <select id="getCoordilist" parameterType="String"
-		resultType="com.tastecoordi.web.vo.Coordination">
-		 select * from codiview1 where clothescode LIKE #{Code} 
-		select IMG, Code from Coordinations
-		</select> -->
 
-	
-	
+	<!-- 15.08.24 영조 : 코디 상세페이지 오버뷰 코디 이미지 리스트 받아오기 수정중. -->
+	<select id="getClothesNCoordi" parameterType="String"
+		resultType="com.tastecoordi.web.vo.Coordination">
+		SELECT *FROM CODIVIEW1 WHERE CLOTHESCODE =#{clothesCode}
+	</select>
+
+<select id="getClothescode" resultType="String">
+select distinct clothesCode from codiview1;
+</select>
+
 
 
 	<select id="getCoordiesCode" parameterType="string" resultType="String">

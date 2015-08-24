@@ -25,7 +25,7 @@ public class Coordination {
 
 	private String color;
 	private String categories;
-	private String clothesCode;
+	
 	private String coordiesCode;
 	private String clothesCoordisCode;
 	
@@ -49,6 +49,17 @@ public class Coordination {
 	public void setCodiCode(String codiCode) {
 		this.codiCode = codiCode;
 	}
+	
+	//코디 상세페이지 해당 아이템이 쓰인 코디 리스트 불러오기.
+	private String clothesCode;
+	
+	public String getClothesCode() {
+		return clothesCode;
+	}
+	public void setClothesCode(String ClothesCode) {
+		this.clothesCode = ClothesCode;
+	}
+	
 	
 /*	public List<Like> getLikes() {
 
@@ -157,12 +168,7 @@ public class Coordination {
 	public void setCategories(String categories) {
 		this.categories = categories;
 	}
-	public String getClothesCode() {
-		return clothesCode;
-	}
-	public void setClothesCode(String clothesCode) {
-		this.clothesCode = clothesCode;
-	}
+	
 	public String getCoordiesCode() {
 		return coordiesCode;
 	}

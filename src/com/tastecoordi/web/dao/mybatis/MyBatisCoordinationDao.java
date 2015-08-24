@@ -153,6 +153,23 @@ public class MyBatisCoordinationDao implements CoordinationDao {
 		 */
 	}
 
+	
+	//15.08.24 영조 : 해당 아이템이 쓰인 코디 리스트
+	@Override
+	public List<Coordination> getClothesNCoordi(String CodiCode) {
+		CoordinationDao dao = session.getMapper(CoordinationDao.class);
+		return dao.getClothesNCoordi(CodiCode);
+	}
+
+	/*@Override
+	public String getClothescode() {
+		CoordinationDao dao = session.getMapper(CoordinationDao.class);
+		return dao.getClothescode();
+	}*/
+
+	
+
+
 	/*
 	 * //15.08.17 영조
 	 * 

@@ -58,13 +58,15 @@ public class CoordiDetailController extends HttpServlet {
 	}
 	
 	@RequestMapping("coordiDetailPage")
-	public String coordinationDetail(Model model, String c){
+	public String coordinationDetail(Model model, String c, String cc){
 		
 		//프로필 이미지 불러오기. 15.08.17 영조 추가분
 		model.addAttribute("profile", coordinationDao.getCoordination(c));
 
 		
-		
+		//15.08.24 영조 : 해당 아이템이 사용된 코디 리스트들(다른 코디 포함)
+		List<Coordination> clothesncoordi = coordinationDao.getClothesNCoordi(cc);
+		model.addAttribute("clothesncoordi", clothesncoordi);
 		
 		
 		
@@ -83,9 +85,9 @@ public class CoordiDetailController extends HttpServlet {
 	
 		
 		//코디 리스트
-				List<Coordination> codilist = coordinationDao.getCodis(c);
+				/*List<Coordination> codilist = coordinationDao.getCodis(c);
 				model.addAttribute("codilist", codilist);
-		
+		*/
 				
 		//코디에 사용된 아이템 리스트
 			
@@ -94,6 +96,8 @@ public class CoordiDetailController extends HttpServlet {
 		List<ClothesCoordi>	clotheslist = clothesCoordiDao.getCCs(c);
 		model.addAttribute("clotheslist", clotheslist);		
 	
+		
+		
 
 		return "tastecoordi.coordiDetailPage";
 		

@@ -29,6 +29,7 @@
 	color: #646464;
 	margin-bottom: 5px;
 	margin-top: 7px;
+	
 }
 </style>
 
@@ -46,6 +47,7 @@
 		screen.style.top = "0px";
 		screen.style.background = "black";
 		screen.style.opacity = "0.5";
+		screen.style.zIndex = "2";
 
 		document.body.appendChild(screen);
 
@@ -63,6 +65,7 @@
 		dialog.style.left = left + "px";
 		dialog.style.top = top + "px";
 		dialog.style.background = "rgb(255,255,255)";
+		dialog.style.zIndex = "2";
 
 		document.body.appendChild(dialog);
 
@@ -98,21 +101,27 @@
 			if (request.readyState == 4)
 			view.innerHTML = request.responseText;
 			
-			
+		
 			var btnJoinscreen = document.querySelector("#btn-joinMemScreen");
 			btnJoinscreen.onclick = function(){
 				
-				showDialog("../joinus/joinMem");
-			}
+				
+				request.open("GET","../joinus/joinMem",true);
+				request.send(null);
+				/* console.log("joinMem-box input"); */
+			} 
 			
 			var btnJoinscreen = document.querySelector("#btn-joinEnterScreen");
 			btnJoinscreen.onclick = function(){
 				
-				showDialog("../joinus/joinEnter");
-			}
+				request.open("GET","../joinus/joinEnter",true);
+				request.send(null);			
 			
+			} 
+			
+		
 				
-		}
+		};
 		
 		//요청
 		request.open("GET", url, true);
@@ -156,6 +165,13 @@
 			showDialog("../joinus/joinSelect");
 		};
 		
+		var btnLoginscreen = document.querySelector("#btn-login-screen");
+		btnLoginscreen.onclick = function() {
+			
+			showDialog("../joinus/login");
+		};
+	
+		
 
 		var searchUp = document.querySelector("#search-up");
 
@@ -184,11 +200,11 @@
 		<h1 class="Hidden">메뉴</h1>
 		<ul id="aside-menu">
 			<li><a href="${ctxName}/tastecoordi/mypage/myCodi"><img
-					src="${ctxName}/resource/image/css/mypage-icon.png" alt="mypage"></a></li>
+					src="${ctxName}/resource/image/css/mypage-icon.png" alt="mypage" class="btn-login-screen"></a></li>
 
 			<c:if test="${empty pageContext.request.userPrincipal.name}">
-				<li><a href="${ctxName}/joinus/login"><img
-						src="${ctxName}/resource/image/css/login-icon.png" alt="login"></a></li>
+				<li><%-- <a href="${ctxName}/joinus/login"> --%><img
+						src="${ctxName}/resource/image/css/login-icon.png" alt="login" id="btn-login-screen"></a></li>
 			</c:if>
 			<c:if test="${not empty pageContext.request.userPrincipal.name}">
 				<%-- <security:authentication property="authorities" var="authorities" />
@@ -211,7 +227,7 @@
 
 
 			<li><a href="${ctxName}/admin/adminMember"> <img
-					src="${ctxName}/resource/image/css/company-icon.png" alt="company"></a>
+					src="${ctxName}/resource/image/css/company-icon.png" alt="company" class="btn-login-screen"></a>
 			</li>
 			<li><a href="${ctxName}/tastecoordi/qna"><img
 					src="${ctxName}/resource/image/css/q&a-icon.png" alt="q&a"></a></li>

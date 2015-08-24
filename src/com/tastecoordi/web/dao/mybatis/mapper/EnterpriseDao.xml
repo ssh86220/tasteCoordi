@@ -8,6 +8,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 INSERT INTO ENTERPRISEVIEW(MID,LINK, PHONENUMBER, REQUESTDATE) VALUES(#{mid},#{Link},#{PhoneNumber}, GETDATE())
 </insert>
 
+<insert id="SignUpEnterprise" parameterType="com.tastecoordi.web.vo.Enterprise">
+INSERT INTO ENTERPRISEVIEW(MID,LINK, PHONENUMBER, REQUESTDATE) VALUES(#{mid},#{Link},#{PhoneNumber}, GETDATE())
+INSERT INTO MEMBERS(ID, NAME, PW, EMAIL,REGDATE,IMAGE,DefaultRole) VALUES
+		(#{id},#{name},#{pW},#{email},getDate(),#{image},'ROLE_USER')
+</insert>
+
 <!-- <select id="getEnterprisesNotApp" parameterType="String" resultType="com.tastecoordi.web.vo.Enterprise">
 		SELECT * FROM ENTERPRISES
 		SELECT * FROM APPENTERPRISE WHERE ALLOWDAY IS NULL 

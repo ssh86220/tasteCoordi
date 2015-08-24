@@ -3,6 +3,7 @@ package com.tastecoordi.web.dao;
 import java.util.List;
 
 import com.tastecoordi.web.vo.Enterprise;
+import com.tastecoordi.web.vo.Member;
 
 public interface EnterpriseDao {
 
@@ -23,6 +24,8 @@ public interface EnterpriseDao {
 		public int addEnterprise(Enterprise id);
 		
 	//-------------------------------------------------
+		
+		public int SignUpEnterprise(Enterprise m);
 		
 		/*public List<Enterprise> deleteEnterprises();*/
 		

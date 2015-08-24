@@ -16,20 +16,28 @@
 	float: left;
 	background: #ffffff;
 	text-align: center;
+	
 }
 
 .joindiv li:FIRST-CHILD{
-	padding-top: 35px;
-	font-size: 18px;
+	padding-top: 50px;
+	
 }
 
 .joindiv img:FIRST-CHILD{
-	padding-top: 40px;
-	width: 60%;
+	padding-top: 20px;
+	width: 45%;
 	height: 60%;
 }
 #joinBox{
 padding-left:45px;
+}
+
+#btn-joinMemScreen :HOVER{
+ color : #f66373;
+}
+#btn-joinEnterScreen :HOVER{
+ color : blue;
 }
 </style>
 
@@ -47,7 +55,7 @@ padding-left:45px;
 	<div>
 		<div class="joindiv" id="btn-joinMemScreen">
 			<ul  style = "cursor: pointer;">
-				<li><!-- <a href="../joinus/joinMem"> -->일반<!-- </a> --></li>
+				<li><a> 일반</a></li>
 				<li><a>회원가입</a></li>
 				 <a><img src="../resource/image/css/joinMember.png"  /></a> 
 				 
@@ -55,9 +63,9 @@ padding-left:45px;
 			</ul>
 		</div>
 		<div class="joindiv" id="btn-joinEnterScreen">
-			<ul>
-				<li><a href="joinEnter">업체</a></li>
-				<li><a href="joinEnter">회원가입</a></li>
+			<ul style = "cursor: pointer;">
+				<li><a>업체</a></li>
+				<li><a>회원가입</a></li>
 				<a><img src="../resource/image/css/joinMembers.png"/></a>
 			</ul>
 		</div>

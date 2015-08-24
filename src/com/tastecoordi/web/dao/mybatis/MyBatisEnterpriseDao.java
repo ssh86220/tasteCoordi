@@ -6,7 +6,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tastecoordi.web.dao.EnterpriseDao;
-import com.tastecoordi.web.dao.MemberDao;
 import com.tastecoordi.web.vo.Enterprise;
 
 public class MyBatisEnterpriseDao implements EnterpriseDao{
@@ -50,6 +49,14 @@ public class MyBatisEnterpriseDao implements EnterpriseDao{
 		EnterpriseDao dao = session.getMapper(EnterpriseDao.class);
 		
 		return dao.addEnterprise(id);
+	}
+
+	@Override
+	public int SignUpEnterprise(Enterprise m) {
+		
+		EnterpriseDao dao = session.getMapper(EnterpriseDao.class);
+		
+		return dao.addEnterprise(m);
 	}
 
 /*	@Override

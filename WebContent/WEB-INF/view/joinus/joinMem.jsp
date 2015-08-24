@@ -3,8 +3,8 @@
 
 <style>
 #joinMem-box{
-border : 1px solid red;
-padding-left : 50px;
+
+padding-left : 75px;
 }
 
 /* #joinMem-box form{
@@ -21,6 +21,12 @@ padding-left : 50px;
 	height: 70%;
 }
 
+#joinMem-box input{
+ width: 230px;
+ height: 25px;
+
+}
+
 </style>
 
 	<nav id="joinLogo">
@@ -35,11 +41,36 @@ padding-left : 50px;
 
 	<section id="joinMem-box">
 	<h1 class="Hidden">개인회원가입</h1>
-	<form method="post">
-		ID:<br> <input type="text" name="ID"><br> PW:<br>
-		<input type="text" name="PW"><br> Email:<br> <input
-			type="text" name="Email"><br> NckName:<br> <input
-			type="text" name="Nname"><br><input type="submit"
-			name="SignUp"><br>
+	<form method="post" action ="../joinus/joinMem">
+
+			
+				<table>
+
+				<tbody>
+					<tr>
+						<td>ID<br />
+						<input type="text" name="ID"></td>
+					</tr>
+					<tr>
+						<td>password<br />
+						<input type="text" name="PW"></td>
+					</tr>
+					<tr>
+						<td>Email<br />
+						<input type="text" name="Email"></td>
+					</tr>
+					<tr>
+						<td>Nick Name<br />
+						<input type="text" name="Nname"></td>
+					</tr>
+					<tr>
+						<td>sing up<br />
+						<input type="submit" name="SingUP" value="회원가입"></td>
+					</tr>
+
+
+				</tbody>
+
+			</table>
 	</form>
 	</section>

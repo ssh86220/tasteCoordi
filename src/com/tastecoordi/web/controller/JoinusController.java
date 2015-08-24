@@ -65,17 +65,31 @@ public class JoinusController {
 		return "joinus.joinEnter";
 	}
 	@RequestMapping(value="joinEnter", method=RequestMethod.POST)
-	public String joinEnter(Principal principal,Model model, String c, HttpServletRequest request){
+	public String joinEnter(Principal principal,Member member,Enterprise enterprise, MemberRoles memberRoles, String c, HttpServletRequest request){
 				
-		Enterprise enterprise = new Enterprise();
-		
+		String mid = request.getParameter("ID");
+ 		String pw = request.getParameter("PW");
+ 		String email = request.getParameter("Email");
+ 		String nname= request.getParameter("Nckname");
+ 		String siteL= request.getParameter("SiteLink");
+ 		String PN= request.getParameter("phoneNumber");
+ 		
+ 		
+ 		member.setId(mid);
+ 		enterprise.setMid(mid);
+ 		member.setPw(pw);
+ 		member.setEmail(email);
+ 		member.setName(nname);
+ 		enterprise.setLink(siteL);
+ 		enterprise.setPhoneNumber(PN);	
+ 		member.setDefaultRole("ROLE-USER");
+ 		memberRoles.setRcode("ROLE-USER");
+ 		memberRoles.setMID(mid);
+ 	
+ 		memberDao.addMember(member);
+		enterpriseDao.SignUpEnterprise(enterprise);
 	 	
-		enterprise.setMid(principal.getName());
-		enterprise.setMid(c); // clothesCode
-	 	
-		enterpriseDao.addEnterprise(enterprise);
-	 	
-	 	return "redirect:tsMain?c=";
+	 	return "redirect:../tastecoordi/tsMain";
 		
 	}
 	
@@ -107,7 +121,7 @@ public class JoinusController {
  	
 		memberDao.addMember(member);
 	 	
-	 	return "redirect:joinSelect";
+	 	return "redirect:../tastecoordi/tsMain";
 	
 	}
 	

@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctxName" value='${pageContext.request.contextPath}'/> 	
 <link href="${ctxName}/resource/css/codiRoom.css" type="text/css" rel="stylesheet" />	
- 		<div class="content-wrapper clearfix">		
+ 	<%-- 	<div class="content-wrapper clearfix">		
 		<section class="clearfix">
 			<h1 class="Hidden">코디하기</h1>
 		
@@ -46,8 +46,8 @@
 							<li><a href="codiRoomJjims">찜 아이템</a></li>
 						</ul>			
 				
-				<div id="coordi-item">	 		
-				<section>
+				<div id="coordi-item">	 --%> 		
+				<section id="resize">
 						<h1 class="Hidden">아이템 색상 선택</h1>
 						<form method="post" action="codiRoomSearch">
 						<select name="color">
@@ -99,9 +99,9 @@
 						</ul>
 				</nav>			
 				</section>	
-				 </div>							
+				 <!-- </div>							
 			</section>			
 		</section>	  																	
 	</section>
 </section>	
-</div>	 
+</div>	  -->

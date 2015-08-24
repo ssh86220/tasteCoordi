@@ -2,7 +2,7 @@
 /* ------------------------------각 영역 */
 
  #main-wapper {
-	 min-height: 700px; 
+	 min-height: 530px; 
 }
 
 	.content-wrapper {
@@ -44,6 +44,10 @@
 	#product{
 	 	height : 565px;
 	}
+	
+	#resize{
+		margin-top: -140px;
+	}
 
 
 	/* 코디 순서 표시 */
@@ -83,11 +87,11 @@
 	/* 아이템 카테고리 */
 	#item-category{
 		display : inline-block;
-		margin-left : 53px;
+		margin-left : 55px; /* 51 */
 		}
 	
 	#item-category li{
-		padding-left: 24px;
+		padding-left: 27px; /* 24 */
 		float : left
 	}	
 
@@ -110,12 +114,12 @@
 	}
 
 	#item-img li{
-		padding-left: 31px;	
+		padding-left: 30px;	
 	}
 
 	#item-img img{
-		width : 70px;
-		height : 70px;	
+		width : 68px; /* 70 */
+		height : 68px;	/* 70 */
 		float : left;
 	} 
 
@@ -236,7 +240,8 @@
 	#save img{
 		width : 17px;
 		height :17px;
-		padding-right: 7px;
+		padding-right: 9px;
+		margin-left : 8px;
 		
 	}
 	#save a{
@@ -249,16 +254,16 @@
 /* ----------------------- pager*/
 
 	#pager{
-		margin-left: 100px;
-		margin-right: 100px;
+		margin-left: 110px;
+		margin-right: 80px;
 	}
  	#pager li { 
  		float: left; 
  		width: 40px; 
- 		height: 25px; 
+ 		height: 20px; 
 		/* border: 1px solid green;  */ 
  		 text-align: center; 
- 		line-height: 25px; 
+ 		line-height: 20px; 
  	} 
   
  	#pager { 
@@ -292,5 +297,6 @@
 		height : 21px; 
 		background: url("../image/css/codiRoom-Jjim2.png") no-repeat center;
 	}
+	
 	
 	

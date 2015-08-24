@@ -16,7 +16,6 @@
 	<aside>
 		
 	</aside> -->
-	
 	<main>	
 	<section>
 			<h1>아이템등록하기 </h1>

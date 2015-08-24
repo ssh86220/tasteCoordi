@@ -3,7 +3,25 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctxName" value='${pageContext.request.contextPath}'/> 
 <link href="${ctxName}/resource/css/codiRoom.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="${ctxName}/resource/js/codiRoom.js"></script>
 <script type="text/javascript">
+
+	function clothesDetail(){
+		/* var detailView = document.querySelector("#coordi-canvas");
+		
+		var request = new window.XMLHttpRequest();
+		 
+		request.onreadystatechange = function() {
+			if (request.readyState == 4){
+				view.innerHTML = request.responseText; 
+			}
+		}
+
+		//요청
+		request.open("GET", "codiRoomDetail", true);
+		request.send(null);  */
+		//alert("ttt");
+	}
 
 
 	function showMenu(url){
@@ -26,17 +44,30 @@
 	}
 	window.addEventListener("load", function(){	
 		
-		/* var menu = document.querySelector("#item-menu").getElementsByTagName("li");
-	
+		//showMenu("codiRoom2");
+		 var menu = document.querySelector("#item-menu").getElementsByTagName("li");
+		document.querySelector("#item-menu").style.cursor="pointer";
+		
+		
+		
+		menu[0].onclick = function(){
+			showMenu("codiRoom2");	
+		}; 
+		 
 		menu[1].onclick = function(){
-			showMenu("codiRoomMyClothes");	
+			showMenu("codiRoomMyClothes");
 		};
 		
 		menu[2].onclick = function(){
 			showMenu("codiRoomJjims");	
 		};
-	 */
+				
+	 
 });
+	
+
+	
+
 </script>
 
 		<div class="content-wrapper clearfix">		
@@ -78,9 +109,9 @@
 				<section>
 					<h1 class="Hidden">아이템 저장소</h1>
 						<ul id="item-menu" class="clearfix">
-							<li><a href="codiRoom">의류</a></li>
-							<li><a href="codiRoomMyClothes">내 옷장</a> </li>
-							<li><a href="codiRoomJjims">찜 아이템</a></li>
+							<li><a>의류</a></li>
+							<li><a>내 옷장 </a></li>
+							<li><a>찜 아이템</a></li>
 						</ul>			
 				
 				<div id="coordi-item">			
@@ -130,7 +161,7 @@
 						<c:forEach var="c" items="${list}">
 						<ul id="item-img" class="clearfix">									
 							<li>
-								<a href="codiRoomDetail?c=${c.code}&mid=${id}">
+								<a href="codiRoomDetail?c=${c.code}&mid=${id}"> 
 								<img src="${ctxName}/resource/image/clothes/${c.image}">
 								</a>
 							</li>

@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctxName" value='${pageContext.request.contextPath}'/> 
-<link href="${ctxName}/resource/css/codiRoom.css" type="text/css" rel="stylesheet" />	
-				 <section>
+<link href="${ctxName}/resource/css/codiRoom.css" type="text/css" rel="stylesheet" />
+				 <section id="resize">
 						<h1 class="Hidden">아이템 카테고리</h1>
 						<ul id="item-category" class="clearfix">
 							<li><a href="codiRoomSearch?c=<c:out value="top"/>">

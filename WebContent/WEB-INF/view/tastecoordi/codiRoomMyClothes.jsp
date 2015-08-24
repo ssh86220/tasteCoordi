@@ -3,95 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctxName" value='${pageContext.request.contextPath}'/> 
 <link href="${ctxName}/resource/css/codiRoom.css" type="text/css" rel="stylesheet" />	
-<!-- <script type="text/javascript" src="../resource/js/codiRoom.js"></script> -->	
-<script type="text/javascript">
-function showDialog(url) {
-	var screen = document.createElement("div");
-
-	screen.style.width = "100%";
-	screen.style.height = "100%";
-	screen.style.position = "fixed";
-	screen.style.left = "0px";
-	screen.style.top = "0px";
-	screen.style.background = "black";
-	screen.style.opacity = "0.7";
-
-	document.body.appendChild(screen);
-
- 	var docHeight = window.innerHeight;
-	var docWidth = window.innerWidth;
-	var width = "300";
-	var height = "300";
-	var top = docHeight / 2 - height / 2;
-	var left = docWidth / 2 - width / 2;
-
-	var dialog = document.createElement("div");
-	dialog.style.width = "300px";
-	dialog.style.height = "300px";
-	dialog.style.position = "fixed";
-	dialog.style.left = left + "px";
-	dialog.style.top = top + "px";
-	dialog.style.background = "rgb(255,255,255)";
-
-	document.body.appendChild(dialog);
-
-	var view = document.createElement("div");
-	view.style.background="#f8deec"; 
-	view.style.width = "100%";
-	view.style.height = "100%";
-	dialog.appendChild(view); 
 
 
-	 var btnClose = document.createElement("input");
-	btnClose.type = "button";
-	btnClose.value = "X";
-	btnClose.style.position = "absolute";
-	btnClose.style.right = "-5px";
-	btnClose.style.top = "-5px";
-	btnClose.style.padding = "3px";
-
-	dialog.appendChild(btnClose);
-
-	btnClose.onclick = function() {
-
-		document.body.removeChild(dialog);
-		document.body.removeChild(screen);
-	} 
-
-
-
-	 var request = new window.XMLHttpRequest();
-
-	//비동기 반응
-	request.onreadystatechange = function() {
-		if (request.readyState == 4){
-			view.innerHTML = request.responseText; 
-    		request.send(null);
-		}
-	}
-
-	//요청
-	request.open("GET", url, true);
-	request.send(null); 
-
-	//반응 (기다리면 동기 안기다리면 비동기)	
-}
-
-	
-	window.addEventListener("load", function(){
-		var clothesUpload = document.querySelector("#product > a");
-		
-		clothesUpload.onclick = function(){
-			
-			//alert("tt");
-			showDialog("codiRoomMyClothesUpload");
-			
-		};
-		
-	});
-</script>
-
-		<div class="content-wrapper clearfix">		
+<%-- 		<div class="content-wrapper clearfix">		
 		<section class="clearfix">
 			<h1 class="Hidden">코디하기</h1>
 		
@@ -134,8 +48,8 @@ function showDialog(url) {
 							<li><a href="codiRoomJjims">찜 아이템</a></li>
 						</ul>			
 				
-				<div id="coordi-item">	 		
-				<section>
+				<div id="coordi-item">	 --%> 		
+				<section id="resize">
 						<h1 class="Hidden">아이템 색상 선택</h1>
 						<form method="post" action="codiRoomSearch">
 						<select name="color">
@@ -163,7 +77,7 @@ function showDialog(url) {
 							
 				<section id="product">
 					<h1 class="Hidden">아이템 등록</h1>
-						<a> 
+						<a onClick='showDialog("codiRoomMyClothesUpload")'> 
 						<!-- <a href="codiRoomMyClothesUpload"> --> 아이템 등록하기</a>
 						<h1 class="Hidden">이미지 목록</h1>
 							<form method="POST" action="codiRoomMyClothesDelete">
@@ -193,7 +107,7 @@ function showDialog(url) {
 						</ul>
 				</nav>			
 			</section>	
-			 </div>
+			<!--  </div>
 		</section>			
 	</section>
 	  
@@ -201,3 +115,4 @@ function showDialog(url) {
 																
 	</section>
 </section>		
+ -->

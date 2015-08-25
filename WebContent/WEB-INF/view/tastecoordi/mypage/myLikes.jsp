@@ -22,6 +22,28 @@
 			}
 		})
 	})
+	
+	
+	function likesDel(){
+		var likesForm = document.itemForm;
+		likesForm.method = "post";
+		likesForm.action = "myLikesDel";
+		likesForm.submit();
+	}
+	
+	window.addEventListener("load", function(){
+		
+		var delBtn = document.querySelector("#item-btn input[type='button']");
+		delBtn.onclick = function(){
+			
+			if(confirm("삭제하시겠습니까?") == true)
+				likesDel();
+			else
+				return;		
+		}
+		
+	});
+	
 </script>
 </head>
 
@@ -35,14 +57,14 @@
 								
 					<h1 class="hidden">상품목록</h1>
 					
-					<form name="itemForm" method="post" action="myLikesDel">
+					<form name="itemForm">
 					
 						<div id = "item-btn">
 							<div id="btn-left">
 								<input type="checkbox" id="all-check">check all<br>
 							</div>
 							<div>
-								<input type="submit" value="삭제">		
+								<input type="button" value="삭제">		
 							</div>
 						</div>
 						

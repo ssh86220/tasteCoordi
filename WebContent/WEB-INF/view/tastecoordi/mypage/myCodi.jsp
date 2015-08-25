@@ -50,6 +50,14 @@
 			if(img[i].alt == 0)
 				img[i].style.opacity = "0.3";
 		
+		var delBtn = document.querySelector("#codi-btns input:first-child");
+		delBtn.onclick = function(){
+			if(confirm("삭제하시겠습니까?") == true)
+				del();
+			else
+				return;	
+		};
+		
 		
 	});
 	
@@ -87,7 +95,7 @@
 							<input type="checkbox" id="all-check">check all<br>
 						</div>
 						<div id = "codi-btns">
-							<input type="button" value="삭제" onclick="del()">
+							<input type="button" value="삭제">
 							<input type="button" value="공개/비공개" onclick="state()">				
 						</div>
 					</div>

@@ -25,6 +25,27 @@
 		})
 	})
 	
+	
+	function clothesDel(){
+		var clothesForm = document.itemForm;
+		clothesForm.method = "post";
+		clothesForm.action = "myClothesDel";
+		clothesForm.submit();
+	}
+	
+	window.addEventListener("load", function(){
+		
+		var delBtn = document.querySelector("#btn-right input[type='button']");
+		delBtn.onclick = function(){
+			
+			if(confirm("삭제하시겠습니까?") == true)
+				clothesDel();
+			else
+				return;		
+		}
+		
+	});
+	
 </script>
 <style type="text/css">
 
@@ -49,7 +70,7 @@
 								
 					<h1 class="hidden">상품목록</h1>
 					
-					<form name="itemForm" method="post" action="myClothesDel">
+					<form name="itemForm">
 						<div id = "item-btn">
 							<div id="btn-left">
 								<input type="checkbox" id="all-check">check all<br>
@@ -57,7 +78,7 @@
 							<div id="btn-right">
 								<p data-code="${m.defaultRole}">아이템 등록</p>
 								&emsp;
-								<input type="submit" value="삭제">		
+								<input type="button" value="삭제">		
 							</div>
 						</div>
 						

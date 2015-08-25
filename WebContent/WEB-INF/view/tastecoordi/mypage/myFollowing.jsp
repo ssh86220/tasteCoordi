@@ -25,6 +25,31 @@
 		})
 	})
 	
+	
+	function followingDel(){
+		var followingForm = document.itemForm;
+		followingForm.method = "post";
+		followingForm.action = "myFollowingDel";
+		followingForm.submit();
+	}
+	
+	window.addEventListener("load", function(){
+		
+		var delBtn = document.querySelector("#item-btn input[type='button']");
+		delBtn.onclick = function(){
+			
+			if(confirm("삭제하시겠습니까?") == true)
+				followingDel();
+			else
+				return;		
+		}
+		
+	});
+	
+	
+	
+	
+	
 </script>
 
 <style>
@@ -32,6 +57,9 @@
 {border-radius:100px; display: block; margin-left: auto; margin-right: auto;}
 #items p
 {text-align: center;}
+#items li
+{height: 170px;}
+
 </style>
 
 </head>
@@ -44,13 +72,13 @@
 								
 					<h1 class="hidden">팔로잉목록</h1>
 					
-					<form name="itemForm" method="post" action="myFollowingDel">
+					<form name="itemForm">
 						<div id = "item-btn">
 							<div id="btn-left">
 								<input type="checkbox" id="all-check">check all<br>
 							</div>
 							<div>
-								<input type="submit" value="삭제">		
+								<input type="button" value="삭제">		
 							</div>
 						</div>
 					

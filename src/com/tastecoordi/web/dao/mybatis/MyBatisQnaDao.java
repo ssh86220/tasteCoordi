@@ -129,6 +129,15 @@ public class MyBatisQnaDao implements QnaDao {
 		return list;
 	}
 
+	@Override
+	public int updateReadCount(String number) {
+		int result = 0;
+		result=session.update("updateReadCount",number);
+		return result;
+	}
+
+	
+
 	
 	
 }

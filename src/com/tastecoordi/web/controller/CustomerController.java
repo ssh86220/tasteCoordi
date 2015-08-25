@@ -63,8 +63,12 @@ public class CustomerController {
 	public String qnaDetail(String c,Model model){
 		//NoticeDao ND = new MyBatisNoticeDao();
 		
+		qnaDao.updateReadCount(c);
 		QnA q = qnaDao.getQnA(c);
+		
+		
 		model.addAttribute("c",q);
+		
 		
 		List<QnaComment> list = qnaCommentDao.getComment(c);
 		model.addAttribute("list", list);

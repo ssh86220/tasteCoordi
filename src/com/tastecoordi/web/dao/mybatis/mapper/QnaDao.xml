@@ -36,6 +36,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		
 	</insert>
 	
+	
+	
+	<update id="updateReadCount" parameterType="String">
+	Update QnAs set hits= hits+1 where Number=#{Number};
+	</update>
+	
+	
 	<delete id="removeQnA" parameterType="string">
 	Delete FROM QnAs where number = #{number};
 	</delete>

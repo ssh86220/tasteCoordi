@@ -71,7 +71,9 @@ public class CodiRoomJjimsController {
 	 	
 	 	jjimsDao.addJjims(jjims);
 	 	
+	 	
 	 	return "redirect:codiRoomDetail?c="+c;
+	 	//return "tastecoordi.codiRoomJjims";
 	 		
 	}
 	
@@ -95,6 +97,7 @@ public class CodiRoomJjimsController {
 	 	jjimsDao.removeJjims(c, principal.getName());
 	 	
 	 	return "redirect:codiRoomDetail?c="+c;
+	 	//return "tastecoordi.codiRoomJjims";
 	 		
 	}
 

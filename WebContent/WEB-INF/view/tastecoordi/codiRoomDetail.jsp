@@ -3,8 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <c:set var="ctxName" value='${pageContext.request.contextPath}'/> 
  <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
-<link href="../resource/css/codiRoom.css" type="text/css" rel="stylesheet" />	
-		<div class="content-wrapper clearfix">		
+<link href="../resource/css/codiRoom.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="${ctxName}/resource/js/codiRoom.js"></script>	
+		<%-- <div class="content-wrapper clearfix">		
 		<section class="clearfix">
 			<h1 class="Hidden">코디하기</h1>
 		
@@ -22,13 +23,13 @@
 						<li id="save"><a href="">
 						<img src="${ctxName}/resource/image/css/codiRoom-save.png">저장하기</a></li>
 					</ul>
-				</section>
+				</section> --%>
 				
-				<section id="coordi-canvas">
+				<!-- <section id="coordi-canvas">
 				<h1 class="Hidden">코디 영역</h1>
 					<div>
 					<section>
-					 <h1 class="Hidden">코디 아이템 정보</h1>
+					 <h1 class="Hidden">코디 아이템 정보</h1> -->
 						<table>
 							<tbody>
 								<tr>
@@ -43,14 +44,14 @@
 								 
 								 <c:choose>
 								 	<c:when test="${isJjim eq true}"> 
-										<form method="POST" action="codiRoomJjimsDelete?c=${c.code}&mid=${id}">
+										<form method="POST" action="codiRoomJjimsDelete?c=${c.code}">
 										<tr>
 											<td>
 												<input class="button jjim-delete-button" type="submit" value="찜취소"/>
 												count : ${count}  
 												찜한 사람들 : 
 												<c:forEach var="j" items="${jjimPeopleList}">
-										 		${j.mid}
+										 		${j.mid} 
 												</c:forEach>																						
 											</td>
 										</tr>
@@ -58,7 +59,7 @@
 									</c:when>
 									
 									 <c:otherwise>
-										<form method="POST">									
+										<form method="POST" action="codiRoomDetail?c=${c.code}">									
 										<tr>
 											<td>										
 												<input class="button jjim-button" type="submit" value="찜하기"/> 
@@ -80,11 +81,11 @@
 								</tr>		
 							</tbody>				
 						</table>
-					</section> 			
+					<!-- </section> 			
 					</div>					
-				</section>	
+				</section> -->	
 							
-			</section>
+			<%-- </section>
 									
 			<!--아이템 영역 -->			
 			<section id="item" class="clearfix">
@@ -149,7 +150,7 @@
 							<c:forEach var="c" items="${list}">
 								<ul id="item-img" class="clearfix">									
 									<li>
-										<a href="codiRoomDetail?c=${c.code}<%-- &mid=${id} --%>">
+										<a href="codiRoomDetail?c=${c.code}&mid=${id}">
 										<img src="${ctxName}/resource/image/clothes/${c.image}">
 										</a>
 									</li>							
@@ -177,4 +178,4 @@
 	  
 	  								
 	</section>
-</section>		
+</section>		 --%>

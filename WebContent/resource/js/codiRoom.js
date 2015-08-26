@@ -73,3 +73,89 @@ function showDialog(url) {
 
 		//반응 (기다리면 동기 안기다리면 비동기)	 
 	}
+
+
+/*clothes jjim, site, price*/
+function clothesDetail(url){
+	 var detailView = document.querySelector("#coordi-canvas");
+	
+	var request = new window.XMLHttpRequest();
+	 
+	request.onreadystatechange = function() {
+		if (request.readyState == 4){
+			detailView.innerHTML = request.responseText; 
+			request.send(null);
+		}
+	}
+
+	//요청
+	request.open("GET", url, true);
+	request.send(null);  
+	//alert("ttt");
+}
+
+
+function showMenu(url){
+	
+	var view = document.querySelector("#coordi-item");
+	
+	var request = new window.XMLHttpRequest();
+	 
+	request.onreadystatechange = function() {
+		if (request.readyState == 4){
+			view.innerHTML = request.responseText; 
+		}
+	}
+
+	//요청
+	request.open("GET", url, true);
+	request.send(null); 
+	
+	
+}
+window.addEventListener("load", function(){	
+	
+	//showMenu("codiRoom2");
+	 var menu = document.querySelector("#item-menu").getElementsByTagName("li");
+	document.querySelector("#item-menu").style.cursor="pointer";
+	
+	
+	
+	menu[0].onclick = function(){
+		showMenu("codiRoom2");	
+	}; 
+	 
+	menu[1].onclick = function(){
+		showMenu("codiRoomMyClothes");
+	};
+	
+	menu[2].onclick = function(){
+		showMenu("codiRoomJjims");	
+	};
+	
+	
+	/*drag&drop*/
+/*	var itemBox = document.querySelectorAll("#item-img li");
+	for(var i=0; i < itemBox.length; i++){
+		itemBox[i].addEventListener("click", function(event){
+			alert("dd");
+		});
+	}*/
+   /* imgBox.addEventListener("dragstart", function(event){
+   		if(event.target instanceof HTMLImageElement){
+   			var data = {
+   					code : event.target.dataset.code,
+   					src : event.target.dataset.src
+   					};
+   			
+   			event.dataTransfer.setData('text/plain',JSON.stringify(data));
+   			event.dataTransfer.effectAllowed = "move";
+   			
+   		} 
+   		else
+   			event.preventDefault();
+   		    		
+    });*/
+			
+
+});

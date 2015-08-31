@@ -134,28 +134,71 @@ window.addEventListener("load", function(){
 	};
 	
 	
-	/*drag&drop*/
-/*	var itemBox = document.querySelectorAll("#item-img li");
+	/*drag&drop*/	
+	var itemBox = document.querySelectorAll("#item-img li");
 	for(var i=0; i < itemBox.length; i++){
-		itemBox[i].addEventListener("click", function(event){
-			alert("dd");
+		itemBox[i].addEventListener("dragstart", function(event){
+			if(event.target instanceof HTMLImageElement){
+	   			var data = {
+	   					src : event.target.dataset.src
+	   					};
+	   			
+	   			event.dataTransfer.setData('text/plain',JSON.stringify(data));
+	   			event.dataTransfer.effectAllowed = "move";
+	   		} 
+	   		else
+	   			event.preventDefault();
 		});
-	}*/
-   /* imgBox.addEventListener("dragstart", function(event){
-   		if(event.target instanceof HTMLImageElement){
-   			var data = {
-   					code : event.target.dataset.code,
-   					src : event.target.dataset.src
-   					};
-   			
-   			event.dataTransfer.setData('text/plain',JSON.stringify(data));
-   			event.dataTransfer.effectAllowed = "move";
-   			
-   		} 
-   		else
-   			event.preventDefault();
-   		    		
-    });*/
-			
+	}
+	
+	
+	 var codiCanvas = document.querySelector("#coordi-canvas");
+	 codiCanvas.addEventListener("dragover", function(event){
+		 event.preventDefault();
+     });
+	 
+	 var dragitem = null;
+	 var mouseOffset = {x:0, y:0};
+	 
+	 codiCanvas.addEventListener("drop", function(event){
+		 var data = JSON.parse(event.dataTransfer.getData("text/plain"));
+	    	var img = document.createElement("img");
+	    	img.src = data.src;
+	    	img.draggable = false;
+	    	img.style.position = "absolute";
+	    	/*img.style.left= (event.offsetX-img.width/2) + "px";
+	    	img.style.top=(event.offsetY-img.height/2)+"px";*/
+	    	img.style.left= (event.offsetX) + "px";
+	    	img.style.top=(event.offsetY)+"px";
+	    	img.style.width="100px";
+	    	img.style.height="100px";
+	    	
+	    	img.addEventListener("mousedown",function(event){
+	    		dragitem = event.target;
+	    		mouseOffset.x=event.offsetX;
+	    		mouseOffset.y=event.offsetY;
+	    			
+	    	}); 
+	    	
+	    	event.target.appendChild(img);
+		 
+	 });
+	 
+	 document.addEventListener("mousemove", function(event){
+		    
+	    	// h1.textContent = event.x;
+	    	   if(dragitem != null){
+	    		   dragitem.style.left = event.pageX-mouseOffset.x + "px";
+	    		   dragitem.style.top = event.pageY-mouseOffset.y + "px";
+	    	 }  
+	     });
+	 
+	 document.addEventListener("mouseup", function(event){
+    	 if(dragitem != null)
+    		 dragitem = null;    	 
+     });
+	
+   
+				
 
 });

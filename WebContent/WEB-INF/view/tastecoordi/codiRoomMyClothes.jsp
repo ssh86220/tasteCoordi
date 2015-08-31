@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctxName" value='${pageContext.request.contextPath}'/> 
 <link href="${ctxName}/resource/css/codiRoom.css" type="text/css" rel="stylesheet" />	
-
+<script type="text/javascript" src="${ctxName}/resource/js/codiRoom.js"></script>
 
 <%-- 		<div class="content-wrapper clearfix">		
 		<section class="clearfix">
@@ -85,7 +85,9 @@
 							<c:forEach var="c" items="${list}">									
 								<ul id="myClothes-img" class="clearfix">									
 									<li>
-									<img src="${ctxName}/resource/image/clothes/${c.image}">
+									<img draggable="true" 
+								src="${ctxName}/resource/image/clothes/${c.image}" 
+								data-src="${ctxName}/resource/image/clothes/${c.image}">
 									<input type="checkbox" name="check" value="${c.code}"/>
 									</li>							
 								</ul>							

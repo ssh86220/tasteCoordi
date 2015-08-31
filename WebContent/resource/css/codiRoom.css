@@ -25,6 +25,8 @@
 	 	border:1px solid gray;
 		height : 680px; 
 		margin-top: -9px;
+		 position : relative;
+		 overflow: hidden;
 	}
 
 	#coordi-item{

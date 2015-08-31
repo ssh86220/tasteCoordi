@@ -102,9 +102,11 @@
 						<ul id="item-img" class="clearfix">									
 							<li>
 								<a>
-								<%-- <a onClick='clothesDetail("codiRoomDetail?c=${c.code}")'> --%> 
+								<%--  <a onClick='clothesDetail("codiRoomDetail?c=${c.code}")'>  --%>
 								<%-- <a href="codiRoomDetail?c=${c.code}&mid=${id}"> --%>
-								<img src="${ctxName}/resource/image/clothes/${c.image}">
+								<img draggable="true" 
+								src="${ctxName}/resource/image/clothes/${c.image}" 
+								data-src="${ctxName}/resource/image/clothes/${c.image}">
 								</a>
 							</li>
 								
